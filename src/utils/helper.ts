@@ -1,2 +1,2 @@
-export const Logger = (message: string, params?: any) => console.log(message, params);
+export const Logger = (message: any, params?: any) => console.log(message, params);
 

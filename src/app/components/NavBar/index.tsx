@@ -3,14 +3,12 @@ import styled from 'styled-components/macro';
 import { PageWrapper, SubWrapperRow } from '../PageWrapper';
 import { AppLogo } from './AppLogo';
 import { StyleConstants } from '../../../styles/StyleConstants';
-
-export const NavBar = () => {
+import { NavBar } from './NavBar';
+export const NavBarWrapper = () => {
   return (
     <Wrapper>
       <PageWrapper>
-        <SubWrapperRow>
-          <AppLogo />
-        </SubWrapperRow>
+        <NavBar/>
       </PageWrapper>
     </Wrapper>
   );

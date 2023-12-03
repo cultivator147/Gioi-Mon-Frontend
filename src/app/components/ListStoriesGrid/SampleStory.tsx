@@ -6,29 +6,31 @@ import { title } from "process";
 import { StyledLink } from "../Common/StyledLink";
 import { Chapter, ChapterProps, ListChapter } from "../ListChapter";
 import { Logger } from "../../../utils/helper";
+import { StyleConstants } from "../../../styles/StyleConstants";
 export interface SampleStoryProps{
-    image : string,
+    picture : string,
     title: string,
-    href: string,
-    newestChapters: ChapterProps[]
+    link: string,
+    chapters: ChapterProps[]
 }
 export const SampleStory = (props: SampleStoryProps) =>{
-    const newestChapters : ChapterProps[] = props.newestChapters || [];
-    // Logger("Newest Chapters: ", newestChapters);
+    const newestChapters : ChapterProps[] = props.chapters || [];
+    Logger("Newest Chapters: ", newestChapters);
     return(
         <StoryWrapper>
-            <a href = {props.href}>
+            <a href = {props.link}>
                 <Image
-                    src={props.image}
+                    src={props.picture}
                     width={150}
                     height={190}
                     onClick={() => {console.log("Cliked Story!")}}
                 />
             </a>
             <StyledLink 
+            fontSize={StyleConstants.FONT_SIZE_LOWER_MEDIUM}
             color="#000000" 
             underline = {false} 
-            href = {props.href} 
+            href = {props.link} 
             title={props.title} />
             <ListChapter chapterQuantity={newestChapters.length} listChapterProps={newestChapters}/>
         </StoryWrapper>
@@ -36,5 +38,8 @@ export const SampleStory = (props: SampleStoryProps) =>{
     );
 };
 const StoryWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
     margin-top: 8px;
 `;
+

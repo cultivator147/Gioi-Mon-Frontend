@@ -16,13 +16,14 @@ export const Header = () => {
         </Center>
         <End>
           <StyledLink
+            fontSize={StyleConstants.FONT_SIZE_SMALL}
             color="#21231D"
             afterContent="/"
             title="Đăng nhập"
             underline = {false}
             href="/"
           />
-          <StyledLink color="#21231D" title="Đăng ký" href="/" underline = {false}/>
+          <StyledLink fontSize={StyleConstants.FONT_SIZE_SMALL} color="#21231D" title="Đăng ký" href="/" underline = {false}/>
         </End>
       </SubWrapperRow>
     </Wrapper>
@@ -31,6 +32,7 @@ export const Header = () => {
 const Wrapper = styled(PageWrapper)`
   background-color: ${StyleConstants.BACKGROUND_HEADER_COLOR};
   ${SubWrapperRow} {
+    padding: 4px 8px;
     justify-content: space-between;
   }
 `;

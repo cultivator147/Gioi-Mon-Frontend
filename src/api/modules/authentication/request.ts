@@ -1,0 +1,8 @@
+import axios from 'axios';
+import { GM_ADM_URL } from '../../configuration';
+const request = axios.create({
+    baseURL: GM_ADM_URL,
+    timeout: 8000,
+    headers: {Accept: '*/*', 'Content-Type': 'application/json'},
+});
+export default request;

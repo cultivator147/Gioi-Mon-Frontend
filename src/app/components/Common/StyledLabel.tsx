@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { StyleConstants } from "../../../styles/StyleConstants";
 interface StyledLabelProps{
     title : string,
-    fontSize?: number,
+    fontSize?: any,
     color?: string
 }
 export const StyledLabel = (props : StyledLabelProps) => {
@@ -16,6 +16,7 @@ export const StyledLabel = (props : StyledLabelProps) => {
     );
 }
 const Label = styled.label<{fontSize : number}>`
-    font-size: ${props => props.fontSize}px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: ${props => props.fontSize};
     color: ${props => props.color};
 `;
