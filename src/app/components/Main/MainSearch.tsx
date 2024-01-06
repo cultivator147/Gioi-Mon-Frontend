@@ -2,28 +2,36 @@ import styled from "styled-components";
 import { PageWrapper, SubWrapperColumn, SubWrapperRow } from "../PageWrapper";
 import { StyleConstants } from "../../../styles/StyleConstants";
 import { StyledLabel } from "../Common/StyledLabel";
-import { ListStoriesTransition } from "../ListStoriesTranstion";
-import { ListStoriesGrid } from "../ListStoriesGrid";
+import { ListSuggestedStories } from "./ListSuggestedStories";
+import { ListStoriesGrid } from "./ListStoriesHome";
 import React, { useState } from "react";
-import useFilteredListStories from "../../../hooks/useFilteredListStories";
+import useFilteredListStories, {
+  IUseFilteredListStories,
+} from "../../../hooks/useFilteredListStories";
 import { Logger } from "../../../utils/helper";
 import { useAppSelector } from "../../../redux-toolkit/hooks";
+import { useParams } from "react-router-dom";
+import { getFilteredListStoriesRequest } from "../../../api/modules/stories/stories";
 
 export const MainSearch = () => {
-  const currentCategory = useAppSelector((state) => state.category.id);
+  const categoryId = useParams().categoryid;
+
   const [stories, setStories] = useState([]);
+
+  // const currentCategory = useAppSelector((state) => state.category.id);
   const onConpleteGetFilteredListStories = (data: any) => {
     setStories(data);
   }
-  const {getFilteredListStories} = useFilteredListStories({onComplete: onConpleteGetFilteredListStories});
-  React.useEffect(()=>{
+  const filtered : IUseFilteredListStories = {onComplete: onConpleteGetFilteredListStories, categoryId: categoryId};
+  const {getFilteredListStories} = useFilteredListStories(filtered);
+
+  React.useEffect(() => {
     getFilteredListStories();
-    console.log('Category changed:', currentCategory);
-  },[currentCategory]);
+  }, []);
   return (
     <Wrapper>
       <SubWrapperColumn>
-        <StyledLabel title="Truyện mới cập nhật" color="#D44C4C"/>
+        <StyledLabel title="Truyện mới cập nhật" color="#D44C4C" />
         <SubWrapperRow>
           <ListStoriesGrid listItems={stories} page={0} size={20} />
         </SubWrapperRow>

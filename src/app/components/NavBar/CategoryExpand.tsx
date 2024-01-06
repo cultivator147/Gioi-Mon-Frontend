@@ -14,15 +14,22 @@ const LIST_CATEGORY = [
   {id: 6, name: "COMEDY"},
   {id: 7, name: "COMIC"},
   {id: 8, name: "COOKING"},
+  {id: 9, name: "Cổ đại"},
+  {id: 10, name: "Doujinshi"},
+  {id: 11, name: "Drama"},
+  {id: 12, name: "Đam mỹ"},
+  {id: 13, name: "Ecchi"},
+  {id: 14, name: "Fantasy"},
+  {id: 15, name: "Gender Bender"},
+  {id: 16, name: "Harem"},
 ];
 
 export const CategoryExpand = () => {
-  const dispatch = useAppDispatch();
-  const currentCategoryID = useAppSelector((state) => state.category.id);
-  const handleOnClickCategory = (id:any, name:any) => {
-    dispatch(update({id: id, title: name}));
-    Logger(currentCategoryID);
-  }
+  // const dispatch = useAppDispatch();
+  // const currentCategoryID = useAppSelector((state) => state.category.id);
+  // const handleOnClickCategory = (id:any, name:any) => {
+  //   dispatch(update({id: id, title: name}));
+  // }
   const [listCategory, setListCategory] = useState(LIST_CATEGORY);
     return (
         <CategoryLI style={{ width: "20%" }}>
@@ -31,7 +38,12 @@ export const CategoryExpand = () => {
             <ListCategory>
             {listCategory.map((category) => (
               <Category>
-                <a href={"/tim-truyen/" + category.name.toLowerCase()} onMouseEnter={() => handleOnClickCategory(category.id, category.name)}>{category.name}</a>
+                <a 
+                color="black"
+                href={"/tim-truyen/" + category.id} 
+                >
+                      {category.name}
+                </a>
               </Category>
             ))}
               
@@ -40,7 +52,6 @@ export const CategoryExpand = () => {
         </CategoryLI>
     );
 }
-
 const CategoryULDropdown = styled.div`
   background-color: white;
   float: left;
@@ -69,7 +80,6 @@ const LI = styled.li`
   display: block;
   cursor: pointer;
   &:hover {
-    opacity: 0.8;
     background-color: white;
     ${A} {
       color: red;
@@ -87,7 +97,7 @@ const CategoryLI = styled(LI)`
 `;
 
 const Category = styled.div`
-
+    padding: 6px;
     &:hover{
         background-color: green;
     }

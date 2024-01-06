@@ -1,7 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { HomePage } from "./pages/HomePage";
-import { SearchPage } from "./pages/SearchPage";
+import { publicRoutes } from "../routes/route";
 
 export const GioiMonApp = () => {
   document.body.style.margin = '0';
@@ -10,8 +9,15 @@ export const GioiMonApp = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/tim-truyen/*" element={<SearchPage />} />
+        {/* <Route path="/" element={<HomePage />} />
+        <Route path="/tim-truyen/:categoryId" element={<SearchPage />} /> */}
+         {publicRoutes.map(item => (
+                        <Route
+                            key={item.path}
+                            path={item.path}
+                            element={<item.component/>}
+                        />
+                    ))}
       </Routes>
     </BrowserRouter>
   );

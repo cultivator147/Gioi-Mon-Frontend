@@ -3,7 +3,7 @@ export const Brand = () => {
   return (
     <Wrapper>
       <Title href = "/">
-      <Image src="https://i.ibb.co/BsYkk4y/brand-img.png" alt="brand-img" />
+      <Image src="https://i.ibb.co/tYVBQ1F/brand-img.png" alt="brand-img" />
       </Title>
     </Wrapper>
   );
