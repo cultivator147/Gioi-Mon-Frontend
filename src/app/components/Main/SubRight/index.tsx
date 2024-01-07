@@ -1,10 +1,12 @@
 import styled from "styled-components";
-import { ReadingHistory } from "./ReadingHistory";
+import { ReadingHistory } from "./ReadingHistory/ReadingHistory";
+import { Leaderboard } from "./Leaderboard/Leaderboard";
 
 export const SubRight = () => {
     return(
         <Wrapper>
             <ReadingHistory/>
+            <Leaderboard/>
         </Wrapper>
     );
 };

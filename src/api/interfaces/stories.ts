@@ -7,3 +7,6 @@ export interface TypeFilteredListStories extends AxiosRequestConfig{
     page?: number,
     size?: number
 }
+export interface TypeTopStories extends AxiosRequestConfig{
+    orderBy ?: any;
+}

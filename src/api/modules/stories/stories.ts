@@ -1,4 +1,4 @@
-import { TypeFilteredListStories } from "../../interfaces/stories";
+import { TypeFilteredListStories, TypeTopStories } from "../../interfaces/stories";
 import request from "./request";
 
 export const getFilteredListStoriesRequest = (params?: TypeFilteredListStories) => {
@@ -9,4 +9,7 @@ export const getSuggestedListStoriesRequest = () => {
 }
 export const getReadingHistory = () => {
     return request.get('/reading-history');
+}
+export const getTopStories = (params: TypeTopStories) => {
+    return request.get('/top-stories', {params: params});   
 }

@@ -9,6 +9,8 @@ interface StyledLinkProps {
     fontSize?: any;
     afterContent?: string;
     underline ?: boolean;
+    italic ?: boolean;
+
 }
 export const StyledLink = (props : StyledLinkProps) => {
     const title = props.title;
@@ -16,9 +18,11 @@ export const StyledLink = (props : StyledLinkProps) => {
     const fontSize = props.fontSize || StyleConstants.FONT_SIZE_MEDIUM;
     const color = props.color || "#ffffff";
     const afterContent = props.afterContent || '';
-    const underline = props.underline;
+    const underline = props?.underline;
+    const italic = props?.italic;
     return (
         <Link 
+        italic={italic}
         fontSize={fontSize}
         underline = {underline}
         color={color} 
@@ -27,12 +31,14 @@ export const StyledLink = (props : StyledLinkProps) => {
         </Link>
     );
 }
-const Link = styled.a<{color: string, afterContent : string, underline?: any, fontSize?: any}>`
+const Link = styled.a<{color: string, afterContent : string, underline?: any, fontSize?: any, italic?: any}>`
+    cursor: pointer;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 450;
     color: ${props => props.color};
     font-size:  ${props => props.fontSize};
     text-decoration: ${props => (props.underline === true) ? 'underline' : 'none'};
+    font-style: ${props => (props.italic === true) ? 'italic' : 'normal'};
     &:hover {
     opacity: 0.8;
     text-decoration: underline;
