@@ -12,8 +12,8 @@ export const StyledImage = (props: ImageProps) => {
     const [imageSrc, setImageSrc] = useState(src);
     return(
         <img
-            onError={()=>setImageSrc('https://st.nettruyenus.com/data/comics/24/ta-co-999-loai-di-nang.jpg')}
-            src= {imageSrc}
+            // onError={()=>setImageSrc('https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg')}
+            src= {src}
             alt = {alt}
             width={width}
             height={height}

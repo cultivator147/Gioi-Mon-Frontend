@@ -7,13 +7,13 @@ import { StyledLink } from "../../Common/StyledLink";
 import { Chapter, ChapterProps, ListChapter } from "../../ListChapter";
 import { Logger } from "../../../../utils/helper";
 import { StyleConstants } from "../../../../styles/StyleConstants";
-export interface SampleStoryProps {
-  picture: string;
+export interface SimpleStoryProps {
   title: string;
+  picture: string;
   link: string;
   chapters: ChapterProps[];
 }
-export const SampleStory = (props: SampleStoryProps) => {
+export const SampleStory = (props: SimpleStoryProps) => {
   const newestChapters: ChapterProps[] = props.chapters || [];
   return (
     <StoryWrapper>

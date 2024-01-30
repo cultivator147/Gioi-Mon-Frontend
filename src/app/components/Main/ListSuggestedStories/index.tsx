@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
-import { getSuggestedListStoriesRequest } from "../../../../api/modules/stories/stories";
+import { getSuggestedListStoriesRequest } from "../../../../api/modules/stories/listStories";
 import { StyledImage } from "../../Common/Image";
 import { SuggestedStory, SuggestedStoryProps } from "./SuggestedStory";
 

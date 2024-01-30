@@ -1,13 +1,13 @@
 import { Logger } from "../../../../utils/helper";
-import { SampleStory, SampleStoryProps } from "./StoryHome";
+import { SampleStory, SimpleStoryProps } from "./StoryHome";
 import styled from "styled-components";
 export interface  ListStoriesProps{
-    listItems: SampleStoryProps[],
+    listItems: SimpleStoryProps[],
     page?: number,
     size?: number
 }
 export const ListStoriesGrid = (props: ListStoriesProps) => {
-    var items : SampleStoryProps[] = props.listItems;
+    var items : SimpleStoryProps[] = props.listItems;
     const page = props.page || 0;
     const size = props.size || 30;
     if(items.length > 30){
@@ -15,7 +15,7 @@ export const ListStoriesGrid = (props: ListStoriesProps) => {
     }
     return(
         <Wrapper>
-            {items.map((item : SampleStoryProps) => (
+            {items.map((item : SimpleStoryProps) => (
                 <SampleStory 
                     picture={item.picture}
                     title={item.title}

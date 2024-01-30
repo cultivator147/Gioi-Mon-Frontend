@@ -14,7 +14,7 @@ export const MainHome = () => {
   const onConpleteGetFilteredListStories = (data: any) => {
     setStories(data);
   }
-  const {getFilteredListStories} = useFilteredListStories({onComplete: onConpleteGetFilteredListStories, categoryId: 0});
+  const {getFilteredListStories} = useFilteredListStories({onComplete: onConpleteGetFilteredListStories, categoryId: 1});
   React.useEffect(()=>{
     getFilteredListStories();
   },[]);
@@ -22,7 +22,7 @@ export const MainHome = () => {
     <Wrapper>
       <SubWrapperColumn>
         <FirstRow>
-            <StyledLabel title="Truyện đề cử" color="#D44C4C"/>
+            <StyledLabel title="Truyện nổi tiếng" color="#D44C4C"/>
             <ListSuggestedStories/>
           <StyledLabel title="Truyện mới cập nhật" color="#D44C4C"/>
         </FirstRow>

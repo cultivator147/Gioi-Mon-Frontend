@@ -1,10 +1,10 @@
 import styled from "styled-components"
 import { StyledImage } from "../../../Common/Image";
 import { StyledLink } from "../../../Common/StyledLink";
-import { SampleStoryProps } from "../../ListStoriesHome/StoryHome";
+import { SimpleStoryProps } from "../../ListStoriesHome/StoryHome";
 import { StyledLabel } from "../../../Common/StyledLabel";
 
-export const LeaderboardStory = (props: SampleStoryProps) => {
+export const LeaderboardStory = (props: SimpleStoryProps) => {
     const {link,title,picture} = props;
     return(
     <Wrapper>
@@ -26,7 +26,7 @@ export const LeaderboardStory = (props: SampleStoryProps) => {
             fontSize={"14px"}
             color="gray"
             title={`Chương ${props?.chapters[0]?.chapterNumber}>`}
-            href={props?.chapters[0]?.link}
+            href={props?.chapters[0]?.picture}
             />
         </div>
         <div>

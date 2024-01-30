@@ -38,17 +38,18 @@ const Wrapper = styled(PageWrapper)`
 `;
 
 const First = styled.div`
-  flex: 0.2;
+  width: 20%;
 `;
 const Center = styled.div`
   display: flex;
-  flex: 0.5;
+  width: 50%;
+
   height: 100%;
   flex-direction: row;
   align-items: center;
 `;
 const End = styled.div`
   display: flex;
-  flex: 0.3;
+  width: 30%;
   justify-content: center;
 `;

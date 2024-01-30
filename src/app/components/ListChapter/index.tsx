@@ -5,7 +5,7 @@ import { StyleConstants } from "../../../styles/StyleConstants";
 
 export interface ChapterProps{
     chapterNumber : any,
-    link : string,
+    picture : string,
     chapterName ?: string,
 }
 
@@ -17,7 +17,7 @@ export const Chapter = (props: ChapterProps) => {
         fontSize={StyleConstants.FONT_SIZE_SMALL}
         title= {title}
         color="#000000" 
-        href={props.link}/>
+        href={props.picture}/>
     );
    
 };
@@ -33,7 +33,7 @@ export const ListChapter = (props : ListChapterProps) => {
         <Wrapper>
             {listChapterProps.map(
                 (chapter: ChapterProps) => (
-                    <Chapter chapterName={chapter.chapterName} chapterNumber={chapter.chapterNumber} link={chapter.link}/>
+                    <Chapter chapterName={chapter.chapterName} chapterNumber={chapter.chapterNumber} picture={chapter.picture}/>
                 )
             )}
         </Wrapper>

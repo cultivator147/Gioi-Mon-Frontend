@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { SampleStoryProps } from "../../ListStoriesHome/StoryHome";
+import { SimpleStoryProps } from "../../ListStoriesHome/StoryHome";
 import { HistoryStory } from "./HistoryStory";
-import { getReadingHistory } from "../../../../../api/modules/stories/stories";
+import { getReadingHistory } from "../../../../../api/modules/stories/listStories";
 import { StyledLabel } from "../../../Common/StyledLabel";
 import { StyledLink } from "../../../Common/StyledLink";
 
@@ -35,7 +35,7 @@ export const ReadingHistory = () => {
         title="Xem tất cả"
         />
       </div>
-      {stories.map((story: SampleStoryProps) => (
+      {stories.map((story: SimpleStoryProps) => (
         <HistoryStory 
         title={story.title}
         picture={story.picture}

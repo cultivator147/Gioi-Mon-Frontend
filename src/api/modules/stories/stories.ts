@@ -1,15 +1,8 @@
-import { TypeFilteredListStories, TypeTopStories } from "../../interfaces/stories";
 import request from "./request";
 
-export const getFilteredListStoriesRequest = (params?: TypeFilteredListStories) => {
-    return request.get('/filtered-list-story', {params: params});
+export const getDetailStory = (params: {story_id: number}) => {
+    return request.get('/story/detail', {params: params});   
 }
-export const getSuggestedListStoriesRequest = () => {
-    return request.get('/suggested-list-stories');
-}
-export const getReadingHistory = () => {
-    return request.get('/reading-history');
-}
-export const getTopStories = (params: TypeTopStories) => {
-    return request.get('/top-stories', {params: params});   
+export const getStoryContent = (params: {story_id: number, chapter_number: number}) => {
+    return request.get('/story/content', {params: params});   
 }

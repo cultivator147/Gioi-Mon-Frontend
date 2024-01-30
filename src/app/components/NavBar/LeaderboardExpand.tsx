@@ -1,43 +1,40 @@
 import styled from "styled-components";
 import { StyleConstants } from "../../../styles/StyleConstants";
-import React, { useState } from "react";
-import { Logger } from "../../../utils/helper";
-import { getAllCategories } from "../../../api/modules/stories/category";
-import { Category } from "../../../api/interfaces/category";
+import { useState } from "react";
 
-export const CategoryExpand = () => {
-  // const dispatch = useAppDispatch();
-  // const currentCategoryID = useAppSelector((state) => state.category.id);
-  // const handleOnClickCategory = (id:any, name:any) => {
-  //   dispatch(update({id: id, title: name}));
-  // }
-  const [listCategory, setListCategory] = useState<Category[]>([]);
-  React.useEffect(() => {
-    const  getAll = async () => {
-      try{
-        const response = await getAllCategories();
-        setListCategory(response.data?.data);
-      }catch(err){
-        Logger(err);
-      }
-    }
-    getAll();
-    },[]);
+import {update, add} from '../../../redux-toolkit/categorySlice'
+import { useAppDispatch, useAppSelector } from "../../../redux-toolkit/hooks";
+import { Logger } from "../../../utils/helper";
+const LIST_LEADERBOARD = [
+  {id: 1, name: "TOP_ALL"},
+  {id: 2, name: "TOP_MONTHLY"},
+  {id: 3, name: "TOP_WEEKLY"},
+  {id: 4, name: "TOP_DAILY"},
+  {id: 5, name: "TOP_FOLLOW"},
+  {id: 6, name: "FULL"},
+  {id: 7, name: "FAVOURITE"},
+  {id: 8, name: "LAST_UPDATE"},
+  {id: 9, name: "NEW"},
+  {id: 10, name: "CHAPTERS"},
+];
+
+export const LeaderboardExpand = () => {
+  const [listLeaderboard, setlistLeaderboard] = useState(LIST_LEADERBOARD);
     return (
-        <CategoryLI style={{ width: "20%" }}>
-          <A href="/">Thể loại</A>
+        <CategoryLI style={{ width: "30%" }}>
+          <A href="/">XẾP HẠNG</A>
           <CategoryULDropdown>
             <ListCategory>
-            {listCategory.map((category) => (
-              <CategoryWrapper>
+            {listLeaderboard.map((category) => (
+              <Category>
                 <a 
                 style={{textDecoration: "none"}}
-                color="#000000"
-                href={"/tim-truyen/" + category.id} 
+                color="black"
+                href={"/tim-truyen/leaderboard/" + category.id} 
                 >
                       {category.name}
                 </a>
-              </CategoryWrapper>
+              </Category>
             ))}
               
             </ListCategory>
@@ -48,8 +45,8 @@ export const CategoryExpand = () => {
 const CategoryULDropdown = styled.div`
   background-color: white;
   float: left;
-  width: 40rem;
-  min-width: 20rem;
+  width: 20rem;
+  min-width: 10rem;
   position: absolute;
   top: 100%;
   z-index: 1000;
@@ -89,7 +86,7 @@ const CategoryLI = styled(LI)`
   }
 `;
 
-export const CategoryWrapper = styled.div`
+const Category = styled.div`
     padding: 6px;
     &:hover{
         background-color: green;
