@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { ChapterProps } from "../app/components/ListChapter";
+import { ChapterProps } from "../../../app/components/ListChapter";
 
 interface StoryState {
   id: any;

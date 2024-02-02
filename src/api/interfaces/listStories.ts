@@ -3,7 +3,7 @@ import { AxiosRequestConfig } from "axios";
 export interface TypeFilteredListStories extends AxiosRequestConfig{
     category_id ?: number,
     writing_state?: number,
-    sortBy?: string,
+    sort_by?: string,
     page?: number,
     size?: number
 }

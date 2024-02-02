@@ -12,8 +12,8 @@ import { StyledLink } from "../Common/StyledLink";
 import { StyledLabel } from "../Common/StyledLabel";
 import { Author } from "../../../api/interfaces/author";
 import useDetailStory from "../../../hooks/useDetailStory";
-import { useAppDispatch, useAppSelector } from "../../../redux-toolkit/hooks";
-import { addStory, storySlice, updateStory } from "../../../redux-toolkit/storySlice";
+// import { useAppDispatch, useAppSelector } from "../../../redux-toolkit/hooks";
+import { addStory, storySlice, updateStory } from "../../../redux-toolkit/slice/storySlice/storySlice";
 import { ReadingHistory } from "../Main/SubRight/ReadingHistory/ReadingHistory";
 import { Leaderboard } from "../Main/SubRight/Leaderboard/Leaderboard";
 import { SubRight } from "../Main/SubRight";
@@ -31,7 +31,7 @@ export const Story = () => {
   const [views, setViews] = useState(0);
   const [introduction, setIntroduction] = useState("");
 
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
   const onCompleteGetDetailStory = (data: any) => {
     const {
       title,
@@ -58,10 +58,7 @@ export const Story = () => {
     getDataDetailStory();
   }, []);
   console.log("chapters: ", chapters);
-  dispatch(storySlice.actions.updateStory({
-    id: storyId,
-    chapters: [1, 2]
-  }));
+  
  
   return (
     <Wrapper>
@@ -81,7 +78,9 @@ export const Story = () => {
             />
           </div>
           <DivButton>
-            <div style={{ width: "30%", display: "flex", justifyContent:"center" }}>
+            <div style={{width: '60%', display: 'flex', justifyContent: 'center', gap: '12px'}}>
+
+            <div style={{  display: "flex", justifyContent:"center" }}>
               <a
                 href={`/truyen-tranh/${storyId}/${chapters[0]?.chapterNumber}`}
                 style={{ cursor: "pointer" }}
@@ -93,7 +92,7 @@ export const Story = () => {
                 />
               </a>
             </div>
-            <div style={{ width: "35%", display: "flex", justifyContent:"center" }}>
+            <div style={{  display: "flex", justifyContent:"center" }}>
               <a
                 href={`/truyen-tranh/${storyId}/${
                   chapters[chapters.length - 1]?.chapterNumber
@@ -107,7 +106,7 @@ export const Story = () => {
                 />
               </a>
             </div>
-            <div style={{ width: "30%", display: "flex", justifyContent:"center" }}>
+            <div style={{display: "flex", justifyContent:"center" }}>
               <a
                 href={`/truyen-tranh/${storyId}/1`}
                 style={{ cursor: "pointer" }}
@@ -119,6 +118,8 @@ export const Story = () => {
                 />
               </a>
             </div>
+            </div>
+
           </DivButton>
           <div
             style={{
@@ -171,6 +172,7 @@ const DivButton = styled.div`
   flex: 1;
   display: flex;
   flex-direction: row;
+  justify-content: center;
 `;
 const Wrapper = styled(PageWrapper)`
   flex: 1;

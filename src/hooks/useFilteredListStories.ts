@@ -6,15 +6,18 @@ export interface IUseFilteredListStories {
     onComplete : (response : any) => any;
     categoryId?: any;
     writingState?: any;
+    sortBy?: any;
+    page?: number;
+    size?: number;
 }
 const useFilteredListStories = (props : IUseFilteredListStories) => {
-    const {onComplete, categoryId, writingState} = props;
+    const {onComplete, categoryId, writingState, sortBy, page, size} = props;
     const getFilteredListStories = async () => {
         try{
-            const params : TypeFilteredListStories = {category_id: categoryId, writing_state: writingState};
+            const params : TypeFilteredListStories = {category_id: categoryId, writing_state: writingState, sort_by : sortBy, page: page, size: size};
             const response = await getFilteredListStoriesRequest(params);
-            Logger('api data: ', response?.data?.data?.content);
-            onComplete(response?.data?.data?.content);
+            Logger('api data: ', response?.data?.data);
+            onComplete(response?.data?.data);
         }catch(err){
             Logger('err call api: ', err);
         }

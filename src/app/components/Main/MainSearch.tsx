@@ -14,26 +14,42 @@ import { Logger } from "../../../utils/helper";
 import { CategoryWrapper } from "../NavBar/CategoryExpand";
 import { StyledButton } from "../Common/StyledButton";
 import { ids } from "webpack";
-
+import ReactPaginate from 'react-paginate';
+import './pagination.css';
 export const MainSearch = () => {
   var categoryId = useParams().categoryid || "1";
  
   const writingState = useParams().writing_state || "0";
+  const sortBy = useParams().sort_by || "LAST_UPDATE_DATE";
   const [stories, setStories] = useState([]);
   const [listCategory, setListCategory] = useState<Category[]>([]);
+  
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalPages, setTotalPages] = useState(1);
+
+  const handlePageChange = async (pageNumber: number) => {
+      setCurrentPage(pageNumber);
+  };
 
   const onConpleteGetFilteredListStories = (data: any) => {
-    setStories(data);
+    setStories(data?.content);
+    setTotalPages(data.totalPages);
   };
   const filtered: IUseFilteredListStories = {
     onComplete: onConpleteGetFilteredListStories,
     categoryId: categoryId,
-    writingState: parseInt(writingState)
+    writingState: parseInt(writingState),
+    sortBy: sortBy,
+    page: currentPage,
+    size: +StyleConstants.ITEMS_PER_PAGE,
   };
   const { getFilteredListStories } = useFilteredListStories(filtered);
 
   React.useEffect(() => {
     getFilteredListStories();
+  },[currentPage]);
+
+  React.useEffect(() => {
     const getAll = async () => {
       try {
         const response = await getAllCategories();
@@ -91,29 +107,50 @@ export const MainSearch = () => {
                   <StyledButton label={"Đang tiến hành"} backgroundColor="#ffffff" href={`/tim-truyen/${categoryId}/1`}/>
               </div>
 
-              <div style={{display: 'flex', width: '100%', }}>
+              <div style={{display: 'flex', width: '100%', marginTop: '24px'}}>
                 <div style={{width:'8em'}}>
                   <StyledLabel fontSize={'1.2em'} title={"Sắp xếp theo"} color="#000000" />
                 </div>
                 <div style={{width: '100%', display: 'block', gap: '10px'}}>
-                  <StyledButton label={"Ngày cập nhật"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/0`}/>
-                  <StyledButton label={"Truyện mới"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/0`}/>
-                  <StyledButton label={"Top all"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/0`}/>
-                  <StyledButton label={"Top tháng"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/0`}/>
-                  <StyledButton label={"Top tuần"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/0`}/>
-                  <StyledButton label={"Top ngày"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/0`}/>
-                  <StyledButton label={"Lượt theo dõi"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/0`}/>
-                  <StyledButton label={"Bình luận"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/0`}/>
-                  <StyledButton label={"Số chapter"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/0`}/>
-
+                  <StyledButton label={"Ngày cập nhật"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=LAST_UPDATE_DATE`}/>
+                  <StyledButton label={"Truyện mới"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=NEW`}/>
+                  <StyledButton label={"Top all"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_ALL`}/>
+                  <StyledButton label={"Top tháng"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_MONTHLY`}/>
+                  <StyledButton label={"Top tuần"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_WEEKLY`}/>
+                  <StyledButton label={"Top ngày"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_DAILY`}/>
+                  <StyledButton label={"Lượt theo dõi"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=FOLLOWER`}/>
+                  <StyledButton label={"Bình luận"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=COMMENT`}/>
+                  <StyledButton label={"Số chapter"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=CHAPTER`}/>
                 </div>
               </div>
 
             </div>
             <FirstRow>
-              <ListStoriesGrid listItems={stories} page={0} size={20} />
+              <ListStoriesGrid listItems={stories} page={currentPage} size={20} />
             </FirstRow>
-            <SubWrapperRow></SubWrapperRow>
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+            <ReactPaginate
+              nextLabel="next >"
+              onPageChange={ (selectedItem) => handlePageChange(selectedItem.selected)}
+              pageRangeDisplayed={3}
+              marginPagesDisplayed={2}
+              pageCount={totalPages}
+              previousLabel="< previous"
+              pageClassName="page-item"
+              pageLinkClassName="page-link"
+              previousClassName="page-item"
+              previousLinkClassName="page-link"
+              nextClassName="page-item"
+              nextLinkClassName="page-link"
+              breakLabel="..."
+              breakClassName="page-item"
+              breakLinkClassName="page-link"
+              containerClassName="pagination"
+              activeClassName="active"
+              renderOnZeroPageCount={null}
+            />
+            </div>
+            
           </SubWrapperColumn>
           <div style={{ flex: 1 }}>
             <CategoryRightWrapper>

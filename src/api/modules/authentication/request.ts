@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { GM_ADM_URL } from '../../configuration';
+import { GM_ADM_URL } from '../../constant.url';
 const request = axios.create({
     baseURL: GM_ADM_URL,
     timeout: 8000,

@@ -34,7 +34,7 @@ export const Leaderboard = () => {
     <Wrapper>
       <div style={{ display: "flex", flex: 1 }}>
         <Box onClick={getTopMonthly}>
-          <StyledLink title="Top Tháng" color="black" fontSize={"16px"} />
+          <StyledLink title="Top Tháng" color="black" fontSize={"16px"}  />
         </Box>
         <Box onClick={getTopWeekly}>
           <StyledLink title="Top Tuần" color="black" fontSize={"16px"} />

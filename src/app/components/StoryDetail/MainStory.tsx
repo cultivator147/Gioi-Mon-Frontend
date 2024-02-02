@@ -19,8 +19,9 @@ export const MainStory = (props: MainStoryProps) => {
         <Wrapper>
             <First>
                 <StyledLabel
+                fontSize={"1.6em"}
                 color="black"
-                title={title}
+                title={title.toUpperCase()}
                 />
                
             </First>
@@ -28,48 +29,80 @@ export const MainStory = (props: MainStoryProps) => {
                 <div style={{width: "30%"}}>
                     <StyledImage alt={title} src={picture} width={200} height={250}/>
                 </div>
-                <div style={{width: "70%"}}>
+                <div style={{width: "70%", paddingLeft: '24px', }}>
                     <Row> 
+                    <div style={{width: '7em'}}>
                         <StyledLabel
+                        fontSize={"1.2em"}
                         color="gray"
                         title="Tên khác"
                         />
+                        </div>
+                        <div style={{display: 'flex', justifyContent:'start'}}>
+
                         <StyledLabel
+                        fontSize={"1.2em"}
                         color="gray"
                         title={title}
                         />
+                        </div>
+
                     </Row>
                     <Row> 
+                    <div style={{width: '7em'}}>
+
                         <StyledLabel
+                        fontSize={"1.2em"}
                         color="gray"
                         title="Tác giả"
                         />
+                        </div>
+                        <div style={{display: 'flex', justifyContent:'start'}}>
+
+                        
                          {authors.map((author) => (
                             <StyledLink
-                            title={`${author.name} - `}
+                            fontSize={"1.2em"}
+                            title={`${author.name} `}
                             color="blue"
                             />
                         ))} 
+                        </div>
+
                     </Row>
                     <Row> 
+                    <div style={{width: '7em'}}>
+
                         <StyledLabel
+                        fontSize={"1.2em"}
                         color="gray"
                         title="Tình trạng"
                         />
+                        </div>
+
                         <StyledLabel
+                        fontSize={"1.2em"}
                         color="gray"
                         title={status}
                         />
                     </Row>
                     <Row> 
+                    <div style={{width: '7em'}}>
+
+
                         <StyledLabel
+                        fontSize={"1.2em"}
+
                         color="gray"
                         title="Thể loại"
                         />
-                        <div>
+                        </div>
+                        <div style={{display: 'flex', justifyContent:'start'}}>
+
                         {categories.map((cate) => (
                             <StyledLink
-                            title={`${cate.name} - `}
+                            fontSize={"1.2em"}
+                            title={`${cate.name} ` }
                             color="blue"
                             />
                         ))} 
@@ -77,14 +110,22 @@ export const MainStory = (props: MainStoryProps) => {
                         
                     </Row>
                     <Row> 
+                    <div style={{width: '7em'}}>
                         <StyledLabel
+                        fontSize={"1.2em"}
                         color="gray"
                         title="Lượt xem"
                         />
+                        </div>
+                        <div style={{display: 'flex', justifyContent:'start'}}>
+
                          <StyledLabel
+                        fontSize={"1.2em"}
                         color="gray"
                         title={views}
                         />
+                        </div>
+
                     </Row>
                 </div>
             </Second>
@@ -93,8 +134,9 @@ export const MainStory = (props: MainStoryProps) => {
 };
 const Row = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     padding: 8px;
+    gap: 12px;
 `;
 const First = styled.div`
     display: flex;
@@ -116,4 +158,5 @@ const Wrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 12px;
 `;

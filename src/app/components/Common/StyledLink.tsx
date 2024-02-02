@@ -10,6 +10,7 @@ interface StyledLinkProps {
     afterContent?: string;
     underline ?: boolean;
     italic ?: boolean;
+    onClick?: any;
 
 }
 export const StyledLink = (props : StyledLinkProps) => {
@@ -20,7 +21,9 @@ export const StyledLink = (props : StyledLinkProps) => {
     const afterContent = props.afterContent || '';
     const underline = props?.underline;
     const italic = props?.italic;
+    const onClick = props?.onClick;
     return (
+      <div onClick={onClick}>
         <Link 
         italic={italic}
         fontSize={fontSize}
@@ -29,6 +32,8 @@ export const StyledLink = (props : StyledLinkProps) => {
         afterContent={afterContent} 
         href={href}>{title} 
         </Link>
+      </div>
+        
     );
 }
 const Link = styled.a<{color: string, afterContent : string, underline?: any, fontSize?: any, italic?: any}>`

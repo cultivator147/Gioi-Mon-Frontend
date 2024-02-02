@@ -10,8 +10,9 @@ export const enum StyleConstants {
     FONT_SIZE_LARGE = '2rem',
     FONT_SIZE_UPPER_MEDIUM = '1.8rem',
     FONT_SIZE_MEDIUM = '1.5rem',
-    FONT_SIZE_LOWER_MEDIUM = '1.25rem',
+    FONT_SIZE_LOWER_MEDIUM = '1.25rem', 
     FONT_SIZE_SMALL = '1rem',
     FONT_NAME = 'Arial',
+    ITEMS_PER_PAGE = "8",
   }
   

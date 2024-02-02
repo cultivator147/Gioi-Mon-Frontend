@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { StyleConstants } from "../../../styles/StyleConstants";
 import { useState } from "react";
 
-import {update, add} from '../../../redux-toolkit/categorySlice'
-import { useAppDispatch, useAppSelector } from "../../../redux-toolkit/hooks";
+import {update, add} from '../../../redux-toolkit/slice/categorySlice/categorySlice'
+// import { useAppDispatch, useAppSelector } from "../../../redux-toolkit/hooks";
 import { Logger } from "../../../utils/helper";
 const LIST_LEADERBOARD = [
   {id: 1, name: "TOP_ALL"},

@@ -9,7 +9,7 @@ import { StyleConstants } from "../../../styles/StyleConstants";
 import { StyledLabel } from "../Common/StyledLabel";
 import { StyledLink } from "../Common/StyledLink";
 import { Brand } from "../Header/Brand";
-import { useAppSelector } from "../../../redux-toolkit/hooks";
+// import { useAppSelector } from "../../../redux-toolkit/hooks";
 
 export const StoryContent = () => {
   const chapterNumber = useParams().chapternumber || "1";
@@ -19,10 +19,10 @@ export const StoryContent = () => {
   const [title, setTitle] = useState("");
   const [chapterName, setChapterName] = useState("");
 
-  const story = useAppSelector((state) => state.story);
+  // const story = useAppSelector((state) => state.story);
 
   const onClick = () => {
-    console.log(story.chapters);
+    // console.log(story.chapters);
   }
   const onCompleteGetContent = (data: any) => {
     const { images, title, chapterName } = data;
