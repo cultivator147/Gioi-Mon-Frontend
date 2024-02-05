@@ -16,9 +16,10 @@ import { StyledButton } from "../Common/StyledButton";
 import { ids } from "webpack";
 import ReactPaginate from 'react-paginate';
 import './pagination.css';
+import useSearch from "../../../hooks/useSearch";
 export const MainSearch = () => {
-  var categoryId = useParams().categoryid || "1";
- 
+  const categoryId = useParams().categoryid || "1";
+  const keyword = useParams().keyword || '';
   const writingState = useParams().writing_state || "0";
   const sortBy = useParams().sort_by || "LAST_UPDATE_DATE";
   const [stories, setStories] = useState([]);
@@ -39,6 +40,7 @@ export const MainSearch = () => {
     onComplete: onConpleteGetFilteredListStories,
     categoryId: categoryId,
     writingState: parseInt(writingState),
+    keyword: keyword,
     sortBy: sortBy,
     page: currentPage,
     size: +StyleConstants.ITEMS_PER_PAGE,
@@ -60,6 +62,7 @@ export const MainSearch = () => {
     };
     getAll();
   }, []);
+
   return (
     <Wrapper>
       <div style={{ width: "60%",  }}>
@@ -69,7 +72,7 @@ export const MainSearch = () => {
               style={{
                 display: "flex",
                 flexDirection: "column",
-                justifyContent: "center",
+                justifyContent: "space-between",
                 alignItems: "center",
                 width: "100%",
                 padding: "8px",
@@ -127,29 +130,30 @@ export const MainSearch = () => {
             </div>
             <FirstRow>
               <ListStoriesGrid listItems={stories} page={currentPage} size={20} />
+              <div style={{display: 'flex', justifyContent: 'center'}}>
+              <ReactPaginate
+                nextLabel="next >"
+                onPageChange={ (selectedItem) => handlePageChange(selectedItem.selected)}
+                pageRangeDisplayed={3}
+                marginPagesDisplayed={2}
+                pageCount={totalPages}
+                previousLabel="< previous"
+                pageClassName="page-item"
+                pageLinkClassName="page-link"
+                previousClassName="page-item"
+                previousLinkClassName="page-link"
+                nextClassName="page-item"
+                nextLinkClassName="page-link"
+                breakLabel="..."
+                breakClassName="page-item"
+                breakLinkClassName="page-link"
+                containerClassName="pagination"
+                activeClassName="active"
+                renderOnZeroPageCount={null}
+              />
+              </div>
             </FirstRow>
-            <div style={{display: 'flex', justifyContent: 'center'}}>
-            <ReactPaginate
-              nextLabel="next >"
-              onPageChange={ (selectedItem) => handlePageChange(selectedItem.selected)}
-              pageRangeDisplayed={3}
-              marginPagesDisplayed={2}
-              pageCount={totalPages}
-              previousLabel="< previous"
-              pageClassName="page-item"
-              pageLinkClassName="page-link"
-              previousClassName="page-item"
-              previousLinkClassName="page-link"
-              nextClassName="page-item"
-              nextLinkClassName="page-link"
-              breakLabel="..."
-              breakClassName="page-item"
-              breakLinkClassName="page-link"
-              containerClassName="pagination"
-              activeClassName="active"
-              renderOnZeroPageCount={null}
-            />
-            </div>
+            
             
           </SubWrapperColumn>
           <div style={{ flex: 1 }}>
@@ -164,14 +168,11 @@ export const MainSearch = () => {
                 <StyledLabel fontSize="20px" color="#6AB5CE" title="Thể loại" />
                 <ListCategory>
                   {listCategory.map((category) => (
-                    <CategoryWrapper>
-                      <a
-                        style={{ textDecoration: "none" }}
-                        color="black"
-                        href={"/tim-truyen/" + category.id}
-                      >
+                    <CategoryWrapper
+                    color="black"
+                    href={"/tim-truyen/" + category.id}
+                    >
                         {category.name}
-                      </a>
                     </CategoryWrapper>
                   ))}
                 </ListCategory>

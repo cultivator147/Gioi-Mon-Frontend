@@ -26,7 +26,7 @@ export const HistoryStory = (props: SimpleStoryProps) => {
             fontSize={"14px"}
             color="gray"
             title={`Đọc tiếp chap ${props?.chapters[0]?.chapterNumber} >`}
-            href={props?.chapters[0]?.picture}
+            href={`${props.id}/${props.chapters[0].chapterNumber}`}
             />
         </div>
         <div>

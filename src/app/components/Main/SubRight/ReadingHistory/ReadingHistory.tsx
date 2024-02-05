@@ -37,6 +37,7 @@ export const ReadingHistory = () => {
       </div>
       {stories.map((story: SimpleStoryProps) => (
         <HistoryStory 
+        id={story.id}
         title={story.title}
         picture={story.picture}
         link={story.link}

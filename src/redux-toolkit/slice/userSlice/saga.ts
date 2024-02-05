@@ -13,19 +13,18 @@ export function* Login(action: any) {
     };
   
     const res: BaseResponse = yield loginRequest(data);
-    Logger('data response: ', res.data);
 
     if (res.data.code === 0) {
       // yield CheckProfile(res.data);
       yield put(
         usersActions.loginSuccess({
-          id: res.data.id,
-          token: res.data.accessToken,
-          username: res.data.username,
+          id: res.data.data.id,
+          token: res.data.data.accessToken,
+          username: res.data.data.username,
           isLogin: false,
           login: {
-            error: res.code,
-            message: res.message,
+            error: res.data.code,
+            message: res.data.message,
             savePassword: action.payload.savePassword,
           },
         }),
@@ -34,8 +33,8 @@ export function* Login(action: any) {
       yield put(
         usersActions.loginFail({
           login: {
-            error: res.code,
-            message: res.message,
+            error: res.data.code,
+            message: res.data.message,
           },
         }),
       );
@@ -49,20 +48,18 @@ export function* Login(action: any) {
     };
   
     const res: BaseResponse = yield registerRequest(data);
-    Logger('data response: ', res.data);
 
     if (res.data.code === 0) {
       // yield CheckProfile(res.data);
       yield put(
-        usersActions.loginSuccess({
-          id: res.data.id,
-          token: res.data.accessToken,
-          username: res.data.username,
-          isLogin: false,
-          login: {
-            error: res.code,
-            message: res.message,
-            savePassword: action.payload.savePassword,
+        usersActions.registerSuccess({
+          id: res.data.data.id,
+          token: res.data.data.token,
+          username: res.data.data.username,
+          password: res.data.data.password,
+          register: {
+            error: res.data.code,
+            message: res.data.message,
           },
         }),
       );
@@ -70,8 +67,8 @@ export function* Login(action: any) {
       yield put(
         usersActions.loginFail({
           login: {
-            error: res.code,
-            message: res.message,
+            error: res.data.code,
+            message: res.data.message,
           },
         }),
       );

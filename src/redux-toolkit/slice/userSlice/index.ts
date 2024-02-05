@@ -1,8 +1,9 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { useEffect } from 'react';
-import { useInjectReducer, useInjectSaga } from 'redux-injectors';
 import { userSaga } from './saga';
 import { persistor } from '../../..';
+import { createSlice } from '../../../utils/@reduxjs/toolkit';
+import { PayloadAction } from '@reduxjs/toolkit';
+import { useInjectReducer, useInjectSaga } from '../../../utils/redux-injectors';
 
 export interface UserState {
     //Account

@@ -6,6 +6,7 @@ import { PageWrapper, SubWrapperColumn, SubWrapperRow } from "../../components/P
 import { MainStory } from "../../components/StoryDetail/MainStory";
 import { Story } from "../../components/StoryDetail";
 import { StyleConstants } from "../../../styles/StyleConstants";
+import Footer from "../../components/Footer/Footer";
 
 export const StoryPage = () => {
   return (
@@ -13,6 +14,7 @@ export const StoryPage = () => {
       <Header />
       <NavBarWrapper />
       <Story />
+      <Footer />
     </Wrapper>
   );
 };

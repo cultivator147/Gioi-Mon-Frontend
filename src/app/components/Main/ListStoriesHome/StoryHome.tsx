@@ -8,6 +8,7 @@ import { Chapter, ChapterProps, ListChapter } from "../../ListChapter";
 import { Logger } from "../../../../utils/helper";
 import { StyleConstants } from "../../../../styles/StyleConstants";
 export interface SimpleStoryProps {
+  id?: any;
   title: string;
   picture: string;
   link: string;

@@ -8,13 +8,16 @@ interface StyledButtonProps{
     onClick?: () => void,
     customStyle?: any,
     href ?: any,
+    disable?: boolean,
 }
-export const StyledButton = ({onClick,href, label, backgroundColor ='#000000',customStyle, ...props}: StyledButtonProps) => {
+export const StyledButton = ({onClick,disable, href, label, backgroundColor ='#000000',customStyle, ...props}: StyledButtonProps) => {
     const [background, setBackground] = useState(backgroundColor);
     return(
         <a href={href}>
         <button
-        onClick={() => setBackground("#d6935b")}
+        // setBackground("#d6935b")
+        disabled={disable}
+        onClick={onClick}
         style={{minWidth: '4em',borderStyle: 'solid', borderColor: 'gray',borderRadius: '8px',padding: '6px',backgroundColor: background, cursor: "pointer", ...customStyle}}
         {...props}
         >

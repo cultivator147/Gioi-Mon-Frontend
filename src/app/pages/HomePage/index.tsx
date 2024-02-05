@@ -3,6 +3,7 @@ import { Header } from "../../components/Header";
 import { MainHome } from "../../components/Main/MainHome";
 import styled from "styled-components";
 import { PageWrapper } from "../../components/PageWrapper";
+import Footer from "../../components/Footer/Footer";
 
 export const HomePage = () => {
   return (
@@ -10,6 +11,7 @@ export const HomePage = () => {
       <Header />
       <NavBarWrapper />
       <MainHome />
+      <Footer />
     </Wrapper>
   );
 };

@@ -13,6 +13,6 @@ export const enum StyleConstants {
     FONT_SIZE_LOWER_MEDIUM = '1.25rem', 
     FONT_SIZE_SMALL = '1rem',
     FONT_NAME = 'Arial',
-    ITEMS_PER_PAGE = "8",
+    ITEMS_PER_PAGE = "16",
   }
   

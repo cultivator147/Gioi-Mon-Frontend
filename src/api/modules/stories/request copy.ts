@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useSelector } from "react-redux";
 import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
-import { GM_USER_URL } from "../../constant.url";
+import { GM_STORIES_URL, GM_USER_URL } from "../../constant.url";
 import { BaseResponse } from "../../../utils/http/response";
 
-export const apiGet = async (url: string, header: any) => {
+export const getRequestStory = async (url: string, header: any) => {
   try {
     url = GM_USER_URL + url;
     const { data } = await axios.get(url, { headers: header });
@@ -25,9 +25,9 @@ export const apiGet = async (url: string, header: any) => {
   }
 };
 
-export const postRequestUser = async (url: string, payload: any, header: any) => {
+export const postRequestStory = async (url: string, payload: any, header: any) => {
   try {
-    url = GM_USER_URL + url;
+    url = GM_STORIES_URL + url;
     const { data } = await axios.post<BaseResponse>(url, payload, {
       headers: header,
     });

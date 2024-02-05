@@ -4,6 +4,9 @@ import { StyledImage } from "../Common/Image";
 import { StyledLink } from "../Common/StyledLink";
 import { Category } from "../../../api/interfaces/category";
 import { Author } from "../../../api/interfaces/author";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEye, faPlus, faSignal, faStar, faTags, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faStackpath } from "@fortawesome/free-brands-svg-icons";
 
 export interface MainStoryProps{
     title: string,
@@ -31,7 +34,10 @@ export const MainStory = (props: MainStoryProps) => {
                 </div>
                 <div style={{width: "70%", paddingLeft: '24px', }}>
                     <Row> 
-                    <div style={{width: '7em'}}>
+                    <div style={{width: '7em', display: 'flex'}}>
+                    <div style={{padding: '4px'}}>
+                        <FontAwesomeIcon icon={faPlus} />
+                        </div>
                         <StyledLabel
                         fontSize={"1.2em"}
                         color="gray"
@@ -49,8 +55,10 @@ export const MainStory = (props: MainStoryProps) => {
 
                     </Row>
                     <Row> 
-                    <div style={{width: '7em'}}>
-
+                    <div style={{width: '7em', display: 'flex'}}>
+                    <div style={{padding: '4px'}}>
+                        <FontAwesomeIcon icon={faUser} />
+                        </div>
                         <StyledLabel
                         fontSize={"1.2em"}
                         color="gray"
@@ -71,8 +79,10 @@ export const MainStory = (props: MainStoryProps) => {
 
                     </Row>
                     <Row> 
-                    <div style={{width: '7em'}}>
-
+                    <div style={{width: '7em', display: 'flex'}}>
+                    <div style={{padding: '4px'}}>
+                        <FontAwesomeIcon icon={faSignal} />
+                        </div>
                         <StyledLabel
                         fontSize={"1.2em"}
                         color="gray"
@@ -87,9 +97,10 @@ export const MainStory = (props: MainStoryProps) => {
                         />
                     </Row>
                     <Row> 
-                    <div style={{width: '7em'}}>
-
-
+                    <div style={{width: '7em', display: 'flex'}}>
+                    <div style={{padding: '4px'}}>
+                        <FontAwesomeIcon icon={faTags} />
+                        </div>
                         <StyledLabel
                         fontSize={"1.2em"}
 
@@ -101,6 +112,7 @@ export const MainStory = (props: MainStoryProps) => {
 
                         {categories.map((cate) => (
                             <StyledLink
+                            href={"/tim-truyen/" + cate.id}
                             fontSize={"1.2em"}
                             title={`${cate.name} ` }
                             color="blue"
@@ -110,7 +122,10 @@ export const MainStory = (props: MainStoryProps) => {
                         
                     </Row>
                     <Row> 
-                    <div style={{width: '7em'}}>
+                    <div style={{width: '7em', display: 'flex'}}>
+                        <div style={{padding: '4px'}}>
+                        <FontAwesomeIcon icon={faEye} />
+                        </div>
                         <StyledLabel
                         fontSize={"1.2em"}
                         color="gray"

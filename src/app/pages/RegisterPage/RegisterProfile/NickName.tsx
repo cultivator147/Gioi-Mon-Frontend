@@ -9,10 +9,10 @@ import { ReactComponent as FaceName } from '../../../../assets/icons/faceName.sv
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { images } from '../../../../assets/images';
-import { CounterSlice } from '../../../../redux-toolkit/slice/counterSlice';
 import { UserSlice } from '../../../../redux-toolkit/slice/userSlice';
 import { getProfileSelector, getUserSelector } from '../../../../redux-toolkit/slice/userSlice/selector';
 import { ProfileLayout } from '../../../components/Layout/CreateProfile/CreateProfile';
+import { CounterSlice } from '../../../../redux-toolkit/slice/counterSlice';
 
 
 export default function NickName() {

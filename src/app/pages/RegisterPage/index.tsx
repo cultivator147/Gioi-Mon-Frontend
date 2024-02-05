@@ -11,16 +11,19 @@ import {
 import { useForm } from '@mantine/form';
 import Background from "../../components/Background/Background";
 import LoginLayout from "../../components/Layout/LoginLayout";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Logger } from "../../../utils/helper";
-// import { useAppDispatch } from "../../../redux-toolkit/hooks";
 import MyPassInput from "../../components/custom/MyPassInput/MyPassInput";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
+import { useNavigate } from "react-router-dom";
+import Social from "../../components/Social/Social";
 export const RegisterPage = () => {
   const dispatch = useDispatch();
   const { actions } = UserSlice();
   const { classes } = useStyles();
   const userNameRef = useRef<HTMLInputElement>(null);
+  const navigate = useNavigate();
     
   const [errName, setErrName] = useState(true);
   const [errPass, setErrPass] = useState(true);
@@ -67,7 +70,23 @@ export const RegisterPage = () => {
       },
     },
   });
+  const user = useSelector(getUserSelector);
 
+  useEffect(() => {
+    console.log(user.register.error);
+    if (user.register.error === -1) {
+      return;
+    } else if (user.register.error === 10) {
+      setErrName(false);
+    } else if (user.register.error === 0) {
+      setErrName(false);
+      navigate('/');
+    } else {
+      setErrName(true);
+      return;
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user.register]);
   const handleRegisterUser = () => {
     dispatch(
       actions.requestRegister({
@@ -101,8 +120,8 @@ export const RegisterPage = () => {
           <TextInput
             maxLength={16}
             name="username"
-            label={'Username'}
-            placeholder={'Enter your username'}
+            label={'Tên tài khoản'}
+            placeholder={'Nhập tên tài khoản của bạn'}
             error={form.errors.username}
             ref={userNameRef}
             {...form.getInputProps('username')}
@@ -122,7 +141,7 @@ export const RegisterPage = () => {
           {errName && (
             <Text className={classes.error}>
               {
-                'Contains only lowercase letters and numbers'
+                'Chỉ chứa các chữ cái và số viết thường'
               }
             </Text>
           )}
@@ -130,22 +149,22 @@ export const RegisterPage = () => {
           <MyPassInput
             form={form}
             name="password"
-            label="Password"
-            placeholder="Password"
+            label="Mật khẩu"
+            placeholder="Mật khẩu"
             handleKeyDown={handleClearSpace}
             handleFocus={handleOnFocusInput}
             handleInput={handleOnInput}
           />
           {errPass && (
             <Text className={classes.error}>
-              {'At least 8 characters'}
+              {'Ít nhất 8 ký tự'}
             </Text>
           )}
           <MyPassInput
             form={form}
             name="confirmPassword"
-            label="Confirm password"
-            placeholder="Confirm password"
+            label="Xác nhận mật khẩu"
+            placeholder="Xác nhận mật khẩu"
             handleKeyDown={handleClearSpace}
           />
 
@@ -169,7 +188,7 @@ export const RegisterPage = () => {
               variant="gradient"
               className={classes.registerBtn}
             >
-              {'Sign up'}
+              {'Đăng ký'}
             </Button>
           </Flex>
         </form>
@@ -200,10 +219,10 @@ export const RegisterPage = () => {
               marginTop: '18px',
             },
           }}
-          label={'LoginPage'}
+          // label={'LoginPage'}
           labelPosition="center"
         />
-        {/* <Social /> */}
+        <Social />
       </LoginLayout>
     </Background>
   );

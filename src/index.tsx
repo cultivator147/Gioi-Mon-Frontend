@@ -6,8 +6,9 @@ import { GioiMonApp } from "./app";
 import { Provider } from "react-redux";
 import persistStore from 'redux-persist/es/persistStore';
 import { configureAppStore } from "./redux-toolkit/configureStore";
+import { HelmetProvider } from 'react-helmet-async';
 
-const store = configureAppStore();
+export const store = configureAppStore();
 export const persistor = persistStore(store);
 
 const root = ReactDOM.createRoot(
@@ -16,9 +17,12 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <Provider store={store}>
+    <HelmetProvider>
     <React.StrictMode>
       <GioiMonApp />
     </React.StrictMode>
+    </HelmetProvider>
+
   </Provider>
 );
 

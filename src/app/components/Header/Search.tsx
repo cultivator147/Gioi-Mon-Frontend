@@ -1,8 +1,21 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 export const Search = () => {
+  const navigate = useNavigate();
+  const [keyword, setKeyword]= useState('');
+
+  const onClickSearch = () => {
+  navigate(`/tim-truyen/keyword=${keyword}`);
+  window.location.reload();
+  }
   return (
     <>
-      <Input placeholder="Tìm truyện..."></Input>
+      <Input 
+      placeholder="Tìm truyện..."
+      onChange={(e) => {setKeyword(e.target.value)}}
+      />
+
       <Button
         type="submit"
         onClick={() => {
@@ -13,6 +26,7 @@ export const Search = () => {
         }}
       >
         <SearchIcon
+          onClick={onClickSearch}
           src="https://img.icons8.com/ios-glyphs/30/search--v1.png"
           alt="Search Icon"
         ></SearchIcon>

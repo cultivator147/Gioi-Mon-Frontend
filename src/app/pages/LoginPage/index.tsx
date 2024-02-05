@@ -23,9 +23,9 @@ import LoginLayout from '../../components/Layout/LoginLayout';
 import Background from '../../components/Background/Background';
 import MyPassInput from '../../components/custom/MyPassInput/MyPassInput';
 import { getProfileSelector, getUserSelector } from '../../../redux-toolkit/slice/userSlice/selector';
+import Social from '../../components/Social/Social';
 
 export function LoginPage() {
-  const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { actions } = UserSlice();
@@ -91,7 +91,6 @@ export function LoginPage() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user.token]);
   useEffect(() => {
-    Logger('user', user);
     if (!user.isLogin) {
       return;
     } else {
@@ -111,8 +110,8 @@ export function LoginPage() {
             name="username"
             value={user.username}
             // defaultValue={user.username}
-            label={t('Username')}
-            placeholder={t('Enter your username')}
+            label={'Tên đăng nhập'}
+            placeholder={'Nhập tên đăng nhập'}
             {...form.getInputProps('username')}
             onKeyDown={e => {
               handleClearSpace(e);
@@ -124,14 +123,14 @@ export function LoginPage() {
           <MyPassInput
             form={form}
             name="password"
-            label="Password"
-            placeholder="Password"
+            label="Mật khẩu"
+            placeholder="Nhập mật khẩu"
             handleKeyDown={handleClearSpace}
             handleKeyUp={handleConvertEng}
           />
           {error || user.login.error > 0 ? (
             <Text className={classes.error}>
-              {t('Username or password incorrect')}
+              {'Username or password incorrect'}
             </Text>
           ) : (
             <></>
@@ -153,12 +152,12 @@ export function LoginPage() {
                 {...form.getInputProps('termsOfService', { type: 'checkbox' })}
               />
               <Text className={classes.save}>
-                {t('Remember me')}
+                {'Nhớ thông tin đăng nhập'}
               </Text>
             </Flex>
             <Link to="/forgot">
               <Text className={clsx(classes.forgot, classes.save)}>
-                {t('Forgot password')}
+                {'Quên mật khẩu'}
               </Text>
             </Link>
           </Flex>
@@ -169,7 +168,7 @@ export function LoginPage() {
               variant="gradient"
               className={classes.signinBtn}
             >
-              {t('Đăng nhập')}
+              {'Đăng nhập'}
             </Button>
           </Flex>
         </form>
@@ -194,10 +193,10 @@ export function LoginPage() {
               marginTop: '18px',
             },
           }}
-          label={t('LoginPage.or')}
+          // label={t('LoginPage.or')}
           labelPosition="center"
         />
-        {/* <Social /> */}
+        <Social />
       </LoginLayout>
     </Background>
   );

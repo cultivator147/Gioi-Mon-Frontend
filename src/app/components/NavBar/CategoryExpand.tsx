@@ -29,14 +29,11 @@ export const CategoryExpand = () => {
           <CategoryULDropdown>
             <ListCategory>
             {listCategory.map((category) => (
-              <CategoryWrapper>
-                <a 
-                style={{textDecoration: "none"}}
-                color="#000000"
-                href={"/tim-truyen/" + category.id} 
-                >
-                      {category.name}
-                </a>
+              <CategoryWrapper
+              href={"/tim-truyen/" + category.id} 
+              color="#000000"
+              >
+                {category.name}
               </CategoryWrapper>
             ))}
               
@@ -58,6 +55,7 @@ const CategoryULDropdown = styled.div`
   cursor: default;
 `;
 const A = styled.a`
+font-weight: 450;
   display: block;
   color: #333;
   line-height: ${StyleConstants.NAV_BAR_HEIGHT};
@@ -89,7 +87,9 @@ const CategoryLI = styled(LI)`
   }
 `;
 
-export const CategoryWrapper = styled.div`
+export const CategoryWrapper = styled.a`
+    text-decoration: none;
+    cursor: pointer;
     padding: 6px;
     &:hover{
         background-color: green;

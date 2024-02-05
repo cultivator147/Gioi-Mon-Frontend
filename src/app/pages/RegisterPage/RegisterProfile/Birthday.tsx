@@ -11,12 +11,12 @@ import { CreateProfileStyles } from '../../../components/Layout/CreateProfile/Cr
 import { ReactComponent as DateBirth } from '../../../../assets/icons/dateBirth.svg';
 
 import { useNavigate } from 'react-router-dom';
-import { CounterSlice } from '../../../../redux-toolkit/slice/counterSlice';
 import { getProfileSelector, getUserSelector } from '../../../../redux-toolkit/slice/userSlice/selector';
 import { UserSlice } from '../../../../redux-toolkit/slice/userSlice';
 import { Zodiac } from '../../../components/Zodiac/Zodiac';
 import { ProfileLayout } from '../../../components/Layout/CreateProfile/CreateProfile';
 import { images } from '../../../../assets/images';
+import { CounterSlice } from '../../../../redux-toolkit/slice/counterSlice';
 
 const ADJ = ['lovely', 'cute', 'mischievious', 'bonny', 'affable'];
 export default function Birth() {

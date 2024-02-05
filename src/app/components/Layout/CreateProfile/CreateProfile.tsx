@@ -6,10 +6,10 @@ import { Box, Card, Container, Flex } from '@mantine/core';
 
 import { ReactComponent as BackBtn } from '../../../../assets/icons/backBtn.svg';
 import { CreateProfileStyles } from './CreateProfileStyles';
-import { CounterSlice } from '../../../../redux-toolkit/slice/counterSlice';
-import { getCounterSelector } from '../../../../redux-toolkit/slice/counterSlice/selector';
 import { getUserSelector } from '../../../../redux-toolkit/slice/userSlice/selector';
 import Background from '../../Background/Background';
+import { CounterSlice } from '../../../../redux-toolkit/slice/counterSlice';
+import { getCounterSelector } from '../../../../redux-toolkit/slice/counterSlice/selector';
 
 const STEPS = [
   'nickname',

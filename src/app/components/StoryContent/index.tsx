@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { PageWrapper, SubWrapperRow, SubWrapperColumn } from "../PageWrapper";
 import { StyledImage } from "../Common/Image";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import React from "react";
 import useStoryContent from "../../../hooks/useStoryContent";
@@ -9,26 +9,43 @@ import { StyleConstants } from "../../../styles/StyleConstants";
 import { StyledLabel } from "../Common/StyledLabel";
 import { StyledLink } from "../Common/StyledLink";
 import { Brand } from "../Header/Brand";
+import { StyledButton } from "../Common/StyledButton";
+import { postRequestUser } from "../../../api/modules/user/request";
+import { postRequestStory } from "../../../api/modules/stories/request copy";
+import { useDispatch, useSelector } from "react-redux";
+import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
 // import { useAppSelector } from "../../../redux-toolkit/hooks";
-
+import { store } from "../../..";
+import { UserSlice } from "../../../redux-toolkit/slice/userSlice";
 export const StoryContent = () => {
   const chapterNumber = useParams().chapternumber || "1";
   const storyId = useParams().storyid || "1";
-
   const [images, setImages] = useState<string[]>([]);
+
   const [title, setTitle] = useState("");
   const [chapterName, setChapterName] = useState("");
-
-  // const story = useAppSelector((state) => state.story);
-
+  const [chapterQuantity, setChapterQuantity] = useState(1);
+  const userId = useSelector(getUserSelector)?.id;
+  const auth = useSelector(getUserSelector);
+  console.log('auth: ', auth.id);
+  console.log('userId:', userId);
+  const navigate = useNavigate();
   const onClick = () => {
-    // console.log(story.chapters);
   }
+  const handlePreviousChapter = () => {
+     navigate(`/truyen-tranh/${storyId}/${+chapterNumber-1}`);
+     window.location.reload();
+  }
+  const handleNextChapter = () => {
+    navigate(`/truyen-tranh/${storyId}/${+chapterNumber+1}`);
+    window.location.reload();
+ }
   const onCompleteGetContent = (data: any) => {
-    const { images, title, chapterName } = data;
+    const { images, title, chapterName, chapterQuantity } = data;
     setTitle(title);
     setImages(images);
     setChapterName(chapterName);
+    setChapterQuantity(chapterQuantity);
   };
   const { getStoryContent } = useStoryContent({
     onComplete: onCompleteGetContent,
@@ -36,7 +53,11 @@ export const StoryContent = () => {
     chapterId: parseInt(chapterNumber),
   });
   React.useEffect(() => {
+    const readingHistory = async () => {
+      await postRequestStory('/story/history',{story_id: storyId, chapter_number: chapterNumber}, {user_id: userId, Authorization: 'token'})
+    }
     getStoryContent();
+    readingHistory();
   }, []);
   return (
     <Wrapper>
@@ -45,25 +66,34 @@ export const StoryContent = () => {
           <Brand />
         </First>
         <Second>
-          <StyledLabel
+          <div style={{display: 'flex'}}>
+          <StyledLink
+            href={`/truyen-tranh/${storyId}`}
             title={`${title}   >`}
             fontSize={"1.2em"}
             color="#ffffff"
           />
           <StyledLabel
-            title={`EP. ${chapterNumber}${chapterName}`}
+            title={`EP. ${chapterNumber}`}
             fontSize={"1.2em"}
             color="#ffffff"
           />
+          </div>
         </Second>
         <Third>
-          <StyledLink title={"Chương trước"} fontSize={"1em"} href="/" />
+          <div style={{display: 'flex'}}>
+            <StyledButton backgroundColor="#ffffff" label={"Chương trước"} customStyle={{fontColor: "#ffffff"}} onClick={handlePreviousChapter} disable={chapterNumber == '1'}/>
+          {/* <StyledLink title={"Chương trước"} fontSize={"1em"} onClick={handlePreviousChapter}/> */}
           <button onClick={onClick}>
-          <StyledLink title={`#${chapterNumber}`} fontSize={"1em"}/>
-
+          <StyledLink color="#000000" title={`#${chapterNumber}`} fontSize={"1em"}/>
           </button>
-          <StyledLink title={"Chương sau"} fontSize={"1em"} />
+          <StyledButton backgroundColor="#ffffff" label={"Chương sau"} customStyle={{fontColor: "#ffffff"}} onClick={handleNextChapter} disable={+chapterNumber == chapterQuantity} />
+          {/* <StyledLink onClick={handleNextChapter}  title={"Chương sau"} fontSize={"1em"} /> */}
+          </div>
         </Third>
+        <div style={{flex: '0.5'}}>
+
+        </div>
       </HeaderContent>
       <ListChapters>
         {images.map((image) => (
@@ -92,7 +122,6 @@ const ListChapters = styled.ul`
 `;
 
 const Wrapper = styled(PageWrapper)`
-  flex: 1;
   width: 100%;
   justify-content: center;
   background-color: #ffffff;
@@ -106,7 +135,7 @@ const HeaderContent = styled(PageWrapper)`
   position: fixed;
   ${SubWrapperRow} {
     padding: 4px 8px;
-    justify-content: space-between;
+    justify-content: start;
   }
 `;
 const First = styled.div`
@@ -119,12 +148,12 @@ const Second = styled.div`
   align-items: center;
 `;
 const Third = styled.div`
+flex: 1;
   padding: 8px;
-  margin-left: 36px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   min-width: 15em;
 `;
 const Fourth = styled.div`

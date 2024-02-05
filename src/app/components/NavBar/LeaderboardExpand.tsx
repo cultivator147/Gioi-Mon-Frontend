@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { StyleConstants } from "../../../styles/StyleConstants";
 import { useState } from "react";
 
-import {update, add} from '../../../redux-toolkit/slice/categorySlice/categorySlice'
 // import { useAppDispatch, useAppSelector } from "../../../redux-toolkit/hooks";
 import { Logger } from "../../../utils/helper";
 const LIST_LEADERBOARD = [
@@ -21,19 +20,15 @@ const LIST_LEADERBOARD = [
 export const LeaderboardExpand = () => {
   const [listLeaderboard, setlistLeaderboard] = useState(LIST_LEADERBOARD);
     return (
-        <CategoryLI style={{ width: "30%" }}>
+        <CategoryLI style={{ width: "20%" }}>
           <A href="/">XẾP HẠNG</A>
           <CategoryULDropdown>
             <ListCategory>
             {listLeaderboard.map((category) => (
-              <Category>
-                <a 
-                style={{textDecoration: "none"}}
-                color="black"
-                href={"/tim-truyen/leaderboard/" + category.id} 
-                >
+              <Category
+              color="black"
+              href={"/tim-truyen/leaderboard/" + category.id} >
                       {category.name}
-                </a>
               </Category>
             ))}
               
@@ -86,7 +81,8 @@ const CategoryLI = styled(LI)`
   }
 `;
 
-const Category = styled.div`
+const Category = styled.a`
+text-decoration: none;
     padding: 6px;
     &:hover{
         background-color: green;

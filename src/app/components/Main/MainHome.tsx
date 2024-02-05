@@ -9,6 +9,9 @@ import useFilteredListStories from "../../../hooks/useFilteredListStories";
 import { Logger } from "../../../utils/helper";
 import { SubRight } from "./SubRight";
 import ReactPaginate from "react-paginate";
+import { relative } from "path";
+import { useSelector } from "react-redux";
+import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
 
 export const MainHome = () => {
   const [stories, setStories] = useState([]);
@@ -36,7 +39,7 @@ export const MainHome = () => {
         <SecondRow>
           <SubWrapperRow>
             <First>
-              <div style={{display: 'flex', flexDirection: 'column', gap: '12px'}}>
+              <div style={{display: 'flex', flexDirection: 'column', gap: '12px', justifyContent: 'space-between', height: '100%'}}>
               <ListStoriesGrid listItems={stories} page={0} size={20} />
               <div style={{display: 'flex', justifyContent: 'center'}}>
               <ReactPaginate
@@ -74,12 +77,17 @@ export const MainHome = () => {
   );
 };
 const FirstRow = styled.div`
+height: 100%;
 width: 100%;
 `;
 const SecondRow = styled.div`
+height: 100%;
+
   width: 100%;
 `;
 const First = styled.div`
+height: 100%;
+
   width: 70%;
 `;
 const Second = styled.div`
@@ -92,6 +100,7 @@ const Wrapper = styled(PageWrapper)`
   min-height: 500px;
 
   ${SubWrapperRow} {
+    height: 100%;
     width: 100%;
     flex: 1;
     justify-content: start;

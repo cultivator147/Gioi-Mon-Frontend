@@ -10,25 +10,25 @@ import { StyledLink } from "../../../Common/StyledLink";
 export const Leaderboard = () => {
   const [stories, setStories] = useState([]);
   const getAll = async (orderBy: string) => {
-    const response = await getTopStories({ orderBy: orderBy });
-    const histories: Array<any> = response?.data?.data?.content;
+    const response = await getTopStories({ type: orderBy });
+    const histories: Array<any> = response?.data?.data;
     if (histories.length <= 7) {
-      setStories(response?.data?.data?.content);
+      setStories(response?.data?.data);
     } else {
-      setStories(response?.data?.data?.content.slice(0, 7));
+      setStories(response?.data?.data.slice(0, 7));
     }
   };
   React.useEffect(() => {
-    getAll("MONTHLY");
+    getAll("TOP_MONTHLY");
   }, []);
   const getTopMonthly = () => {
-    getAll("MONTHLY");
+    getAll("TOP_MONTHLY");
   };
   const getTopWeekly = () => {
-    getAll("WEEKLY");
+    getAll("TOP_WEEKLY");
   };
   const getTopDaily = () => {
-    getAll("DAILY");
+    getAll("TOP_DAILY");
   };
   return (
     <Wrapper>
@@ -46,6 +46,7 @@ export const Leaderboard = () => {
       <div>
         {stories.map((story: SimpleStoryProps) => (
           <LeaderboardStory
+            id={story.id}
             title={story.title}
             picture={story.picture}
             link={story.link}

@@ -26,21 +26,14 @@ export const LeaderboardStory = (props: SimpleStoryProps) => {
             fontSize={"14px"}
             color="gray"
             title={`Chương ${props?.chapters[0]?.chapterNumber}>`}
-            href={props?.chapters[0]?.picture}
-            />
-        </div>
-        <div>
-            <StyledLink
-            italic={true}
-            color="black"
-            fontSize={"14px"}
-            title={"Xoá"}
+            href={`${props?.id}/${props.chapters[0].chapterNumber}`}
             />
         </div>
     </Wrapper>
     );
 }
 const Wrapper = styled.div`
+padding: 8px;
 display: flex;
 flex-direction: row;
 `;

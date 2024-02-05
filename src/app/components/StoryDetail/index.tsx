@@ -12,10 +12,6 @@ import { StyledLink } from "../Common/StyledLink";
 import { StyledLabel } from "../Common/StyledLabel";
 import { Author } from "../../../api/interfaces/author";
 import useDetailStory from "../../../hooks/useDetailStory";
-// import { useAppDispatch, useAppSelector } from "../../../redux-toolkit/hooks";
-import { addStory, storySlice, updateStory } from "../../../redux-toolkit/slice/storySlice/storySlice";
-import { ReadingHistory } from "../Main/SubRight/ReadingHistory/ReadingHistory";
-import { Leaderboard } from "../Main/SubRight/Leaderboard/Leaderboard";
 import { SubRight } from "../Main/SubRight";
 
 export const Story = () => {
@@ -62,8 +58,8 @@ export const Story = () => {
  
   return (
     <Wrapper>
-      <div style={{ display: "flex", width: "60%", backgroundColor: 'white' }}>
-        <div style={{ width: "70%", display: "flex", flexDirection: "column", }}>
+      <div style={{ display: "flex", width: "60%", backgroundColor: 'white', gap:'8px' }}>
+        <div style={{ width: "70%", display: "flex", flexDirection: "column"}}>
           <div style={{ width: "100%"}}>
             <MainStory
               authors={authors}
@@ -78,7 +74,7 @@ export const Story = () => {
             />
           </div>
           <DivButton>
-            <div style={{width: '60%', display: 'flex', justifyContent: 'center', gap: '12px'}}>
+            <div style={{width: '60%', display: 'flex', justifyContent: 'center', gap: '12px',}}>
 
             <div style={{  display: "flex", justifyContent:"center" }}>
               <a
@@ -136,8 +132,11 @@ export const Story = () => {
               color="blue"
             />
             <ListChapters>
+              <div style={{display: 'flex', justifyContent: 'space-between'}}>
               <StyledLabel title="Số chương" color="black" />
-              <ul style={{}}>
+              <StyledLabel title="Cập nhật" color="black" />
+              </div>
+              <div style={{borderStyle: 'solid', borderWidth: '1px', padding: '8px'}}>
                 {chapters.map((chapter: ChapterProps) => (
                   <li
                     style={{ display: "flex", justifyContent: "space-between" }}
@@ -146,14 +145,18 @@ export const Story = () => {
                       href={`/truyen-tranh/${storyId}/${chapter.chapterNumber}`}
                       title={`Chương ${chapter.chapterNumber}`}
                       color="black"
+                      fontSize={'1.1em'}
                     />
                     <StyledLink
-                      title={`Chương ${chapter.chapterNumber}`}
+                      // title={`${chapter?.lastUpdate}`}
+                      title={`Mới cập nhật`}
                       color="gray"
+                      fontSize={'1.1em'}
                     />
                   </li>
                 ))}
-              </ul>
+              </div>
+
             </ListChapters>
           </div>
         </div>
@@ -169,10 +172,10 @@ const ListChapters = styled.div`
   flex: 1;
 `;
 const DivButton = styled.div`
-  flex: 1;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 24px;
 `;
 const Wrapper = styled(PageWrapper)`
   flex: 1;

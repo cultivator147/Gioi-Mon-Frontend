@@ -13,6 +13,7 @@ const publicRoutes = [
     {path: '/register', component: RegisterPage},
     {path: '/login', component: LoginPage},
     {path: '/tim-truyen/:categoryid', component: SearchPage},
+    {path: '/tim-truyen/keyword=:keyword', component: SearchPage},
     {path: '/tim-truyen/leaderboard/:leaderboardid', component: SearchPage},
     {path: '/tim-truyen/:categoryid/:writing_state', component: SearchPage},
     {path: '/tim-truyen/:categoryid/:writing_state/sort_by=:sort_by', component: SearchPage},
