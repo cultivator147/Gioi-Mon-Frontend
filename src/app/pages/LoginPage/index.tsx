@@ -43,6 +43,7 @@ export function LoginPage() {
       setError(true);
     } else {
       setError(false);
+      console.log('requesting login...');
       dispatch(
         actions.requestLogin({
           username: form.values.username,
