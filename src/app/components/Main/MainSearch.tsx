@@ -7,29 +7,27 @@ import React, { useState } from "react";
 import useFilteredListStories, {
   IUseFilteredListStories,
 } from "../../../hooks/useFilteredListStories";
-import { useHref, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { Category } from "../../../api/interfaces/category";
 import { getAllCategories } from "../../../api/modules/stories/category";
 import { Logger } from "../../../utils/helper";
 import { CategoryWrapper } from "../NavBar/CategoryExpand";
 import { StyledButton } from "../Common/StyledButton";
-import { ids } from "webpack";
-import ReactPaginate from 'react-paginate';
-import './pagination.css';
-import useSearch from "../../../hooks/useSearch";
+import ReactPaginate from "react-paginate";
+import "./pagination.css";
 export const MainSearch = () => {
-  const categoryId = useParams().categoryid || "1";
-  const keyword = useParams().keyword || '';
+  const categoryId = useParams().categoryid || "2";
+  const keyword = useParams().keyword || "";
   const writingState = useParams().writing_state || "0";
   const sortBy = useParams().sort_by || "LAST_UPDATE_DATE";
   const [stories, setStories] = useState([]);
   const [listCategory, setListCategory] = useState<Category[]>([]);
-  
+
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
 
   const handlePageChange = async (pageNumber: number) => {
-      setCurrentPage(pageNumber);
+    setCurrentPage(pageNumber);
   };
 
   const onConpleteGetFilteredListStories = (data: any) => {
@@ -49,12 +47,14 @@ export const MainSearch = () => {
 
   React.useEffect(() => {
     getFilteredListStories();
-  },[currentPage]);
+    console.log(categoryId);
+  }, [currentPage, categoryId]);
 
   React.useEffect(() => {
     const getAll = async () => {
       try {
         const response = await getAllCategories();
+        console.log("main search");
         setListCategory(response.data?.data);
       } catch (err) {
         Logger(err);
@@ -65,8 +65,8 @@ export const MainSearch = () => {
 
   return (
     <Wrapper>
-      <div style={{ width: "60%",  }}>
-        <div style={{ width: "100%", display: "flex" , gap: '10px', }}>
+      <div style={{ width: "60%" }}>
+        <div style={{ width: "100%", display: "flex", gap: "10px" }}>
           <SubWrapperColumn>
             <div
               style={{
@@ -77,8 +77,8 @@ export const MainSearch = () => {
                 width: "100%",
                 padding: "8px",
                 marginBottom: "16px",
-                boxSizing: 'border-box',
-                gap: '12px'
+                boxSizing: "border-box",
+                gap: "12px",
               }}
             >
               <StyledLabel
@@ -104,57 +104,131 @@ export const MainSearch = () => {
                   }`}
                 />
               </div>
-              <div style={{width: '100%', display: 'flex', justifyContent: 'center', gap: '10px'}}>
-                  <StyledButton label={"Tất cả"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/0`}/>
-                  <StyledButton label={"Hoàn thành"} backgroundColor="#ffffff" href={`/tim-truyen/${categoryId}/2`}/>
-                  <StyledButton label={"Đang tiến hành"} backgroundColor="#ffffff" href={`/tim-truyen/${categoryId}/1`}/>
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  gap: "10px",
+                }}
+              >
+                <StyledButton
+                  label={"Tất cả"}
+                  backgroundColor="#ffffff"
+                  customStyle={{}}
+                  href={`/tim-truyen/${categoryId}/0`}
+                />
+                <StyledButton
+                  label={"Hoàn thành"}
+                  backgroundColor="#ffffff"
+                  href={`/tim-truyen/${categoryId}/2`}
+                />
+                <StyledButton
+                  label={"Đang tiến hành"}
+                  backgroundColor="#ffffff"
+                  href={`/tim-truyen/${categoryId}/1`}
+                />
               </div>
 
-              <div style={{display: 'flex', width: '100%', marginTop: '24px'}}>
-                <div style={{width:'8em'}}>
-                  <StyledLabel fontSize={'1.2em'} title={"Sắp xếp theo"} color="#000000" />
+              <div
+                style={{ display: "flex", width: "100%", marginTop: "24px" }}
+              >
+                <div style={{ width: "8em" }}>
+                  <StyledLabel
+                    fontSize={"1.2em"}
+                    title={"Sắp xếp theo"}
+                    color="#000000"
+                  />
                 </div>
-                <div style={{width: '100%', display: 'block', gap: '10px'}}>
-                  <StyledButton label={"Ngày cập nhật"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=LAST_UPDATE_DATE`}/>
-                  <StyledButton label={"Truyện mới"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=NEW`}/>
-                  <StyledButton label={"Top all"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_ALL`}/>
-                  <StyledButton label={"Top tháng"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_MONTHLY`}/>
-                  <StyledButton label={"Top tuần"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_WEEKLY`}/>
-                  <StyledButton label={"Top ngày"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_DAILY`}/>
-                  <StyledButton label={"Lượt theo dõi"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=FOLLOWER`}/>
-                  <StyledButton label={"Bình luận"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=COMMENT`}/>
-                  <StyledButton label={"Số chapter"} backgroundColor="#ffffff" customStyle={{}} href={`/tim-truyen/${categoryId}/${writingState}/sort_by=CHAPTER`}/>
+                <div style={{ width: "100%", display: "block", gap: "10px" }}>
+                  <StyledButton
+                    label={"Ngày cập nhật"}
+                    backgroundColor="#ffffff"
+                    customStyle={{}}
+                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=LAST_UPDATE_DATE`}
+                  />
+                  <StyledButton
+                    label={"Truyện mới"}
+                    backgroundColor="#ffffff"
+                    customStyle={{}}
+                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=NEW`}
+                  />
+                  <StyledButton
+                    label={"Top all"}
+                    backgroundColor="#ffffff"
+                    customStyle={{}}
+                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_ALL`}
+                  />
+                  <StyledButton
+                    label={"Top tháng"}
+                    backgroundColor="#ffffff"
+                    customStyle={{}}
+                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_MONTHLY`}
+                  />
+                  <StyledButton
+                    label={"Top tuần"}
+                    backgroundColor="#ffffff"
+                    customStyle={{}}
+                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_WEEKLY`}
+                  />
+                  <StyledButton
+                    label={"Top ngày"}
+                    backgroundColor="#ffffff"
+                    customStyle={{}}
+                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_DAILY`}
+                  />
+                  <StyledButton
+                    label={"Lượt theo dõi"}
+                    backgroundColor="#ffffff"
+                    customStyle={{}}
+                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=FOLLOWER`}
+                  />
+                  <StyledButton
+                    label={"Bình luận"}
+                    backgroundColor="#ffffff"
+                    customStyle={{}}
+                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=COMMENT`}
+                  />
+                  <StyledButton
+                    label={"Số chapter"}
+                    backgroundColor="#ffffff"
+                    customStyle={{}}
+                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=CHAPTER`}
+                  />
                 </div>
               </div>
-
             </div>
             <FirstRow>
-              <ListStoriesGrid listItems={stories} page={currentPage} size={20} />
-              <div style={{display: 'flex', justifyContent: 'center'}}>
-              <ReactPaginate
-                nextLabel="next >"
-                onPageChange={ (selectedItem) => handlePageChange(selectedItem.selected)}
-                pageRangeDisplayed={3}
-                marginPagesDisplayed={2}
-                pageCount={totalPages}
-                previousLabel="< previous"
-                pageClassName="page-item"
-                pageLinkClassName="page-link"
-                previousClassName="page-item"
-                previousLinkClassName="page-link"
-                nextClassName="page-item"
-                nextLinkClassName="page-link"
-                breakLabel="..."
-                breakClassName="page-item"
-                breakLinkClassName="page-link"
-                containerClassName="pagination"
-                activeClassName="active"
-                renderOnZeroPageCount={null}
+              <ListStoriesGrid
+                listItems={stories}
+                page={currentPage}
+                size={20}
               />
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                <ReactPaginate
+                  nextLabel="next >"
+                  onPageChange={(selectedItem) =>
+                    handlePageChange(selectedItem.selected)
+                  }
+                  pageRangeDisplayed={3}
+                  marginPagesDisplayed={2}
+                  pageCount={totalPages}
+                  previousLabel="< previous"
+                  pageClassName="page-item"
+                  pageLinkClassName="page-link"
+                  previousClassName="page-item"
+                  previousLinkClassName="page-link"
+                  nextClassName="page-item"
+                  nextLinkClassName="page-link"
+                  breakLabel="..."
+                  breakClassName="page-item"
+                  breakLinkClassName="page-link"
+                  containerClassName="pagination"
+                  activeClassName="active"
+                  renderOnZeroPageCount={null}
+                />
               </div>
             </FirstRow>
-            
-            
           </SubWrapperColumn>
           <div style={{ flex: 1 }}>
             <CategoryRightWrapper>
@@ -169,10 +243,10 @@ export const MainSearch = () => {
                 <ListCategory>
                   {listCategory.map((category) => (
                     <CategoryWrapper
-                    color="black"
-                    href={"/tim-truyen/" + category.id}
+                      color="black"
+                      to={"/tim-truyen/" + category.id}
                     >
-                        {category.name}
+                      {category.name}
                     </CategoryWrapper>
                   ))}
                 </ListCategory>

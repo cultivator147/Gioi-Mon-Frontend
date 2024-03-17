@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { useForm } from '@mantine/form';
-import { IconChevronRight } from '@tabler/icons';
-import { useDispatch, useSelector } from 'react-redux';
-import { Box, Button, Text, TextInput } from '@mantine/core';
+import React, { useEffect, useState } from "react";
+import { useForm } from "@mantine/form";
+import { IconChevronRight } from "@tabler/icons";
+import { useDispatch, useSelector } from "react-redux";
+import { Box, Button, Text, TextInput } from "@mantine/core";
 
-import { CreateProfileStyles } from '../../../components/Layout/CreateProfile/CreateProfileStyles';
-import { ReactComponent as FaceName } from '../../../../assets/icons/faceName.svg';
-import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
-import { images } from '../../../../assets/images';
-import { UserSlice } from '../../../../redux-toolkit/slice/userSlice';
-import { getProfileSelector, getUserSelector } from '../../../../redux-toolkit/slice/userSlice/selector';
-import { ProfileLayout } from '../../../components/Layout/CreateProfile/CreateProfile';
-import { CounterSlice } from '../../../../redux-toolkit/slice/counterSlice';
-
+import { CreateProfileStyles } from "../../../components/Layout/CreateProfile/CreateProfileStyles";
+import { ReactComponent as FaceName } from "../../../../assets/icons/faceName.svg";
+import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import { images } from "../../../../assets/images";
+import { UserSlice } from "../../../../redux-toolkit/slice/userSlice";
+import {
+  getProfileSelector,
+  getUserSelector,
+} from "../../../../redux-toolkit/slice/userSlice/selector";
+import { ProfileLayout } from "../../../components/Layout/CreateProfile/CreateProfile";
+import { CounterSlice } from "../../../../redux-toolkit/slice/counterSlice";
 
 export default function NickName() {
   const { t } = useTranslation();
@@ -29,7 +31,7 @@ export default function NickName() {
   const user = useSelector(getUserSelector);
 
   const form = useForm({
-    initialValues: { nickname: '' || profile.nickname },
+    initialValues: { nickname: "" || profile.nickname },
   });
   const handleClearSpace = (e: any) => {
     if (/[ `!@#$%^&*()_+\-=\\[\]{};':"\\|,.<>\\/?~]/g.test(e.key)) {
@@ -54,14 +56,14 @@ export default function NickName() {
             introduction: profile.introduction,
             relationship: profile.relationship,
           },
-        }),
+        })
       );
       dispatch(counterActions.increase());
       // navigate('/register/picture');
     }
   };
   useEffect(() => {
-    if (form.values.nickname !== '') {
+    if (form.values.nickname !== "") {
       setDisableBtn(false);
     } else {
       setDisableBtn(true);
@@ -74,10 +76,10 @@ export default function NickName() {
           sx={{
             width: 485,
             height: 214,
-            position: 'absolute',
-            top: '8%',
-            left: '50%',
-            transform: 'translateX(-50%)',
+            position: "absolute",
+            top: "8%",
+            left: "50%",
+            transform: "translateX(-50%)",
             [`@media (max-width:575px)`]: {
               width: 305,
               height: 222,
@@ -92,20 +94,20 @@ export default function NickName() {
         </Box>
         <Box className={classes.box}>
           <Text className={classes.titleChild}>
-            {t('Profile.title.Nickname')}
+            {t("Profile.title.Nickname")}
           </Text>
           <Text mb={24} className={classes.text}>
             {t(
-              'Profile.text.As a GoDooer, you are free to give yourself an interesting name.',
+              "Profile.text.As a GoDooer, you are free to give yourself an interesting name."
             )}
           </Text>
           <form onSubmit={form.onSubmit(handleNickName)}>
             <Box
               sx={{
-                position: 'relative',
+                position: "relative",
                 borderRadius: 8,
-                border: error ? '1px solid var(--red)' : 'none',
-                backgroundColor: 'var(--white)',
+                border: error ? "1px solid var(--red)" : "none",
+                backgroundColor: "var(--white)",
               }}
             >
               <TextInput
@@ -113,18 +115,18 @@ export default function NickName() {
                   input: {
                     fontSize: 24,
                     fontWeight: 500,
-                    lineHeight: '30px',
-                    textAlign: 'right',
-                    border: 'none',
-                    backgroundColor: 'transparent',
+                    lineHeight: "30px",
+                    textAlign: "right",
+                    border: "none",
+                    backgroundColor: "transparent",
                   },
                 }}
                 maxLength={15}
-                placeholder={t('Profile.title.Nickname')}
+                placeholder={t("Profile.title.Nickname")}
                 // onKeyDown={e => {
                 //   handleClearSpace(e);
                 // }}
-                {...form.getInputProps('nickname')}
+                {...form.getInputProps("nickname")}
               />
               <FaceName className={classes.nicknameIcon} />
             </Box>

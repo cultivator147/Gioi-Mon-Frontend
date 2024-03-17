@@ -1,72 +1,75 @@
-import { useEffect } from 'react';
-import { userSaga } from './saga';
-import { persistor } from '../../..';
-import { createSlice } from '../../../utils/@reduxjs/toolkit';
-import { PayloadAction } from '@reduxjs/toolkit';
-import { useInjectReducer, useInjectSaga } from '../../../utils/redux-injectors';
+import { useEffect } from "react";
+import { userSaga } from "./saga";
+import { createSlice } from "../../../utils/@reduxjs/toolkit";
+import { PayloadAction } from "@reduxjs/toolkit";
+import {
+  useInjectReducer,
+  useInjectSaga,
+} from "../../../utils/redux-injectors";
+import { persistor } from "../../configureStore";
 
 export interface UserState {
-    //Account
-    id?: number;
-    token?: string;
-    isLogin?: boolean;
-    loading?: boolean;
-    username?: string;
-    password?: string | number;
-    device?: boolean;
-    // Status
-    register?: {
-      error?: number;
-      message?: string;
-    };
-    login?: {
-      error?: number;
-      message?: string;
-      savePassword?: boolean;
-    };
-    profile?: {
-      nickname?: string;
-      picture?: string[];
-      date_of_birth?: string;
-      zodiac?: string;
-      gender?: string[];
-      introduction?: string;
-      relationship?: number;
-    };
-  }
+  //Account
+  id?: number;
+  token?: string;
+  isLogin?: boolean;
+  loading?: boolean;
+  username?: string;
+  password?: string | number;
+  device?: boolean;
+  // Status
+  register?: {
+    error?: number;
+    message?: string;
+  };
+  login?: {
+    error?: number;
+    message?: string;
+    savePassword?: boolean;
+  };
+  profile?: {
+    nickname?: string;
+    picture?: string[];
+    date_of_birth?: string;
+    zodiac?: string;
+    gender?: string[];
+    introduction?: string;
+    relationship?: number;
+  };
+}
 
 export const initialState: UserState = {
   // Account
   id: -1,
-  token: '',
+  token: "",
   isLogin: false,
   loading: false,
-  username: '',
-  password: '',
+  username: "",
+  password: "",
   device: false,
   // Status
   register: {
     error: -1,
-    message: '',
+    message: "",
   },
   login: {
     error: -1,
-    message: '',
+    message: "",
     savePassword: false,
   },
   profile: {
-    nickname: '',
+    nickname: "",
     picture: [],
-    date_of_birth: '',
-    zodiac: '',
+    date_of_birth: "",
+    zodiac: "",
     gender: [],
-    introduction: '',
+    introduction: "",
     relationship: -1,
   },
 };
 
 const slice = createSlice({
-  name: 'user',
+  name: "user",
   initialState,
   reducers: {
     requestLogin(state: UserState, action: PayloadAction<UserState>) {
@@ -104,26 +107,26 @@ const slice = createSlice({
 
     logoutSuccess(state: UserState) {
       state.id = -1;
-      state.token = '';
-      state.username = '';
+      state.token = "";
+      state.username = "";
       state.isLogin = false;
       state.loading = false;
       state.register = {
         error: -1,
-        message: '',
+        message: "",
       };
       state.login = {
         error: -1,
-        message: '',
+        message: "",
         savePassword: false,
       };
       state.profile = {
-        nickname: '',
+        nickname: "",
         picture: [],
-        date_of_birth: '',
-        zodiac: '',
+        date_of_birth: "",
+        zodiac: "",
         gender: [],
-        introduction: '',
+        introduction: "",
         relationship: -1,
       };
     },
@@ -152,4 +155,3 @@ export const UserSlice = () => {
   }, []);
   return { actions: slice.actions };
 };
-

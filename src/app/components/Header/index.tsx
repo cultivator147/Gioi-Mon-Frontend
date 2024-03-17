@@ -18,8 +18,7 @@ export const Header = () => {
 
   const onLogout = () => {
     dispatch(actions.logoutSuccess());
-
-  }
+  };
   return (
     <Wrapper>
       <SubWrapperRow>
@@ -30,22 +29,46 @@ export const Header = () => {
           <Search />
         </Center>
         <End>
-          {auth.token !== '' ? <>
-            <StyledLabel color="#21231D" fontSize={StyleConstants.FONT_SIZE_SMALL}  title={`Xin chào, ${auth?.username}`}/>
-            <StyledImage src={"https://th.bing.com/th/id/R.22a58b4e1063265995b8a8c51a09fe23?rik=gWBSa8fDnKsP0w&pid=ImgRaw&r=0"} width={50} height={50} />
-            <StyledLink color="#21231D" fontSize={StyleConstants.FONT_SIZE_SMALL}  title={"Đăng xuất"} onClick={onLogout}/>
-          </>: <>
-          <StyledLink
-            fontSize={StyleConstants.FONT_SIZE_SMALL}
-            color="#21231D"
-            afterContent="/"
-            title="Đăng nhập"
-            underline = {false}
-            href="/login"
-          />
-          <StyledLink fontSize={StyleConstants.FONT_SIZE_SMALL} color="#21231D" title="Đăng ký" href="/register" underline = {false}/>
-          </>}
-          
+          {auth.token !== "" ? (
+            <>
+              <StyledLabel
+                color="#21231D"
+                fontSize={StyleConstants.FONT_SIZE_SMALL}
+                title={`Xin chào, ${auth?.username}`}
+              />
+              <StyledImage
+                src={
+                  "https://th.bing.com/th/id/R.22a58b4e1063265995b8a8c51a09fe23?rik=gWBSa8fDnKsP0w&pid=ImgRaw&r=0"
+                }
+                width={50}
+                height={50}
+              />
+              <StyledLink
+                color="#21231D"
+                fontSize={StyleConstants.FONT_SIZE_SMALL}
+                title={"Đăng xuất"}
+                onClick={onLogout}
+              />
+            </>
+          ) : (
+            <>
+              <StyledLink
+                fontSize={StyleConstants.FONT_SIZE_SMALL}
+                color="#21231D"
+                afterContent="/"
+                title="Đăng nhập"
+                underline={false}
+                href="/auth"
+              />
+              <StyledLink
+                fontSize={StyleConstants.FONT_SIZE_SMALL}
+                color="#21231D"
+                title="Đăng ký"
+                href="/auth/register"
+                underline={false}
+              />
+            </>
+          )}
         </End>
       </SubWrapperRow>
     </Wrapper>

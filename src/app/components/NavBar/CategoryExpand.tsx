@@ -1,47 +1,58 @@
 import styled from "styled-components";
 import { StyleConstants } from "../../../styles/StyleConstants";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Logger } from "../../../utils/helper";
 import { getAllCategories } from "../../../api/modules/stories/category";
 import { Category } from "../../../api/interfaces/category";
+import { NavLink } from "react-router-dom";
 
-export const CategoryExpand = () => {
+interface CategoryExpandProps {
+  additionStyle?: React.CSSProperties;
+  addtionStyleLink?: React.CSSProperties;
+}
+
+export const CategoryExpand = ({
+  additionStyle,
+  addtionStyleLink,
+}: CategoryExpandProps) => {
   // const dispatch = useAppDispatch();
   // const currentCategoryID = useAppSelector((state) => state.category.id);
   // const handleOnClickCategory = (id:any, name:any) => {
   //   dispatch(update({id: id, title: name}));
   // }
   const [listCategory, setListCategory] = useState<Category[]>([]);
-  React.useEffect(() => {
-    const  getAll = async () => {
-      try{
-        const response = await getAllCategories();
-        setListCategory(response.data?.data);
-      }catch(err){
-        Logger(err);
-      }
+  const getAll = async () => {
+    try {
+      const response = await getAllCategories();
+      setListCategory(response.data?.data);
+    } catch (err) {
+      Logger(err);
     }
+  };
+  useEffect(() => {
     getAll();
-    },[]);
-    return (
-        <CategoryLI style={{ width: "20%" }}>
-          <A href="/">Thể loại</A>
-          <CategoryULDropdown>
-            <ListCategory>
-            {listCategory.map((category) => (
-              <CategoryWrapper
-              href={"/tim-truyen/" + category.id} 
+  }, []);
+  return (
+    <CategoryLI style={{ width: "20%", ...additionStyle }}>
+      <A to="/" style={{ ...addtionStyleLink }}>
+        Thể loại
+      </A>
+      <CategoryULDropdown>
+        <ListCategory>
+          {listCategory.map((category) => (
+            <CategoryWrapper
+              key={category.id}
+              to={"/tim-truyen/" + category.id}
               color="#000000"
-              >
-                {category.name}
-              </CategoryWrapper>
-            ))}
-              
-            </ListCategory>
-          </CategoryULDropdown>
-        </CategoryLI>
-    );
-}
+            >
+              {category.name}
+            </CategoryWrapper>
+          ))}
+        </ListCategory>
+      </CategoryULDropdown>
+    </CategoryLI>
+  );
+};
 const CategoryULDropdown = styled.div`
   background-color: white;
   float: left;
@@ -54,8 +65,8 @@ const CategoryULDropdown = styled.div`
   display: none;
   cursor: default;
 `;
-const A = styled.a`
-font-weight: 450;
+const A = styled(NavLink)`
+  font-weight: 450;
   display: block;
   color: #333;
   line-height: ${StyleConstants.NAV_BAR_HEIGHT};
@@ -87,13 +98,13 @@ const CategoryLI = styled(LI)`
   }
 `;
 
-export const CategoryWrapper = styled.a`
-    text-decoration: none;
-    cursor: pointer;
-    padding: 6px;
-    &:hover{
-        background-color: green;
-    }
+export const CategoryWrapper = styled(NavLink)`
+  text-decoration: none;
+  cursor: pointer;
+  padding: 6px;
+  &:hover {
+    background-color: green;
+  }
 `;
 const ListCategory = styled.div`
   display: grid;

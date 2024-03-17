@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { StyledImage } from "../../Common/Image";
+import { NavLink } from "react-router-dom";
 
 export interface SuggestedStoryProps {
   picture: string;
@@ -14,7 +15,7 @@ export const SuggestedStory = (props: SuggestedStoryProps) => {
   `;
   return (
     <ItemWrapper>
-      <a href={link}>
+      <NavLink to={link}>
         <StyledImage
           src={picture}
           width={180}
@@ -23,7 +24,7 @@ export const SuggestedStory = (props: SuggestedStoryProps) => {
             console.log("Cliked Story!");
           }}
         />
-      </a>
+      </NavLink>
     </ItemWrapper>
   );
 };

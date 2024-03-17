@@ -4,25 +4,19 @@ import reportWebVitals from "./reportWebVitals";
 import { GioiMonApp } from "./app";
 // import { store } from "./redux-toolkit/store";
 import { Provider } from "react-redux";
-import persistStore from 'redux-persist/es/persistStore';
-import { configureAppStore } from "./redux-toolkit/configureStore";
-import { HelmetProvider } from 'react-helmet-async';
-
-export const store = configureAppStore();
-export const persistor = persistStore(store);
+import { HelmetProvider } from "react-helmet-async";
+import { PersistGate } from "redux-persist/integration/react";
+import { rehydration, store } from "./redux-toolkit/configureStore";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-
+rehydration();
 root.render(
   <Provider store={store}>
     <HelmetProvider>
-    <React.StrictMode>
       <GioiMonApp />
-    </React.StrictMode>
     </HelmetProvider>
-
   </Provider>
 );
 

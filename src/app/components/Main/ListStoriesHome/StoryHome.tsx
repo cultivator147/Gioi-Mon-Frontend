@@ -7,6 +7,7 @@ import { StyledLink } from "../../Common/StyledLink";
 import { Chapter, ChapterProps, ListChapter } from "../../ListChapter";
 import { Logger } from "../../../../utils/helper";
 import { StyleConstants } from "../../../../styles/StyleConstants";
+import { NavLink } from "react-router-dom";
 export interface SimpleStoryProps {
   id?: any;
   title: string;
@@ -18,7 +19,7 @@ export const SampleStory = (props: SimpleStoryProps) => {
   const newestChapters: ChapterProps[] = props.chapters || [];
   return (
     <StoryWrapper>
-      <a href={props.link}>
+      <NavLink to={props.link}>
         <StyledImage
           src={props.picture}
           width={150}
@@ -27,7 +28,7 @@ export const SampleStory = (props: SimpleStoryProps) => {
             console.log("Cliked Story!");
           }}
         />
-      </a>
+      </NavLink>
       <div style={{ maxWidth: "150px" }}>
         <StyledLink
           fontSize={StyleConstants.FONT_SIZE_LOWER_MEDIUM}

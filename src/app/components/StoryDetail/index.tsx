@@ -1,11 +1,9 @@
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { MainStory } from "./MainStory";
-import { getDetailStory } from "../../../api/modules/stories/stories";
 import React, { useState } from "react";
 import { StyleConstants } from "../../../styles/StyleConstants";
-import { PageWrapper, SubWrapperRow, SubWrapperColumn } from "../PageWrapper";
-import { Logger } from "../../../utils/helper";
+import { PageWrapper } from "../PageWrapper";
 import { StyledButton } from "../Common/StyledButton";
 import { ChapterProps } from "../ListChapter";
 import { StyledLink } from "../Common/StyledLink";
@@ -25,7 +23,6 @@ export const Story = () => {
 
   const [status, setStatus] = useState("");
   const [views, setViews] = useState(0);
-  const [introduction, setIntroduction] = useState("");
 
   // const dispatch = useAppDispatch();
   const onCompleteGetDetailStory = (data: any) => {
@@ -47,20 +44,27 @@ export const Story = () => {
     setCategories(categories);
     setStatus(writingState);
     setViews(views);
-
-  }
-  const {getDataDetailStory} = useDetailStory({onComplete: onCompleteGetDetailStory, storyId: storyId});
+  };
+  const { getDataDetailStory } = useDetailStory({
+    onComplete: onCompleteGetDetailStory,
+    storyId: storyId,
+  });
   React.useEffect(() => {
     getDataDetailStory();
   }, []);
-  console.log("chapters: ", chapters);
-  
- 
+
   return (
     <Wrapper>
-      <div style={{ display: "flex", width: "60%", backgroundColor: 'white', gap:'8px' }}>
-        <div style={{ width: "70%", display: "flex", flexDirection: "column"}}>
-          <div style={{ width: "100%"}}>
+      <div
+        style={{
+          display: "flex",
+          width: "60%",
+          backgroundColor: "white",
+          gap: "8px",
+        }}
+      >
+        <div style={{ width: "70%", display: "flex", flexDirection: "column" }}>
+          <div style={{ width: "100%" }}>
             <MainStory
               authors={authors}
               title={title}
@@ -74,48 +78,41 @@ export const Story = () => {
             />
           </div>
           <DivButton>
-            <div style={{width: '60%', display: 'flex', justifyContent: 'center', gap: '12px',}}>
-
-            <div style={{  display: "flex", justifyContent:"center" }}>
-              <a
-                href={`/truyen-tranh/${storyId}/${chapters[0]?.chapterNumber}`}
-                style={{ cursor: "pointer" }}
-              >
-                <StyledButton
-                  label="Đọc từ đầu"
-                  backgroundColor="orange"
-                  customStyle={{ padding: "8px" }}
-                />
-              </a>
+            <div
+              style={{
+                width: "60%",
+                display: "flex",
+                justifyContent: "center",
+                gap: "12px",
+              }}
+            >
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                  <StyledButton
+                    href={`/truyen-tranh/${storyId}/${chapters[0]?.chapterNumber}`}
+                    label="Đọc từ đầu"
+                    backgroundColor="orange"
+                    customStyle={{ padding: "8px" }}
+                  />
+              </div>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                  <StyledButton
+                  href={`/truyen-tranh/${storyId}/${
+                    chapters[chapters.length - 1]?.chapterNumber
+                  }`}
+                    label="Đọc mới nhất"
+                    backgroundColor="orange"
+                    customStyle={{ padding: "8px" }}
+                  />
+              </div>
+              <div style={{ display: "flex", justifyContent: "center" }}>
+                  <StyledButton
+                  href={`/truyen-tranh/${storyId}/1`}
+                    label="Đọc tiếp"
+                    backgroundColor="red"
+                    customStyle={{ padding: "8px" }}
+                  />
+              </div>
             </div>
-            <div style={{  display: "flex", justifyContent:"center" }}>
-              <a
-                href={`/truyen-tranh/${storyId}/${
-                  chapters[chapters.length - 1]?.chapterNumber
-                }`}
-                style={{ cursor: "pointer" }}
-              >
-                <StyledButton
-                  label="Đọc mới nhất"
-                  backgroundColor="orange"
-                  customStyle={{ padding: "8px" }}
-                />
-              </a>
-            </div>
-            <div style={{display: "flex", justifyContent:"center" }}>
-              <a
-                href={`/truyen-tranh/${storyId}/1`}
-                style={{ cursor: "pointer" }}
-              >
-                <StyledButton
-                  label="Đọc tiếp"
-                  backgroundColor="red"
-                  customStyle={{ padding: "8px" }}
-                />
-              </a>
-            </div>
-            </div>
-
           </DivButton>
           <div
             style={{
@@ -132,11 +129,17 @@ export const Story = () => {
               color="blue"
             />
             <ListChapters>
-              <div style={{display: 'flex', justifyContent: 'space-between'}}>
-              <StyledLabel title="Số chương" color="black" />
-              <StyledLabel title="Cập nhật" color="black" />
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <StyledLabel title="Số chương" color="black" />
+                <StyledLabel title="Cập nhật" color="black" />
               </div>
-              <div style={{borderStyle: 'solid', borderWidth: '1px', padding: '8px'}}>
+              <div
+                style={{
+                  borderStyle: "solid",
+                  borderWidth: "1px",
+                  padding: "8px",
+                }}
+              >
                 {chapters.map((chapter: ChapterProps) => (
                   <li
                     style={{ display: "flex", justifyContent: "space-between" }}
@@ -145,23 +148,22 @@ export const Story = () => {
                       href={`/truyen-tranh/${storyId}/${chapter.chapterNumber}`}
                       title={`Chương ${chapter.chapterNumber}`}
                       color="black"
-                      fontSize={'1.1em'}
+                      fontSize={"1.1em"}
                     />
                     <StyledLink
                       // title={`${chapter?.lastUpdate}`}
                       title={`Mới cập nhật`}
                       color="gray"
-                      fontSize={'1.1em'}
+                      fontSize={"1.1em"}
                     />
                   </li>
                 ))}
               </div>
-
             </ListChapters>
           </div>
         </div>
         <div style={{ width: "30%" }}>
-          <SubRight/>
+          <SubRight />
         </div>
       </div>
     </Wrapper>

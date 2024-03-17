@@ -6,87 +6,96 @@ import { ListSuggestedStories } from "./ListSuggestedStories";
 import { ListStoriesGrid } from "./ListStoriesHome";
 import React, { useState } from "react";
 import useFilteredListStories from "../../../hooks/useFilteredListStories";
-import { Logger } from "../../../utils/helper";
 import { SubRight } from "./SubRight";
 import ReactPaginate from "react-paginate";
-import { relative } from "path";
-import { useSelector } from "react-redux";
-import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
 
 export const MainHome = () => {
   const [stories, setStories] = useState([]);
   const onConpleteGetFilteredListStories = (data: any) => {
     setStories(data?.content);
     setTotalPages(data?.totalPages);
-  }
+  };
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
   const handlePageChange = async (pageNumber: number) => {
     setCurrentPage(pageNumber);
-};
-  const {getFilteredListStories} = useFilteredListStories({onComplete: onConpleteGetFilteredListStories, categoryId: 1,   page: currentPage,size: +StyleConstants.ITEMS_PER_PAGE,});
-  React.useEffect(()=>{
+  };
+  const { getFilteredListStories } = useFilteredListStories({
+    onComplete: onConpleteGetFilteredListStories,
+    categoryId: 1,
+    page: currentPage,
+    size: +StyleConstants.ITEMS_PER_PAGE,
+  });
+  React.useEffect(() => {
     getFilteredListStories();
-  },[currentPage]);
+  }, [currentPage]);
   return (
     <Wrapper>
       <SubWrapperColumn>
         <FirstRow>
-            <StyledLabel title="Truyện nổi tiếng" color="#D44C4C"/>
-            <ListSuggestedStories/>
-          <StyledLabel title="Truyện mới cập nhật" color="#D44C4C"/>
+          <StyledLabel title="Truyện nổi tiếng" color="#D44C4C" />
+          <ListSuggestedStories />
+          <StyledLabel title="Truyện mới cập nhật" color="#D44C4C" />
         </FirstRow>
         <SecondRow>
           <SubWrapperRow>
             <First>
-              <div style={{display: 'flex', flexDirection: 'column', gap: '12px', justifyContent: 'space-between', height: '100%'}}>
-              <ListStoriesGrid listItems={stories} page={0} size={20} />
-              <div style={{display: 'flex', justifyContent: 'center'}}>
-              <ReactPaginate
-              nextLabel="next >"
-              onPageChange={ (selectedItem) => handlePageChange(selectedItem.selected)}
-              pageRangeDisplayed={3}
-              marginPagesDisplayed={2}
-              pageCount={totalPages}
-              previousLabel="< previous"
-              pageClassName="page-item"
-              pageLinkClassName="page-link"
-              previousClassName="page-item"
-              previousLinkClassName="page-link"
-              nextClassName="page-item"
-              nextLinkClassName="page-link"
-              breakLabel="..."
-              breakClassName="page-item"
-              breakLinkClassName="page-link"
-              containerClassName="pagination"
-              activeClassName="active"
-              renderOnZeroPageCount={null}
-            />
-              </div>
-
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "12px",
+                  justifyContent: "space-between",
+                  height: "100%",
+                }}
+              >
+                <ListStoriesGrid listItems={stories} page={0} size={20} />
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <ReactPaginate
+                    nextLabel="next >"
+                    onPageChange={(selectedItem) =>
+                      handlePageChange(selectedItem.selected)
+                    }
+                    pageRangeDisplayed={3}
+                    marginPagesDisplayed={2}
+                    pageCount={totalPages}
+                    previousLabel="< previous"
+                    pageClassName="page-item"
+                    pageLinkClassName="page-link"
+                    previousClassName="page-item"
+                    previousLinkClassName="page-link"
+                    nextClassName="page-item"
+                    nextLinkClassName="page-link"
+                    breakLabel="..."
+                    breakClassName="page-item"
+                    breakLinkClassName="page-link"
+                    containerClassName="pagination"
+                    activeClassName="active"
+                    renderOnZeroPageCount={null}
+                  />
+                </div>
               </div>
             </First>
             <Second>
-              <SubRight/>
+              <SubRight />
             </Second>
           </SubWrapperRow>
         </SecondRow>
-      
       </SubWrapperColumn>
     </Wrapper>
   );
 };
 const FirstRow = styled.div`
-height: 100%;
-width: 100%;
+  height: 100%;
+  width: 100%;
 `;
 const SecondRow = styled.div`
-height: 100%;
+  height: 100%;
 
   width: 100%;
 `;
 const First = styled.div`
-height: 100%;
+  height: 100%;
 
   width: 70%;
 `;

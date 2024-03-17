@@ -5,41 +5,79 @@ import { CategoryExpand } from "./CategoryExpand";
 import { LeaderboardExpand } from "./LeaderboardExpand";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { NavLink, useLocation } from "react-router-dom";
 
 export const NavBar = () => {
+  const location = useLocation();
+
+  const activeBackgroundTab = (path: string) => {
+    if (path === "/") {
+      if (location.pathname === "/") {
+        return { opacity: "0.8", backgroundColor: "white" };
+      }
+    } else {
+      const regex = new RegExp(path);
+      if (location.pathname.match(regex)) {
+        return { opacity: "0.8", backgroundColor: "white" };
+      }
+    }
+    return {};
+  };
+
+  const activeLinkTab = (path: string) => {
+    if (path === "/") {
+      if (location.pathname === "/") {
+        return { color: "red" };
+      }
+    } else {
+      const regex = new RegExp(path);
+      if (location.pathname.match(regex)) {
+        return { color: "red" };
+      }
+    }
+    return {};
+  };
+
   return (
     <Wrapper>
       <ULWrappper>
-        <div style={{width: '80%'}}>
-        <LI style={{ width: "20%" }}>
-          <A href="/">Home</A>
-        </LI>
-        
-        <LI style={{ width: "10%" }}>
-          <A href="/">Đề cử</A>
-        </LI>
-        <LI style={{ width: "10%" }}>
-          <A href="/">Theo dõi</A>
-        </LI>
-        <LI style={{ width: "10%" }}>
-          <A href="/">Lịch sử</A>
-        </LI>
-        <CategoryExpand/>
-        <LeaderboardExpand/>
-        {/* <CategoryLI style={{ width: "20%" }}>
+        <div style={{ width: "80%" }}>
+          <LI style={{ width: "20%", ...activeBackgroundTab("/") }}>
+            <A style={activeLinkTab("/")} to="/">
+              Home
+            </A>
+          </LI>
+
+          <LI style={{ width: "10%" }}>
+            <A to="/de-cu">Đề cử</A>
+          </LI>
+          <LI style={{ width: "10%" }}>
+            <A to="/theo-doi">Theo dõi</A>
+          </LI>
+          <LI style={{ width: "10%" }}>
+            <A to="/">Lịch sử</A>
+          </LI>
+          <CategoryExpand
+            additionStyle={activeBackgroundTab("^/tim-truyen/(\\d+)$")}
+            addtionStyleLink={activeLinkTab("^/tim-truyen/(\\d+)$")}
+          />
+          <LeaderboardExpand
+            additionStyle={activeBackgroundTab(
+              "^/tim-truyen/leaderboard/(\\d+)$"
+            )}
+            addtionStyleLink={activeLinkTab("^/tim-truyen/leaderboard/(\\d+)$")}
+          />
+          {/* <CategoryLI style={{ width: "20%" }}>
           <A href="/">Xếp hạng</A>
           <CategoryULDropdown></CategoryULDropdown>
         </CategoryLI> */}
-      </div>
-
+        </div>
       </ULWrappper>
-
     </Wrapper>
   );
 };
 
-
- const A = styled.a`
+const A = styled(NavLink)`
   display: block;
   color: #000000;
   font-weight: 450;
@@ -48,7 +86,7 @@ export const NavBar = () => {
   text-decoration: none;
   text-transform: uppercase;
 `;
- const LI = styled.li`
+const LI = styled.li`
   text-align: center;
   float: left;
   border-right: 2px solid #ddd;
@@ -81,5 +119,3 @@ const ULWrappper = styled.ul`
   margin-block-end: 1em;
   margin-inline-start: 40px;
 `;
-
-

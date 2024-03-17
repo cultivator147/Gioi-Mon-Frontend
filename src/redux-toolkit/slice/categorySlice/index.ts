@@ -1,25 +1,28 @@
-import { PayloadAction } from '@reduxjs/toolkit';
-import { createSlice } from '../../../utils/@reduxjs/toolkit';
-import { useInjectReducer } from '../../../utils/redux-injectors';
-import { useEffect } from 'react';
-import { persistor } from '../../..';
+import { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "../../../utils/@reduxjs/toolkit";
+import { useInjectReducer } from "../../../utils/redux-injectors";
+import { useEffect } from "react";
 export interface CategoryState {
-    id: any;
-    title: any;
-    description?: any;
+  id: any;
+  title: any;
+  description?: any;
 }
 export const initialState: CategoryState = {
-    id: 1,
-    title: '',
-    description: ''
+  id: 1,
+  title: "",
+  description: "",
 };
 
 const slice = createSlice({
-  name: 'category',
+  name: "category",
   initialState,
   reducers: {
-    update : (state, action : PayloadAction<CategoryState>) => {state.id = action.payload.id},
-    add : (state) => {state.id += 1},
+    update: (state, action: PayloadAction<CategoryState>) => {
+      state.id = action.payload.id;
+    },
+    add: (state) => {
+      state.id += 1;
+    },
   },
 });
 

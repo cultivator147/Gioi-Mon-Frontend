@@ -1,8 +1,8 @@
-import { configureStore, StoreEnhancer } from '@reduxjs/toolkit';
-import { createInjectorsEnhancer } from 'redux-injectors';
-import createSagaMiddleware from 'redux-saga';
+import { configureStore, StoreEnhancer } from "@reduxjs/toolkit";
+import { createInjectorsEnhancer } from "redux-injectors";
+import createSagaMiddleware from "redux-saga";
 
-import { createReducer } from './reducers';
+import { createReducer } from "./reducers";
 
 import {
   FLUSH,
@@ -12,8 +12,19 @@ import {
   PURGE,
   REGISTER,
   persistStore,
-} from 'redux-persist';
+} from "redux-persist";
 
+let rehydrationComplete: () => void;
+let rehydrationFailed: (error: Error) => void;
+
+const rehydrationPromise = new Promise<void>((resolve, reject) => {
+  rehydrationComplete = () => resolve();
+  rehydrationFailed = (error) => reject(error);
+});
+
+export function rehydration(): Promise<void> {
+  return rehydrationPromise;
+}
 export function configureAppStore() {
   const reduxSagaMonitorOptions = {};
   const sagaMiddleware = createSagaMiddleware(reduxSagaMonitorOptions);
@@ -31,7 +42,7 @@ export function configureAppStore() {
 
   const store = configureStore({
     reducer: createReducer(),
-    middleware: defaultMiddleware => [
+    middleware: (defaultMiddleware) => [
       ...defaultMiddleware({
         serializableCheck: {
           ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
@@ -41,10 +52,15 @@ export function configureAppStore() {
     ],
     devTools:
       /* istanbul ignore next line */
-      process.env.NODE_ENV !== 'production' ||
+      process.env.NODE_ENV !== "production" ||
       process.env.PUBLIC_URL.length > 0,
     enhancers,
   });
-  persistStore(store);
-  return store;
+
+  const persistor = persistStore(store, null, () => {
+    rehydrationComplete();
+  });
+  return { store, persistor };
 }
+
+export const { store, persistor } = configureAppStore();
