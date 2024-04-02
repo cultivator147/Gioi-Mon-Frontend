@@ -42,12 +42,16 @@ export const NavBar = () => {
     <Wrapper>
       <ULWrappper>
         <div style={{ width: "80%" }}>
-          <LI style={{ width: "20%", ...activeBackgroundTab("/") }}>
+          <LI style={{ width: "15%", ...activeBackgroundTab("/") }}>
             <A style={activeLinkTab("/")} to="/">
               Home
             </A>
           </LI>
-
+          <LI style={{ width: "15%"}}>
+            <A style={activeLinkTab("/feed")} to="/feed">
+              FEED
+            </A>
+          </LI>
           <LI style={{ width: "10%" }}>
             <A to="/de-cu">Đề cử</A>
           </LI>

@@ -3,6 +3,6 @@ import { GM_ADM_URL } from '../../constant.url';
 const request = axios.create({
     baseURL: GM_ADM_URL,
     timeout: 8000,
-    headers: {Accept: '*/*', 'Content-Type': 'application/json'},
+    headers: {'Content-Type': 'application/json'},
 });
 export default request;

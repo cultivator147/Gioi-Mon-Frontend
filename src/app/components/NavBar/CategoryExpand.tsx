@@ -33,7 +33,7 @@ export const CategoryExpand = ({
     getAll();
   }, []);
   return (
-    <CategoryLI style={{ width: "20%", ...additionStyle }}>
+    <CategoryLI style={{ width: "15%", ...additionStyle }}>
       <A to="/" style={{ ...addtionStyleLink }}>
         Thể loại
       </A>

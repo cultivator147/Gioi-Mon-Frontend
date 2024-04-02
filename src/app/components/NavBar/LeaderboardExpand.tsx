@@ -28,7 +28,7 @@ export const LeaderboardExpand = ({
 }: LeaderboardExpandProps) => {
   const [listLeaderboard, setlistLeaderboard] = useState(LIST_LEADERBOARD);
   return (
-    <CategoryLI style={{ width: "20%", ...additionStyle }}>
+    <CategoryLI style={{ width: "15%", ...additionStyle }}>
       <A to="/" style={{ ...addtionStyleLink }}>
         XẾP HẠNG
       </A>
