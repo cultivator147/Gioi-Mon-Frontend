@@ -18,38 +18,65 @@ export const Feed = () => {
           width: "60%",
           backgroundColor: StyleConstants.BACKGROUND_MAIN_COLOR,
           gap: "8px",
+          justifyItems: 'center',
+          alignItems: 'center'
         }}
       >
-        <Post
-          owner_id={"1"}
-          owner_avatar={
-            "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg"
-          }
-          owner_name={"M Hieu"}
-          title={"Bộ này quá đỉnh !"}
-          content={"Mời ae đọc bộ này, main rất bá !"}
-          images={["https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg", "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg"]}
-        />
-        <Post
-          owner_id={"1"}
-          owner_avatar={
-            "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg"
-          }
-          owner_name={"M Hieu"}
-          title={"Bộ này quá đỉnh !"}
-          content={"Mời ae đọc bộ này, main rất bá !"}
-          images={["https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg", "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg"]}
-        />
-        <Post
-          owner_id={"1"}
-          owner_avatar={
-            "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg"
-          }
-          owner_name={"M Hieu"}
-          title={"Bộ này quá đỉnh !"}
-          content={"Mời ae đọc bộ này, main rất bá !"}
-          images={["https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg", "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg"]}
-        />
+        <div 
+        style={{display: 'flex', alignContent: 'center', flexDirection: 'column', justifyItems: 'center', width: "75%", gap: '20px'}}>
+          <Post
+            owner_id={"1"}
+            owner_avatar={
+              "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg"
+            }
+            owner_name={"M Hieu"}
+            title={"Bộ này quá đỉnh !"}
+            content={"Mời ae đọc bộ này, main rất bá !"}
+            images={[
+              "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg",
+              "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg",
+            ]}
+          />
+          <Post
+            owner_id={"1"}
+            owner_avatar={
+              "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg"
+            }
+            owner_name={"M Hieu"}
+            title={"Bộ này quá đỉnh !"}
+            content={"Mời ae đọc bộ này, main rất bá !"}
+            images={[
+              "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg",
+              "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg",
+            ]}
+          />
+          <Post
+            owner_id={"1"}
+            owner_avatar={
+              "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg"
+            }
+            owner_name={"M Hieu"}
+            title={"Bộ này quá đỉnh !"}
+            content={"Mời ae đọc bộ này, main rất bá !"}
+            images={[
+              "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg",
+              "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg",
+            ]}
+          />
+           <Post
+            owner_id={"1"}
+            owner_avatar={
+              "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg"
+            }
+            owner_name={"M Hieu"}
+            title={"Bộ này quá đỉnh !"}
+            content={"Mời ae đọc bộ này, main rất bá !"}
+            images={[
+              "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg",
+              "https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg",
+            ]}
+          />
+        </div>
       </div>
     </Wrapper>
   );
