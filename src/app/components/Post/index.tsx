@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { StyledImage } from "../Common/Image";
 import { StyledLabel } from "../Common/StyledLabel";
 export interface PostProps{
-    owner_id: string,
+    owner_id: any,
     owner_avatar: string,
     owner_name: string,
-    title: string,
-    content: string,
+    title?: string,
+    content?: string,
     images: string[],
 }
 export const Post = (props: PostProps) => {
@@ -37,7 +37,7 @@ export const Post = (props: PostProps) => {
                     {props.content}
                 </div>
                 <div>
-                    {props.images.map((img) => (
+                    {props?.images?.map((img) => (
                         <StyledImage src={img} width={200} height={200} />
                     ))}
                 </div>

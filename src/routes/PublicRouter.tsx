@@ -9,7 +9,7 @@ import Footer from "../app/components/Footer/Footer";
 import { Header } from "../app/components/Header";
 import { NavBarWrapper } from "../app/components/NavBar";
 import { useEffect, useState } from "react";
-import { Feed } from "../app/components/Feed";
+import { FeedPage } from "../app/pages/FeedPage";
 const PublicRouter = () => {
   const location = useLocation();
   const [showHeader, setShowHeader] = useState(true);
@@ -41,7 +41,7 @@ const PublicRouter = () => {
           <Route path="/tim-truyen/:categoryid/:writing_state" element={<SearchPage />} />
           <Route path="/tim-truyen/:categoryid/:writing_state/sort_by=:sort_by" element={<SearchPage />} />
           <Route path="/truyen-tranh/:storyid" element={<StoryPage />} />
-          <Route path="/feed" element={<Feed />} />
+          <Route path="/feed" element={<FeedPage />} />
 
           <Route
             path="/truyen-tranh/:storyid/:chapternumber"
