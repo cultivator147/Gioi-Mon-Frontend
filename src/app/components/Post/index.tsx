@@ -12,7 +12,7 @@ export interface PostProps{
 export const Post = (props: PostProps) => {
     return(
         <PostWrapper>
-            <PostHeader>
+            <div style={{display: 'flex'}}>
                 <div 
                 style={{padding: '8px'}}>
                     <StyledImage
@@ -24,11 +24,12 @@ export const Post = (props: PostProps) => {
                     />
                 </div>
                 <div 
-                style={{display: 'flex', flexDirection: 'column', padding: '8px'}}>
-                    <StyledLabel title={props.owner_name}  color="#0"/>
-                    <StyledLabel title="4h" color="#0"/>
+                style={{display: 'flex', flexDirection: 'column', padding: '4px'}}>
+                    <StyledLabel title={props.owner_name} fontSize={'1.2rem'}  color="#0"/>
+                    <StyledLabel title="4h" fontSize={'1.1rem'} color="#0"/>
                 </div>
-            </PostHeader>
+            </div>
+            
             <PostBody>
                 <div>
                     {props.title}
@@ -50,11 +51,12 @@ export const Post = (props: PostProps) => {
 const PostWrapper = styled.div`
     background-color: white;
     box-sizing: border-box;
-        border-width: 0;
+    border-width: 0;
     border-style: solid;
     border-radius: 10px;
 `;
 const PostHeader = styled.div`
+    padding: 12px;
     align-items: center;
     box-sizing: border-box;
     display: flex;
@@ -65,6 +67,10 @@ const PostBody = styled.div`
     display: flex;
     flex-direction: column;
     height: 60%;
+    padding-left: 4px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    padding-right: 4px;
 `;
 const PostFooter = styled.div`
 `;
