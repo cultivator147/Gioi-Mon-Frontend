@@ -39,7 +39,6 @@ export const Feed = () => {
           flexDirection: "column",
           width: "60%",
           backgroundColor: StyleConstants.BACKGROUND_MAIN_COLOR,
-          gap: "8px",
           justifyItems: 'center',
           alignItems: 'center'
         }}
@@ -73,6 +72,7 @@ const Second = styled.div`
   width: 30%;
 `;
 const Wrapper = styled(PageWrapper)`
+  padding: 12px;
   justify-content: center;
   flex: 1;
   background-color: ${StyleConstants.BACKGROUND_MAIN_COLOR};

@@ -50,15 +50,12 @@ export const Post = (props: PostProps) => {
 const PostWrapper = styled.div`
     background-color: white;
     box-sizing: border-box;
-    flex: 1;
-    min-height: 250px;
-    min-width: 250px;
-    border-width: 0;
+        border-width: 0;
     border-style: solid;
     border-radius: 10px;
 `;
 const PostHeader = styled.div`
-align-items: center;
+    align-items: center;
     box-sizing: border-box;
     display: flex;
     height: 20%;

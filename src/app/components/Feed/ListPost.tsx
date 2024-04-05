@@ -16,13 +16,13 @@ export const ListPost = (props: ListPostProps) => {
   return (
     <Wrapper>
       {items.map((item: PostDetail) => (
-         <Post 
-         owner_id={item.ownerId} 
-         owner_avatar={"https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg"}
-          owner_name={"Trinh M Hieu"} title={item?.title} 
+        <Post
+          owner_id={item.ownerId}
+          owner_avatar={"https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg"}
+          owner_name={"Trinh M Hieu"} title={item?.title}
           content={item?.content}
-           images={item?.images}        
-               />
+          images={item?.images}
+        />
       ))}
     </Wrapper>
   );
@@ -30,11 +30,11 @@ export const ListPost = (props: ListPostProps) => {
 
 const Wrapper = styled.div`
 display: flex;
-alignContent: center;
-flexDirection: column;
-justifyItems: center;
- width: 75%;
-  gap: 20px;
+align-content: center;
+flex-direction: column;
+justify-items: center;
+width: 75%;
+gap: 20px;
 `;
- 
+
 
