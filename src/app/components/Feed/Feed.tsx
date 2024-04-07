@@ -18,7 +18,7 @@ export const Feed = () => {
   React.useEffect(() => {
     const getPost = async () => {
       try{
-        const params : TypeListPost = {page: 0, size: 5};
+        const params : TypeListPost = {page: 0, size: 3};
         const response = await getListPost(params);
         const data = response?.data?.data;
         setPosts(data);
