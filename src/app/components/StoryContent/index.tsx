@@ -9,7 +9,7 @@ import { StyleConstants } from "../../../styles/StyleConstants";
 import { StyledLabel } from "../Common/StyledLabel";
 import { StyledLink } from "../Common/StyledLink";
 import { Brand } from "../Header/Brand";
-import { StyledButton } from "../Common/StyledButton";
+import { StyledNavButton } from "../Common/StyledNavButton";
 import { postRequestStory } from "../../../api/modules/stories/request copy";
 import { useSelector } from "react-redux";
 import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
@@ -62,7 +62,6 @@ export const StoryContent = () => {
       <HeaderContent>
         <First>
           <Brand />
-          <span style={{ color: "white" }}> user Id :{userId}</span>
         </First>
         <Second>
           <div style={{ display: "flex" }}>
@@ -81,7 +80,7 @@ export const StoryContent = () => {
         </Second>
         <Third>
           <div style={{ display: "flex" }}>
-            <StyledButton
+            <StyledNavButton
               backgroundColor="#ffffff"
               label={"Chương trước"}
               customStyle={{ fontColor: "#ffffff" }}
@@ -96,7 +95,7 @@ export const StoryContent = () => {
                 fontSize={"1em"}
               />
             </button>
-            <StyledButton
+            <StyledNavButton
               backgroundColor="#ffffff"
               label={"Chương sau"}
               customStyle={{ fontColor: "#ffffff" }}

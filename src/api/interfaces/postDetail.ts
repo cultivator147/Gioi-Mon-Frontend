@@ -1,6 +1,7 @@
 export interface PostDetail{
     id: any;
     ownerId: any;
+    ownerAvatar: any;
     storyId: any;
     title?: any;
     content?: any;
@@ -8,4 +9,7 @@ export interface PostDetail{
     createTime?: any;
     lastEditTime?: any;
     videos?: any;
+    favouriteCount?: any;
+    averageFavouritePoint?: any;
+    commentCount?: any;
 };

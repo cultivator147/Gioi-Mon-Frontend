@@ -3,7 +3,7 @@ import { StyleConstants } from "../../../styles/StyleConstants";
 import { Button } from "../../../stories/Button";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-interface StyledButtonProps {
+interface StyledNavButtonProps {
   label: string;
   backgroundColor?: string;
   onClick?: () => void;
@@ -12,7 +12,7 @@ interface StyledButtonProps {
   disable?: boolean;
   navigate?: boolean
 }
-export const StyledButton = ({
+export const StyledNavButton = ({
   onClick,
   disable,
   href,
@@ -20,9 +20,10 @@ export const StyledButton = ({
   backgroundColor = "#000000",
   customStyle,
   ...props
-}: StyledButtonProps) => {
+}: StyledNavButtonProps) => {
   const [background, setBackground] = useState(backgroundColor);
   return (
+    <NavLink to={href ? href : "/"}>
       <button
         // setBackground("#d6935b")
         disabled={disable}
@@ -41,6 +42,7 @@ export const StyledButton = ({
       >
         {label}
       </button>
+    </NavLink>
   );
 };
 const Label = styled.label<{ fontSize: number }>`

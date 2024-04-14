@@ -29,6 +29,7 @@ export interface UserState {
   };
   profile?: {
     nickname?: string;
+    avatar?: string;
     picture?: string[];
     date_of_birth?: string;
     zodiac?: string;

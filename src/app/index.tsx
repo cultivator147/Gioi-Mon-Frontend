@@ -8,7 +8,6 @@ export const GioiMonApp = () => {
   document.body.style.margin = "0";
   document.body.style.padding = "0";
   UserSlice();
-
   return (
     <BrowserRouter>
       <Routes>

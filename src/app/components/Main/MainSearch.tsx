@@ -12,7 +12,7 @@ import { Category } from "../../../api/interfaces/category";
 import { getAllCategories } from "../../../api/modules/stories/category";
 import { Logger } from "../../../utils/helper";
 import { CategoryWrapper } from "../NavBar/CategoryExpand";
-import { StyledButton } from "../Common/StyledButton";
+import { StyledNavButton } from "../Common/StyledNavButton";
 import ReactPaginate from "react-paginate";
 import "./pagination.css";
 export const MainSearch = () => {
@@ -114,18 +114,18 @@ export const MainSearch = () => {
                   gap: "10px",
                 }}
               >
-                <StyledButton
+                <StyledNavButton
                   label={"Tất cả"}
                   backgroundColor="#ffffff"
                   customStyle={{}}
                   href={`/tim-truyen/${categoryId}/0`}
                 />
-                <StyledButton
+                <StyledNavButton
                   label={"Hoàn thành"}
                   backgroundColor="#ffffff"
                   href={`/tim-truyen/${categoryId}/2`}
                 />
-                <StyledButton
+                <StyledNavButton
                   label={"Đang tiến hành"}
                   backgroundColor="#ffffff"
                   href={`/tim-truyen/${categoryId}/1`}
@@ -143,55 +143,55 @@ export const MainSearch = () => {
                   />
                 </div>
                 <div style={{ width: "100%", display: "block", gap: "10px" }}>
-                  <StyledButton
+                  <StyledNavButton
                     label={"Ngày cập nhật"}
                     backgroundColor="#ffffff"
                     customStyle={{}}
                     href={`/tim-truyen/${categoryId}/${writingState}/sort_by=LAST_UPDATE_DATE`}
                   />
-                  <StyledButton
+                  <StyledNavButton
                     label={"Truyện mới"}
                     backgroundColor="#ffffff"
                     customStyle={{}}
                     href={`/tim-truyen/${categoryId}/${writingState}/sort_by=NEW`}
                   />
-                  <StyledButton
+                  <StyledNavButton
                     label={"Top all"}
                     backgroundColor="#ffffff"
                     customStyle={{}}
                     href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_ALL`}
                   />
-                  <StyledButton
+                  <StyledNavButton
                     label={"Top tháng"}
                     backgroundColor="#ffffff"
                     customStyle={{}}
                     href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_MONTHLY`}
                   />
-                  <StyledButton
+                  <StyledNavButton
                     label={"Top tuần"}
                     backgroundColor="#ffffff"
                     customStyle={{}}
                     href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_WEEKLY`}
                   />
-                  <StyledButton
+                  <StyledNavButton
                     label={"Top ngày"}
                     backgroundColor="#ffffff"
                     customStyle={{}}
                     href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_DAILY`}
                   />
-                  <StyledButton
+                  <StyledNavButton
                     label={"Lượt theo dõi"}
                     backgroundColor="#ffffff"
                     customStyle={{}}
                     href={`/tim-truyen/${categoryId}/${writingState}/sort_by=FOLLOWER`}
                   />
-                  <StyledButton
+                  <StyledNavButton
                     label={"Bình luận"}
                     backgroundColor="#ffffff"
                     customStyle={{}}
                     href={`/tim-truyen/${categoryId}/${writingState}/sort_by=COMMENT`}
                   />
-                  <StyledButton
+                  <StyledNavButton
                     label={"Số chapter"}
                     backgroundColor="#ffffff"
                     customStyle={{}}

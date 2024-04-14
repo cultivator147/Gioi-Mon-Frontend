@@ -2,8 +2,14 @@ import styled from "styled-components";
 import { StyledImage } from "../Common/Image";
 import { StyledLabel } from "../Common/StyledLabel";
 import { Link } from "react-router-dom";
+import { StyledNavButton } from "../Common/StyledNavButton";
+import { favPost } from "../../../api/modules/post/post";
+import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
+import { useSelector } from "react-redux";
+import { Button } from "@mantine/core";
 import { StyledButton } from "../Common/StyledButton";
 export interface PostProps{
+    id: any,
     owner_id: any,
     story_id: any,
     owner_avatar: string,
@@ -11,10 +17,15 @@ export interface PostProps{
     title?: string,
     content?: string,
     images: string[],
+    favourite_count: any,
+    avarageFavouritePoint: any,
+    comment_conut: any
 }
 export const Post = (props: PostProps) => {
-    const onClickInterest = () => {
-        
+    const user = useSelector(getUserSelector);
+    const onClickInterest = async () => {
+        console.log('usr: ', user.token);
+        await favPost(user?.token,{postId: props.id, favourite: 1, favouritePoint: 7});
     }
     return(
         <PostWrapper>
@@ -67,9 +78,32 @@ export const Post = (props: PostProps) => {
             </PostBody>
 
             <PostFooter >
-                <StyledButton backgroundColor="#ffffff" label={"Quan tâm"} onClick={onClickInterest}/>
-                <StyledButton backgroundColor="#ffffff" label={"Bình luận"} />
-                <StyledButton backgroundColor="#ffffff" label={"Chia sẻ"} />
+                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                    <div style={{display: 'flex', gap: '8px'}}>
+                        <StyledLabel title={props.favourite_count} color="#000000" />
+                        <StyledLabel title={props.avarageFavouritePoint} color="#000000" />
+                    </div>
+                    <div>
+                        <StyledLabel title={props.comment_conut} color="#000000" />
+                    </div>
+                    <div>
+                        <StyledLabel title={props.comment_conut} color="#000000" />
+                    </div>
+                </div>
+                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                    <div style={{display: 'flex', gap: '8px'}}>
+                        <StyledButton backgroundColor="#ffffff" label={"Quan tâm"} onClick={onClickInterest}/>
+
+                    </div>
+                    <div>
+                        <StyledButton backgroundColor="#ffffff" label={"Bình luận"} />
+
+                    </div>
+                    <div>
+                        <StyledButton backgroundColor="#ffffff" label={"Chia sẻ"} />
+                    </div>
+                </div>
+               
             </PostFooter>
         </PostWrapper>
     );
@@ -101,4 +135,5 @@ const PostBody = styled.div`
 `;
 const PostFooter = styled.div`
     display: flex;
+    flex-direction: column;
 `;

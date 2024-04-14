@@ -6,6 +6,7 @@ import { LoginPage } from "../app/pages/LoginPage";
 import { RegisterPage } from "../app/pages/RegisterPage";
 const AuthRouter = () => {
   const auth = useSelector(getUserSelector);
+  console.log('authrouter: ', auth);
   const navigate = useNavigate();
   useEffect(() => {
     if (!!auth.token && auth.token !== "") {

@@ -4,7 +4,7 @@ import { MainStory } from "./MainStory";
 import React, { useState } from "react";
 import { StyleConstants } from "../../../styles/StyleConstants";
 import { PageWrapper } from "../PageWrapper";
-import { StyledButton } from "../Common/StyledButton";
+import { StyledNavButton } from "../Common/StyledNavButton";
 import { ChapterProps } from "../ListChapter";
 import { StyledLink } from "../Common/StyledLink";
 import { StyledLabel } from "../Common/StyledLabel";
@@ -87,7 +87,7 @@ export const Story = () => {
               }}
             >
               <div style={{ display: "flex", justifyContent: "center" }}>
-                  <StyledButton
+                  <StyledNavButton
                     href={`/truyen-tranh/${storyId}/${chapters[0]?.chapterNumber}`}
                     label="Đọc từ đầu"
                     backgroundColor="orange"
@@ -95,7 +95,7 @@ export const Story = () => {
                   />
               </div>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                  <StyledButton
+                  <StyledNavButton
                   href={`/truyen-tranh/${storyId}/${
                     chapters[chapters.length - 1]?.chapterNumber
                   }`}
@@ -105,7 +105,7 @@ export const Story = () => {
                   />
               </div>
               <div style={{ display: "flex", justifyContent: "center" }}>
-                  <StyledButton
+                  <StyledNavButton
                   href={`/truyen-tranh/${storyId}/1`}
                     label="Đọc tiếp"
                     backgroundColor="red"

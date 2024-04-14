@@ -59,7 +59,7 @@ export function* Register(action: any) {
     yield put(
       usersActions.registerSuccess({
         id: res.data.id,
-        token: res.data.token,
+        token: res.data.accessToken,
         username: res.data.username,
         password: res.data.password,
         register: {

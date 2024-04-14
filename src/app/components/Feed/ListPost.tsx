@@ -17,12 +17,16 @@ export const ListPost = (props: ListPostProps) => {
     <Wrapper>
       {items.map((item: PostDetail) => (
         <Post
+          id={item.id}
           owner_id={item.ownerId}
           story_id={item.storyId}
-          owner_avatar={"https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg"}
+          owner_avatar={item.ownerAvatar}
           owner_name={"Trinh M Hieu"} title={item?.title}
           content={item?.content}
-          images={item?.images}
+          images={item?.images} 
+          favourite_count={item?.favouriteCount} 
+          avarageFavouritePoint={item?.averageFavouritePoint} 
+          comment_conut={item.commentCount}          
         />
       ))}
     </Wrapper>
@@ -34,7 +38,6 @@ display: flex;
 align-content: center;
 flex-direction: column;
 justify-items: center;
-width: 75%;
 gap: 20px;
 `;
 
