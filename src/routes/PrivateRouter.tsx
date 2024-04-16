@@ -14,21 +14,25 @@ const PrivateRouter = () => {
     if (!auth.isLogin) {
       const item = localStorage.getItem("persist:state");
       const itemUser = JSON.parse(JSON.parse(item || "{}")?.user);
+      console.log('item: ', itemUser);
       if (itemUser.isLogin) {
         return;
+      }else{
+        navigate("/auth");
       }
+    }else{
+      return;
     }
-    navigate("/auth");
   }, []);
   UserSlice();
 
   return (
     <Routes>
       <Route path="/profile" element={<SearchPage />} />
-      <Route path="/register/nickname" element={<NickName />} />
-      <Route path="/register/picture" element={<NickName />} />
-      <Route path="/register/birthday" element={<Birth />} />
-      <Route path="/register/gender" element={<Gender />} />
+      <Route path="/profile/nickname" element={<NickName />} />
+      <Route path="/profile/picture" element={<NickName />} />
+      <Route path="/profile/birthday" element={<Birth />} />
+      <Route path="/profile/gender" element={<Gender />} />
     </Routes>
   );
 };

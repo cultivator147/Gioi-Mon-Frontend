@@ -45,11 +45,10 @@ export default function NickName() {
       dispatch(
         actions.requestProfile({
           id: user.id,
-          isLogin: false,
           token: user.token,
           profile: {
             nickname: form.values.nickname,
-            picture: profile.picture,
+            avatar: profile.avatar,
             date_of_birth: profile.date_of_birth,
             zodiac: profile.zodiac,
             gender: profile.gender,
@@ -59,7 +58,7 @@ export default function NickName() {
         })
       );
       dispatch(counterActions.increase());
-      // navigate('/register/picture');
+      navigate('/register/picture');
     }
   };
   useEffect(() => {

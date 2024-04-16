@@ -1,12 +1,12 @@
 import {
   loginRequest,
-  registerRequest,
 } from "../../../api/modules/authentication/authenticate";
 import { BaseResponse } from "../../../utils/http/response";
 import { put, takeLatest } from "redux-saga/effects";
 import { usersActions } from ".";
-import { apiGet } from "../../../api/modules/user/request";
 import { postRequest } from "../../../api/modules/authentication/request2";
+import { getProfile } from "../../../api/modules/user/profile";
+import History from "../../../app/History/History";
 
 export function* Login(action: any) {
   const data = {
@@ -16,21 +16,23 @@ export function* Login(action: any) {
 
   const res: BaseResponse = yield loginRequest(data);
   if (res.code === 0) {
-    // yield CheckProfile(res.data);
-    console.log("putting...");
-
     yield put(
       usersActions.loginSuccess({
         id: res.data.id,
         token: res.data.accessToken,
         username: res.data.username,
-        isLogin: false,
+        isLogin: true,
         login: {
           error: res.code,
           message: res.message,
           savePassword: action.payload.savePassword,
         },
       })
+    );
+    yield put(
+      usersActions.requestProfile(
+        res.data
+      )
     );
   } else {
     yield put(
@@ -55,7 +57,6 @@ export function* Register(action: any) {
   });
 
   if (res.code === 0) {
-    // yield CheckProfile(res.data);
     yield put(
       usersActions.registerSuccess({
         id: res.data.id,
@@ -68,6 +69,11 @@ export function* Register(action: any) {
         },
       })
     );
+    yield put(
+      usersActions.requestProfile(
+        res.data
+      )
+    );
   } else {
     yield put(
       usersActions.loginFail({
@@ -79,43 +85,95 @@ export function* Register(action: any) {
     );
   }
 }
-
-export function* CheckProfile(data: any) {
-  const res: BaseResponse = yield apiGet("/profile", {
-    user_id: data.id,
-    token: data.accessToken,
-  });
-  if (res.data !== null) {
+function* handleGetProfile(action: any) {
+  console.log('action' , action);
+  try{
+  const res: BaseResponse = yield getProfile({
+    userId: action.payload.id,
+  }, null);
+  console.log('data  profile: ', res.data);
+    if (res.code === 0) {
+      const data = res.data;
     yield put(
-      usersActions.createProfile({
+      usersActions.setProfile({
         profile: {
-          nickname: res.data.nickname,
-          picture: res.data.picture,
-          date_of_birth: res.data.date_of_birth,
-          zodiac: res.data.zodiac,
-          gender: res.data.gender,
-          introduction: res.data.introduction,
-          relationship: res.data.relationship,
+          nickname: data.nickname,
+          avatar: data.avatar,
+          date_of_birth: data.dateOfBirth,
+          zodiac: data.zodiac,
+          gender: data.gender,
+          introduction: data.introduction,
+          relationship: data.relationship,
         },
       })
     );
-  } else {
-    yield put(
-      usersActions.createProfile({
-        profile: {
-          nickname: "",
-          picture: [],
-          date_of_birth: "",
-          zodiac: "",
-          gender: [],
-          introduction: "",
-          relationship: -1,
-        },
-      })
-    );
+    if(data.nickname === '' || data.nickname === null){
+      console.log('navigating to username page...');
+      History.push('/user/profile/nickname');
+    }else if(data.avatar === '' || data.avatar === null){
+      console.log('navigating to picture page...');
+      History.push('/user/profile/picture');
+    }else if(data.dateOfBirth === '' || data.dateOfBirth === null){
+      console.log('navigating to birthday page...');
+      History.push('/user/profile/birthday');
+    }else if(data.gender === '' || data.gender === null){
+      console.log('navigating to gender page...');
+      History.push('/user/profile/gender');
+    }
+      else {
+        History.push('/');
+        yield put(
+          usersActions.setIsLogin({
+            isLogin: true,
+          }),
+        );
+      }
+    } else {
+      throw new Error('System Error');
+    }
+  }
+ catch {
+    console.log('get profile error!');
   }
 }
+// export function* CheckProfile(data: any) {
+//   const res: BaseResponse = yield getProfile({
+//     userId: data.id,
+//   }, null);
+//   console.log('data  profile: ', res.data);
+//   if(res.code === 0) {
+//     const data = res.data;
+//     yield put(
+//       usersActions.createProfile({
+//         profile: {
+//           nickname: data.nickname,
+//           avatar: data.avatar,
+//           date_of_birth: data.dateOfBirth,
+//           zodiac: data.zodiac,
+//           gender: data.gender,
+//           introduction: data.introduction,
+//           relationship: data.relationship,
+//         },
+//       })
+//     );
+//     if(data.nickname === '' || data.nickname === null){
+//       console.log('navigating to username page...');
+//       History.push('/user/profile/nickname');
+//     }else if(data.avatar === '' || data.avatar === null){
+//       console.log('navigating to picture page...');
+//       History.push('/user/profile/picture');
+//     }else if(data.dateOfBirth === '' || data.dateOfBirth === null){
+//       console.log('navigating to birthday page...');
+//       History.push('/user/profile/birthday');
+//     }else if(data.gender === '' || data.gender === null){
+//       console.log('navigating to gender page...');
+//       History.push('/user/profile/gender');
+//     }
+// }
+// }
 export function* userSaga() {
   yield takeLatest(usersActions.requestLogin.type, Login);
   yield takeLatest(usersActions.requestRegister.type, Register);
+  yield takeLatest(usersActions.requestProfile.type, handleGetProfile);
+
 }

@@ -35,16 +35,12 @@ export default function Birth() {
   const [error, setError] = useState(false);
   const [disableBtn, setDisableBtn] = useState(true);
   const phone = useMediaQuery('(max-width:575px)');
-
-  console.log(
-    profile.date_of_birth.slice(0, 2),
-    profile.date_of_birth.slice(3, 5),
-    profile.date_of_birth.slice(6),
-  );
+  
+  console.log(profile.date_of_birth);
   const form = useForm({
     initialValues: {
       date:
-        profile.date_of_birth === ''
+        profile.date_of_birth === '' || profile.date_of_birth === null
           ? new Date()
           : new Date(
               profile.date_of_birth.slice(6),
@@ -74,11 +70,10 @@ export default function Birth() {
       dispatch(
         actions.requestProfile({
           id: user.id,
-          isLogin: false,
           token: user.token,
           profile: {
             nickname: profile.nickname,
-            picture: profile.picture,
+            avatar: profile.avatar,
             date_of_birth: `${day}/${month}/${year}`,
             gender: profile.gender,
             zodiac: Zodiac(form.values.date)?.name,
@@ -87,8 +82,8 @@ export default function Birth() {
           },
         }),
       );
-      dispatch(counterActions.increase());
-      // navigate('/register/gender');
+      // dispatch(counterActions.increase());
+      // navigate('/user/profile/gender');
     }
   };
   useEffect(() => {
