@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { HelmetProvider } from "react-helmet-async";
 import { PersistGate } from "redux-persist/integration/react";
 import { rehydration, store } from "./redux-toolkit/configureStore";
+import Directional from "./app/components/Directional/Directional";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

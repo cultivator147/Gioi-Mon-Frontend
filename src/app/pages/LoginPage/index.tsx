@@ -68,32 +68,6 @@ export function LoginPage() {
           : handleClearSpecialCharacter(e.target.value),
     });
   };
-  useEffect(() => {
-    if (user.token !== "") {
-      dispatch(
-        actions.loginSuccess({
-          id: user.id,
-          token: user.token,
-          isLogin: true,
-          loading: false,
-          username: user.username,
-          login: { savePassword: form.values.termsOfService },
-        })
-      );
-    } else {
-      navigate("/auth");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user.token]);
-  useEffect(() => {
-    if (!user.isLogin) {
-      return;
-    } else {
-      navigate("/");
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user.isLogin]);
-
   return (
     <Background>
       <LoginLayout islogin={true}>

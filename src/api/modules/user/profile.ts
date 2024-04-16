@@ -1,5 +1,5 @@
-import {apiGet} from "./request";
+import {apiGet, postRequestUser} from "./request";
 
-export const getProfile = (headers: any) => {
-    return apiGet('/profile', headers);   
+export const getProfile = (payload: Object, headers: any) => {
+    return postRequestUser('/user/profile',payload, headers);   
 }

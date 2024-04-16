@@ -32,28 +32,6 @@ export function ProfileLayout({ children }: any) {
   const handleComeBack = () => {
     dispatch(counterActions.decrease());
   };
-  useEffect(() => {
-    console.log(counter);
-    if (user.token !== '') {
-      if (counter === 0) {
-        navigate('/register/nickname');
-      } else if (counter === 1) {
-        navigate('/register/picture');
-      } else if (counter === 2) {
-        navigate('/register/birthday');
-      } else if (counter === 3) {
-        navigate('/register/gender');
-      } else if (counter === 4) {
-        navigate('/register/description');
-      } else if (counter === 5) {
-        navigate('/register/mode');
-      }
-    } else {
-      return;
-    }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [counter]);
   return (
     <>
       <Helmet>

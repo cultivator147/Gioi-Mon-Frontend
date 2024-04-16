@@ -29,7 +29,7 @@ export interface UserState {
   };
   profile?: {
     nickname?: string;
-    picture?: string[];
+    avatar?: string;
     date_of_birth?: string;
     zodiac?: string;
     gender?: string[];
@@ -58,8 +58,8 @@ export const initialState: UserState = {
     savePassword: false,
   },
   profile: {
-    nickname: "",
-    picture: [],
+    nickname: "Gioimon Reader",
+    avatar: "https://bizweb.dktcdn.net/100/438/408/files/avatar-dep-cho-nam-yody-vn.jpg?v=1683516280828",
     date_of_birth: "",
     zodiac: "",
     gender: [],
@@ -72,6 +72,9 @@ const slice = createSlice({
   name: "user",
   initialState,
   reducers: {
+    setIsLogin(state, action: PayloadAction<UserState>) {
+      state.isLogin = action.payload.isLogin;
+    },
     requestLogin(state: UserState, action: PayloadAction<UserState>) {
       state.loading = true;
       state.isLogin = false;
@@ -122,7 +125,7 @@ const slice = createSlice({
       };
       state.profile = {
         nickname: "",
-        picture: [],
+        avatar: "",
         date_of_birth: "",
         zodiac: "",
         gender: [],
@@ -133,13 +136,16 @@ const slice = createSlice({
 
     requestProfile(state: UserState, action: PayloadAction<UserState>) {
       state.loading = true;
-      state.isLogin = action.payload.isLogin;
+    },
+    setProfile(state: UserState, action: PayloadAction<UserState>) {
+      state.loading = true;
+      state.profile = action.payload.profile;
     },
     // Create Information Profile User
-    createProfile(state: UserState, action: PayloadAction<UserState>) {
-      state.profile = action.payload.profile;
-      state.loading = false;
-    },
+    // createProfile(state: UserState, action: PayloadAction<UserState>) {
+    //   state.profile = action.payload.profile;
+    //   state.loading = false;
+    // },
     // Set device
     setDevice(state: UserState, action: PayloadAction<UserState>) {
       state.device = action.payload.device;

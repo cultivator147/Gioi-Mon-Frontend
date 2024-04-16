@@ -5,13 +5,14 @@ import { Search } from "./Search";
 import { StyledLink } from "../Common/StyledLink";
 import { PageWrapper, SubWrapperRow } from "../PageWrapper";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
+import { getProfileSelector, getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
 import { StyledLabel } from "../Common/StyledLabel";
 import { StyledImage } from "../Common/Image";
 import { UserSlice } from "../../../redux-toolkit/slice/userSlice";
 import React from "react";
 export const Header = () => {
   const auth = useSelector(getUserSelector);
+  const profile = useSelector(getProfileSelector);
   const { actions } = UserSlice();
 
   const dispatch = useDispatch();
@@ -37,9 +38,7 @@ export const Header = () => {
                 title={`Xin chào, ${auth?.username}`}
               />
               <StyledImage
-                src={
-                  "https://th.bing.com/th/id/R.22a58b4e1063265995b8a8c51a09fe23?rik=gWBSa8fDnKsP0w&pid=ImgRaw&r=0"
-                }
+                src={profile?.avatar}
                 width={50}
                 height={50}
               />

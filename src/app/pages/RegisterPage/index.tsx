@@ -80,7 +80,6 @@ export const RegisterPage = () => {
       setErrName(false);
     } else if (user.register.error === 0) {
       setErrName(false);
-      navigate('/');
     } else {
       setErrName(true);
       return;
