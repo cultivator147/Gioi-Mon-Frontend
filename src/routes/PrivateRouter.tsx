@@ -7,6 +7,7 @@ import NickName from "../app/pages/RegisterPage/RegisterProfile/NickName";
 import Birth from "../app/pages/RegisterPage/RegisterProfile/Birthday";
 import Gender from "../app/pages/RegisterPage/RegisterProfile/Gender";
 import { UserSlice } from "../redux-toolkit/slice/userSlice";
+import Avatar from "../app/pages/RegisterPage/RegisterProfile/Avatar";
 const PrivateRouter = () => {
   const auth = useSelector(getUserSelector);
   const navigate = useNavigate();
@@ -14,7 +15,6 @@ const PrivateRouter = () => {
     if (!auth.isLogin) {
       const item = localStorage.getItem("persist:state");
       const itemUser = JSON.parse(JSON.parse(item || "{}")?.user);
-      console.log('item: ', itemUser);
       if (itemUser.isLogin) {
         return;
       }else{
@@ -30,7 +30,7 @@ const PrivateRouter = () => {
     <Routes>
       <Route path="/profile" element={<SearchPage />} />
       <Route path="/profile/nickname" element={<NickName />} />
-      <Route path="/profile/picture" element={<NickName />} />
+      <Route path="/profile/avatar" element={<Avatar />} />
       <Route path="/profile/birthday" element={<Birth />} />
       <Route path="/profile/gender" element={<Gender />} />
     </Routes>

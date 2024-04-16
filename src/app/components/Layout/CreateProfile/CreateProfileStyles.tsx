@@ -67,7 +67,7 @@ export const CreateProfileStyles = createStyles(() => ({
     height: 9,
     maxWidth: 106,
     borderRadius: 41,
-    backgroundColor: 'var(--white-light)',
+    backgroundColor: 'F3F3F3',
     [`@media (max-width:575px)`]: {
       height: 6,
     },
@@ -83,7 +83,7 @@ export const CreateProfileStyles = createStyles(() => ({
     boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
     '&:disabled': {
       boxShadow: 'none',
-      color: 'var(--white)',
+      color: '#ffffff',
       border: '1px solid #FFFFFF',
       background:
         'linear-gradient(90deg, rgba(228, 97, 37, 0.6) -0.01%, rgba(161, 47, 163, 0.6) 100%)',
@@ -123,14 +123,18 @@ export const CreateProfileStyles = createStyles(() => ({
       transform: 'translateX(-50%)',
     },
   },
-
+//var5: #FFE0D2
+//var1: #E46125
+//var2: #D65473
+//var3: 'linear-gradient(90deg, #E46125 -0.01%, #C91A44 50%, #A12FA3 100%)'
+//var6: #FFDBEF
   box: {
     height: '60%',
     bottom: 0,
     width: '100%',
     padding: '0 6.5%',
     borderRadius: 30,
-    backgroundColor: 'var(--primary-5)',
+    backgroundColor: '#FFE0D2',
     position: 'absolute',
     zIndex: 3,
     [`@media (max-width:575px)`]: {
@@ -145,7 +149,7 @@ export const CreateProfileStyles = createStyles(() => ({
     lineHeight: '60px',
     textAlign: 'center',
     marginTop: 10,
-    color: 'var(--primary-1)',
+    color: 'E46125',
     [`@media (max-width:575px)`]: {
       fontSize: 32,
       lineHeight: '40px',
@@ -164,7 +168,7 @@ export const CreateProfileStyles = createStyles(() => ({
   },
   back: {
     textAlign: 'left',
-    color: 'var(--primary-3)',
+    color: '#D65473',
     position: 'absolute',
     left: 10,
     top: 10,
@@ -206,7 +210,7 @@ export const CreateProfileStyles = createStyles(() => ({
     padding: '0 !important',
     borderRadius: 30,
     position: 'relative',
-    backgroundColor: 'var(--white-light)',
+    backgroundColor: '#F3F3F3',
   },
   picCard: {
     height: '100%',
@@ -214,12 +218,12 @@ export const CreateProfileStyles = createStyles(() => ({
     padding: '0 !important',
     borderRadius: 30,
     position: 'relative',
-    backgroundColor: 'var(--white)',
+    backgroundColor: '#ffffff',
     display: 'flex',
     justifyContent: 'center',
   },
   label: {
-    width: '63%',
+    width: '73%',
     position: 'absolute',
     bottom: '6%',
     zIndex: 3,
@@ -242,7 +246,7 @@ export const CreateProfileStyles = createStyles(() => ({
   addBtnSmall: {
     width: '67% !important',
     height: '100% !important',
-    color: 'var(--white)',
+    color: '#ffffff',
     padding: 0,
     backgroundColor: '#E46125',
     borderRadius: 34,
@@ -348,7 +352,7 @@ export const CreateProfileStyles = createStyles(() => ({
     top: 10,
     right: 0,
     textDecoration: 'underline',
-    color: 'var(--black)',
+    color: '#000000',
     fontWeight: 500,
     fontSize: 14,
     lineHeight: '18px',

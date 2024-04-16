@@ -43,7 +43,7 @@ export default function NickName() {
       setError(true);
     } else {
       dispatch(
-        actions.requestProfile({
+        actions.updateProfile({
           id: user.id,
           token: user.token,
           profile: {
@@ -58,7 +58,7 @@ export default function NickName() {
         })
       );
       dispatch(counterActions.increase());
-      navigate('/register/picture');
+      navigate('/user/register/avatar');
     }
   };
   useEffect(() => {
@@ -93,11 +93,11 @@ export default function NickName() {
         </Box>
         <Box className={classes.box}>
           <Text className={classes.titleChild}>
-            {t("Profile.title.Nickname")}
+            {t("Nickname")}
           </Text>
           <Text mb={24} className={classes.text}>
             {t(
-              "Profile.text.As a GoDooer, you are free to give yourself an interesting name."
+              "As a GoDooer, you are free to give yourself an interesting name."
             )}
           </Text>
           <form onSubmit={form.onSubmit(handleNickName)}>
@@ -105,8 +105,8 @@ export default function NickName() {
               sx={{
                 position: "relative",
                 borderRadius: 8,
-                border: error ? "1px solid var(--red)" : "none",
-                backgroundColor: "var(--white)",
+                border: error ? "1px solid #FF0000" : "none",
+                backgroundColor: "#FFFFFF",
               }}
             >
               <TextInput
@@ -121,7 +121,7 @@ export default function NickName() {
                   },
                 }}
                 maxLength={15}
-                placeholder={t("Profile.title.Nickname")}
+                placeholder={t("Nickname")}
                 // onKeyDown={e => {
                 //   handleClearSpace(e);
                 // }}

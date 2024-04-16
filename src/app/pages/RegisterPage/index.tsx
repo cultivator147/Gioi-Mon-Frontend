@@ -255,7 +255,7 @@ const useStyles = createStyles(() => ({
       fontSize: '12px',
       lineHeight: 1.2,
       display: 'block',
-      color: 'var(--grey-dark)',
+      color: '#929292',
       marginTop: '4px',
     },
     rules: {

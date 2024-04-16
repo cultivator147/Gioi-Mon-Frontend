@@ -133,7 +133,7 @@ export default function Birth() {
               sx={{
                 position: 'relative',
                 borderRadius: 8,
-                backgroundColor: 'var(--white)',
+                backgroundColor: '#ffffff',
               }}
             >
               <DatePicker
@@ -144,7 +144,7 @@ export default function Birth() {
                     lineHeight: '30px',
                     textAlign: 'right',
                     borderRadius: 8,
-                    border: error ? '1px solid var(--red)' : 'none',
+                    border: error ? '1px solid #FF0000' : 'none',
                     backgroundColor: 'transparent',
                   },
                 }}
@@ -164,7 +164,7 @@ export default function Birth() {
               <Text
                 sx={{
                   textAlign: 'center',
-                  color: 'var(--red)',
+                  color: '#FF0000',
                   fontSize: 14,
                   fontWeight: 400,
                   marginTop: 4,
@@ -194,7 +194,7 @@ export default function Birth() {
               lineHeight: '25px',
               marginTop: 12,
               textAlign: 'center',
-              color: 'var(--primary-1)',
+              color: '#E46125',
               [`@media (max-width:575px)`]: {
                 fontSize: 18,
                 marginTop: 0,

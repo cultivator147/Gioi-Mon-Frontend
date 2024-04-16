@@ -24,7 +24,7 @@ export const LoginLayoutStyles = createStyles(() => ({
     maxWidth: 720,
     margin: 'auto',
     borderRadius: 30,
-    backgroundColor: 'var(--white)',
+    backgroundColor: '#ffffff',
     [`@media (max-width:575px)`]: {
       width: '100%',
       height: 'calc(100% - 176px)',
@@ -63,13 +63,13 @@ export const LoginLayoutStyles = createStyles(() => ({
       height: 'max-content',
       // height: 615,
       borderRadius: '30px 30px 0 0',
-      backgroundColor: 'var(--white)',
+      backgroundColor: '#ffffff',
     },
     [`@media (max-width:376px)`]: {
       padding: '20px 20px 120px ',
       borderRadius: '30px 30px 0 0',
       // height: 634,
-      backgroundColor: 'var(--white)',
+      backgroundColor: '#ffffff',
     },
   },
 
@@ -100,7 +100,7 @@ export const LoginLayoutStyles = createStyles(() => ({
     position: 'relative',
     zIndex: 2,
     '& span': {
-      color: 'var(--primary-1 )',
+      color: '#E46125',
       fontWeight: 600,
       textDecoration: 'underline',
       userSelect: 'none',

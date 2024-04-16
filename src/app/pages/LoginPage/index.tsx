@@ -177,14 +177,14 @@ const useStyles = createStyles(() => ({
     marginTop: "16px",
   },
   error: {
-    color: "var(--red)",
+    color: "#FF0000",
     fontWeight: 400,
     fontSize: "12px",
     lineHeight: "15px",
     marginTop: "4px",
   },
   save: {
-    color: "var(--black)",
+    color: "#000000",
     margin: "10px 0 0 2px",
     fontSize: "16px",
     fontWeight: 500,

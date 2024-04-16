@@ -7,6 +7,7 @@ import { usersActions } from ".";
 import { postRequest } from "../../../api/modules/authentication/request2";
 import { getProfile } from "../../../api/modules/user/profile";
 import History from "../../../app/History/History";
+import { postAuthApi } from "../../../api/modules/user/request";
 
 export function* Login(action: any) {
   const data = {
@@ -85,8 +86,20 @@ export function* Register(action: any) {
     );
   }
 }
+function* handleUpdateProfile(action: any){
+  console.log('action update prf: ', action);
+  try{
+    const payload = action.payload;
+    const token = action.payload.token;
+    const {nickname, avatar, date_of_birth, zodiac, gender, introduction} = payload.profile;
+    const body = {nickname: nickname, avatar: avatar, dateOfBirth: date_of_birth, zodia: zodiac, gender: gender, introduction: introduction};
+    const response : BaseResponse = yield postAuthApi("/user/profile/update", token, body);
+    console.log(response);
+  }catch(err){
+    console.log(err);
+  }
+}
 function* handleGetProfile(action: any) {
-  console.log('action' , action);
   try{
   const res: BaseResponse = yield getProfile({
     userId: action.payload.id,
@@ -103,7 +116,6 @@ function* handleGetProfile(action: any) {
           zodiac: data.zodiac,
           gender: data.gender,
           introduction: data.introduction,
-          relationship: data.relationship,
         },
       })
     );
@@ -112,7 +124,7 @@ function* handleGetProfile(action: any) {
       History.push('/user/profile/nickname');
     }else if(data.avatar === '' || data.avatar === null){
       console.log('navigating to picture page...');
-      History.push('/user/profile/picture');
+      History.push('/user/profile/avatar');
     }else if(data.dateOfBirth === '' || data.dateOfBirth === null){
       console.log('navigating to birthday page...');
       History.push('/user/profile/birthday');
@@ -175,5 +187,6 @@ export function* userSaga() {
   yield takeLatest(usersActions.requestLogin.type, Login);
   yield takeLatest(usersActions.requestRegister.type, Register);
   yield takeLatest(usersActions.requestProfile.type, handleGetProfile);
+  yield takeLatest(usersActions.updateProfile.type, handleUpdateProfile);
 
 }

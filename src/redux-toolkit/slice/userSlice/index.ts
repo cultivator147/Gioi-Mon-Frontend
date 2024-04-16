@@ -142,10 +142,10 @@ const slice = createSlice({
       state.profile = action.payload.profile;
     },
     // Create Information Profile User
-    // createProfile(state: UserState, action: PayloadAction<UserState>) {
-    //   state.profile = action.payload.profile;
-    //   state.loading = false;
-    // },
+    updateProfile(state: UserState, action: PayloadAction<UserState>) {
+      state.profile = action.payload.profile;
+      state.loading = false;
+    },
     // Set device
     setDevice(state: UserState, action: PayloadAction<UserState>) {
       state.device = action.payload.device;

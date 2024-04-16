@@ -75,9 +75,9 @@ export default function Mode() {
             >
               <Text
                 sx={{
-                  background: 'var(--primary-3)',
+                  background: 'linear-gradient(90deg, #E46125 -0.01%, #C91A44 50%, #A12FA3 100%)',
                   WebkitBackgroundClip: 'text',
-                  color: mode === 0 ? 'var(--white)' : 'transparent',
+                  color: mode === 0 ? '#FFFFFF' : 'transparent',
                 }}
               >
                 {t('Profile.text.Friends')}

@@ -55,8 +55,8 @@ export function ProfileLayout({ children }: any) {
                       sx={{
                         backgroundColor:
                           index <= counter
-                            ? 'var(--primary-4)'
-                            : 'var(--white-light)',
+                            ? '#FF9565'
+                            : '#F3F3F3',
                       }}
                       key={index}
                       className={classes.step}

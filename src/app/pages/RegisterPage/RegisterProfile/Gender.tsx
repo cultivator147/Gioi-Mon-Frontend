@@ -191,7 +191,7 @@ export default function Gender() {
                     color: gender.color,
                     backgroundColor: 'inherit',
                     borderRadius: 200,
-                    border: `1px solid var(--white)`,
+                    border: `1px solid #FFFFFF`,
 
                     '&::before': {
                       display: 'none',
@@ -209,7 +209,7 @@ export default function Gender() {
                       boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
                     },
                     '&.active::before': {
-                      backgroundColor: 'var(--white)',
+                      backgroundColor: '#FFFFFF)',
                     },
                     [`@media (max-width:376px)`]: {
                       height: 42,
@@ -241,7 +241,7 @@ export default function Gender() {
                       lineHeight: '30px',
                       background:
                         gender.text === 'Others'
-                          ? 'var(--primary-3)'
+                          ? 'linear-gradient(90deg, #E46125 -0.01%, #C91A44 50%, #A12FA3 100%)'
                           : 'inherit',
                       WebkitBackgroundClip:
                         gender.text === 'Others' ? 'text' : 'inherit',
