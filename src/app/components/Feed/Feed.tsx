@@ -42,9 +42,7 @@ export const Feed = () => {
     }
     getPost();
   }, []);
-  React.useEffect(() => {
-    console.log('post changed');
-  }, [posts]);
+
    const  handleUploadImage = async (e: any) => {
     setLoading(true);
     if(!e.target.files)return; 
