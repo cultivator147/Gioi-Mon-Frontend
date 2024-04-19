@@ -81,13 +81,13 @@ export default function Gender() {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const { classes } = CreateProfileStyles();
-  const [sex, setSex] = useState<string[]>(profile.gender);
+  const [sex, setSex] = useState<string[]>(profile.gender || []);
   const [disableBtn, setDisabel] = useState(true);
 
   const handleCreateGender = () => {
     dispatch(counterActions.increase());
     dispatch(
-      actions.requestProfile({
+      actions.updateProfile({
         id: user.id,
         token: user.token,
         profile: {
@@ -101,10 +101,10 @@ export default function Gender() {
         },
       }),
     );
-    // navigate('/register/description');
+    navigate('/user/register/description');
   };
   useEffect(() => {
-    if (sex.length > 2) {
+    if (sex?.length > 2) {
       setDisabel(true);
     } else {
       setDisabel(false);
@@ -154,7 +154,7 @@ export default function Gender() {
           className={classes.box}
         >
           <Text className={classes.titleChild}>
-            {t('Profile.title.Genders')}
+            {t('Genders')}
           </Text>
           <Text
             sx={{
@@ -162,7 +162,7 @@ export default function Gender() {
               textAlign: 'center',
             }}
           >
-            {t('Profile.text.Pick maximum 2 genders')}
+            {t('Pick maximum 2 genders')}
           </Text>
           <SimpleGrid
             cols={2}
@@ -181,7 +181,7 @@ export default function Gender() {
                 <Button
                   key={index}
                   className={
-                    profile.gender.includes(gender.text) ? 'active' : ''
+                    profile?.gender?.includes(gender.text) ? 'active' : ''
                   }
                   sx={{
                     height: 52,
@@ -217,7 +217,7 @@ export default function Gender() {
                   }}
                   onClick={(e: any) => {
                     if (gender.id === index) {
-                      let boolean = sex.find(value => {
+                      let boolean = sex?.find(value => {
                         return value === gender.text;
                       });
                       if (boolean) {
@@ -249,7 +249,7 @@ export default function Gender() {
                         gender.text === 'Others' ? 'transparent' : gender.color,
                     }}
                   >
-                    {t(`Profile.gender.${gender.text}`)}
+                    {t(`${gender.text}`)}
                   </Text>
                 </Button>
               );
@@ -275,7 +275,7 @@ export default function Gender() {
               },
             }}
             color="orange.7"
-            label={t('Profile.text.Show on my profile')}
+            label={t('Show on my profile')}
           />
           <Button
             disabled={disableBtn}

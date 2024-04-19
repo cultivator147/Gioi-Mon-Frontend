@@ -9,6 +9,12 @@ import { ReactComponent as Blink } from '../../../../assets/icons/blink.svg';
 import { IconPlus } from '@tabler/icons';
 import { uploadImage } from "../../../../utils/imageUploader";
 import { IconChevronRight } from "@tabler/icons";
+import { profile } from "console";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { UserSlice } from "../../../../redux-toolkit/slice/userSlice";
+import { getProfileSelector, getUserSelector } from "../../../../redux-toolkit/slice/userSlice/selector";
+import { CounterSlice } from "../../../../redux-toolkit/slice/counterSlice";
 
 export default function Avatar() {
   const { classes } = CreateProfileStyles();
@@ -17,8 +23,38 @@ export default function Avatar() {
   const [files, setFiles] = useState<FileList>();
   const [fileUrls, setFileUrls] = useState<string[]>([]);
   const [disableAddImage, setDisableAddImage] = useState(false);
+
+   //Global
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { actions } = UserSlice();
+  const { counterActions } = CounterSlice();
+  const profile = useSelector(getProfileSelector);
+  const user = useSelector(getUserSelector);
+
   const handleUpdapteImage = () => {
     console.log('updating img...');
+    if (fileUrls[0] === null || fileUrls[0] === '') {
+      return;
+    } else {
+      dispatch(
+        actions.updateProfile({
+          id: user.id,
+          token: user.token,
+          profile: {
+            nickname: profile.nickname,
+            avatar: fileUrls[0],
+            date_of_birth: profile.date_of_birth,
+            zodiac: profile.zodiac,
+            gender: profile.gender,
+            introduction: profile.introduction,
+            relationship: profile.relationship,
+          },
+        })
+      );
+      dispatch(counterActions.increase());
+      navigate('/user/register/birthday');
+    }
   }
   const handleUploadImage = async (e: any) => {
     if (!e.target.files) return;

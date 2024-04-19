@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { StyledImage } from "../Common/Image";
 import { StyledLabel } from "../Common/StyledLabel";
 import { Link } from "react-router-dom";
-import { StyledNavButton } from "../Common/StyledNavButton";
+import { StyledNavButton } from "../Common/Button/StyledNavButton";
 import { favPost } from "../../../api/modules/post/post";
 import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
 import { useSelector } from "react-redux";
 import { Button } from "@mantine/core";
-import { StyledButton } from "../Common/StyledButton";
+import { StyledButton } from "../Common/Button/StyledButton";
 export interface PostProps{
     id: any,
     owner_id: any,

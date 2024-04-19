@@ -36,7 +36,6 @@ export default function Birth() {
   const [disableBtn, setDisableBtn] = useState(true);
   const phone = useMediaQuery('(max-width:575px)');
   
-  console.log(profile.date_of_birth);
   const form = useForm({
     initialValues: {
       date:
@@ -68,7 +67,7 @@ export default function Birth() {
           : new Date(form.values.date).getMonth();
       let year = new Date(form.values.date).getFullYear();
       dispatch(
-        actions.requestProfile({
+        actions.updateProfile({
           id: user.id,
           token: user.token,
           profile: {
@@ -82,8 +81,8 @@ export default function Birth() {
           },
         }),
       );
-      // dispatch(counterActions.increase());
-      // navigate('/user/profile/gender');
+      dispatch(counterActions.increase());
+      navigate('/user/profile/gender');
     }
   };
   useEffect(() => {

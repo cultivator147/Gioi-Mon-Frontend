@@ -32,10 +32,12 @@ export const Header = () => {
         <End>
           {auth.token !== "" ? (
             <>
-              <StyledLabel
+              <StyledLink
+                href="/user/profile"
                 color="#21231D"
                 fontSize={StyleConstants.FONT_SIZE_SMALL}
                 title={`Xin chào, ${auth?.username}`}
+                
               />
               <StyledImage
                 src={profile?.avatar}

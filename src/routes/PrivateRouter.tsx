@@ -8,6 +8,7 @@ import Birth from "../app/pages/RegisterPage/RegisterProfile/Birthday";
 import Gender from "../app/pages/RegisterPage/RegisterProfile/Gender";
 import { UserSlice } from "../redux-toolkit/slice/userSlice";
 import Avatar from "../app/pages/RegisterPage/RegisterProfile/Avatar";
+import { ProfilePage } from "../app/pages/ProfilePage";
 const PrivateRouter = () => {
   const auth = useSelector(getUserSelector);
   const navigate = useNavigate();
@@ -28,7 +29,7 @@ const PrivateRouter = () => {
 
   return (
     <Routes>
-      <Route path="/profile" element={<SearchPage />} />
+      <Route path="/profile" element={<ProfilePage />} />
       <Route path="/profile/nickname" element={<NickName />} />
       <Route path="/profile/avatar" element={<Avatar />} />
       <Route path="/profile/birthday" element={<Birth />} />

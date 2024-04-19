@@ -12,7 +12,7 @@ import { Category } from "../../../api/interfaces/category";
 import { getAllCategories } from "../../../api/modules/stories/category";
 import { Logger } from "../../../utils/helper";
 import { CategoryWrapper } from "../NavBar/CategoryExpand";
-import { StyledNavButton } from "../Common/StyledNavButton";
+import { StyledNavButton } from "../Common/Button/StyledNavButton";
 import ReactPaginate from "react-paginate";
 import "./pagination.css";
 export const MainSearch = () => {

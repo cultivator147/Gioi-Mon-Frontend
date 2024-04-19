@@ -4,7 +4,7 @@ import { MainStory } from "./MainStory";
 import React, { useState } from "react";
 import { StyleConstants } from "../../../styles/StyleConstants";
 import { PageWrapper } from "../PageWrapper";
-import { StyledNavButton } from "../Common/StyledNavButton";
+import { StyledNavButton } from "../Common/Button/StyledNavButton";
 import { ChapterProps } from "../ListChapter";
 import { StyledLink } from "../Common/StyledLink";
 import { StyledLabel } from "../Common/StyledLabel";

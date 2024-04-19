@@ -9,7 +9,7 @@ import { StyleConstants } from "../../../styles/StyleConstants";
 import { StyledLabel } from "../Common/StyledLabel";
 import { StyledLink } from "../Common/StyledLink";
 import { Brand } from "../Header/Brand";
-import { StyledNavButton } from "../Common/StyledNavButton";
+import { StyledNavButton } from "../Common/Button/StyledNavButton";
 import { postRequestStory } from "../../../api/modules/stories/request copy";
 import { useSelector } from "react-redux";
 import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";

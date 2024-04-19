@@ -9,7 +9,7 @@ import { StyledImage } from "../Common/Image";
 import { useSelector } from "react-redux";
 import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
 import { Alert, TextInput } from "@mantine/core";
-import { StyledButton } from "../Common/StyledButton";
+import { StyledButton } from "../Common/Button/StyledButton";
 import { uploadImage } from "../../../utils/imageUploader";
 import { createPost } from "../../../api/modules/post/post";
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { StyleConstants } from "../../../styles/StyleConstants";
-import { Button } from "../../../stories/Button";
+import { StyleConstants } from "../../../../styles/StyleConstants";
+import { Button } from "../../../../stories/Button";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 interface StyledButtonProps {
