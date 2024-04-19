@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { StyledImage } from "../Common/Image";
 import { StyledLabel } from "../Common/StyledLabel";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { StyledNavButton } from "../Common/Button/StyledNavButton";
 import { favPost } from "../../../api/modules/post/post";
 import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
@@ -22,6 +22,7 @@ export interface PostProps{
     comment_conut: any
 }
 export const Post = (props: PostProps) => {
+    const navigate = useNavigate();
     const user = useSelector(getUserSelector);
     const onClickInterest = async () => {
         console.log('usr: ', user.token);
@@ -38,6 +39,7 @@ export const Post = (props: PostProps) => {
                             src={
                                 props.owner_avatar
                             }
+                            onClick={() => navigate('/user/profile')}
                             width={50}
                             height={50}
                         />

@@ -33,7 +33,7 @@ export function isAgeEnough(date: Date | string | number): boolean | string {
 
 export function Age(data: string): number {
   // Chuyển đổi ngày tháng năm sang định dạng yyyy-mm-dd
-  const parts: string[] = data.split('/');
+  const parts: string[] = data?.split('/');
   const birthDate: string = `${parts[2]}-${parts[1]}-${parts[0]}`;
 
   // Tính số tuổi dựa trên ngày tháng năm sinh

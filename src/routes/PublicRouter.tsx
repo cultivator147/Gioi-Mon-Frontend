@@ -34,6 +34,7 @@ const PublicRouter = () => {
       <div>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage />} />
           <Route path="/tim-truyen/*" element={<SearchPage />} />
           <Route path="/tim-truyen/:categoryid" element={<SearchPage />} />
           <Route path="/tim-truyen/keyword=:keyword" element={<SearchPage />} />

@@ -16,6 +16,7 @@ import {
 } from "../../../../redux-toolkit/slice/userSlice/selector";
 import { ProfileLayout } from "../../../components/Layout/CreateProfile/CreateProfile";
 import { CounterSlice } from "../../../../redux-toolkit/slice/counterSlice";
+import History from "../../../History/History";
 
 export default function NickName() {
   const { t } = useTranslation();
@@ -38,7 +39,7 @@ export default function NickName() {
       e.preventDefault();
     }
   };
-  const handleNickName = () => {
+  const handleNickName = async () => {
     if (!form.values.nickname) {
       setError(true);
     } else {
@@ -46,6 +47,7 @@ export default function NickName() {
         actions.updateProfile({
           id: user.id,
           token: user.token,
+          navigate: '/user/profile/avatar',
           profile: {
             nickname: form.values.nickname,
             avatar: profile.avatar,
@@ -58,7 +60,6 @@ export default function NickName() {
         })
       );
       dispatch(counterActions.increase());
-      navigate('/user/register/avatar');
     }
   };
   useEffect(() => {

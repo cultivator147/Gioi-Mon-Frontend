@@ -62,6 +62,7 @@ export function* Register(action: any) {
       usersActions.registerSuccess({
         id: res.data.id,
         token: res.data.accessToken,
+        isLogin: true,
         username: res.data.username,
         password: res.data.password,
         register: {
@@ -94,6 +95,7 @@ function* handleUpdateProfile(action: any){
     const {nickname, avatar, date_of_birth, zodiac, gender, introduction} = payload.profile;
     const body = {nickname: nickname, avatar: avatar, dateOfBirth: date_of_birth, zodia: zodiac, gender: gender, introduction: introduction};
     const response : BaseResponse = yield postAuthApi("/user/profile/update", token, body);
+    History.push(payload.navigate);
     console.log(response);
   }catch(err){
     console.log(err);

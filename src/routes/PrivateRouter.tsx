@@ -12,21 +12,23 @@ import { ProfilePage } from "../app/pages/ProfilePage";
 const PrivateRouter = () => {
   const auth = useSelector(getUserSelector);
   const navigate = useNavigate();
+  UserSlice();
+
   useEffect(() => {
-    if (!auth.isLogin) {
+    console.log(auth);
+    if (auth.id === -1) {
       const item = localStorage.getItem("persist:state");
       const itemUser = JSON.parse(JSON.parse(item || "{}")?.user);
-      if (itemUser.isLogin) {
-        return;
+      if (itemUser.id !== -1) {
+        console.log('user logged in after persist');
+        console.log(itemUser);
       }else{
         navigate("/auth");
       }
     }else{
-      return;
+      console.log('user logged in');
     }
   }, []);
-  UserSlice();
-
   return (
     <Routes>
       <Route path="/profile" element={<ProfilePage />} />

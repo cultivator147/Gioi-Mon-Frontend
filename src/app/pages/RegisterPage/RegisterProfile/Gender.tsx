@@ -90,6 +90,7 @@ export default function Gender() {
       actions.updateProfile({
         id: user.id,
         token: user.token,
+        navigate: '/home',
         profile: {
           nickname: profile.nickname,
           avatar: profile.avatar,
@@ -101,7 +102,6 @@ export default function Gender() {
         },
       }),
     );
-    navigate('/user/register/description');
   };
   useEffect(() => {
     if (sex?.length > 2) {

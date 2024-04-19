@@ -5,7 +5,7 @@ interface ImageProps {
   alt?: string;
   width: number;
   height: number;
-  onClick?: any;
+  onClick? : () => any;
 }
 export const StyledImage = (props: ImageProps) => {
   const { src, alt, width, height, onClick } = props;
@@ -18,6 +18,7 @@ export const StyledImage = (props: ImageProps) => {
       width={width}
       height={height}
       onClick={onClick}
+      style={{cursor: 'pointer'}}
     />
   );
 };

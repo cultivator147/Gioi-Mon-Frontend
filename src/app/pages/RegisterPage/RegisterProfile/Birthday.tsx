@@ -70,6 +70,7 @@ export default function Birth() {
         actions.updateProfile({
           id: user.id,
           token: user.token,
+          navigate: '/user/profile/gender',
           profile: {
             nickname: profile.nickname,
             avatar: profile.avatar,

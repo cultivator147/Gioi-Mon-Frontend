@@ -41,6 +41,7 @@ export default function Avatar() {
         actions.updateProfile({
           id: user.id,
           token: user.token,
+          navigate: '/user/profile/birthday',
           profile: {
             nickname: profile.nickname,
             avatar: fileUrls[0],
@@ -53,7 +54,6 @@ export default function Avatar() {
         })
       );
       dispatch(counterActions.increase());
-      navigate('/user/register/birthday');
     }
   }
   const handleUploadImage = async (e: any) => {

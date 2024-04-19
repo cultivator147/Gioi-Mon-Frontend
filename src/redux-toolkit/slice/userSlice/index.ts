@@ -17,6 +17,7 @@ export interface UserState {
   username?: string;
   password?: string | number;
   device?: boolean;
+  navigate?: string;
   // Status
   register?: {
     error?: number;
@@ -93,6 +94,7 @@ const slice = createSlice({
       state.login = action.payload.login;
     },
     requestRegister(state: UserState, action: PayloadAction<UserState>) {
+      state.login = action.payload.login;
       state.loading = true;
     },
     registerSuccess(state: UserState, action: PayloadAction<UserState>) {
@@ -102,6 +104,7 @@ const slice = createSlice({
       state.username = action.payload.username;
       state.password = action.payload.password;
       state.register = action.payload.register;
+      state.isLogin = action.payload.isLogin;
     },
     registerFail(state: UserState, action: PayloadAction<UserState>) {
       state.loading = false;
