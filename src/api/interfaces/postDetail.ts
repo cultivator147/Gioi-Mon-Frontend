@@ -12,4 +12,6 @@ export interface PostDetail{
     favouriteCount?: any;
     averageFavouritePoint?: any;
     commentCount?: any;
+    favourited?: number;
+    favouritePoint?: number;
 };

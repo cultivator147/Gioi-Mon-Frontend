@@ -19,7 +19,7 @@ export const postAuthApi = (url: string,token: string, payload: object) => {
     return requestWithAuth(token).post(url, payload);
 }
 export const getAuthApi = (url: string,token:string, params: object) => {
-    return requestWithAuth(token).get(url, {params: params});
+    return requestWithAuth(token).get(url,  params);
 }
 
 export default request;

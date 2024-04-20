@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 interface StyledButtonProps {
   label: string;
   backgroundColor?: string;
-  onClick?: () => void;
+  onClick?: (event?: any) => void;
   customStyle?: any;
   href?: string;
   disable?: boolean;

@@ -1,6 +1,6 @@
 import { TypeListPost } from "../../interfaces/listPost";
-import request from "./request";
+import request, { getAuthApi, postAuthApi } from "./request";
 
-export const getListPost = (params?: TypeListPost) => {
-    return request.get('/list-post/', {params: params});
+export const getListPost = (token: string, params?: TypeListPost) => {
+    return getAuthApi('/list-post/', token, {params: params});
 }

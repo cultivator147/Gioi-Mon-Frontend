@@ -26,7 +26,9 @@ export const ListPost = (props: ListPostProps) => {
           images={item?.images} 
           favourite_count={item?.favouriteCount} 
           avarageFavouritePoint={item?.averageFavouritePoint} 
-          comment_conut={item.commentCount}          
+          comment_conut={item.commentCount}
+          favourited={item.favourited}     
+          favourited_point={item.favouritePoint}     
         />
       ))}
     </Wrapper>

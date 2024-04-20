@@ -33,7 +33,7 @@ export const Feed = () => {
     const getPost = async () => {
       try{
         const params : TypeListPost = {page: 0, size: 7};
-        const response = await getListPost(params);
+        const response = await getListPost(user.token, params);
         const data = response?.data?.data;
         setPosts(data);
       }catch(err){
