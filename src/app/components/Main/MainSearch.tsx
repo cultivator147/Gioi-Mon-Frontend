@@ -67,7 +67,7 @@ export const MainSearch = () => {
 
   return (
     <Wrapper>
-      <div style={{ width: "60%" }}>
+      <div style={{ width: "70%" }}>
         <div style={{ width: "100%", display: "flex", gap: "10px" }}>
           <SubWrapperColumn>
             <div

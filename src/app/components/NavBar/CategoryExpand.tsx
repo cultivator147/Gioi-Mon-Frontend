@@ -5,6 +5,9 @@ import { Logger } from "../../../utils/helper";
 import { getAllCategories } from "../../../api/modules/stories/category";
 import { Category } from "../../../api/interfaces/category";
 import { NavLink } from "react-router-dom";
+import { Flex } from "@mantine/core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faClockRotateLeft, faLayerGroup } from "@fortawesome/free-solid-svg-icons";
 
 interface CategoryExpandProps {
   additionStyle?: React.CSSProperties;
@@ -34,9 +37,12 @@ export const CategoryExpand = ({
   }, []);
   return (
     <CategoryLI style={{ width: "15%", ...additionStyle }}>
+          <Flex sx={{alignItems:'center', gap: '4px', justifyContent: 'center'}}>
+          <FontAwesomeIcon icon={faLayerGroup} />
       <A to="/" style={{ ...addtionStyleLink }}>
         Thể loại
       </A>
+      </Flex>
       <CategoryULDropdown>
         <ListCategory>
           {listCategory.map((category) => (

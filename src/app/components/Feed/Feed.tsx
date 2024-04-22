@@ -62,8 +62,8 @@ export const Feed = () => {
         style={{
           display: "flex",
           flexDirection: "column",
-          width: "60%",
-          backgroundColor: StyleConstants.BACKGROUND_MAIN_COLOR,
+          width: "70%",
+          backgroundColor: '#ebebeb',
           justifyItems: 'center',
           alignItems: 'center',
           gap: '12px'
@@ -149,7 +149,7 @@ const Wrapper = styled(PageWrapper)`
   padding: 12px;
   justify-content: center;
   flex: 1;
-  background-color: ${StyleConstants.BACKGROUND_MAIN_COLOR};
+  background-color: '#ebebeb;
   min-height: 500px;
 
   ${SubWrapperRow} {

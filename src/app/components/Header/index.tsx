@@ -77,6 +77,7 @@ export const Header = () => {
 };
 const Wrapper = styled(PageWrapper)`
   background-color: ${StyleConstants.BACKGROUND_HEADER_COLOR};
+  min-height: 70px;
   ${SubWrapperRow} {
     padding: 4px 8px;
     justify-content: space-between;

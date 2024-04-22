@@ -3,12 +3,14 @@ import { Logger } from "../../../../utils/helper";
 interface ImageProps {
   src: string;
   alt?: string;
-  width: number;
-  height: number;
+  width?: any;
+  height?: any;
   onClick? : () => any;
 }
 export const StyledImage = (props: ImageProps) => {
-  const { src, alt, width, height, onClick } = props;
+  const { src, alt,  onClick } = props;
+  const width = props.width || '100%';
+  const height = props.height || '100%';
   const [imageSrc, setImageSrc] = useState(src);
   return (
     <img

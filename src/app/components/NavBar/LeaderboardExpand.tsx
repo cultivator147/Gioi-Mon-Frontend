@@ -4,6 +4,9 @@ import { useState } from "react";
 
 // import { useAppDispatch, useAppSelector } from "../../../redux-toolkit/hooks";
 import { NavLink } from "react-router-dom";
+import { Flex } from "@mantine/core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRankingStar } from "@fortawesome/free-solid-svg-icons";
 const LIST_LEADERBOARD = [
   { id: 1, name: "TOP_ALL" },
   { id: 2, name: "TOP_MONTHLY" },
@@ -29,9 +32,12 @@ export const LeaderboardExpand = ({
   const [listLeaderboard, setlistLeaderboard] = useState(LIST_LEADERBOARD);
   return (
     <CategoryLI style={{ width: "15%", ...additionStyle }}>
+          <Flex sx={{alignItems:'center', gap: '4px', justifyContent: 'center'}}>
+          <FontAwesomeIcon icon={faRankingStar} />
       <A to="/" style={{ ...addtionStyleLink }}>
         XẾP HẠNG
       </A>
+      </Flex >
       <CategoryULDropdown>
         <ListCategory>
           {listLeaderboard.map((category) => (

@@ -4,8 +4,9 @@ import { StyleConstants } from "../../../styles/StyleConstants";
 import { CategoryExpand } from "./CategoryExpand";
 import { LeaderboardExpand } from "./LeaderboardExpand";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome } from "@fortawesome/free-solid-svg-icons";
+import { faBlog, faBookJournalWhills, faClockRotateLeft, faHeartCircleCheck, faHome, faTags } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, useLocation } from "react-router-dom";
+import { Flex } from "@mantine/core";
 
 export const NavBar = () => {
   const location = useLocation();
@@ -37,29 +38,42 @@ export const NavBar = () => {
     }
     return {};
   };
-
+  const LabelStyle = {
+    fontFamily: "Nunito Sans, SF Pro Text, SF Pro Icons, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif",
+  };
   return (
     <Wrapper>
       <ULWrappper>
         <div style={{ width: "80%" }}>
           <LI style={{ width: "15%", ...activeBackgroundTab("/") }}>
+          <Flex sx={{alignItems:'center', gap: '4px', justifyContent: 'center'}}>
+          <FontAwesomeIcon icon={faBookJournalWhills}/>
             <A style={activeLinkTab("/")} to="/">
-              Home
+              Trang chủ
             </A>
+            </Flex>
+
           </LI>
           <LI style={{ width: "15%"}}>
+            <Flex sx={{alignItems:'center', gap: '4px', justifyContent: 'center'}}>
+              <FontAwesomeIcon icon={faBlog} />
             <A style={activeLinkTab("/feed")} to="/feed">
-              FEED
+              Bài đăng
             </A>
+            </Flex>
+           
           </LI>
-          <LI style={{ width: "10%" }}>
-            <A to="/de-cu">Đề cử</A>
+          <LI style={{ width: "15%" }}>
+          <Flex sx={{alignItems:'center', gap: '4px', justifyContent: 'center'}}>
+            <FontAwesomeIcon icon={faHeartCircleCheck} />
+            <A to="/theo-doi">Đang theo dõi</A>
+          </Flex>
           </LI>
-          <LI style={{ width: "10%" }}>
-            <A to="/theo-doi">Theo dõi</A>
-          </LI>
-          <LI style={{ width: "10%" }}>
-            <A to="/">Lịch sử</A>
+          <LI style={{ width: "15%" }}>
+          <Flex sx={{alignItems:'center', gap: '4px', justifyContent: 'center'}}>
+            <FontAwesomeIcon icon={faClockRotateLeft} />
+            <A to="/theo-doi">Đang đọc</A>
+          </Flex>
           </LI>
           <CategoryExpand
             additionStyle={activeBackgroundTab("^/tim-truyen/(\\d+)$")}
@@ -88,7 +102,7 @@ const A = styled(NavLink)`
 
   line-height: ${StyleConstants.NAV_BAR_HEIGHT};
   text-decoration: none;
-  text-transform: uppercase;
+  font-family: Nunito Sans, SF Pro Text, SF Pro Icons, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
 `;
 const LI = styled.li`
   text-align: center;

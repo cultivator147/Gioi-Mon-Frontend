@@ -8,6 +8,8 @@ import React, { useState } from "react";
 import useFilteredListStories from "../../../hooks/useFilteredListStories";
 import { SubRight } from "./SubRight";
 import ReactPaginate from "react-paginate";
+import { BackgroundImage, Flex } from "@mantine/core";
+import { StyledImage } from "../Common/Image";
 
 export const MainHome = () => {
   const [stories, setStories] = useState([]);
@@ -29,9 +31,23 @@ export const MainHome = () => {
   React.useEffect(() => {
     getFilteredListStories();
   }, [currentPage]);
+  const SubWrapperStyle = {
+    marginTop: '15%',
+    borderRadius: '9px',
+    opacity: 0.9,
+    background: 'white',
+    padding: '20px',
+    width: '70%',
+  }
   return (
     <Wrapper>
-      <SubWrapperColumn>
+      <div style={{position: 'absolute', width: '100%', height: '360px',}}>
+        <StyledImage src={"https://i.pinimg.com/736x/fa/10/aa/fa10aab5e38c2e4fbcb3408610306419.jpg"} />
+      </div>
+      <Flex 
+      direction={"column"}
+      sx = {SubWrapperStyle}
+      >
         <FirstRow>
           <StyledLabel title="Truyện nổi tiếng" color="#D44C4C" />
           <ListSuggestedStories />
@@ -81,7 +97,7 @@ export const MainHome = () => {
             </Second>
           </SubWrapperRow>
         </SecondRow>
-      </SubWrapperColumn>
+      </Flex>
     </Wrapper>
   );
 };
@@ -103,11 +119,14 @@ const Second = styled.div`
   width: 30%;
 `;
 const Wrapper = styled(PageWrapper)`
+  display: 'flex';
+  flex-direction: 'column';
+  align-items: 'center';
   justify-content: center;
   flex: 1;
   background-color: ${StyleConstants.BACKGROUND_MAIN_COLOR};
   min-height: 500px;
-
+  border-radius: 20px;
   ${SubWrapperRow} {
     height: 100%;
     width: 100%;
