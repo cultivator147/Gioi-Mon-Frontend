@@ -63,7 +63,7 @@ export const Feed = () => {
           display: "flex",
           flexDirection: "column",
           width: "70%",
-          backgroundColor: '#ebebeb',
+          backgroundColor: '#ece7e7',
           justifyItems: 'center',
           alignItems: 'center',
           gap: '12px'
@@ -132,24 +132,12 @@ const UpLoadPost = styled.div`
     border-radius: 10px;
     padding: 12px;
 `;
-const SecondRow = styled.div`
-  height: 100%;
 
-  width: 100%;
-`;
-const First = styled.div`
-  height: 100%;
-
-  width: 70%;
-`;
-const Second = styled.div`
-  width: 30%;
-`;
 const Wrapper = styled(PageWrapper)`
   padding: 12px;
   justify-content: center;
   flex: 1;
-  background-color: '#ebebeb;
+  background-color: #ece7e7;
   min-height: 500px;
 
   ${SubWrapperRow} {
@@ -161,7 +149,6 @@ const Wrapper = styled(PageWrapper)`
   }
   ${SubWrapperColumn} {
     max-width: 1080px;
-    flex: 0.7;
     background-color: #ece7e7;
     justify-content: start;
     align-items: start;
