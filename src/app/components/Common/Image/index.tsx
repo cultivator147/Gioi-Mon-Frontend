@@ -14,13 +14,13 @@ export const StyledImage = (props: ImageProps) => {
   const [imageSrc, setImageSrc] = useState(src);
   return (
     <img
-      // onError={()=>setImageSrc('https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg')}
+      onError={()=>setImageSrc('https://cdnntx.com/nettruyen/thumb/giao-duc-chan-chinh.jpg')}
       src={src}
       alt={alt}
       width={width}
       height={height}
       onClick={onClick}
-      style={{cursor: 'pointer'}}
+      style={{cursor: 'pointer', borderRadius: '9px'}}
     />
   );
 };

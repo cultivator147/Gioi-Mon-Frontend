@@ -8,6 +8,7 @@ import { Chapter, ChapterProps, ListChapter } from "../../ListChapter";
 import { Logger } from "../../../../utils/helper";
 import { StyleConstants } from "../../../../styles/StyleConstants";
 import { NavLink } from "react-router-dom";
+import { BackgroundImage, Container, Flex } from "@mantine/core";
 export interface SimpleStoryProps {
   id?: any;
   title: string;
@@ -19,15 +20,17 @@ export const SampleStory = (props: SimpleStoryProps) => {
   const newestChapters: ChapterProps[] = props.chapters || [];
   return (
     <StoryWrapper>
+        
       <NavLink to={props.link}>
-        <StyledImage
-          src={props.picture}
-          width={150}
-          height={190}
-          onClick={() => {
-            console.log("Cliked Story!");
-          }}
-        />
+        <Flex sx={{width: '170px', height: '200px', borderStyle: 'solid', borderRadius: '9px', borderColor: 'white'}}>
+          <StyledImage
+            src={props.picture}
+            onClick={() => {
+              console.log("Cliked Story!");
+            }}
+          />
+        </Flex>
+
       </NavLink>
       <div style={{ maxWidth: "150px" }}>
         <StyledLink

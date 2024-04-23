@@ -11,6 +11,8 @@ import { StyledLabel } from "../Common/StyledLabel";
 import { Author } from "../../../api/interfaces/author";
 import useDetailStory from "../../../hooks/useDetailStory";
 import { SubRight } from "../Main/SubRight";
+import { Leaderboard } from "../Main/SubRight/Leaderboard/Leaderboard";
+import { Container, Flex } from "@mantine/core";
 
 export const Story = () => {
   const storyId = useParams().storyid;
@@ -54,75 +56,65 @@ export const Story = () => {
   }, []);
 
   return (
-    <Wrapper>
-      <div
-        style={{
-          display: "flex",
-          width: "60%",
-          backgroundColor: "white",
-          gap: "8px",
+    <Flex direction={"column"} sx={{ width: "100%", alignItems: "center" }}>
+      <Flex style={{ width: "100%" }} sx={{ justifyContent: "center" }}>
+        <MainStory
+          authors={authors}
+          title={title}
+          picture={picture}
+          // link={link}
+          // chapters={chapters}
+          categories={categories}
+          // introduction={introduction}
+          status={status}
+          views={views}
+        />
+      </Flex>
+      <Flex
+        direction={"column"}
+        sx={{
+          width: "70%",
         }}
       >
-        <div style={{ width: "70%", display: "flex", flexDirection: "column" }}>
-          <div style={{ width: "100%" }}>
-            <MainStory
-              authors={authors}
-              title={title}
-              picture={picture}
-              // link={link}
-              // chapters={chapters}
-              categories={categories}
-              // introduction={introduction}
-              status={status}
-              views={views}
-            />
-          </div>
-          <DivButton>
-            <div
-              style={{
-                width: "60%",
-                display: "flex",
-                justifyContent: "center",
-                gap: "12px",
-              }}
-            >
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                  <StyledNavButton
-                    href={`/truyen-tranh/${storyId}/${chapters[0]?.chapterNumber}`}
-                    label="Đọc từ đầu"
-                    backgroundColor="orange"
-                    customStyle={{ padding: "8px" }}
-                  />
-              </div>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                  <StyledNavButton
-                  href={`/truyen-tranh/${storyId}/${
-                    chapters[chapters.length - 1]?.chapterNumber
-                  }`}
-                    label="Đọc mới nhất"
-                    backgroundColor="orange"
-                    customStyle={{ padding: "8px" }}
-                  />
-              </div>
-              <div style={{ display: "flex", justifyContent: "center" }}>
-                  <StyledNavButton
-                  href={`/truyen-tranh/${storyId}/1`}
-                    label="Đọc tiếp"
-                    backgroundColor="red"
-                    customStyle={{ padding: "8px" }}
-                  />
-              </div>
-            </div>
-          </DivButton>
+        <DivButton>
           <div
             style={{
-              width: "100%",
+              width: "60%",
               display: "flex",
-              flexDirection: "column",
-              justifyContent: "start",
-              flex: 1,
+              justifyContent: "center",
+              gap: "12px",
             }}
           >
+            <div style={{ display: "flex" }}>
+              <StyledNavButton
+                href={`/truyen-tranh/${storyId}/${chapters[0]?.chapterNumber}`}
+                label="Đọc từ đầu"
+                backgroundColor="orange"
+                customStyle={{ padding: "8px" }}
+              />
+            </div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <StyledNavButton
+                href={`/truyen-tranh/${storyId}/${
+                  chapters[chapters.length - 1]?.chapterNumber
+                }`}
+                label="Đọc mới nhất"
+                backgroundColor="orange"
+                customStyle={{ padding: "8px" }}
+              />
+            </div>
+            <div style={{ display: "flex", justifyContent: "center" }}>
+              <StyledNavButton
+                href={`/truyen-tranh/${storyId}/1`}
+                label="Đọc tiếp"
+                backgroundColor="red"
+                customStyle={{ padding: "8px" }}
+              />
+            </div>
+          </div>
+        </DivButton>
+        <Flex sx={{ width: "100%", justifyContent: "space-between" }}>
+          <Flex direction={'column'} sx={{width: '60%'}}>
             <StyledLabel
               title="Danh sách chương"
               fontSize={"24px"}
@@ -142,7 +134,10 @@ export const Story = () => {
               >
                 {chapters.map((chapter: ChapterProps) => (
                   <li
-                    style={{ display: "flex", justifyContent: "space-between" }}
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}
                   >
                     <StyledLink
                       href={`/truyen-tranh/${storyId}/${chapter.chapterNumber}`}
@@ -160,13 +155,13 @@ export const Story = () => {
                 ))}
               </div>
             </ListChapters>
+          </Flex>
+          <div style={{ width: "30%" }}>
+            <Leaderboard />
           </div>
-        </div>
-        <div style={{ width: "30%" }}>
-          <SubRight />
-        </div>
-      </div>
-    </Wrapper>
+        </Flex>
+      </Flex>
+    </Flex>
   );
 };
 const ListChapters = styled.div`
@@ -176,6 +171,7 @@ const ListChapters = styled.div`
 const DivButton = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: center;
   justify-content: center;
   margin-bottom: 24px;
 `;
