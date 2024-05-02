@@ -54,10 +54,7 @@ export const MainSearch = () => {
     const getAll = async () => {
       try {
         const response = await getAllCategories();
-        console.log("main search");
         setListCategory(response.data?.data);
-        console.log("hhhh");
-        console.log(listCategory);
       } catch (err) {
         Logger(err);
       }
