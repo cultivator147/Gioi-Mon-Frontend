@@ -12,6 +12,8 @@ import { Alert, TextInput } from "@mantine/core";
 import { StyledButton } from "../Common/Button/StyledButton";
 import { uploadImage } from "../../../utils/imageUploader";
 import { createPost } from "../../../api/modules/post/post";
+import SelectStoryModal from "../Modal/SelectStoryModal";
+import useModal from "../Modal/useModal";
 
 export const Feed = () => {
   const user = useSelector(getUserSelector);
@@ -22,6 +24,12 @@ export const Feed = () => {
   const [files, setFiles] = useState<FileList>();
   const [fileUrls, setFileUrls] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
+
+  const {isShowing, toggle} = useModal();
+
+  const onClickSelectStory = () => {
+    toggle();
+  }
   const onClickUpPost = async () => {
     console.log(postContent);
     console.log(fileUrls);
@@ -81,7 +89,11 @@ export const Feed = () => {
             </div>
 
           </div>
+          <SelectStoryModal isShowing={isShowing} hide={toggle}/>
           <div style={{display: 'flex'}}>
+            <button onClick={onClickSelectStory}>
+              {'Chọn truyện'}
+            </button>
             <label htmlFor="file-upload" 
             style=
             {{

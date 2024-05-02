@@ -34,14 +34,14 @@ export const MainHome = () => {
   const SubWrapperStyle = {
     marginTop: '15%',
     borderRadius: '9px',
-    opacity: 0.9,
-    background: 'white',
+    opacity: 0.99,
+    background: '#ece7e7',
     padding: '20px',
     width: '70%',
   }
   return (
     <Wrapper>
-      <div style={{position: 'absolute', width: '100%', height: '360px',}}>
+      <div style={{position: 'absolute', width: '100%', height: '360px'}}>
         <StyledImage src={"https://i.pinimg.com/736x/fa/10/aa/fa10aab5e38c2e4fbcb3408610306419.jpg"} />
       </div>
       <Flex 

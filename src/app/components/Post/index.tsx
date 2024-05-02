@@ -6,11 +6,13 @@ import { StyledNavButton } from "../Common/Button/StyledNavButton";
 import { favPost } from "../../../api/modules/post/post";
 import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
 import { useSelector } from "react-redux";
-import { Button } from "@mantine/core";
+import { Button, Flex } from "@mantine/core";
 import { StyledButton } from "../Common/Button/StyledButton";
 import { GradientButton } from "../Common/Button/GradientButton";
 import { OutlineButton } from "../Common/Button/OutlineButton";
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 export interface PostProps {
   id: any;
   owner_id: any;
@@ -50,13 +52,24 @@ export const Post = (props: PostProps) => {
     }
   };
   const buttonStyle = {
-    height: "45px",
+    height: "2.5rem",
+    width: '8rem',
     color: "#000000",
     borderRadius: "8px",
-    fontSize: "20px",
+    fontSize: "1rem",
     fontWeight: "600",
-    lineHeight: "25px",
+    cursor: 'pointer',
     background: favourited === 1 ? 'linear-gradient(90deg, #e46125 -0.01%, #c91a44 50%, #a12fa3 100%)' : '#FFFFFF',
+  };
+  const commentButton = {
+    height: "2.5rem",
+    width: '6rem',
+    color: "#000000",
+    borderRadius: "8px",
+    fontSize: "1rem",
+    fontWeight: "600",
+    cursor: 'pointer',
+    background: '#FFFFFF',
   };
 
   return (
@@ -71,7 +84,7 @@ export const Post = (props: PostProps) => {
               height={50}
             />
           </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: '4px', padding: '4px' }}>
             <StyledLabel
               title={props.owner_name}
               fontSize={"1.2rem"}
@@ -112,7 +125,7 @@ export const Post = (props: PostProps) => {
           </Link>
         </div>
       </div>
-
+    
       <PostBody>
         <div>{props.title}</div>
         <div>{props.content}</div>
@@ -124,19 +137,21 @@ export const Post = (props: PostProps) => {
       </PostBody>
 
       <PostFooter>
+      <Flex justify={'center'}>
+      </Flex>
         <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div style={{ display: "flex", gap: "8px" }}>
-            <StyledLabel title={props.favourite_count} color="#000000" />
-            <StyledLabel title={props.avarageFavouritePoint} color="#000000" />
+          <div style={{ display: "flex", gap: "4px", justifyItems:'center', alignItems: 'center' }}>
+            <FontAwesomeIcon icon={faHeart} color={favourited == 1 ? "red" : "gray"}/>
+            <StyledLabel title={props.favourite_count} color="#000000" fontSize={'1.2rem'}/>
+            {/* <StyledLabel title={props.avarageFavouritePoint} color="#000000" /> */}
           </div>
-          <div>
-            <StyledLabel title={props.comment_conut} color="#000000" />
-          </div>
-          <div>
-            <StyledLabel title={props.comment_conut} color="#000000" />
+          <div style={{marginRight: '12px'}}>
+            <StyledLabel title={`${props.comment_conut} Bình luận`} color="#000000" fontSize={'1.2rem'}/>
           </div>
         </div>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div style={{width: '100%', opacity: '70%', height: '1px', backgroundColor: 'grey'}}/>
+
+        <div style={{ display: "flex", justifyContent: "space-between", paddingTop: '12px'}}>
           <div style={{ display: "flex", gap: "8px" }}>
             <button
               style={buttonStyle}
@@ -146,12 +161,19 @@ export const Post = (props: PostProps) => {
             </button>
           </div>
           <div>
-            <StyledButton backgroundColor="#ffffff" label={"Bình luận"} />
+            <button
+            style={commentButton}>
+              {'Bình luận'}
+            </button>
           </div>
-          <div>
-            <StyledButton backgroundColor="#ffffff" label={"Chia sẻ"} />
+          <div style={{width: '10%'}}>
+          {/* <button
+            style={commentButton}>
+              {'Chia sẻ'}
+            </button> */}
           </div>
         </div>
+
       </PostFooter>
     </PostWrapper>
   );
@@ -184,6 +206,7 @@ const PostBody = styled.div`
 const PostFooter = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 4px;
 `;
 const FavouriteButton = styled.button`
   height: 45px;
