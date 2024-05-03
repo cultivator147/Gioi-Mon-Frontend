@@ -1,4 +1,4 @@
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { MainStory } from "./MainStory";
 import React, { useState } from "react";
@@ -13,6 +13,8 @@ import useDetailStory from "../../../hooks/useDetailStory";
 import { SubRight } from "../Main/SubRight";
 import { Leaderboard } from "../Main/SubRight/Leaderboard/Leaderboard";
 import { Container, Flex } from "@mantine/core";
+import { ReadnowButton } from "../Common/Button/ReadnowButton";
+import { ContinueReadingBtn } from "../Common/Button/ContinueReadingBtn";
 
 export const Story = () => {
   const storyId = useParams().storyid;
@@ -23,6 +25,7 @@ export const Story = () => {
   const [categories, setCategories] = useState([]);
   const [authors, setAuthors] = useState<Author[]>([]);
 
+  const navigate = useNavigate();
   const [status, setStatus] = useState("");
   const [views, setViews] = useState(0);
 
@@ -59,6 +62,8 @@ export const Story = () => {
     <Flex direction={"column"} sx={{ width: "100%", alignItems: "center" }}>
       <Flex style={{ width: "100%" }} sx={{ justifyContent: "center" }}>
         <MainStory
+          id={storyId}
+          chapters={chapters}
           authors={authors}
           title={title}
           picture={picture}
@@ -76,7 +81,7 @@ export const Story = () => {
           width: "70%",
         }}
       >
-        <DivButton>
+        {/* <DivButton>
           <div
             style={{
               width: "60%",
@@ -86,33 +91,32 @@ export const Story = () => {
             }}
           >
             <div style={{ display: "flex" }}>
-              <StyledNavButton
-                href={`/truyen-tranh/${storyId}/${chapters[0]?.chapterNumber}`}
-                label="Đọc từ đầu"
-                backgroundColor="orange"
-                customStyle={{ padding: "8px" }}
-              />
-            </div>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <StyledNavButton
-                href={`/truyen-tranh/${storyId}/${
+              <ReadnowButton
+                onClick={() => { navigate(`/truyen-tranh/${storyId}/${chapters[0]?.chapterNumber}`)}}
+              >
+               {'Đọc ngay'} 
+              </ReadnowButton>
+            </div> */}
+            {/* <div style={{ display: "flex" }}>
+              <ReadnowButton
+                onClick={() => { navigate(`/truyen-tranh/${storyId}/${
                   chapters[chapters.length - 1]?.chapterNumber
-                }`}
-                label="Đọc mới nhất"
-                backgroundColor="orange"
-                customStyle={{ padding: "8px" }}
-              />
-            </div>
-            <div style={{ display: "flex", justifyContent: "center" }}>
-              <StyledNavButton
-                href={`/truyen-tranh/${storyId}/1`}
-                label="Đọc tiếp"
-                backgroundColor="red"
-                customStyle={{ padding: "8px" }}
-              />
+                }`)}}
+              >
+                {`Mới nhất\nChapter ${chapters[chapters.length - 1]?.chapterNumber}`}
+              </ReadnowButton>
+            </div> */}
+            {/* <div style={{ display: "flex" }}>
+              <ContinueReadingBtn
+                onClick={() => { navigate(`/truyen-tranh/${storyId}/${
+                  chapters[chapters.length - 1]?.chapterNumber
+                }`)}}
+              >
+                {`Đọc tiếp\nChapter ${chapters[chapters.length - 1]?.chapterNumber}`}
+              </ContinueReadingBtn>
             </div>
           </div>
-        </DivButton>
+        </DivButton> */}
         <Flex sx={{ width: "100%", justifyContent: "space-between" }}>
           <Flex direction={'column'} sx={{width: '60%'}}>
             <StyledLabel

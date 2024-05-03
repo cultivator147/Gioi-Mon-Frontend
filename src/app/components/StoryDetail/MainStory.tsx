@@ -15,8 +15,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faStackpath } from "@fortawesome/free-brands-svg-icons";
 import { Flex } from "@mantine/core";
+import { ChooseButton } from "../Common/Button/ChooseButton";
+import { ContinueReadingBtn } from "../Common/Button/ContinueReadingBtn";
+import { ReadnowButton } from "../Common/Button/ReadnowButton";
+import { useNavigate } from "react-router-dom";
+import { CreatePostBtn } from "../Common/Button/CreatePostBtn";
 
 export interface MainStoryProps {
+  id: any;
+  chapters: any;
   title: string;
   picture: string;
   status: any;
@@ -25,6 +32,8 @@ export interface MainStoryProps {
   views: any;
 }
 export const MainStory = (props: MainStoryProps) => {
+  const navigate = useNavigate();
+  const {id, chapters} = props;
   const { title, picture, status, categories, authors, views } = props;
   return (
       <Flex
@@ -151,8 +160,28 @@ export const MainStory = (props: MainStoryProps) => {
                   <StyledLabel fontSize={"1.2em"} color="gray" title={views} />
                 </div>
               </Row>
+              
             </div>
           </Second>
+          <Flex>
+              <ReadnowButton
+                onClick={() => { navigate(`/truyen-tranh/${id}/${chapters[0]?.chapterNumber}`)}}
+              >
+               {'Đọc ngay'} 
+              </ReadnowButton>
+              <ContinueReadingBtn
+                onClick={() => { navigate(`/truyen-tranh/${id}/${
+                  chapters[chapters.length - 1]?.chapterNumber
+                }`)}}
+              >
+                {`Đọc tiếp - Chapter ${chapters[chapters.length - 1]?.chapterNumber}`}
+              </ContinueReadingBtn>
+          </Flex>
+          <Flex>
+                <CreatePostBtn>
+                  {'Tạo bài viết'}
+                </CreatePostBtn>
+          </Flex>
         </Flex>
       </Flex>
   );

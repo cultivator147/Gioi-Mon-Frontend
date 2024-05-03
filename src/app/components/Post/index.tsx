@@ -13,6 +13,7 @@ import { OutlineButton } from "../Common/Button/OutlineButton";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { ReadButton } from "../Common/Button/ReadButton";
 export interface PostProps {
   id: any;
   owner_id: any;
@@ -103,26 +104,11 @@ export const Post = (props: PostProps) => {
             justifyContent: "flex-end",
           }}
         >
-          <Link style={{ width: "50%" }} to={"/truyen-tranh/" + props.story_id}>
-            <div
-              style={{
-                borderStyle: "solid",
-                borderWidth: "2px",
-                width: "100%",
-                height: "75%",
-                borderColor: "green",
-                justifyContent: "center",
-                display: "flex",
-                alignItems: "center",
-                cursor: "pointer",
-              }}
-            >
-              <label style={{ color: "red", cursor: "pointer" }}>
-                {" "}
-                {"Đọc ngay"}
-              </label>
-            </div>
-          </Link>
+              <ReadButton
+              onClick={() => {navigate(`/truyen-tranh/${props.story_id}`)}}
+              >
+                {'Đọc ngay'}
+              </ReadButton>
         </div>
       </div>
     

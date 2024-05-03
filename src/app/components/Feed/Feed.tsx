@@ -17,6 +17,8 @@ import useModal from "../Modal/useModal";
 import { SimpleStoryProps } from "../Main/ListStoriesHome/StoryHome";
 import { StyledLabel } from "../Common/StyledLabel";
 import { StyledLink } from "../Common/StyledLink";
+import { SelectButton } from "../Common/Button/SelectButton";
+import { ChooseButton } from "../Common/Button/ChooseButton";
 
 export const Feed = () => {
   const user = useSelector(getUserSelector);
@@ -121,19 +123,14 @@ export const Feed = () => {
             onCompleteSelectStory={onCompleteSelectStory}
           />
           <div style={{ display: "flex" }}>
-            <button onClick={onClickSelectStory}>{"Chọn truyện"}</button>
+            <SelectButton
+            onClick={onClickSelectStory}
+            >
+              {'Chọn truyện'}
+            </SelectButton>
             <label
-              htmlFor="file-upload"
-              style={{
-                display: "inline-block",
-                padding: "10px 20px",
-                cursor: "pointer",
-                backgroundColor: "#fca311",
-                color: "#ffffff",
-                borderRadius: "5px",
-                border: "none",
-                transition: "background-color 0.3s",
-              }}
+            className="btn-grad"
+            htmlFor="file-upload"
             >
               Chọn ảnh
               <input
@@ -156,13 +153,13 @@ export const Feed = () => {
             </div>
           )}
           <div
-            style={{ width: "100%", display: "flex", justifyContent: "center" }}
+            style={{ width: "100%", display: "flex", justifyContent: "center"}}
           >
-            <StyledButton
-              label={"Đăng"}
-              backgroundColor="#ffffff"
-              onClick={onClickUpPost}
-            />
+            <ChooseButton
+            onClick={onClickUpPost}
+            >
+              {'Đăng bài'}
+            </ChooseButton>
           </div>
         </UpLoadPost>
         <div
