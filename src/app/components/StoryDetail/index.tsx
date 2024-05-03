@@ -60,7 +60,7 @@ export const Story = () => {
 
   return (
     <Flex direction={"column"} sx={{ width: "100%", alignItems: "center" }}>
-      <Flex style={{ width: "100%" }} sx={{ justifyContent: "center" }}>
+      <div style={{ width: "100%", height: '50%', justifyContent: "center" }} >
         <MainStory
           id={storyId}
           chapters={chapters}
@@ -74,51 +74,16 @@ export const Story = () => {
           status={status}
           views={views}
         />
-      </Flex>
+      </div>
       <Flex
         direction={"column"}
         sx={{
           width: "70%",
+          height: '100%',
         }}
       >
-        {/* <DivButton>
-          <div
-            style={{
-              width: "60%",
-              display: "flex",
-              justifyContent: "center",
-              gap: "12px",
-            }}
-          >
-            <div style={{ display: "flex" }}>
-              <ReadnowButton
-                onClick={() => { navigate(`/truyen-tranh/${storyId}/${chapters[0]?.chapterNumber}`)}}
-              >
-               {'Đọc ngay'} 
-              </ReadnowButton>
-            </div> */}
-            {/* <div style={{ display: "flex" }}>
-              <ReadnowButton
-                onClick={() => { navigate(`/truyen-tranh/${storyId}/${
-                  chapters[chapters.length - 1]?.chapterNumber
-                }`)}}
-              >
-                {`Mới nhất\nChapter ${chapters[chapters.length - 1]?.chapterNumber}`}
-              </ReadnowButton>
-            </div> */}
-            {/* <div style={{ display: "flex" }}>
-              <ContinueReadingBtn
-                onClick={() => { navigate(`/truyen-tranh/${storyId}/${
-                  chapters[chapters.length - 1]?.chapterNumber
-                }`)}}
-              >
-                {`Đọc tiếp\nChapter ${chapters[chapters.length - 1]?.chapterNumber}`}
-              </ContinueReadingBtn>
-            </div>
-          </div>
-        </DivButton> */}
         <Flex sx={{ width: "100%", justifyContent: "space-between" }}>
-          <Flex direction={'column'} sx={{width: '60%'}}>
+          <Flex direction={'column'} sx={{ width: '60%' }}>
             <StyledLabel
               title="Danh sách chương"
               fontSize={"24px"}
@@ -172,17 +137,5 @@ const ListChapters = styled.div`
   width: 100%;
   flex: 1;
 `;
-const DivButton = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  justify-content: center;
-  margin-bottom: 24px;
-`;
-const Wrapper = styled(PageWrapper)`
-  flex: 1;
-  width: 100%;
-  justify-content: center;
-  background-color: ${StyleConstants.BACKGROUND_MAIN_COLOR};
-  min-height: 500px;
-`;
+
+

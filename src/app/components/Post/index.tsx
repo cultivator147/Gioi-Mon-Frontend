@@ -12,7 +12,7 @@ import { GradientButton } from "../Common/Button/GradientButton";
 import { OutlineButton } from "../Common/Button/OutlineButton";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faComment, faHeart, faHeartCirclePlus } from "@fortawesome/free-solid-svg-icons";
 import { ReadButton } from "../Common/Button/ReadButton";
 export interface PostProps {
   id: any;
@@ -113,20 +113,27 @@ export const Post = (props: PostProps) => {
       </div>
     
       <PostBody>
-        <div>{props.title}</div>
+        <Flex  justify={'center'} sx={{ width: '100%'}} className="">
+          <Link to={`/truyen-tranh/${props.story_id}`}>
+          <text className="gradient-text">
+          {props.title}
+          </text>
+          </Link>
+
+          </Flex>
         <div>{props.content}</div>
-        <div>
+        <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '4px'}} >
           {props?.images?.map((img) => (
-            <StyledImage src={img} width={200} height={200} />
+            <div style={{}}>
+              <StyledImage src={img}   />
+            </div>
           ))}
         </div>
       </PostBody>
 
       <PostFooter>
-      <Flex justify={'center'}>
-      </Flex>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div style={{ display: "flex", gap: "4px", justifyItems:'center', alignItems: 'center' }}>
+        <div style={{width: '100%', display: "flex", justifyContent: "space-between" }}>
+          <div style={{ display: "flex", gap: "4px", justifyItems:'center', alignItems: 'center', padding: '0px 16px' }}>
             <FontAwesomeIcon icon={faHeart} color={favourited == 1 ? "red" : "gray"}/>
             <StyledLabel title={props.favourite_count} color="#000000" fontSize={'1.2rem'}/>
             {/* <StyledLabel title={props.avarageFavouritePoint} color="#000000" /> */}
@@ -135,29 +142,25 @@ export const Post = (props: PostProps) => {
             <StyledLabel title={`${props.comment_conut} Bình luận`} color="#000000" fontSize={'1.2rem'}/>
           </div>
         </div>
-      <div style={{width: '100%', opacity: '70%', height: '1px', backgroundColor: 'grey'}}/>
+      <div style={{width: '96%', opacity: '70%', height: '1px', backgroundColor: 'grey'}}/>
 
-        <div style={{ display: "flex", justifyContent: "space-between", paddingTop: '12px'}}>
+        <div style={{width: '100%', display: "flex",paddingLeft: '16px', justifyContent: "center", paddingTop: '12px', gap: '32px'}}>
           <div style={{ display: "flex", gap: "8px" }}>
             <button
               style={buttonStyle}
               onClick={onClickInterest}
-            >
+            > {<FontAwesomeIcon style={{marginRight: '2px'}} icon={faHeartCirclePlus}/>}
               {favourited === 0 ? 'Quan tâm' : 'Bỏ quan tâm'}
             </button>
           </div>
           <div>
             <button
             style={commentButton}>
+              <FontAwesomeIcon style={{marginRight: '2px'}} icon={faComment} />
               {'Bình luận'}
             </button>
           </div>
-          <div style={{width: '10%'}}>
-          {/* <button
-            style={commentButton}>
-              {'Chia sẻ'}
-            </button> */}
-          </div>
+          
         </div>
 
       </PostFooter>
@@ -188,11 +191,13 @@ const PostBody = styled.div`
   padding-top: 16px;
   padding-bottom: 16px;
   padding-right: 4px;
+  gap: 16px;
 `;
 const PostFooter = styled.div`
   display: flex;
   flex-direction: column;
   padding: 4px;
+  align-items: center;
 `;
 const FavouriteButton = styled.button`
   height: 45px;

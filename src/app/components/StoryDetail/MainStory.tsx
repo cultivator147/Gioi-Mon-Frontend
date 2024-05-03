@@ -14,7 +14,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import { faStackpath } from "@fortawesome/free-brands-svg-icons";
-import { Flex } from "@mantine/core";
+import { BackgroundImage, Flex, createStyles } from "@mantine/core";
 import { ChooseButton } from "../Common/Button/ChooseButton";
 import { ContinueReadingBtn } from "../Common/Button/ContinueReadingBtn";
 import { ReadnowButton } from "../Common/Button/ReadnowButton";
@@ -33,16 +33,33 @@ export interface MainStoryProps {
 }
 export const MainStory = (props: MainStoryProps) => {
   const navigate = useNavigate();
-  const {id, chapters} = props;
+  const { id, chapters } = props;
   const { title, picture, status, categories, authors, views } = props;
+
   return (
+    <div style={{ width: '100%', height: '100%'}}>
+      <div style={{
+        position: 'absolute',
+        zIndex: -9999,
+        display: 'block',
+        backgroundImage: `url(${picture})`,
+        width: '100%',
+        height: '50%',
+        filter: 'blur(30px)',
+        WebkitFilter: 'blur(30px)',
+        backgroundColor: '#000000',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        opacity: .6,
+        overflow: 'hidden'
+      }} />
       <Flex
         sx={{
-          minHeight: "450px",
-          maxHeight: "680px",
-          background: "#d7e9e5",
           width: "100%",
+          height: '100%',
           alignItems: "center",
+
         }}
       >
         <Flex
@@ -87,22 +104,22 @@ export const MainStory = (props: MainStoryProps) => {
                   <div style={{ padding: "4px" }}>
                     <FontAwesomeIcon icon={faUser} />
                   </div>
-                <div style={{ display: "flex", justifyContent: "start" }}>
-                  <StyledLabel
-                    fontSize={"1.2em"}
-                    color="gray"
-                    title="Tác giả"
-                  />
+                  <div style={{ display: "flex", justifyContent: "start" }}>
+                    <StyledLabel
+                      fontSize={"1.2em"}
+                      color="gray"
+                      title="Tác giả"
+                    />
                   </div>
                 </div>
                 <div style={{ display: 'flex' }}>
                   {authors.map((author) => (
-                    <div style={{paddingRight: '6px'}}>
-                    <StyledLink
-                      fontSize={"1.2em"}
-                      title={`${author.name} `}
-                      color="blue"
-                    />
+                    <div style={{ paddingRight: '6px' }}>
+                      <StyledLink
+                        fontSize={"1.2em"}
+                        title={`${author.name} `}
+                        color="blue"
+                      />
                     </div>
                   ))}
                 </div>
@@ -160,30 +177,33 @@ export const MainStory = (props: MainStoryProps) => {
                   <StyledLabel fontSize={"1.2em"} color="gray" title={views} />
                 </div>
               </Row>
-              
+
             </div>
           </Second>
           <Flex>
-              <ReadnowButton
-                onClick={() => { navigate(`/truyen-tranh/${id}/${chapters[0]?.chapterNumber}`)}}
-              >
-               {'Đọc ngay'} 
-              </ReadnowButton>
-              <ContinueReadingBtn
-                onClick={() => { navigate(`/truyen-tranh/${id}/${
-                  chapters[chapters.length - 1]?.chapterNumber
-                }`)}}
-              >
-                {`Đọc tiếp - Chapter ${chapters[chapters.length - 1]?.chapterNumber}`}
-              </ContinueReadingBtn>
+            <ReadnowButton
+              onClick={() => { navigate(`/truyen-tranh/${id}/${chapters[0]?.chapterNumber}`) }}
+            >
+              {'Đọc ngay'}
+            </ReadnowButton>
+            <ContinueReadingBtn
+              onClick={() => {
+                navigate(`/truyen-tranh/${id}/${chapters[chapters.length - 1]?.chapterNumber
+                  }`)
+              }}
+            >
+              {`Đọc tiếp - Chapter ${chapters[chapters.length - 1]?.chapterNumber}`}
+            </ContinueReadingBtn>
           </Flex>
           <Flex>
-                <CreatePostBtn>
-                  {'Tạo bài viết'}
-                </CreatePostBtn>
+            <CreatePostBtn>
+              {'Tạo bài viết'}
+            </CreatePostBtn>
           </Flex>
         </Flex>
       </Flex>
+    </div>
+
   );
 };
 const Row = styled.div`
@@ -204,12 +224,4 @@ const Second = styled.div`
   flex: 1;
   width: 100%;
 `;
-const Wrapper = styled.div`
-  width: 100%;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-`;
+

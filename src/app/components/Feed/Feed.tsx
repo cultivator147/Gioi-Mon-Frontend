@@ -19,6 +19,8 @@ import { StyledLabel } from "../Common/StyledLabel";
 import { StyledLink } from "../Common/StyledLink";
 import { SelectButton } from "../Common/Button/SelectButton";
 import { ChooseButton } from "../Common/Button/ChooseButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown, faAngleUp, faAnglesDown, faBook, faImage } from "@fortawesome/free-solid-svg-icons";
 
 export const Feed = () => {
   const user = useSelector(getUserSelector);
@@ -122,16 +124,19 @@ export const Feed = () => {
             hide={toggle}
             onCompleteSelectStory={onCompleteSelectStory}
           />
-          <div style={{ display: "flex" }}>
+          <Flex justify={'center'}>
             <SelectButton
             onClick={onClickSelectStory}
             >
+              <FontAwesomeIcon icon={faBook} style={{marginRight: '4px'}}/>
               {'Chọn truyện'}
             </SelectButton>
             <label
             className="btn-grad"
             htmlFor="file-upload"
             >
+
+              <FontAwesomeIcon icon={faImage} style={{marginRight: '4px'}}/>
               Chọn ảnh
               <input
                 id="file-upload"
@@ -140,15 +145,15 @@ export const Feed = () => {
                 hidden={true}
               />
             </label>
-          </div>
+          </Flex>
           <Flex
           >
             <StyledLink href={selectedStory?.link}  title={postTitle} color="#000000"/>
           </Flex>
           {fileUrls.length > 0 && (
-            <div>
+              <div style={{display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '4px'}} >
               {fileUrls.map((url) => (
-                <StyledImage src={url} width={250} height={250} />
+                <StyledImage src={url}/>
               ))}
             </div>
           )}
@@ -158,6 +163,7 @@ export const Feed = () => {
             <ChooseButton
             onClick={onClickUpPost}
             >
+              <FontAwesomeIcon icon={faAnglesDown} style={{marginRight: '4px'}}/>
               {'Đăng bài'}
             </ChooseButton>
           </div>

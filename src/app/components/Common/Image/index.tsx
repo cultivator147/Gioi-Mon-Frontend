@@ -20,7 +20,7 @@ export const StyledImage = (props: ImageProps) => {
       width={width}
       height={height}
       onClick={onClick}
-      style={{cursor: 'pointer', borderRadius: '9px'}}
+      style={{cursor: 'pointer', borderRadius: '9px', overflow: 'hidden'}}
     />
   );
 };
