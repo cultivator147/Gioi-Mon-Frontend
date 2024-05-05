@@ -21,7 +21,7 @@ export const ListPost = (props: ListPostProps) => {
           owner_id={item.ownerId}
           story_id={item.storyId}
           owner_avatar={item.ownerAvatar}
-          owner_name={"Trinh M Hieu"} 
+          owner_name={item.ownerNickname} 
           title={item?.title}
           content={item?.content}
           images={item?.images} 

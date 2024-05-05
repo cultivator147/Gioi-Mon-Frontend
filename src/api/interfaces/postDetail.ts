@@ -1,6 +1,7 @@
 export interface PostDetail{
     id: any;
     ownerId: any;
+    ownerNickname: any;
     ownerAvatar: any;
     storyId: any;
     title?: any;
