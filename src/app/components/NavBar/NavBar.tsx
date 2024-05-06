@@ -7,8 +7,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBlog, faBookJournalWhills, faClockRotateLeft, faHeartCircleCheck, faHome, faTags } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, useLocation } from "react-router-dom";
 import { Flex } from "@mantine/core";
+import { useEffect, useState } from "react";
 
 export const NavBar = () => {
+
+  const [showDiv, setShowDiv] = useState(true);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const windowWidth = window.innerWidth;
+      setShowDiv(windowWidth > 825); // Thay đổi giá trị 500 thành mức nhỏ nhất định của chiều rộng
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+
   const location = useLocation();
 
   const activeBackgroundTab = (path: string) => {
@@ -43,55 +60,57 @@ export const NavBar = () => {
   };
   return (
     <Wrapper>
-      <ULWrappper>
-        <div style={{ width: "80%" }}>
-          <LI style={{ width: "15%", ...activeBackgroundTab("/") }}>
-          <Flex sx={{alignItems:'center', gap: '4px', justifyContent: 'center'}}>
-          <FontAwesomeIcon icon={faBookJournalWhills}/>
-            <A style={activeLinkTab("/")} to="/">
-              Trang chủ
-            </A>
-            </Flex>
+      {showDiv &&
+        <ULWrappper>
+          <Flex justify={'center'} style={{ width: "100%" }}>
+            <LI style={{ ...activeBackgroundTab("/") }}>
+              <Flex sx={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
+                <FontAwesomeIcon icon={faBookJournalWhills} />
+                <A style={activeLinkTab("/")} to="/">
+                  Trang chủ
+                </A>
+              </Flex>
 
-          </LI>
-          <LI style={{ width: "15%"}}>
-            <Flex sx={{alignItems:'center', gap: '4px', justifyContent: 'center'}}>
-              <FontAwesomeIcon icon={faBlog} />
-            <A style={activeLinkTab("/feed")} to="/feed">
-              Bài đăng
-            </A>
-            </Flex>
-           
-          </LI>
-          <LI style={{ width: "15%" }}>
-          <Flex sx={{alignItems:'center', gap: '4px', justifyContent: 'center'}}>
-            <FontAwesomeIcon icon={faHeartCircleCheck} />
-            <A to="/theo-doi">Đang theo dõi</A>
+            </LI>
+            <LI style={{}}>
+              <Flex sx={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
+                <FontAwesomeIcon icon={faBlog} />
+                <A style={activeLinkTab("/feed")} to="/feed">
+                  Bài đăng
+                </A>
+              </Flex>
+
+            </LI>
+            <CategoryExpand
+              additionStyle={activeBackgroundTab("^/tim-truyen/(\\d+)$")}
+              addtionStyleLink={activeLinkTab("^/tim-truyen/(\\d+)$")}
+            />
+            <LeaderboardExpand
+              additionStyle={activeBackgroundTab(
+                "^/tim-truyen/leaderboard/(\\d+)$"
+              )}
+              addtionStyleLink={activeLinkTab("^/tim-truyen/leaderboard/(\\d+)$")}
+            />
+            <LI style={{}}>
+              <Flex sx={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
+                <FontAwesomeIcon icon={faHeartCircleCheck} />
+                <A to="/theo-doi">Đang theo dõi</A>
+              </Flex>
+            </LI>
+            <LI style={{}}>
+              <Flex sx={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
+                <FontAwesomeIcon icon={faClockRotateLeft} />
+                <A to="/theo-doi">Đang đọc</A>
+              </Flex>
+            </LI>
+
+
+
           </Flex>
-          </LI>
-          <LI style={{ width: "15%" }}>
-          <Flex sx={{alignItems:'center', gap: '4px', justifyContent: 'center'}}>
-            <FontAwesomeIcon icon={faClockRotateLeft} />
-            <A to="/theo-doi">Đang đọc</A>
-          </Flex>
-          </LI>
-          <CategoryExpand
-            additionStyle={activeBackgroundTab("^/tim-truyen/(\\d+)$")}
-            addtionStyleLink={activeLinkTab("^/tim-truyen/(\\d+)$")}
-          />
-          <LeaderboardExpand
-            additionStyle={activeBackgroundTab(
-              "^/tim-truyen/leaderboard/(\\d+)$"
-            )}
-            addtionStyleLink={activeLinkTab("^/tim-truyen/leaderboard/(\\d+)$")}
-          />
-          {/* <CategoryLI style={{ width: "20%" }}>
-          <A href="/">Xếp hạng</A>
-          <CategoryULDropdown></CategoryULDropdown>
-        </CategoryLI> */}
-        </div>
-      </ULWrappper>
+        </ULWrappper>
+      }
     </Wrapper>
+
   );
 };
 
@@ -111,6 +130,7 @@ const LI = styled.li`
   list-style: none;
   display: block;
   cursor: pointer;
+  padding: 0 16px;
   &:hover {
     opacity: 0.8;
     background-color: white;
@@ -125,7 +145,7 @@ const Wrapper = styled(SubWrapperRow)`
     padding: 0;
   }
 `;
-const ULWrappper = styled.ul`
+const ULWrappper = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
@@ -135,5 +155,4 @@ const ULWrappper = styled.ul`
   height: 100%;
   margin-block-start: 1em;
   margin-block-end: 1em;
-  margin-inline-start: 40px;
 `;

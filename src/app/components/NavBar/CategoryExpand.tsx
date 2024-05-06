@@ -36,12 +36,12 @@ export const CategoryExpand = ({
     getAll();
   }, []);
   return (
-    <CategoryLI style={{ width: "15%", ...additionStyle }}>
-          <Flex sx={{alignItems:'center', gap: '4px', justifyContent: 'center'}}>
-          <FontAwesomeIcon icon={faLayerGroup} />
-      <A to="/" style={{ ...addtionStyleLink }}>
-        Thể loại
-      </A>
+    <CategoryLI style={{ ...additionStyle }}>
+      <Flex sx={{ alignItems: 'center', gap: '4px', justifyContent: 'center', padding: '0 16px'  }}>
+        <FontAwesomeIcon icon={faLayerGroup} />
+        <A to="/" style={{ ...addtionStyleLink }}>
+          Thể loại
+        </A>
       </Flex>
       <CategoryULDropdown>
         <ListCategory>
@@ -59,19 +59,21 @@ export const CategoryExpand = ({
     </CategoryLI>
   );
 };
-const CategoryULDropdown = styled.div`
+export const CategoryULDropdown = styled.div`
   background-color: white;
   float: left;
-  width: 40rem;
-  min-width: 20rem;
+  min-width: 25rem;
   position: absolute;
   top: 100%;
   z-index: 1000;
   list-style: none;
   display: none;
   cursor: default;
+  border-style: solid;
+  border-color: rgb(190 140 40);
+  border-width: 1px;
 `;
-const A = styled(NavLink)`
+export const A = styled(NavLink)`
   font-weight: 450;
   display: block;
   color: #333;
@@ -95,7 +97,7 @@ const LI = styled.li`
   }
 `;
 
-const CategoryLI = styled(LI)`
+export const CategoryLI = styled(LI)`
   &:hover {
     text-decoration: none;
     ${CategoryULDropdown} {
@@ -107,12 +109,12 @@ const CategoryLI = styled(LI)`
 export const CategoryWrapper = styled(NavLink)`
   text-decoration: none;
   cursor: pointer;
-  padding: 6px;
+  padding: 12px 6px;
   &:hover {
     background-color: green;
   }
 `;
-const ListCategory = styled.div`
+export const ListCategory = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
 `;

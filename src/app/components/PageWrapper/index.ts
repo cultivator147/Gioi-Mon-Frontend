@@ -8,8 +8,6 @@ export const PageWrapper = styled.div`
 export const SubWrapper = styled.div`
   box-sizing: border-box;
   display: flex;
-  /* margin-left: 20%;
-  margin-right: 20%; */
   align-items: center;
   flex: 1;
 `;

@@ -32,6 +32,7 @@ export interface PostProps {
 export const Post = (props: PostProps) => {
   const [favourited, setFavourited] = useState<number>(props.favourited || 0);
   const favouritedPoint = props.favourited_point || 0;
+  const [favouriteCount, setFavouriteCount] = useState(props.favourite_count);
   const navigate = useNavigate();
   const user = useSelector(getUserSelector);
   const onClickInterest = async () => {
@@ -46,6 +47,7 @@ export const Post = (props: PostProps) => {
       if (favourite === 1) {
         console.log('favourited');
         setFavourited(1);
+        setFavouriteCount(favouriteCount + 1);
       } else {
         console.log('unfavourited');
         setFavourited(0);
@@ -135,7 +137,7 @@ export const Post = (props: PostProps) => {
         <div style={{width: '100%', display: "flex", justifyContent: "space-between" }}>
           <div style={{ display: "flex", gap: "4px", justifyItems:'center', alignItems: 'center', padding: '0px 16px' }}>
             <FontAwesomeIcon icon={faHeart} color={favourited == 1 ? "red" : "gray"}/>
-            <StyledLabel title={props.favourite_count} color="#000000" fontSize={'1.2rem'}/>
+            <StyledLabel title={favouriteCount} color="#000000" fontSize={'1.2rem'}/>
             {/* <StyledLabel title={props.avarageFavouritePoint} color="#000000" /> */}
           </div>
           <div style={{marginRight: '12px'}}>
