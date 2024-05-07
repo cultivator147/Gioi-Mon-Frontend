@@ -51,6 +51,7 @@ export const Post = (props: PostProps) => {
       } else {
         console.log('unfavourited');
         setFavourited(0);
+        setFavouriteCount(favouriteCount - 1);
       }
     }
   };
@@ -82,7 +83,7 @@ export const Post = (props: PostProps) => {
           <div style={{ padding: "8px" }}>
             <StyledImage
               src={props.owner_avatar}
-              onClick={() => navigate("/user/profile")}
+              onClick={() => navigate(`/user/profile/${props.owner_id}`)}
               width={50}
               height={50}
             />

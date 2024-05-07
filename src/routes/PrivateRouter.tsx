@@ -9,6 +9,7 @@ import Gender from "../app/pages/RegisterPage/RegisterProfile/Gender";
 import { UserSlice } from "../redux-toolkit/slice/userSlice";
 import Avatar from "../app/pages/RegisterPage/RegisterProfile/Avatar";
 import { ProfilePage } from "../app/pages/ProfilePage";
+import { FriendProfilePage } from "../app/pages/FriendProfilePage";
 const PrivateRouter = () => {
   const auth = useSelector(getUserSelector);
   const navigate = useNavigate();
@@ -31,11 +32,13 @@ const PrivateRouter = () => {
   }, []);
   return (
     <Routes>
-      <Route path="/profile" element={<ProfilePage />} />
       <Route path="/profile/nickname" element={<NickName />} />
       <Route path="/profile/avatar" element={<Avatar />} />
       <Route path="/profile/birthday" element={<Birth />} />
       <Route path="/profile/gender" element={<Gender />} />
+      <Route path="/profile" element={<ProfilePage />} />
+      <Route path="/profile/:profile_id" element={<FriendProfilePage />} />
+
     </Routes>
   );
 };

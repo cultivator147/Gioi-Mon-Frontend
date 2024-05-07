@@ -10,6 +10,7 @@ import { Header } from "../app/components/Header";
 import { NavBarWrapper } from "../app/components/NavBar";
 import { useEffect, useState } from "react";
 import { FeedPage } from "../app/pages/FeedPage";
+import { ProfilePage } from "../app/pages/ProfilePage";
 const PublicRouter = () => {
   const location = useLocation();
   const [showHeader, setShowHeader] = useState(true);
@@ -38,12 +39,20 @@ const PublicRouter = () => {
           <Route path="/tim-truyen/*" element={<SearchPage />} />
           <Route path="/tim-truyen/:categoryid" element={<SearchPage />} />
           <Route path="/tim-truyen/keyword=:keyword" element={<SearchPage />} />
-          <Route path="/tim-truyen/leaderboard/:leaderboardid" element={<SearchPage />} />
-          <Route path="/tim-truyen/:categoryid/:writing_state" element={<SearchPage />} />
-          <Route path="/tim-truyen/:categoryid/:writing_state/sort_by=:sort_by" element={<SearchPage />} />
+          <Route
+            path="/tim-truyen/leaderboard/:leaderboardid"
+            element={<SearchPage />}
+          />
+          <Route
+            path="/tim-truyen/:categoryid/:writing_state"
+            element={<SearchPage />}
+          />
+          <Route
+            path="/tim-truyen/:categoryid/:writing_state/sort_by=:sort_by"
+            element={<SearchPage />}
+          />
           <Route path="/truyen-tranh/:storyid" element={<StoryPage />} />
           <Route path="/feed" element={<FeedPage />} />
-
           <Route
             path="/truyen-tranh/:storyid/:chapternumber"
             element={<StoryContentPage />}

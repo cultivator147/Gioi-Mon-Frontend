@@ -12,7 +12,7 @@ import {
 } from '@mantine/core';
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { ReactComponent as Settings } from '../../../assets/icons/settings.svg';

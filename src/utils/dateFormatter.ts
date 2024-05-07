@@ -32,6 +32,9 @@ export function isAgeEnough(date: Date | string | number): boolean | string {
 }
 
 export function Age(data: string): number {
+  if(data == null){
+    return 18;
+  }
   // Chuyển đổi ngày tháng năm sang định dạng yyyy-mm-dd
   const parts: string[] = data?.split('/');
   const birthDate: string = `${parts[2]}-${parts[1]}-${parts[0]}`;
