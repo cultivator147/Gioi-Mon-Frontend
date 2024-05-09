@@ -1,6 +1,6 @@
 const API_GTE_URL : string = 'http://localhost:10440';
 const HOST_LOCAL: string = 'http://localhost';
-const HOST_DEV_GTE: string = 'http://54.206.47.54:10440';
+const HOST_DEV_GTE: string = 'http://localhost:10440';
 const HOST = HOST_DEV_GTE;
 export const GM_USER_URL : string =HOST  + '/user/v1.0';
 export const GM_STORIES_URL : string = HOST + '/story/v1.0';

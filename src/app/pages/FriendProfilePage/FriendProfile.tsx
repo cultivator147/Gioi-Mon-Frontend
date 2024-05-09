@@ -70,7 +70,7 @@ function FriendProfileScreen() {
 
     const getPost = async () => {
       try {
-        const params: TypeListPost = { page: 0, size: 7 };
+        const params: TypeListPost = { friend_id: profile?.userId, page: 0, size: 10 };
         const response = await getListPost(user.token, params);
         const data = response?.data?.data;
         setPosts(data);

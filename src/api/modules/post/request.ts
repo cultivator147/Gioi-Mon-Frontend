@@ -3,13 +3,13 @@ import { GM_POST_URL } from '../../constant.url';
 import { CreateApiCaller } from '../../config';
 const request = axios.create({
     baseURL: GM_POST_URL,
-    timeout: 8000,
+    timeout: 20000,
     headers: {'Content-Type': 'application/json'},
 });
 export const requestWithAuth = (token: string) => {
     return CreateApiCaller({
         baseURL: GM_POST_URL,
-        timeout: 8000,
+        timeout: 20000,
         headers: {'Content-Type': 'application/json'}},
         {auth: true, token: token}
     );
