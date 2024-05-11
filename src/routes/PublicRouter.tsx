@@ -44,7 +44,7 @@ const PublicRouter = () => {
             element={<SearchPage />}
           />
           <Route
-            path="/tim-truyen/:categoryid/:writing_state"
+            path="/tim-truyen/:categoryid/WRITING_STATE=:writing_state"
             element={<SearchPage />}
           />
           <Route

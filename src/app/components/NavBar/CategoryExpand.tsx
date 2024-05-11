@@ -65,13 +65,13 @@ export const CategoryULDropdown = styled.div`
   min-width: 25rem;
   position: absolute;
   top: 100%;
-  z-index: 1000;
+  z-index: 1001;
   list-style: none;
   display: none;
   cursor: default;
   border-style: solid;
   border-color: rgb(190 140 40);
-  border-width: 1px;
+  border-width: 2px;
 `;
 export const A = styled(NavLink)`
   font-weight: 450;
@@ -83,7 +83,7 @@ export const A = styled(NavLink)`
 `;
 
 const LI = styled.li`
-  text-align: center;
+  text-align: start;
   float: left;
   border-right: 1px solid #ddd;
   list-style: none;
@@ -111,10 +111,25 @@ export const CategoryWrapper = styled(NavLink)`
   cursor: pointer;
   padding: 12px 6px;
   &:hover {
-    background-color: green;
+    background-image: linear-gradient(to right, #304352 0%, #d7d2cc  51%, #304352  100%);
+
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
   }
 `;
 export const ListCategory = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
 `;
+         
+         
+
+
+         
+

@@ -250,3 +250,46 @@ h1 {
   100%{background-position:left}
 }
 
+
+         
+.btn-linktab-bf {
+  background-image: linear-gradient(to right, #3A1C71 0%, #D76D77  51%, #3A1C71  100%);
+  margin: 5px;
+  padding: 5px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-linktab-bf:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+         
+.btn-linktab-af {
+  background-image: linear-gradient(to right, #cb2d3e 0%, #ef473a  51%, #cb2d3e  100%);
+  margin: 5px;
+  padding: 5px 25px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;            
+  box-shadow: 0 0 20px #eee;
+  border-radius: 10px;
+  display: block;
+}
+
+.btn-linktab-af:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+

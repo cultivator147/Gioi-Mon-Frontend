@@ -11,21 +11,41 @@ import { useParams } from "react-router-dom";
 import { Category } from "../../../api/interfaces/category";
 import { getAllCategories } from "../../../api/modules/stories/category";
 import { Logger } from "../../../utils/helper";
-import { CategoryWrapper } from "../NavBar/CategoryExpand";
+import { CategoryWrapper, ListCategory } from "../NavBar/CategoryExpand";
 import { StyledNavButton } from "../Common/Button/StyledNavButton";
 import ReactPaginate from "react-paginate";
 import "./pagination.css";
+import { ButtonLinkTab } from "../Common/Button/ButtonLinkTab";
+import { Flex } from "@mantine/core";
 export const MainSearch = () => {
+  //TODO: Parse the location.path to params.
   const categoryId = useParams().categoryid || "2";
   const keyword = useParams().keyword || "";
-  const writingState = useParams().writing_state || "0";
-  const sortBy = useParams().sort_by || "LAST_UPDATE_DATE";
+  const writingState = useParams().writing_state;
+  const sortBy = useParams().sort_by;
   const [stories, setStories] = useState([]);
   const [listCategory, setListCategory] = useState<Category[]>([]);
 
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
 
+  const convertTitle = () => {
+    var title = "";
+    if(keyword != ""){
+      title = "Tìm kiếm truyện bằng từ khoá"
+    }else if(writingState != undefined){
+      const writingStatusWord = writingState === "0" ? "Tất cả" : (writingState === "2" ? "Hoàn thành" : "Đang tiến hành");
+      title = `Truyện sắp xếp theo tình trạng viết - ${writingStatusWord}`;
+      if(sortBy != undefined){
+        title = "Truyện sắp xếp theo Truyện mới";
+      }
+    }else if(sortBy != ""){
+      title = "Truyện sắp xếp theo Truyện mới";
+    }else{
+      title = `Truyện tranh ${listCategory[parseInt(categoryId) - 1]?.name} - Mới cập nhật`;
+    }
+    return title;
+  }
   const handlePageChange = async (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
@@ -37,9 +57,9 @@ export const MainSearch = () => {
   const filtered: IUseFilteredListStories = {
     onComplete: onConpleteGetFilteredListStories,
     categoryId: categoryId,
-    writingState: parseInt(writingState),
+    writingState: parseInt(writingState || "0"),
     keyword: keyword,
-    sortBy: sortBy,
+    sortBy: sortBy || "LAST_UPDATE_DATE",
     page: currentPage,
     size: +StyleConstants.ITEMS_PER_PAGE,
   };
@@ -48,7 +68,7 @@ export const MainSearch = () => {
   React.useEffect(() => {
     getFilteredListStories();
     console.log(categoryId);
-  }, [currentPage, categoryId]);
+  }, [currentPage, categoryId, keyword, writingState, sortBy]);
 
   React.useEffect(() => {
     const getAll = async () => {
@@ -83,9 +103,7 @@ export const MainSearch = () => {
               <StyledLabel
                 color="#000000"
                 fontSize={"2em"}
-                title={`Truyện tranh ${
-                  listCategory[parseInt(categoryId) - 1]?.name
-                } - Mới cập nhật`}
+                title={convertTitle()}
               />
               <div
                 style={{
@@ -111,21 +129,20 @@ export const MainSearch = () => {
                   gap: "10px",
                 }}
               >
-                <StyledNavButton
+                <ButtonLinkTab
                   label={"Tất cả"}
-                  backgroundColor="#ffffff"
-                  customStyle={{}}
-                  href={`/tim-truyen/${categoryId}/0`}
+                  to={`/tim-truyen/${categoryId}/WRITING_STATE=0`}
+                  backgroundPath={'/WRITING_STATE=0'}
                 />
-                <StyledNavButton
+                <ButtonLinkTab
                   label={"Hoàn thành"}
-                  backgroundColor="#ffffff"
-                  href={`/tim-truyen/${categoryId}/2`}
+                  to={`/tim-truyen/${categoryId}/WRITING_STATE=2`}
+                  backgroundPath={'/WRITING_STATE=2'}
                 />
-                <StyledNavButton
+                <ButtonLinkTab
                   label={"Đang tiến hành"}
-                  backgroundColor="#ffffff"
-                  href={`/tim-truyen/${categoryId}/1`}
+                  to={`/tim-truyen/${categoryId}/WRITING_STATE=1`}
+                  backgroundPath={'/WRITING_STATE=1'}
                 />
               </div>
 
@@ -139,62 +156,65 @@ export const MainSearch = () => {
                     color="#000000"
                   />
                 </div>
-                <div style={{ width: "100%", display: "block", gap: "10px" }}>
-                  <StyledNavButton
-                    label={"Ngày cập nhật"}
-                    backgroundColor="#ffffff"
-                    customStyle={{}}
-                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=LAST_UPDATE_DATE`}
-                  />
-                  <StyledNavButton
-                    label={"Truyện mới"}
-                    backgroundColor="#ffffff"
-                    customStyle={{}}
-                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=NEW`}
-                  />
-                  <StyledNavButton
-                    label={"Top all"}
-                    backgroundColor="#ffffff"
-                    customStyle={{}}
-                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_ALL`}
-                  />
-                  <StyledNavButton
-                    label={"Top tháng"}
-                    backgroundColor="#ffffff"
-                    customStyle={{}}
-                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_MONTHLY`}
-                  />
-                  <StyledNavButton
-                    label={"Top tuần"}
-                    backgroundColor="#ffffff"
-                    customStyle={{}}
-                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_WEEKLY`}
-                  />
-                  <StyledNavButton
-                    label={"Top ngày"}
-                    backgroundColor="#ffffff"
-                    customStyle={{}}
-                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_DAILY`}
-                  />
-                  <StyledNavButton
-                    label={"Lượt theo dõi"}
-                    backgroundColor="#ffffff"
-                    customStyle={{}}
-                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=FOLLOWER`}
-                  />
-                  <StyledNavButton
-                    label={"Bình luận"}
-                    backgroundColor="#ffffff"
-                    customStyle={{}}
-                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=COMMENT`}
-                  />
-                  <StyledNavButton
-                    label={"Số chapter"}
-                    backgroundColor="#ffffff"
-                    customStyle={{}}
-                    href={`/tim-truyen/${categoryId}/${writingState}/sort_by=CHAPTER`}
-                  />
-                </div>
+                <Flex
+                  direction={"column"}
+                  style={{ width: "100%" }}
+                >
+                  <Flex>
+                    <ButtonLinkTab
+                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=LAST_UPDATE_DATE`}
+                      backgroundPath={"/sort_by=LAST_UPDATE_DATE"}
+                    >
+                      Ngày cập nhật
+                    </ButtonLinkTab>
+                    <ButtonLinkTab
+                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=NEW`}
+                      backgroundPath={"/sort_by=NEW"}
+                    >
+                      Truyện mới
+                    </ButtonLinkTab>
+
+                    <ButtonLinkTab
+                      label={"Top all"}
+                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_ALL`}
+                      backgroundPath={"/sort_by=TOP_ALL"}
+                    />
+                  </Flex>
+                  <Flex>
+                    <ButtonLinkTab
+                      label={"Top tháng"}
+                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_MONTHLY`}
+                      backgroundPath={"/sort_by=TOP_MONTHLY"}
+                    />
+                    <ButtonLinkTab
+                      label={"Top tuần"}
+                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_WEEKLY`}
+                      backgroundPath={"/sort_by=TOP_WEEKLY"}
+                    />
+                    <ButtonLinkTab
+                      label={"Top ngày"}
+                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_DAILY`}
+                      backgroundPath={"/sort_by=TOP_DAILY"}
+                    />
+                  </Flex>
+                  <Flex>
+                    <ButtonLinkTab
+                      label={"Lượt theo dõi"}
+                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=FOLLOWER`}
+                      backgroundPath={"/sort_by=FOLLOWER"}
+                    />
+                    <ButtonLinkTab
+                      label={"Bình luận"}
+                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=COMMENT`}
+                      backgroundPath={"/sort_by=COMMENT"}
+                    />
+                    <ButtonLinkTab
+                      label={"Số chapter"}
+                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=CHAPTER`}
+                      backgroundPath={"/sort_by=CHAPTER"}
+                    />
+                  </Flex>
+                </Flex>
               </div>
             </div>
             <FirstRow>
@@ -292,8 +312,4 @@ const CategoryRightWrapper = styled.div`
   border-style: solid;
   border-color: grey;
 `;
-const ListCategory = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
-  gap: 8px;
-`;
+

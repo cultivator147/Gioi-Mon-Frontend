@@ -31,12 +31,12 @@ export const NavBar = () => {
   const activeBackgroundTab = (path: string) => {
     if (path === "/") {
       if (location.pathname === "/") {
-        return { opacity: "0.8", backgroundColor: "white" };
+      return { backgroundColor: "white" };
       }
     } else {
       const regex = new RegExp(path);
       if (location.pathname.match(regex)) {
-        return { opacity: "0.8", backgroundColor: "white" };
+        return {backgroundColor: "white" };
       }
     }
     return {};
@@ -72,7 +72,7 @@ export const NavBar = () => {
               </Flex>
 
             </LI>
-            <LI style={{}}>
+            <LI style={{ ...activeBackgroundTab("/feed") }}>
               <Flex sx={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
                 <FontAwesomeIcon icon={faBlog} />
                 <A style={activeLinkTab("/feed")} to="/feed">
