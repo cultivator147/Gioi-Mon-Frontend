@@ -16,7 +16,7 @@ export const StyledLabel = (props : StyledLabelProps) => {
     );
 }
 const Label = styled.label<{fontSize : number}>`
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Nunito Sans, SF Pro Text, SF Pro Icons, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: ${props => props.fontSize};
     color: ${props => props.color};
 `;

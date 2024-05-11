@@ -13,29 +13,36 @@ import { StyledNavButton } from "../Common/Button/StyledNavButton";
 import { postRequestStory } from "../../../api/modules/stories/request copy";
 import { useSelector } from "react-redux";
 import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
+import { ChapterProps } from "../ListChapter";
 export const StoryContent = () => {
   const chapterNumber = useParams().chapternumber || "1";
   const storyId = useParams().storyid || "1";
   const [images, setImages] = useState<string[]>([]);
-
+  const [chapters, setChapters] = useState<ChapterProps[]>([]);
   const [title, setTitle] = useState("");
   const [chapterName, setChapterName] = useState("");
   const [chapterQuantity, setChapterQuantity] = useState(1);
   const userId = useSelector(getUserSelector)?.id;
+  const [showChapterDropdown, setShowChapterDropdown] = useState(false);
   const navigate = useNavigate();
-  const onClick = () => {};
+  const onClick = () => {
+    setShowChapterDropdown(!showChapterDropdown);
+  };
   const handlePreviousChapter = () => {
     navigate(`/truyen-tranh/${storyId}/${+chapterNumber - 1}`);
+    window.location.reload();
   };
   const handleNextChapter = () => {
     navigate(`/truyen-tranh/${storyId}/${+chapterNumber + 1}`);
+    window.location.reload();
   };
   const onCompleteGetContent = (data: any) => {
-    const { images, title, chapterName, chapterQuantity } = data;
+    const { images, title, chapterName, chapterQuantity, chapters } = data;
     setTitle(title);
     setImages(images);
     setChapterName(chapterName);
     setChapterQuantity(chapterQuantity);
+    setChapters(chapters);
   };
   const { getStoryContent } = useStoryContent({
     onComplete: onCompleteGetContent,
@@ -81,6 +88,7 @@ export const StoryContent = () => {
         <Third>
           <div style={{ display: "flex" }}>
             <StyledNavButton
+              href={`/truyen-tranh/${storyId}/${+chapterNumber - 1}`}
               backgroundColor="#ffffff"
               label={"Chương trước"}
               customStyle={{ fontColor: "#ffffff" }}
@@ -88,25 +96,53 @@ export const StoryContent = () => {
               disable={chapterNumber == "1"}
             />
             {/* <StyledLink title={"Chương trước"} fontSize={"1em"} onClick={handlePreviousChapter}/> */}
-            <button onClick={onClick}>
-              <StyledLink
-                color="#000000"
-                title={`#${chapterNumber}`}
-                fontSize={"1em"}
-              />
+            <button
+            className=""
+             onClick={onClick}>
+            {`#${chapterNumber}`}
             </button>
             <StyledNavButton
               backgroundColor="#ffffff"
               label={"Chương sau"}
               customStyle={{ fontColor: "#ffffff" }}
+              href={`/truyen-tranh/${storyId}/${+chapterNumber + 1}`}
               onClick={handleNextChapter}
               disable={+chapterNumber == chapterQuantity}
             />
+           {showChapterDropdown && <ListChapterDropDown>
+              <ListChapterGrid>
+                {chapters?.map((chapter) => (
+                    <LIChapter
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                    }}
+                    onClick={() => {navigate(`/truyen-tranh/${storyId}/${chapter.chapterNumber}`); window.location.reload();}}
+                  >
+                    <StyledLink
+                      href={`/truyen-tranh/${storyId}/${chapter.chapterNumber}`}
+                      title={`Chương ${chapter.chapterNumber}`}
+                      color="black"
+                      fontSize={"1.1em"}
+                    />
+                    <StyledLink
+                      // title={`${chapter?.lastUpdate}`}
+                      title={`Mới cập nhật`}
+                      color="gray"
+                      fontSize={"1.1em"}
+                    />
+                  </LIChapter>
+                )
+              )}
+              </ListChapterGrid>
+            </ListChapterDropDown>}
             {/* <StyledLink onClick={handleNextChapter}  title={"Chương sau"} fontSize={"1em"} /> */}
           </div>
+         
         </Third>
         <div style={{ flex: "0.5" }}></div>
       </HeaderContent>
+     
       <ListChapters>
         {images.map((image, index) => (
           <div key={`${image}-${index}`}>
@@ -151,7 +187,7 @@ const HeaderContent = styled(PageWrapper)`
   }
 `;
 const First = styled.div`
-  width: auto;
+  align-items: center;
 `;
 const Second = styled.div`
   padding: 8px;
@@ -168,12 +204,34 @@ const Third = styled.div`
   justify-content: center;
   min-width: 15em;
 `;
-const Fourth = styled.div`
-  padding: 8px;
-  margin-left: 12px;
+export const ListChapterDropDown = styled.div`
+  overflow-y: scroll;
+  background-color: #FFFFFF;
+  float: left;
+  min-width: 15rem;
+  min-height: 5em;
+  max-height: 25em;
+  position: absolute;
+  top: 100%;
+  z-index: 1005;
+  list-style: none;
+  cursor: default;
+  border-style: solid;
+  border-color: rgb(190 140 40);
+  border-width: 2px;
+`;
+
+export const ListChapterGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+`;
+
+export const LIChapter = styled.li`
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  min-width: 15em;
+  padding: 4px;
+  cursor: pointer;
+  :hover {
+    background-color: #e5e7eb;
+  }
 `;

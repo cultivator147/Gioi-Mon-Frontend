@@ -45,7 +45,7 @@ const Link = styled(NavLink)<{
   italic?: any;
 }>`
   cursor: pointer;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: Nunito Sans, SF Pro Text, SF Pro Icons, Roboto, Helvetica Neue, Helvetica, Arial, sans-serif;;
   font-weight: 450;
   color: ${(props) => props.color};
   font-size: ${(props) => props.fontSize};

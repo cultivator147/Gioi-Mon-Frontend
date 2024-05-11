@@ -65,7 +65,7 @@ export const CategoryULDropdown = styled.div`
   min-width: 25rem;
   position: absolute;
   top: 100%;
-  z-index: 1001;
+  z-index: 1000;
   list-style: none;
   display: none;
   cursor: default;

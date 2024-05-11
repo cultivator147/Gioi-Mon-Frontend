@@ -12,6 +12,7 @@ export const Brand = () => {
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
+  height: 100%;
 `;
 const Title = styled(NavLink)`
   align-items: center;
@@ -22,4 +23,6 @@ const Title = styled(NavLink)`
 `;
 const Image = styled.img`
   width: 150px;
+  height: 100%;
+  min-height: 2em;
 `;

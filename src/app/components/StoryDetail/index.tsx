@@ -60,7 +60,7 @@ export const Story = () => {
 
   return (
     <Flex direction={"column"} sx={{ width: "100%", alignItems: "center" }}>
-      <div style={{ width: "100%", height: '50%', justifyContent: "center" }} >
+      <div style={{ width: "100%", height: "50%", justifyContent: "center" }}>
         <MainStory
           id={storyId}
           chapters={chapters}
@@ -79,11 +79,11 @@ export const Story = () => {
         direction={"column"}
         sx={{
           width: "70%",
-          height: '100%',
+          height: "100%",
         }}
       >
-        <Flex sx={{ width: "100%", justifyContent: "space-between" }}>
-          <Flex direction={'column'} sx={{ width: '60%' }}>
+        <Flex sx={{ width: "100%", gap: '32px', justifyContent: "space-between" }}>
+          <Flex direction={"column"} sx={{ width: "80%" }}>
             <StyledLabel
               title="Danh sách chương"
               fontSize={"24px"}
@@ -97,16 +97,24 @@ export const Story = () => {
               <div
                 style={{
                   borderStyle: "solid",
+                  display: "flex",
+                  flexDirection: "column",
                   borderWidth: "1px",
+                  borderColor: "#e5e7eb",
                   padding: "8px",
+                  overflowY: "scroll",
+                  borderRadius: ".5rem",
+                  maxHeight: "1200px",
+                  gap: "8px",
                 }}
               >
                 {chapters.map((chapter: ChapterProps) => (
-                  <li
+                  <LIChapter
                     style={{
                       display: "flex",
                       justifyContent: "space-between",
                     }}
+                    onClick={() => navigate(`/truyen-tranh/${storyId}/${chapter.chapterNumber}`)}
                   >
                     <StyledLink
                       href={`/truyen-tranh/${storyId}/${chapter.chapterNumber}`}
@@ -120,12 +128,12 @@ export const Story = () => {
                       color="gray"
                       fontSize={"1.1em"}
                     />
-                  </li>
+                  </LIChapter>
                 ))}
               </div>
             </ListChapters>
           </Flex>
-          <div style={{ width: "30%" }}>
+          <div style={{ }}>
             <Leaderboard />
           </div>
         </Flex>
@@ -137,5 +145,12 @@ const ListChapters = styled.div`
   width: 100%;
   flex: 1;
 `;
-
-
+export const LIChapter = styled.li`
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  cursor: pointer;
+  :hover {
+    background-color: #e5e7eb;
+  }
+`;

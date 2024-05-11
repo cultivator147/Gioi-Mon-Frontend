@@ -8,6 +8,7 @@ export interface ChapterProps{
     picture : string,
     chapterName ?: string,
     lastUpdate ?: any ,
+    chapters?: ChapterProps
 }
 
 export const Chapter = (props: ChapterProps) => {
