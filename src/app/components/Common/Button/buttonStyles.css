@@ -1,3 +1,8 @@
+a:hover {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
 .btn-grad {
   background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA 51%, #77A1D3 100%);
   margin: 10px;

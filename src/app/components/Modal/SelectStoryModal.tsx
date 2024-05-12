@@ -11,7 +11,6 @@ import { SelectButton } from '../Common/Button/SelectButton';
 import { SearchButton } from '../Common/Button/SearchButton';
 
 const SelectStoryModal = ({ isShowing, hide, onCompleteSelectStory}: any) => {
-    console.log('isshowing: ', isShowing);
     const [keyword, setKeyword] = useState("A");
     const inputContent = useRef(null);
     const [stories, setStories] = useState<SimpleStoryProps[]>([]);

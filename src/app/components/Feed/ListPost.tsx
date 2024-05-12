@@ -1,5 +1,5 @@
 import { PostDetail } from "../../../api/interfaces/postDetail";
-import { Post } from "../Post";
+import { Post } from "./Post";
 import styled from "styled-components";
 export interface ListPostProps {
   listItems: PostDetail[];

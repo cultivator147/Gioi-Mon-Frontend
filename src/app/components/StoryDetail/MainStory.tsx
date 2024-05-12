@@ -85,7 +85,7 @@ export const MainStory = (props: MainStoryProps) => {
           <Second>
             <div style={{ width: "100%" }}>
               <Row>
-                <div style={{ width: "7em", display: "flex" }}>
+                <div style={{ width: "10em", display: "flex" }}>
                   <div style={{ padding: "4px" }}>
                     <FontAwesomeIcon icon={faPlus} />
                   </div>
@@ -100,7 +100,7 @@ export const MainStory = (props: MainStoryProps) => {
                 </div>
               </Row>
               <Row>
-                <div style={{ width: "7em", display: "flex" }}>
+                <div style={{ width: "10em", display: "flex" }}>
                   <div style={{ padding: "4px" }}>
                     <FontAwesomeIcon icon={faUser} />
                   </div>
@@ -125,7 +125,7 @@ export const MainStory = (props: MainStoryProps) => {
                 </div>
               </Row>
               <Row>
-                <div style={{ width: "7em", display: "flex" }}>
+                <div style={{ width: "10em", display: "flex" }}>
                   <div style={{ padding: "4px" }}>
                     <FontAwesomeIcon icon={faSignal} />
                   </div>
@@ -139,7 +139,7 @@ export const MainStory = (props: MainStoryProps) => {
                 <StyledLabel fontSize={"1.2em"} color="gray" title={status} />
               </Row>
               <Row>
-                <div style={{ width: "7em", display: "flex" }}>
+                <div style={{ width: "10em", display: "flex" }}>
                   <div style={{ padding: "4px" }}>
                     <FontAwesomeIcon icon={faTags} />
                   </div>
@@ -163,7 +163,7 @@ export const MainStory = (props: MainStoryProps) => {
                 </div>
               </Row>
               <Row>
-                <div style={{ width: "7em", display: "flex" }}>
+                <div style={{ width: "10em", display: "flex" }}>
                   <div style={{ padding: "4px" }}>
                     <FontAwesomeIcon icon={faEye} />
                   </div>

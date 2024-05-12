@@ -3,14 +3,23 @@ import { StyleConstants } from "../../../styles/StyleConstants";
 interface StyledLabelProps{
     title : string,
     fontSize?: any,
-    color?: string
+    color?: string,
+    onClick?: any,
+    addtionalStyle?: any,
 }
 export const StyledLabel = (props : StyledLabelProps) => {
     const title = props.title;
     const fontSize = props.fontSize || StyleConstants.FONT_SIZE_MEDIUM;
     const color = props.color || '#FFFFFF';
+    const onClick = props.onClick;
+    const addtionalStyle = props.addtionalStyle;
     return(
-        <Label fontSize={fontSize} color={color}>
+        <Label
+         onClick={onClick} 
+         fontSize={fontSize} 
+         color={color}
+         style={addtionalStyle}
+         >
             {title}
         </Label>
     );
