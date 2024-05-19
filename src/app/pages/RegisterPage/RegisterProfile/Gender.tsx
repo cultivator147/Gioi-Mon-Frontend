@@ -113,7 +113,7 @@ export default function Gender() {
   }, [sex]);
   return (
     <ProfileLayout>
-      <Box sx={{ height: 476 }} className={classes.children}>
+      <Box style={{ height: 476 }} className={classes.children}>
         <Box
           sx={{
             width: '100%',
@@ -157,7 +157,7 @@ export default function Gender() {
             {t('Genders')}
           </Text>
           <Text
-            sx={{
+            style={{
               fontSize: 18,
               textAlign: 'center',
             }}
@@ -235,7 +235,7 @@ export default function Gender() {
                   }}
                 >
                   <Text
-                    sx={{
+                    style={{
                       fontSize: 24,
                       fontWeight: 500,
                       lineHeight: '30px',

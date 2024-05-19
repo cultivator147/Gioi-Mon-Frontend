@@ -22,7 +22,7 @@ export const SampleStory = (props: SimpleStoryProps) => {
     <StoryWrapper>
         
       <NavLink to={props.link}>
-        <Flex sx={{width: '170px', height: '200px', borderStyle: 'solid', borderRadius: '9px', borderColor: 'white'}}>
+        <Flex style={{width: '170px', height: '200px', borderStyle: 'solid', borderRadius: '9px', borderColor: 'white'}}>
           <StyledImage
             src={props.picture}
             onClick={() => {

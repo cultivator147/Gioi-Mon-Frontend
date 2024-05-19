@@ -20,6 +20,8 @@ import { ContinueReadingBtn } from "../Common/Button/ContinueReadingBtn";
 import { ReadnowButton } from "../Common/Button/ReadnowButton";
 import { useNavigate } from "react-router-dom";
 import { CreatePostBtn } from "../Common/Button/CreatePostBtn";
+import useModal from "../Modal/useModal";
+import CrPostFrStrModal from "../Modal/CrPostFrStoryModal";
 
 export interface MainStoryProps {
   id: any;
@@ -35,6 +37,15 @@ export const MainStory = (props: MainStoryProps) => {
   const navigate = useNavigate();
   const { id, chapters } = props;
   const { title, picture, status, categories, authors, views } = props;
+  
+  const { isShowing, toggle } = useModal();
+  const onClickShowCreatePost = () => {
+    toggle();
+  };
+  const onHiden = async () => {
+    toggle();
+    
+  };
 
   return (
     <div style={{ width: '100%', height: '100%'}}>
@@ -55,7 +66,7 @@ export const MainStory = (props: MainStoryProps) => {
         overflow: 'hidden'
       }} />
       <Flex
-        sx={{
+        style={{
           width: "100%",
           height: '100%',
           alignItems: "center",
@@ -196,10 +207,18 @@ export const MainStory = (props: MainStoryProps) => {
             </ContinueReadingBtn>
           </Flex>
           <Flex>
-            <CreatePostBtn>
+            <CreatePostBtn
+            onClick={onClickShowCreatePost}
+            >
               {'Tạo bài viết'}
             </CreatePostBtn>
           </Flex>
+          {isShowing &&
+           <CrPostFrStrModal 
+            isShowing = {isShowing}
+              hide={onHiden}
+              props={props}
+          />}
         </Flex>
       </Flex>
     </div>

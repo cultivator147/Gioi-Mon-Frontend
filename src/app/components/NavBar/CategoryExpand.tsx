@@ -37,7 +37,7 @@ export const CategoryExpand = ({
   }, []);
   return (
     <CategoryLI style={{ ...additionStyle }}>
-      <Flex sx={{ alignItems: 'center', gap: '4px', justifyContent: 'center', padding: '0 16px'  }}>
+      <Flex style={{ alignItems: 'center', gap: '4px', justifyContent: 'center', padding: '0 16px'  }}>
         <FontAwesomeIcon icon={faLayerGroup} />
         <A to="/" style={{ ...addtionStyleLink }}>
           Thể loại

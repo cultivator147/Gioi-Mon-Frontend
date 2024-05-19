@@ -100,7 +100,7 @@ export default function Desc() {
             placeholder="Say something..."
           />
           <Text
-            sx={{
+            style={{
               textAlign: 'right',
               width: '100%',
               color: '#929292',

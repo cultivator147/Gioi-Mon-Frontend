@@ -59,7 +59,7 @@ export const Story = () => {
   }, []);
 
   return (
-    <Flex direction={"column"} sx={{ width: "100%", alignItems: "center" }}>
+    <Flex direction={"column"} style={{ width: "100%", alignItems: "center" }}>
       <div style={{ width: "100%", height: "50%", justifyContent: "center" }}>
         <MainStory
           id={storyId}
@@ -77,13 +77,13 @@ export const Story = () => {
       </div>
       <Flex
         direction={"column"}
-        sx={{
+        style={{
           width: "70%",
           height: "100%",
         }}
       >
-        <Flex sx={{ width: "100%", gap: '32px', justifyContent: "space-between" }}>
-          <Flex direction={"column"} sx={{ width: "80%" }}>
+        <Flex style={{ width: "100%", gap: '32px', justifyContent: "space-between" }}>
+          <Flex direction={"column"} style={{ width: "80%" }}>
             <StyledLabel
               title="Danh sách chương"
               fontSize={"24px"}

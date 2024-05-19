@@ -23,6 +23,7 @@ import { inherits } from "util";
 import { createComment, getComments } from "../../../../api/modules/post/commentPost";
 import useModal from "../../Modal/useModal";
 import { CommentModal } from "./CommentModal";
+import { convertTimeToFacebookStyle } from "../../../../utils/helper";
 export interface PostProps {
   id: any;
   owner_id: any;
@@ -35,14 +36,15 @@ export interface PostProps {
   favourite_count: any;
   avarageFavouritePoint: any;
   comment_conut: any;
-  favourited?: number;
-  favourited_point?: any;
+  favourited: number;
+  favourited_point : any;
   isModal?: boolean;
+  createTime?: any;
 }
 export const Post = (props: PostProps) => {
+  console.log(props);
   const {isModal} = props || false;
-  const [favourited, setFavourited] = useState<number>(props.favourited || 0);
-  const favouritedPoint = props.favourited_point || 0;
+  const [favourited, setFavourited] = useState(props.favourited);
   const [favouriteCount, setFavouriteCount] = useState(props.favourite_count);
   const navigate = useNavigate();
   const user = useSelector(getUserSelector);
@@ -164,7 +166,7 @@ export const Post = (props: PostProps) => {
               fontSize={"1.2rem"}
               color="#0"
             />
-            <StyledLabel title="4h" fontSize={"1.1rem"} color="#0" />
+            <StyledLabel title={convertTimeToFacebookStyle(props.createTime)} fontSize={"1.1rem"} color="#0" />
           </div>
         </div>
 
@@ -188,25 +190,29 @@ export const Post = (props: PostProps) => {
       </div>
 
       <PostBody>
-        <Flex justify={"center"} sx={{ width: "100%" }} className="">
+        <Flex justify={"center"} style={{ width: "100%" }} className="">
           <Link to={`/truyen-tranh/${props.story_id}`}>
             <text className="gradient-text">{props.title}</text>
           </Link>
         </Flex>
         <div>{props.content}</div>
+        <Flex justify={'center'} style={{width: '100%'}}>
+
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
             gap: "4px",
+            width: '100%'
           }}
         >
           {props?.images?.map((img) => (
-            <div style={{}}>
+            <Flex justify={'center'}>
               <StyledImage src={img} />
-            </div>
+            </Flex>
           ))}
         </div>
+        </Flex>
       </PostBody>
       <CommentModal
             isShowing={isShowing}
@@ -234,7 +240,7 @@ export const Post = (props: PostProps) => {
           >
             <FontAwesomeIcon
               icon={faHeart}
-              color={favourited == 1 ? "red" : "gray"}
+              color={favourited === 1 ? "red" : "gray"}
             />
             <StyledLabel
               title={favouriteCount}
@@ -327,7 +333,7 @@ export const Post = (props: PostProps) => {
 
         <Flex
           align={"center"}
-          sx={{ width: "100%", height: "3rem", padding: "8px", gap: "8px" }}
+          style={{ width: "100%", height: "3rem", padding: "8px", gap: "8px" }}
         >
           <Flex align={"center"} style={{ height: "2.5rem" }}>
             <StyledImage

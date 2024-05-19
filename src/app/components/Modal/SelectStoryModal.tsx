@@ -40,7 +40,7 @@ const SelectStoryModal = ({ isShowing, hide, onCompleteSelectStory}: any) => {
       }, [keyword]);
     return isShowing ? (
         <Flex
-            sx={{
+            style={{
                 position: 'fixed',
                 zIndex: 99,
                 width: '100%', 
@@ -50,11 +50,11 @@ const SelectStoryModal = ({ isShowing, hide, onCompleteSelectStory}: any) => {
                 justifyContent: 'center'
             }}>
             <div style={{ width: '70%', height: '80%', background: 'white', borderRadius: '9px', border: 'solid white' }}>
-                <Flex direction={'column'}  sx={{height: '88%'}}>
-                    <Flex sx={{ padding: '8px', justifyContent:'center' }}>
+                <Flex direction={'column'}  style={{height: '88%'}}>
+                    <Flex style={{ padding: '8px', justifyContent:'center' }}>
                         <StyledLabel title={'Chọn truyện'} color='#0' />
                     </Flex>
-                    <Flex direction={'column'} sx={{padding: '12px', justifyContent: 'space-between', alignItems: 'center'}}>
+                    <Flex direction={'column'} style={{padding: '12px', justifyContent: 'space-between', alignItems: 'center'}}>
                         <TextInput
                             onChange={(event) => setKeyword(event.currentTarget.value)}
                             ref={inputContent}
@@ -67,7 +67,7 @@ const SelectStoryModal = ({ isShowing, hide, onCompleteSelectStory}: any) => {
                         </SearchButton> 
                     </Flex>
                     <div style={{ width: '100%', opacity: '70%', height: '1px', backgroundColor: 'grey' }} />
-                    <Flex sx={{padding: '12px', overflowY: 'scroll'}}>
+                    <Flex style={{padding: '12px', overflowY: 'scroll'}}>
                     <table border={1} width={'100%'} style={{borderCollapse: 'collapse'}}>
                         <tbody>
                             {stories.map((str) => (
@@ -83,7 +83,7 @@ const SelectStoryModal = ({ isShowing, hide, onCompleteSelectStory}: any) => {
                                     </Flex>
                                 </td>
                                 <td style={{width: '10%', padding: '8px', border: '1px solid #ddd'}}>
-                                    <Flex sx={{padding: '4px', gap: '2px'}}>
+                                    <Flex style={{padding: '4px', gap: '2px'}}>
                                     <StyledLabel title='Chọn' fontSize={'1.2rem'} color='#000000' />
                                 <input type='radio' name='selectGroup' onChange={() => {handleRadioChange(str)}}/>
                                     </Flex>

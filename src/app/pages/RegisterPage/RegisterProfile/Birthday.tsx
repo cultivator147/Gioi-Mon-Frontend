@@ -211,7 +211,7 @@ export default function Birth() {
             />
           </Center>
           <Checkbox
-            sx={{
+            style={{
               position: 'absolute',
               bottom: 30,
               zIndex: 4,

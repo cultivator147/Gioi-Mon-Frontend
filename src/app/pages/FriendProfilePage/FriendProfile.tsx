@@ -87,7 +87,7 @@ function FriendProfileScreen() {
   return (
     <Container fluid className={classes.container}>
       <BackgroundImage
-        sx={{
+        style={{
           position: "absolute",
           minHeight: "324px",
           maxHeight: "394px",
@@ -132,14 +132,14 @@ function FriendProfileScreen() {
           </SubtleButton>
         </Flex>
         <Flex
-          sx={{
+          style={{
             justifyItems: "center",
             flexDirection: "column",
             alignItems: "center",
           }}
         >
           <Flex
-            sx={{
+            style={{
               flexDirection: "row",
               justifyContent: "flex-start",
               gap: "16px",
@@ -150,7 +150,7 @@ function FriendProfileScreen() {
             <StyledLabel title={profile?.coin || 0} color="black" />
           </Flex>
           <Flex
-            sx={{
+            style={{
               flexDirection: "row",
               justifyContent: "space-between",
               width: "60%",
@@ -185,7 +185,7 @@ function FriendProfileScreen() {
           <Flex
             direction={"column"}
             gap={"16px"}
-            sx={{ alignItems: "center", justifyContent: "center" }}
+            style={{ alignItems: "center", justifyContent: "center" }}
           >
             <div style={{ display: "flex" }}>
               <StyledLabel title={"Bài viết đã đăng"} color="#000000" />

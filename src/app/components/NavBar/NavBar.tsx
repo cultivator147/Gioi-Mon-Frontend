@@ -64,7 +64,7 @@ export const NavBar = () => {
         <ULWrappper>
           <Flex justify={'center'} style={{ width: "100%" }}>
             <LI style={{ ...activeBackgroundTab("/") }}>
-              <Flex sx={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
+              <Flex style={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
                 <FontAwesomeIcon icon={faBookJournalWhills} />
                 <A style={activeLinkTab("/")} to="/">
                   Trang chủ
@@ -73,9 +73,9 @@ export const NavBar = () => {
 
             </LI>
             <LI style={{ ...activeBackgroundTab("/feed") }}>
-              <Flex sx={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
+              <Flex style={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
                 <FontAwesomeIcon icon={faBlog} />
-                <A style={activeLinkTab("/feed")} to="/feed">
+                <A style={activeLinkTab(`/feed/filter_by=0/fav_status=0`)} to={`/feed/filter_by=0/fav_status=0`}>
                   Bài đăng
                 </A>
               </Flex>
@@ -92,13 +92,13 @@ export const NavBar = () => {
               addtionStyleLink={activeLinkTab("^/tim-truyen/leaderboard/(\\d+)$")}
             />
             <LI style={{}}>
-              <Flex sx={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
+              <Flex style={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
                 <FontAwesomeIcon icon={faHeartCircleCheck} />
                 <A to="/theo-doi">Đang theo dõi</A>
               </Flex>
             </LI>
             <LI style={{}}>
-              <Flex sx={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
+              <Flex style={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
                 <FontAwesomeIcon icon={faClockRotateLeft} />
                 <A to="/theo-doi">Đang đọc</A>
               </Flex>

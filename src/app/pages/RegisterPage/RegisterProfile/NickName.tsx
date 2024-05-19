@@ -103,7 +103,7 @@ export default function NickName() {
           </Text>
           <form onSubmit={form.onSubmit(handleNickName)}>
             <Box
-              sx={{
+              style={{
                 position: "relative",
                 borderRadius: 8,
                 border: error ? "1px solid #FF0000" : "none",

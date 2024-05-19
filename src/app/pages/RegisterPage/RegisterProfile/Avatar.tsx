@@ -117,7 +117,7 @@ export default function Avatar() {
               }}
             >
               <Box
-                sx={{
+                style={{
                   width: "85%",
                   height: "85%",
                   aspectRatio: "1 / 1",
@@ -146,7 +146,7 @@ export default function Avatar() {
                     <Clear width={20} height={20} />
                   </button>
                   <BackgroundImage
-                    sx={{
+                    style={{
                       position: 'absolute',
                       inset: 0,
                       zIndex: 1,

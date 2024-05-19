@@ -52,7 +52,7 @@ export const CommentModal = ({ isShowing, hide, props }: any) => {
         }}
       >
         <Flex
-          sx={{
+          style={{
             backgroundColor: "#FFFFFF",
             height: "5rem",
             zIndex: 102,
@@ -112,11 +112,13 @@ export const CommentModal = ({ isShowing, hide, props }: any) => {
             owner_avatar={owner_avatar}
             owner_name={owner_name}
             images={images}
+            favourited_point={props.favourited_point}
             favourite_count={favourite_count}
             avarageFavouritePoint={avarageFavouritePoint}
             comment_conut={comment_conut}
             favourited={props?.favourited}
             isModal={true}
+            createTime={props?.createTime}
           />
         </div>
       </Flex>

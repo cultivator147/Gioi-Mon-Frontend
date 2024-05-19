@@ -33,7 +33,7 @@ export const LeaderboardExpand = ({
   const [listLeaderboard, setlistLeaderboard] = useState(LIST_LEADERBOARD);
   return (
     <CategoryLI style={{ ...additionStyle }}>
-        <Flex sx={{ alignItems: 'center', gap: '4px', justifyContent: 'center', padding: '0 16px'  }}>
+        <Flex style={{ alignItems: 'center', gap: '4px', justifyContent: 'center', padding: '0 16px'  }}>
         <FontAwesomeIcon icon={faRankingStar} />
         <A to="/" style={{ ...addtionStyleLink }}>
           XẾP HẠNG

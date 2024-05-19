@@ -65,7 +65,7 @@ export default function Mode() {
           </Text>
           <Stack align="center" mt={14}>
             <Button
-              sx={{
+              style={{
                 background:
                   'linear-gradient(90deg, #E46125 -0.01%, #C91A44 100%)',
               }}
@@ -74,7 +74,7 @@ export default function Mode() {
               onClick={() => setMode(0)}
             >
               <Text
-                sx={{
+                style={{
                   background: 'linear-gradient(90deg, #E46125 -0.01%, #C91A44 50%, #A12FA3 100%)',
                   WebkitBackgroundClip: 'text',
                   color: mode === 0 ? '#FFFFFF' : 'transparent',
@@ -84,7 +84,7 @@ export default function Mode() {
               </Text>
             </Button>
             <Button
-              sx={{
+              style={{
                 background:
                   'linear-gradient(90deg, #C91A44 -0.01%, #A12FA3 100%)',
               }}

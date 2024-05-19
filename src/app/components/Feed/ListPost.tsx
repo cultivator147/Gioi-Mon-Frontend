@@ -7,12 +7,7 @@ export interface ListPostProps {
   size?: number;
 }
 export const ListPost = (props: ListPostProps) => {
-  var items: PostDetail[] = props.listItems;
-  const page = props.page || 0;
-  const size = props.size || 5;
-  if (items.length > 5) {
-    items = items.slice(page * size, (page + 1) * size);
-  }
+  const items: PostDetail[] = props.listItems;
   return (
     <Wrapper>
       {items.map((item: PostDetail) => (
@@ -25,11 +20,12 @@ export const ListPost = (props: ListPostProps) => {
           title={item?.title}
           content={item?.content}
           images={item?.images} 
-          favourite_count={item?.favouriteCount} 
+          favourite_count={item.favouriteCount} 
           avarageFavouritePoint={item?.averageFavouritePoint} 
           comment_conut={item.commentCount}
           favourited={item.favourited}     
           favourited_point={item.favouritePoint}     
+          createTime={item.createTime}
         />
       ))}
     </Wrapper>

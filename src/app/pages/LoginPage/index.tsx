@@ -108,7 +108,7 @@ export function LoginPage() {
           <Flex
             justify="space-between"
             align="center"
-            sx={{
+            style={{
               position: "relative",
               zIndex: 2,
             }}

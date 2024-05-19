@@ -101,7 +101,7 @@ function UpLoad({ link, id = '0', name, setImg, img }: any) {
         </button>
       )}
       <BackgroundImage
-        sx={{
+        style={{
           position: 'absolute',
           inset: 0,
           zIndex: zIndex,
@@ -109,7 +109,7 @@ function UpLoad({ link, id = '0', name, setImg, img }: any) {
         src={profile.picture[id] || link}
       ></BackgroundImage>
       <Box
-        sx={{
+        style={{
           width: '35%',
           height: '35%',
           position: 'absolute',
