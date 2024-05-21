@@ -46,6 +46,9 @@ export const MainStory = (props: MainStoryProps) => {
     toggle();
     
   };
+  const onClickViewPosts = () => {
+    navigate(`/feed/filter_by=0/fav_status=0/sort_by=0/story_id=${id}`)
+  };
 
   return (
     <div style={{ width: '100%', height: '100%'}}>
@@ -211,6 +214,11 @@ export const MainStory = (props: MainStoryProps) => {
             onClick={onClickShowCreatePost}
             >
               {'Tạo bài viết'}
+            </CreatePostBtn>
+            <CreatePostBtn
+            onClick={onClickViewPosts}
+            >
+              {'Xem bài viết về truyện'}
             </CreatePostBtn>
           </Flex>
           {isShowing &&

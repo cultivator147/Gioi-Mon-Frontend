@@ -13,15 +13,16 @@ export interface IUseFilterPosts {
     filterBy: any;
     favouriteStatus: any;
     sortBy?: any;
+    storyId?: any;
 
 }
 const useFilterPosts = (props : IUseFilterPosts) => {
     const user = useSelector(getUserSelector);
 
-    const {onComplete, filterBy, favouriteStatus,sortBy, page, size} = props;
+    const {onComplete, filterBy, favouriteStatus,sortBy,storyId, page, size} = props;
     const fetchFilterPosts = async () => {
         try{
-            const params : TypeListPost = {filterBy: filterBy, favouriteStatus: favouriteStatus , page: page, size: size};
+            const params : TypeListPost = {filterBy: filterBy, favouriteStatus: favouriteStatus , sortBy: sortBy, page: page, size: size, storyId: storyId};
             const response = await getListPost(user.token, params);
             Logger('api data: ', response?.data?.data);
             onComplete(response?.data?.data);

@@ -75,7 +75,7 @@ export const NavBar = () => {
             <LI style={{ ...activeBackgroundTab("/feed") }}>
               <Flex style={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
                 <FontAwesomeIcon icon={faBlog} />
-                <A style={activeLinkTab(`/feed/filter_by=0/fav_status=0`)} to={`/feed/filter_by=0/fav_status=0`}>
+                <A style={activeLinkTab(`/feed/filter_by=0/fav_status=0/sort_by=0`)} to={`/feed/filter_by=0/fav_status=0/sort_by=0/story_id=0`}>
                   Bài đăng
                 </A>
               </Flex>

@@ -8,7 +8,7 @@ import { getListPost } from "../../../api/modules/post/listPost";
 import { StyledImage } from "../Common/Image";
 import { useSelector } from "react-redux";
 import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
-import { Alert, Button, Flex, Menu, Select, TextInput } from "@mantine/core";
+import { Alert, Button, Flex, Menu, Select, Text, TextInput } from "@mantine/core";
 import { StyledButton } from "../Common/Button/StyledButton";
 import { uploadImage } from "../../../utils/imageUploader";
 import { createPost } from "../../../api/modules/post/post";
@@ -31,12 +31,13 @@ import { IconComponents } from "@tabler/icons-react";
 import { IconHash } from "@tabler/icons";
 import { useNavigate, useParams } from "react-router-dom";
 import useFilterPosts from "../../../hooks/useFilterPost";
+import useDetailStory from "../../../hooks/useDetailStory";
 const FilterBy = {
   "Tất cả": 0,
   "Top yêu thích": 1,
   "Top bình luận": 2,
 };
-export const Feed = () => {
+export const Feed = ({props} : any) => {
   const user = useSelector(getUserSelector);
   const navigate = useNavigate();
   const inputContent = useRef(null);
@@ -48,11 +49,8 @@ export const Feed = () => {
   const [loading, setLoading] = useState(false);
   const [selectedStory, setSelectedStory] = useState<SimpleStoryProps>();
   const { isShowing, toggle } = useModal();
-  const [storyId, setStoryId] = useState(null);
   const refFilterBy = useRef<HTMLInputElement>(null);
 
-  const filter_by = useParams().filter_by || "0";
-  const fav_status = useParams().fav_status || "0";
 
   const setFilterByStr = (str: any) => {
     if(str === "0"){
@@ -79,19 +77,34 @@ export const Feed = () => {
       ;
     }
   }
-  
+  const setSortByStr = (str: any) => {
+    if(str === "0"){
+      return  "Tất cả"
+    }else if(str === "1"){
+      return "Giảm dần";
+    }else if(str === "2"){
+      return"Tăng dần"
+    }else{
+      return "Tất cả"
+      ;
+    }
+  }
+  const story_id = useParams().story_id || "0";
+  const filter_by = useParams().filter_by || "0";
+  const fav_status = useParams().fav_status || "0";
+  const sort_by = useParams().sort_by || "0";
 
   const [filterBy, setFilterBy] = useState<string | null>(setFilterByStr(filter_by));
   const [filterByInt, setFilterByInt] = useState<number>(+filter_by);
 
-  const [favouriteStatusInt, setFavouriteStatusInt] = useState<number>(
-    +fav_status
-  );
-  const [favouriteStatus, setFavouriteStatus] = useState<string | null>(
-    setFavStatusStr(fav_status)
-  );
-  const [sortBy, setSortBy] = useState<string | null>("Tất cả");
+  const [favouriteStatusInt, setFavouriteStatusInt] = useState<number>(+fav_status);
+  const [favouriteStatus, setFavouriteStatus] = useState<string | null>(setFavStatusStr(fav_status));
 
+   const [sortByInt, setSortByInt] = useState<number>(+sort_by);
+  const [sortBy, setSortBy] = useState<string | null>(setSortByStr(sort_by));
+
+  const [storyId, setStoryId] = useState(+story_id);
+  const [storyName, setStoryName] = useState(null);
   const onCompleteSelectStory = (str: SimpleStoryProps) => {
     setSelectedStory(str);
     setPostTitle(str.title);
@@ -116,28 +129,18 @@ export const Feed = () => {
   const {fetchFilterPosts} = useFilterPosts({
     onComplete: onCompleteFetchFilterPost,
     filterBy: filterByInt,
-    favouriteStatus: favouriteStatusInt 
+    favouriteStatus: favouriteStatusInt ,
+    sortBy: sortByInt,
+    storyId: storyId,
   });
   React.useEffect(() => {
     setPosts([]);
+    if(storyId != null){
+      getDataDetailStory();
+    }
     fetchFilterPosts();
-    // const getPost = async () => {
-    //   try {
-    //     const params: TypeListPost = {
-    //       page: 0,
-    //       size: 3,
-    //       filterBy: filterByInt,
-    //       favouriteStatus: favouriteStatusInt,
-    //     };
-    //     const response = await getListPost(user.token, params);
-    //     const data = response?.data?.data;
-    //     setPosts(data);
-    //   } catch (err) {
-    //     console.log(err);
-    //   }
-    // };
-    // getPost();
-  }, [filter_by, fav_status]);
+  
+  }, [filter_by, fav_status, sort_by]);
   
   const setFilterInt = (filterByStr: any) => {
     const filterByInt =
@@ -148,6 +151,11 @@ export const Feed = () => {
         : FilterBy["Top yêu thích"];
     setFilterByInt(filterByInt);
   };
+  const convertToSortByInt = (sortByStr: any) => {
+    const favStatusInt =
+    sortByStr === "Tất cả" ? 0 : sortByStr === "Giảm dần" ? 1 : 2;
+    setSortByInt(favStatusInt);
+  };
   const setFavStatusInt = (favStatusStr: any) => {
     const favStatusInt =
       favStatusStr === "Tất cả" ? 0 : favStatusStr === "Đã thích" ? 1 : 2;
@@ -155,7 +163,7 @@ export const Feed = () => {
   };
   const onClickFilterPost =   () => {
     //  window.location.reload();
-     navigate(`/feed/filter_by=${filterByInt}/fav_status=${favouriteStatusInt}`);
+     navigate(`/feed/filter_by=${filterByInt}/fav_status=${favouriteStatusInt}/sort_by=${sortByInt}/story_id=${storyId}`);
   };
 
 
@@ -172,6 +180,17 @@ export const Feed = () => {
     }
     setLoading(false);
   };
+
+  const onCompleteGetDetailStory = (data: any) => {
+    const {
+      title,
+    } = data;
+   setStoryName(title);
+  };
+  const { getDataDetailStory } = useDetailStory({
+    onComplete: onCompleteGetDetailStory,
+    storyId: storyId,
+  });
   return (
     <Wrapper>
       <div
@@ -309,15 +328,33 @@ export const Feed = () => {
                 placeholder="Pick value"
                 data={["Tất cả", "Tăng dần", "Giảm dần"]}
                 value={sortBy}
-                onChange={setSortBy}
+                onChange={(v) => {setSortBy(v); convertToSortByInt(v);}}
                 icon={<IconComponents />}
               />
             </Flex>
+            {storyName != null && (<Flex align={'center'}>
+              <Menu.Label style={{ color: "#000000", fontSize: "1rem" }}>
+                Truyện:
+              </Menu.Label>
+              <Text
+                variant="gradient"
+                gradient={{ from: 'indigo', to: 'cyan', deg: 45 }}
+                sx={{ fontFamily: 'Greycliff CF, sans-serif' }}
+                ta="center"
+                fz="xl"
+                fw={700}
+                align="center"
+                >
+              {storyName}
+            </Text>
+            </Flex>)}
+            
             <Flex justify={"center"} sx={{ width: "100%" }}>
               <Button onClick={onClickFilterPost} variant="light">
                 Visit gallery
               </Button>
             </Flex>
+          
           </Flex>
         </SearchPost>
         <div

@@ -37,7 +37,7 @@ function ProfileScreen() {
   React.useEffect(() => {
     const getPost = async () => {
       try{
-        const params : TypeListPost = {page: 0, size: 7};
+        const params : TypeListPost = {page: 0, size: 7, friend_id: user.id};
         const response = await getListPost(user.token, params);
         const data = response?.data?.data;
         setPosts(data);
