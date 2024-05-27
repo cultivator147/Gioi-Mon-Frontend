@@ -53,6 +53,7 @@ const PublicRouter = () => {
           />
           <Route path="/truyen-tranh/:storyid" element={<StoryPage />} />
           <Route path="/feed/filter_by=:filter_by/fav_status=:fav_status/sort_by=:sort_by/story_id=:story_id" element={<FeedPage />} />
+          <Route path="/feed/filter_by=:filter_by/fav_status=:fav_status/sort_by=:sort_by" element={<FeedPage />} />
           <Route path="/feed/story_id=:story_id" element={<FeedPage />} />
 
           <Route

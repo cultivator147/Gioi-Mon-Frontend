@@ -118,6 +118,7 @@ function* handleGetProfile(action: any) {
           zodiac: data.zodiac,
           gender: data.gender,
           introduction: data.introduction,
+          coin: data.coin,
         },
       })
     );

@@ -65,4 +65,8 @@ export function convertLang(str: string) {
       const yearsDifference = Math.floor(secondsDifference / 29030400);
       return `${yearsDifference} năm trước`;
     }
-  }
+  };
+  export const delay = async (ms: any) => {
+    return new Promise((resolve) => 
+        setTimeout(resolve, ms));
+};

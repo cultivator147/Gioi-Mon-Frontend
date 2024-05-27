@@ -138,18 +138,18 @@ function FriendProfileScreen() {
             alignItems: "center",
           }}
         >
-          <Flex
+          {/* <Flex
             style={{
               flexDirection: "row",
               justifyContent: "flex-start",
               gap: "16px",
               width: "60%",
             }}
-          >
-            <StyledLabel title={"Coin"} color="black" />
-            <StyledLabel title={profile?.coin || 0} color="black" />
-          </Flex>
-          <Flex
+          > */}
+            {/* <StyledLabel title={"Coin"} color="black" />
+            <StyledLabel title={profile?.coin || 0} color="black" /> */}
+          {/* </Flex> */}
+          {/* <Flex
             style={{
               flexDirection: "row",
               justifyContent: "space-between",
@@ -165,30 +165,62 @@ function FriendProfileScreen() {
               <StyledLabel title={"Level"} color="black" />
               <StyledLabel title={profile?.level || 2} color="black" />
             </Flex>
-          </Flex>
+          </Flex> */}
         </Flex>
         <Flex direction={"column"} gap={"16px"}>
-          <StyledLabel title={"Thông tin cá nhân"} color="black" />
+          <Text
+          variant="gradient"
+          gradient={{ from: 'indigo', to: 'cyan', deg: 45 }}
+          sx={{ fontFamily: 'Greycliff CF, sans-serif' }}
+          ta="start"
+          style={{marginLeft: '64px'}}
+          fz="xl"
+          fw={700}
+          >
+          {"Thông tin cá nhân:"}
+          </Text>
           <Flex direction={"column"} gap={"12px"}>
             <Flex className={classes.flexRow}>
-              <StyledLabel title={"Nickname"} color="#000000" />
-              <TextInput
-                // onChange={}
-                // ref={inputContent}
-                value={profile?.nickname}
-                style={{ width: "100%" }}
-                placeholder="Điền nickname của bạn"
-              />
+              <Text
+              style={{marginLeft: '76px'}}
+              variant="gradient"
+              gradient={{ from: 'indigo', to: 'cyan', deg: 45 }}
+              sx={{ fontFamily: 'Greycliff CF, sans-serif' }}
+              ta="center"
+              fz="xl"
+              fw={700}
+              >
+                {"Nickname:"}
+              </Text>
+              <Text
+              fz="xl"
+              fw={800}
+              sx={{ fontFamily: 'Greycliff CF, sans-serif' }}
+              variant="gradient"
+              gradient={{ from: 'black', to: 'cyan', deg: 45 }}
+              >
+                {profile?.nickname}
+              </Text>
             </Flex>
           </Flex>
-          TODO: Chọn danh hiệu
+          {/* TODO: Chọn danh hiệu */}
           <Flex
             direction={"column"}
             gap={"16px"}
             style={{ alignItems: "center", justifyContent: "center" }}
           >
             <div style={{ display: "flex" }}>
-              <StyledLabel title={"Bài viết đã đăng"} color="#000000" />
+            <Text
+              variant="gradient"
+              gradient={{ from: 'red', to: 'cyan', deg: 45 }}
+              sx={{ fontFamily: 'Greycliff CF, sans-serif' }}
+              ta="center"
+              fz="xl"
+              fs="italic"
+              fw={700}
+              >
+                Bài viết đã đăng
+              </Text>
             </div>
             <div
               style={{

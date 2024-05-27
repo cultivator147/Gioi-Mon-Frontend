@@ -36,6 +36,7 @@ export interface UserState {
     gender?: string[];
     introduction?: string;
     relationship?: number;
+    coin?: number;
   };
 }
 
@@ -66,6 +67,7 @@ export const initialState: UserState = {
     gender: [],
     introduction: "",
     relationship: -1,
+    coin: 0,
   },
 };
 

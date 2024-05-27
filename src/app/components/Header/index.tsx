@@ -9,16 +9,35 @@ import { getProfileSelector, getUserSelector } from "../../../redux-toolkit/slic
 import { StyledLabel } from "../Common/StyledLabel";
 import { StyledImage } from "../Common/Image";
 import { UserSlice } from "../../../redux-toolkit/slice/userSlice";
-import React from "react";
+import React, { useState } from "react";
+import { getUserCoin } from "../../../api/modules/user/profile";
+import { faCoins } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Button, Flex, Modal } from "@mantine/core";
+import { useNavigate } from "react-router-dom";
 export const Header = () => {
   const auth = useSelector(getUserSelector);
   const profile = useSelector(getProfileSelector);
   const { actions } = UserSlice();
-
+  const [coin, setCoin] = useState(0);
+  const [opened, setOpened] = useState(false);
   const dispatch = useDispatch();
-
+  const navigate = useNavigate();
+  React.useEffect(() => {
+    const fetchUserCoin = async () => {
+      try{
+        const response = await getUserCoin(auth.token);
+        const {coin} = response?.data?.data;
+        setCoin(coin);
+      }catch(err){
+        console.log(err);
+      }
+    };
+    fetchUserCoin();
+  },[])
   const onLogout = () => {
-    dispatch(actions.logoutSuccess());
+    setOpened(true);
+    
   };
   return (
     <Wrapper>
@@ -36,20 +55,42 @@ export const Header = () => {
                 href="/user/profile"
                 color="#21231D"
                 fontSize={StyleConstants.FONT_SIZE_SMALL}
-                title={`Xin chào, ${auth?.username}`}
-                
+                title={`${profile?.nickname} - ${auth?.username}`}
               />
               <StyledImage
+                onClick={() => {navigate('user/profile')}}
                 src={profile?.avatar}
                 width={50}
                 height={50}
               />
+             <StyledLabel title={`${coin}`} color="black" />
+             <FontAwesomeIcon icon={faCoins} color="red" />
               <StyledLink
                 color="#21231D"
                 fontSize={StyleConstants.FONT_SIZE_SMALL}
                 title={"Đăng xuất"}
                 onClick={onLogout}
               />
+              <Modal
+        opened={opened}
+        onClose={() => setOpened(false)}
+        title="Bạn có chắc muốn đăng xuất?"
+      >
+        <Flex gap={'12px'} justify={'center'} sx={{width: '100%'}}>
+          <Button
+          onClick={() => {dispatch(actions.logoutSuccess())}}
+          >
+            {'Xác nhận'}
+          </Button>
+
+          <Button
+          onClick={() => {setOpened(false)}}
+          >
+            {'Huỷ'}
+          </Button>
+        </Flex>
+        
+      </Modal>
             </>
           ) : (
             <>

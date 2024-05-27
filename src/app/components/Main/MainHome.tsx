@@ -42,7 +42,11 @@ export const MainHome = () => {
   return (
     <Wrapper>
       <div style={{position: 'absolute', width: '100%', height: '360px'}}>
-        <StyledImage src={"https://i.pinimg.com/736x/fa/10/aa/fa10aab5e38c2e4fbcb3408610306419.jpg"} />
+        <img
+         width={'100%'}
+         height={'100%'}
+         style={{cursor: 'pointer', borderRadius: '9px', overflow: 'hidden'}}
+         src={"https://i.pinimg.com/736x/fa/10/aa/fa10aab5e38c2e4fbcb3408610306419.jpg"} />
       </div>
       <Flex 
       direction={"column"}

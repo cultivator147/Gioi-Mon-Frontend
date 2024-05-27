@@ -8,7 +8,7 @@ import { getListPost } from "../../../api/modules/post/listPost";
 import { StyledImage } from "../Common/Image";
 import { useSelector } from "react-redux";
 import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
-import { Alert, Button, Flex, Menu, Select, Text, TextInput } from "@mantine/core";
+import { Alert, Button, Flex, LoadingOverlay, Menu, Modal, Select, Text, TextInput } from "@mantine/core";
 import { StyledButton } from "../Common/Button/StyledButton";
 import { uploadImage } from "../../../utils/imageUploader";
 import { createPost } from "../../../api/modules/post/post";
@@ -32,6 +32,8 @@ import { IconHash } from "@tabler/icons";
 import { useNavigate, useParams } from "react-router-dom";
 import useFilterPosts from "../../../hooks/useFilterPost";
 import useDetailStory from "../../../hooks/useDetailStory";
+import { PostProps } from "./Post";
+import { delay } from "../../../utils/helper";
 const FilterBy = {
   "Tất cả": 0,
   "Top yêu thích": 1,
@@ -50,7 +52,7 @@ export const Feed = ({props} : any) => {
   const [selectedStory, setSelectedStory] = useState<SimpleStoryProps>();
   const { isShowing, toggle } = useModal();
   const refFilterBy = useRef<HTMLInputElement>(null);
-
+  const [opened, setOpened] = useState(false);
 
   const setFilterByStr = (str: any) => {
     if(str === "0"){
@@ -110,18 +112,43 @@ export const Feed = ({props} : any) => {
     setPostTitle(str.title);
     setFileUrls([...fileUrls, str?.picture]);
   };
-
-  const onClickSelectStory = () => {
-    toggle();
-  };
-  const onClickUpPost = async () => {
+  const onConfirmUpPost = async () => {
+    setLoading(true);
     await createPost(user?.token, {
       storyId: selectedStory?.id,
       title: selectedStory?.title,
       content: postContent,
       images: fileUrls,
     });
-    window.location.reload();
+    await delay(3000);
+    // window.location.reload();
+    setOpened(false);
+
+    // setPosts([...posts, {
+    //   id: undefined,
+    //   owner_id: undefined,
+    //   story_id: undefined,
+    //   owner_avatar: "",
+    //   owner_name: "",
+    //   images: [],
+    //   favourite_count: undefined,
+    //   avarageFavouritePoint: undefined,
+    //   comment_conut: undefined,
+    //   favourited: 0,
+    //   favourited_point: undefined
+    // }])
+    setFileUrls([]);
+    setPostTitle("");
+    setPostContent("");
+    setPosts([]);
+    fetchFilterPosts();
+    setLoading(false);
+  }
+  const onClickSelectStory = () => {
+    toggle();
+  };
+  const onClickUpPost = async () => {
+    setOpened(true);
   };
   const onCompleteFetchFilterPost = (data: any) => {
     setPosts(data);
@@ -205,6 +232,7 @@ export const Feed = ({props} : any) => {
         }}
       >
         <UpLoadPost>
+        <LoadingOverlay   loaderProps={{ size: 'xl'}} visible={loading} overlayBlur={2}/>
           <div
             style={{
               display: "flex",
@@ -281,6 +309,28 @@ export const Feed = ({props} : any) => {
               {"Đăng bài"}
             </ChooseButton>
           </div>
+          <Modal
+          size={"lg"}
+        centered
+        opened={opened}
+        onClose={() => setOpened(false)}
+        title="Bạn có chắc muốn đăng bài, sẽ bị trừ 10 Xu?"
+      >
+        <Flex gap={'12px'} justify={'center'} sx={{width: '100%'}}>
+          <Button
+          variant="gradient" gradient={{ from: 'orange', to: 'red' }}
+          onClick={onConfirmUpPost}
+          >
+            {'Xác nhận'}
+          </Button>
+
+          <Button
+          onClick={() => {setOpened(false)}}
+          >
+            {'Huỷ'}
+          </Button>
+          </Flex>
+          </Modal>
         </UpLoadPost>
         <SearchPost>
           <Flex direction={"column"} sx={{ width: "100%", gap: "10px" }}>
@@ -350,8 +400,8 @@ export const Feed = ({props} : any) => {
             </Flex>)}
             
             <Flex justify={"center"} sx={{ width: "100%" }}>
-              <Button onClick={onClickFilterPost} variant="light">
-                Visit gallery
+              <Button variant="gradient" gradient={{ from: 'teal', to: 'lime', deg: 105 }} onClick={onClickFilterPost}>
+                Tìm bài đăng
               </Button>
             </Flex>
           
