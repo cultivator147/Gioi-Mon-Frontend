@@ -1,4 +1,4 @@
-import { Flex, TextInput } from "@mantine/core";
+import { Flex, TextInput, Textarea } from "@mantine/core";
 import React, { useRef, useState } from "react";
 import ReactDOM from "react-dom";
 import { StyledLabel } from "../Common/StyledLabel";
@@ -96,10 +96,11 @@ const CrPostFrStrModal = ({ isShowing, hide, props }: any) => {
           </Flex>
 
           <div style={{ display: "flex", width: "100%" }}>
-            <TextInput
+            <Textarea
               onChange={(event) => setPostContent(event.currentTarget.value)}
               ref={inputContent}
-              style={{ width: "100%" }}
+              style={{ width: "100%"}}
+              minRows={2}
               placeholder={`Nói gì đó về truyện ${title}`}
             />
           </div>

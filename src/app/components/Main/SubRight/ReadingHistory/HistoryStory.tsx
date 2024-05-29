@@ -42,4 +42,5 @@ export const HistoryStory = (props: SimpleStoryProps) => {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
+  padding: 4px;
 `;

@@ -6,7 +6,7 @@ import { StyledNavButton } from "../../Common/Button/StyledNavButton";
 import { favPost } from "../../../../api/modules/post/post";
 import { getUserSelector } from "../../../../redux-toolkit/slice/userSlice/selector";
 import { useSelector } from "react-redux";
-import { Button, Flex, TextInput } from "@mantine/core";
+import { Button, Flex, TextInput, Textarea } from "@mantine/core";
 import { StyledButton } from "../../Common/Button/StyledButton";
 import { GradientButton } from "../../Common/Button/GradientButton";
 import { OutlineButton } from "../../Common/Button/OutlineButton";
@@ -24,6 +24,7 @@ import { createComment, getComments } from "../../../../api/modules/post/comment
 import useModal from "../../Modal/useModal";
 import { CommentModal } from "./CommentModal";
 import { convertTimeToFacebookStyle } from "../../../../utils/helper";
+import { StyledAvatar } from "../../Common/Image/StyledAvatar";
 export interface PostProps {
   id: any;
   owner_id: any;
@@ -146,7 +147,7 @@ export const Post = (props: PostProps) => {
       <div style={{ display: "flex" }}>
         <div style={{ display: "flex", width: "60%", padding: "4px" }}>
           <div style={{ padding: "8px" }}>
-            <StyledImage
+            <StyledAvatar
               src={props.owner_avatar}
               onClick={() => navigate(`/user/profile/${props.owner_id}`)}
               width={50}
@@ -336,11 +337,11 @@ export const Post = (props: PostProps) => {
           style={{ width: "100%", height: "3rem", padding: "8px", gap: "8px" }}
         >
           <Flex align={"center"} style={{ height: "2.5rem" }}>
-            <StyledImage
+            <StyledAvatar
               src={props?.owner_avatar}
               onClick={() => navigate(`/user/profile/${props.owner_id}`)}
-              width={50}
-              height={inherits}
+              width={40}
+              height={40}
             />
           </Flex>
           <div
@@ -349,11 +350,12 @@ export const Post = (props: PostProps) => {
               width: "100%",
             }}
           >
-            <TextInput
+            <Textarea
               id="comment-input"
               onChange={(event) => setCommentContent(event.currentTarget.value)}
               ref={inputComment}
               style={{ width: "100%" }}
+              minRows={1}
               placeholder="Để lại nhận xét của bạn"
               value={commentContent}
             />

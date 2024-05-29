@@ -20,7 +20,7 @@ const SelectStoryModal = ({ isShowing, hide, onCompleteSelectStory}: any) => {
     setSelectedStory(str);
   };
     const onConpleteGetFilteredListStories = (data: any) => {
-        setStories(data?.content);
+        setStories(data);
     };
     const onClickSearch = async () =>{
         getFilteredListStories();

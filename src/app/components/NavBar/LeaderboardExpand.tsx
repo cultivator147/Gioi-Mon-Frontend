@@ -8,7 +8,7 @@ import { Flex } from "@mantine/core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRankingStar } from "@fortawesome/free-solid-svg-icons";
 import { CategoryLI, A, CategoryULDropdown, ListCategory, CategoryWrapper } from "./CategoryExpand";
-const LIST_LEADERBOARD = [
+export const LIST_LEADERBOARD = [
   { id: 1, name: "TOP_ALL" },
   { id: 2, name: "TOP_MONTHLY" },
   { id: 3, name: "TOP_WEEKLY" },

@@ -44,7 +44,7 @@ function FriendProfileScreen() {
   const navigate = useNavigate();
   const [profile, setProfile] = useState<ProfileProps>();
   const user = useSelector(getUserSelector);
-  const profileId = useParams().profile_id;
+  const profileId = useParams().profile_id || "0";
   // Local
   const { t } = useTranslation();
   const { classes } = makeStyles();
@@ -70,7 +70,7 @@ function FriendProfileScreen() {
 
     const getPost = async () => {
       try {
-        const params: TypeListPost = { friend_id: profile?.userId, page: 0, size: 10 };
+        const params: TypeListPost = { friend_id: +profileId, page: 0, size: 10 };
         const response = await getListPost(user.token, params);
         const data = response?.data?.data;
         setPosts(data);

@@ -13,9 +13,9 @@ import { StyledImage } from "../Common/Image";
 
 export const MainHome = () => {
   const [stories, setStories] = useState([]);
-  const onConpleteGetFilteredListStories = (data: any) => {
-    setStories(data?.content);
-    setTotalPages(data?.totalPages);
+  const onConpleteGetFilteredListStories = (data: any, totalPages: any) => {
+    setStories(data);
+    setTotalPages(totalPages);
   };
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);

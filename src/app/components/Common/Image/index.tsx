@@ -6,9 +6,10 @@ interface ImageProps {
   width?: any;
   height?: any;
   onClick? : () => any;
+  isAvatar ?: boolean;
 }
 export const StyledImage = (props: ImageProps) => {
-  const { src, alt,  onClick } = props;
+  const { src, alt,  onClick, isAvatar } = props;
   const width = props.width || '100%';
   const height = props.height || '100%';
   const [imageSrc, setImageSrc] = useState(src);

@@ -7,8 +7,8 @@ import { TypeListPost } from "../../../api/interfaces/listPost";
 import { getListPost } from "../../../api/modules/post/listPost";
 import { StyledImage } from "../Common/Image";
 import { useSelector } from "react-redux";
-import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
-import { Alert, Button, Flex, LoadingOverlay, Menu, Modal, Select, Text, TextInput } from "@mantine/core";
+import { getProfileSelector, getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
+import { Alert, Button, Flex, LoadingOverlay, Menu, Modal, Select, Text, TextInput, Textarea, Avatar } from "@mantine/core";
 import { StyledButton } from "../Common/Button/StyledButton";
 import { uploadImage } from "../../../utils/imageUploader";
 import { createPost } from "../../../api/modules/post/post";
@@ -34,6 +34,7 @@ import useFilterPosts from "../../../hooks/useFilterPost";
 import useDetailStory from "../../../hooks/useDetailStory";
 import { PostProps } from "./Post";
 import { delay } from "../../../utils/helper";
+import { StyledAvatar } from "../Common/Image/StyledAvatar";
 const FilterBy = {
   "Tất cả": 0,
   "Top yêu thích": 1,
@@ -53,7 +54,7 @@ export const Feed = ({props} : any) => {
   const { isShowing, toggle } = useModal();
   const refFilterBy = useRef<HTMLInputElement>(null);
   const [opened, setOpened] = useState(false);
-
+  const profile = useSelector(getProfileSelector);
   const setFilterByStr = (str: any) => {
     if(str === "0"){
       return  "Tất cả"
@@ -241,20 +242,31 @@ export const Feed = ({props} : any) => {
               gap: "8px",
             }}
           >
-            <StyledImage
+            <StyledAvatar height={50} width={50} src={profile?.avatar} />
+            {/* <StyledImage
               src={
-                "https://i.pinimg.com/564x/0e/67/ab/0e67abe3de05cc36baad2ff2e4ea6464.jpg"
+                profile?.avatar
               }
+              isAvatar={true}
               width={50}
               height={50}
-            />
+            /> */}
+            
             <div style={{ display: "flex", width: "100%" }}>
-              <TextInput
+            <Textarea
+                placeholder="Xin chào, bạn đang yêu thích câu truyện nào?"
+                ref={inputContent}
+                autosize
+                minRows={2}
+                onChange={(event) => setPostContent(event.currentTarget.value)}
+                style={{width: '100%'}}
+              />
+              {/* <TextInput
                 onChange={(event) => setPostContent(event.currentTarget.value)}
                 ref={inputContent}
                 style={{ width: "100%" }}
                 placeholder="Xin chào, bạn đang yêu thích câu truyện nào?"
-              />
+              /> */}
             </div>
           </div>
           <SelectStoryModal

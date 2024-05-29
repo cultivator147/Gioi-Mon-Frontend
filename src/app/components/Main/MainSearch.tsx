@@ -16,7 +16,8 @@ import { StyledNavButton } from "../Common/Button/StyledNavButton";
 import ReactPaginate from "react-paginate";
 import "./pagination.css";
 import { ButtonLinkTab } from "../Common/Button/ButtonLinkTab";
-import { Flex } from "@mantine/core";
+import { Flex, Stack } from "@mantine/core";
+import { LIST_LEADERBOARD } from "../NavBar/LeaderboardExpand";
 export const MainSearch = () => {
   //TODO: Parse the location.path to params.
   const categoryId = useParams().categoryid || "2";
@@ -29,30 +30,42 @@ export const MainSearch = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
 
+  const leaderboardId = +(useParams().leaderboardid || "0");
   const convertTitle = () => {
-    var title = "";
-    if(keyword != ""){
-      title = "Tìm kiếm truyện bằng từ khoá"
-    }else if(writingState != undefined){
+    var title = `Thể loại ${listCategory[parseInt(categoryId) - 1]?.name}`;
+    if (writingState != undefined) {
       const writingStatusWord = writingState === "0" ? "Tất cả" : (writingState === "2" ? "Hoàn thành" : "Đang tiến hành");
-      title = `Truyện sắp xếp theo tình trạng viết - ${writingStatusWord}`;
-      if(sortBy != undefined){
-        title = "Truyện sắp xếp theo Truyện mới";
-      }
-    }else if(sortBy != ""){
-      title = "Truyện sắp xếp theo Truyện mới";
-    }else{
-      title = `Truyện tranh ${listCategory[parseInt(categoryId) - 1]?.name} - Mới cập nhật`;
+      title = title + ` - ${writingStatusWord}`;
+    }
+    if (sortBy != undefined) {
+      const sortByWord = sortBy == "LAST_UPDATE_DATE" ? "Ngày cập nhật" : (sortBy == "NEW" ? "Truyện mới ra" : (sortBy == "POSTS" ? "Lượng bài viết" : (sortBy == "CHAPTER" ? "Lượng chapter" : "Tất cả")));
+      title = title + " - " + sortByWord;
+    }
+    if (leaderboardId != 0) {
+      title = `Bảng xếp hạng: ${LIST_LEADERBOARD[leaderboardId - 1]?.name}`;
+    }
+    if (keyword != "") {
+      title = "Tìm kiếm truyện bằng từ khoá"
     }
     return title;
+  };
+  const convertSubtitle = () => {
+    var subtitle = listCategory[parseInt(categoryId) - 1]?.description;
+    if (keyword != "") {
+      subtitle = "Tất cả thể loại truyện tranh";
+    }
+    if (leaderboardId != 0) {
+      subtitle = "Tất cả thể loại truyện tranh";
+    }
+    return subtitle;
   }
   const handlePageChange = async (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
 
-  const onConpleteGetFilteredListStories = (data: any) => {
-    setStories(data?.content);
-    setTotalPages(data.totalPages);
+  const onConpleteGetFilteredListStories = (data: any, totalPages: any) => {
+    setStories(data);
+    setTotalPages(totalPages || 1);
   };
   const filtered: IUseFilteredListStories = {
     onComplete: onConpleteGetFilteredListStories,
@@ -62,13 +75,19 @@ export const MainSearch = () => {
     sortBy: sortBy || "LAST_UPDATE_DATE",
     page: currentPage,
     size: +StyleConstants.ITEMS_PER_PAGE,
+    leaderboardType: LIST_LEADERBOARD[leaderboardId - 1]?.name,
   };
-  const { getFilteredListStories } = useFilteredListStories(filtered);
+  const { getFilteredListStories, getLeaderboardStory } = useFilteredListStories(filtered);
 
   React.useEffect(() => {
-    getFilteredListStories();
-    console.log(categoryId);
-  }, [currentPage, categoryId, keyword, writingState, sortBy]);
+    if (leaderboardId != 0) {
+      getLeaderboardStory();
+    } else {
+      getFilteredListStories();
+      console.log(categoryId);
+    }
+
+  }, [currentPage, categoryId, keyword, writingState, sortBy, leaderboardId]);
 
   React.useEffect(() => {
     const getAll = async () => {
@@ -116,12 +135,18 @@ export const MainSearch = () => {
                 <StyledLabel
                   color="#000000"
                   fontSize={"1.1em"}
-                  title={`${
-                    listCategory[parseInt(categoryId) - 1]?.description
-                  }`}
+                  title={
+                    convertSubtitle()
+                    //   `${
+                    //   listCategory[parseInt(categoryId) - 1]?.description
+                    // }`
+                  }
                 />
               </div>
-              <div
+              {leaderboardId < 1 &&
+              <Stack>
+
+               <div
                 style={{
                   width: "100%",
                   display: "flex",
@@ -173,35 +198,13 @@ export const MainSearch = () => {
                     >
                       Truyện mới
                     </ButtonLinkTab>
+                  </Flex>
 
-                    <ButtonLinkTab
-                      label={"Top all"}
-                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_ALL`}
-                      backgroundPath={"/sort_by=TOP_ALL"}
-                    />
-                  </Flex>
                   <Flex>
                     <ButtonLinkTab
-                      label={"Top tháng"}
-                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_MONTHLY`}
-                      backgroundPath={"/sort_by=TOP_MONTHLY"}
-                    />
-                    <ButtonLinkTab
-                      label={"Top tuần"}
-                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_WEEKLY`}
-                      backgroundPath={"/sort_by=TOP_WEEKLY"}
-                    />
-                    <ButtonLinkTab
-                      label={"Top ngày"}
-                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=TOP_DAILY`}
-                      backgroundPath={"/sort_by=TOP_DAILY"}
-                    />
-                  </Flex>
-                  <Flex>
-                    <ButtonLinkTab
-                      label={"Lượt theo dõi"}
-                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=FOLLOWER`}
-                      backgroundPath={"/sort_by=FOLLOWER"}
+                      label={"Lượng bài viết"}
+                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=POSTS`}
+                      backgroundPath={"/sort_by=POSTS"}
                     />
                     <ButtonLinkTab
                       label={"Bình luận"}
@@ -216,6 +219,8 @@ export const MainSearch = () => {
                   </Flex>
                 </Flex>
               </div>
+              </Stack>
+}
             </div>
             <FirstRow>
               <ListStoriesGrid
