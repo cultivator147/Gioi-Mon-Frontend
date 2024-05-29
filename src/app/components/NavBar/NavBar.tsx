@@ -93,12 +93,6 @@ export const NavBar = () => {
             />
             <LI style={{}}>
               <Flex style={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
-                <FontAwesomeIcon icon={faHeartCircleCheck} />
-                <A to="/theo-doi">Đang theo dõi</A>
-              </Flex>
-            </LI>
-            <LI style={{}}>
-              <Flex style={{ alignItems: 'center', gap: '4px', justifyContent: 'center' }}>
                 <FontAwesomeIcon icon={faClockRotateLeft} />
                 <A to="/theo-doi">Đang đọc</A>
               </Flex>
