@@ -1,25 +1,37 @@
 import styled from "styled-components";
 import { StyledLink } from "../Common/StyledLink";
-import { Logger } from "../../../utils/helper";
+import { Logger, convertTimeToFacebookStyle } from "../../../utils/helper";
 import { StyleConstants } from "../../../styles/StyleConstants";
+import { Flex, Text } from "@mantine/core";
 
 export interface ChapterProps{
     chapterNumber : any,
     picture : string,
     chapterName ?: string,
-    lastUpdate ?: any ,
+    updateDate ?: any ,
     chapters?: ChapterProps
 }
 
 export const Chapter = (props: ChapterProps) => {
     const chapterName = props.chapterName === undefined || props.chapterName === null ? '' : `: ${props.chapterName}`;
     const title = `Chapter ${props.chapterNumber}${chapterName}`;
+    const {updateDate } = props;
+    console.log(props);
     return(
-        <StyledLink 
-        fontSize={StyleConstants.FONT_SIZE_SMALL}
-        title= {title}
-        color="#000000" 
-        href={props.picture}/>
+        <Flex justify={'space-between'} sx={{width: '90%'}}>
+            <StyledLink 
+            fontSize={StyleConstants.FONT_SIZE_SMALL}
+            title= {title}
+            color="#000000" 
+            href={props.picture}/>
+            <Text
+            fz={"sm"}
+            fs={'italic'}
+            >
+                {convertTimeToFacebookStyle(updateDate)}
+            </Text>
+        </Flex>
+
     );
    
 };
@@ -35,7 +47,7 @@ export const ListChapter = (props : ListChapterProps) => {
         <Wrapper>
             {listChapterProps.map(
                 (chapter: ChapterProps) => (
-                    <Chapter chapterName={chapter.chapterName} chapterNumber={chapter.chapterNumber} picture={chapter.picture}/>
+                    <Chapter chapterName={chapter.chapterName} chapterNumber={chapter.chapterNumber} picture={chapter.picture} updateDate={chapter.updateDate}/>
                 )
             )}
         </Wrapper>
