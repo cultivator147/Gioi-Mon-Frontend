@@ -25,7 +25,7 @@ export const LeaderboardStory = (props: SimpleStoryProps) => {
           fontSize={"14px"}
           color="gray"
           title={`Chương ${props?.chapters[0]?.chapterNumber}>`}
-          href={`truyen-tranh/${props?.id}/${props.chapters[0].chapterNumber}`}
+          href={`truyen-tranh/${props?.id}/${props.chapters[0]?.chapterNumber}`}
         />
       </div>
     </Wrapper>
