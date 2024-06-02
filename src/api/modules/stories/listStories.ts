@@ -1,5 +1,5 @@
-import { TypeFilteredListStories, TypeSearch, TypeTopStories } from "../../interfaces/listStories";
-import request from "./request";
+import { TypeFilteredListStories, TypeReadingStory, TypeSearch, TypeTopStories } from "../../interfaces/listStories";
+import request, { getAuthApi } from "./request";
 
 export const getFilteredListStoriesRequest = (params?: TypeFilteredListStories) => {
     return request.get('/filtered-list-story', {params: params});
@@ -15,4 +15,7 @@ export const getTopStories = (params: TypeTopStories) => {
 }
 export const searchRequest = (params?: TypeSearch) => {
     return request.get('/search', {params: params});
+}
+export const getReadingStories = (token: string, params: TypeReadingStory) => {
+    return getAuthApi('/reading-story', token, {params: params});
 }

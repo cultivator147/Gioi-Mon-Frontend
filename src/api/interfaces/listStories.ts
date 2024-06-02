@@ -16,3 +16,7 @@ export interface TypeSearch extends AxiosRequestConfig{
     page?: number,
     size?: number
 }
+export interface TypeReadingStory extends AxiosRequestConfig{
+    page?: number,
+    size?: number
+}

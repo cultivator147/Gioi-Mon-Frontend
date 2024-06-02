@@ -11,6 +11,7 @@ import { NavBarWrapper } from "../app/components/NavBar";
 import { useEffect, useState } from "react";
 import { FeedPage } from "../app/pages/FeedPage";
 import { ProfilePage } from "../app/pages/ProfilePage";
+import { ReadingPage } from "../app/pages/ReadingPage";
 const PublicRouter = () => {
   const location = useLocation();
   const [showHeader, setShowHeader] = useState(true);
@@ -55,7 +56,7 @@ const PublicRouter = () => {
           <Route path="/feed/filter_by=:filter_by/fav_status=:fav_status/sort_by=:sort_by/story_id=:story_id" element={<FeedPage />} />
           <Route path="/feed/filter_by=:filter_by/fav_status=:fav_status/sort_by=:sort_by" element={<FeedPage />} />
           <Route path="/feed/story_id=:story_id" element={<FeedPage />} />
-
+          <Route path="/theo-doi" element={<ReadingPage />} />
           <Route
             path="/truyen-tranh/:storyid/:chapternumber"
             element={<StoryContentPage />}

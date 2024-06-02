@@ -12,3 +12,9 @@ export const StyledAvatar = (props: AvatarProps) => {
         <Avatar onClick={onClick} alt={alt} src={src} radius={99} style={{width: width, height: height, cursor: 'pointer'}}/>
     );
 }
+export const MantineImage = (props: AvatarProps) => {
+    const {src, alt, width, height, onClick} = props;
+    return(
+        <Avatar onClick={onClick} alt={alt} src={src} radius={5} style={{width: width, height: height, cursor: 'pointer'}}/>
+    );
+}
