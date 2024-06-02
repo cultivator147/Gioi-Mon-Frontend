@@ -14,6 +14,7 @@ import { postRequestStory } from "../../../api/modules/stories/request copy";
 import { useSelector } from "react-redux";
 import { getUserSelector } from "../../../redux-toolkit/slice/userSlice/selector";
 import { ChapterProps } from "../ListChapter";
+import { Text, Title } from "@mantine/core";
 export const StoryContent = () => {
   const chapterNumber = useParams().chapternumber || "1";
   const storyId = useParams().storyid || "1";
@@ -71,18 +72,29 @@ export const StoryContent = () => {
           <Brand />
         </First>
         <Second>
-          <div style={{ display: "flex" }}>
-            <StyledLink
-              href={`/truyen-tranh/${storyId}`}
-              title={`${title}   >`}
-              fontSize={"1.2em"}
-              color="#ffffff"
-            />
-            <StyledLabel
-              title={`EP. ${chapterNumber}`}
-              fontSize={"1.2em"}
-              color="#ffffff"
-            />
+          <div style={{ display: "flex", gap: '8px' }}>
+            <Title
+            order={2}
+            variant="gradient"
+            gradient={{ from: "#d6e04b", to: "#3798be", deg: 45 }}
+            sx={{ fontFamily: "Greycliff CF, sans-serif", cursor: "pointer" }}
+            ta="center"
+            fw={700}
+            onClick={() => navigate(`/truyen-tranh/${storyId}`)}
+            >
+                {`${title} `}
+            </Title>
+
+            <Title
+            order={2}
+            variant="gradient"
+            gradient={{ from: "#AD8F8F", to: "#558D59", deg: 45 }}
+            sx={{ fontFamily: "Greycliff CF, sans-serif" }}
+            ta="center"
+            >
+                {` >EP. ${chapterNumber}`}
+            </Title>
+
           </div>
         </Second>
         <Third>
