@@ -13,12 +13,9 @@ export const LIST_LEADERBOARD = [
   { id: 2, name: "TOP_MONTHLY" },
   { id: 3, name: "TOP_WEEKLY" },
   { id: 4, name: "TOP_DAILY" },
-  { id: 5, name: "TOP_FOLLOW" },
-  { id: 6, name: "FULL" },
-  { id: 7, name: "FAVOURITE" },
-  { id: 8, name: "LAST_UPDATE" },
-  { id: 9, name: "NEW" },
-  { id: 10, name: "CHAPTERS" },
+  { id: 5, name: "CHAPTERS" },
+  { id: 6, name: "POSTS" },
+  { id: 7, name: "VIEWS" },
 ];
 
 interface LeaderboardExpandProps {

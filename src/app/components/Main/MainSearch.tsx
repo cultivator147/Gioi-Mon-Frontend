@@ -19,10 +19,9 @@ import { ButtonLinkTab } from "../Common/Button/ButtonLinkTab";
 import { Flex, Stack } from "@mantine/core";
 import { LIST_LEADERBOARD } from "../NavBar/LeaderboardExpand";
 export const MainSearch = () => {
-  //TODO: Parse the location.path to params.
   const categoryId = useParams().categoryid || "2";
   const keyword = useParams().keyword || "";
-  const writingState = useParams().writing_state;
+  const writingState = useParams().writing_state || "0";
   const sortBy = useParams().sort_by;
   const [stories, setStories] = useState([]);
   const [listCategory, setListCategory] = useState<Category[]>([]);
@@ -38,7 +37,7 @@ export const MainSearch = () => {
       title = title + ` - ${writingStatusWord}`;
     }
     if (sortBy != undefined) {
-      const sortByWord = sortBy == "LAST_UPDATE_DATE" ? "Ngày cập nhật" : (sortBy == "NEW" ? "Truyện mới ra" : (sortBy == "POSTS" ? "Lượng bài viết" : (sortBy == "CHAPTER" ? "Lượng chapter" : "Tất cả")));
+      const sortByWord = sortBy == "LAST_UPDATE_DATE" ? "Ngày cập nhật" : (sortBy == "VIEWS" ? "Lượt xem" : (sortBy == "CHAPTERS" ? "Lượng chapter" : "Tất cả"));
       title = title + " - " + sortByWord;
     }
     if (leaderboardId != 0) {
@@ -70,7 +69,7 @@ export const MainSearch = () => {
   const filtered: IUseFilteredListStories = {
     onComplete: onConpleteGetFilteredListStories,
     categoryId: categoryId,
-    writingState: parseInt(writingState || "0"),
+    writingState: parseInt(writingState) || 0,
     keyword: keyword,
     sortBy: sortBy || "LAST_UPDATE_DATE",
     page: currentPage,
@@ -193,28 +192,14 @@ export const MainSearch = () => {
                       Ngày cập nhật
                     </ButtonLinkTab>
                     <ButtonLinkTab
-                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=NEW`}
-                      backgroundPath={"/sort_by=NEW"}
-                    >
-                      Truyện mới
-                    </ButtonLinkTab>
-                  </Flex>
-
-                  <Flex>
-                    <ButtonLinkTab
-                      label={"Lượng bài viết"}
-                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=POSTS`}
+                      label={"Lượt xem"}
+                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=VIEWS`}
                       backgroundPath={"/sort_by=POSTS"}
                     />
                     <ButtonLinkTab
-                      label={"Bình luận"}
-                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=COMMENT`}
-                      backgroundPath={"/sort_by=COMMENT"}
-                    />
-                    <ButtonLinkTab
                       label={"Số chapter"}
-                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=CHAPTER`}
-                      backgroundPath={"/sort_by=CHAPTER"}
+                      to={`/tim-truyen/${categoryId}/${writingState}/sort_by=CHAPTERS`}
+                      backgroundPath={"/sort_by=CHAPTERS"}
                     />
                   </Flex>
                 </Flex>
