@@ -108,6 +108,8 @@ export const Feed = ({props} : any) => {
 
   const [storyId, setStoryId] = useState(+story_id);
   const [storyName, setStoryName] = useState(null);
+
+  const [openAlert, setOpenAlert] = useState(false);
   const onCompleteSelectStory = (str: SimpleStoryProps) => {
     setSelectedStory(str);
     setPostTitle(str.title);
@@ -149,6 +151,10 @@ export const Feed = ({props} : any) => {
     toggle();
   };
   const onClickUpPost = async () => {
+    if(selectedStory == undefined){
+      setOpenAlert(true);
+      return;
+    }
     setOpened(true);
   };
   const onCompleteFetchFilterPost = (data: any) => {
@@ -321,6 +327,23 @@ export const Feed = ({props} : any) => {
               {"Đăng bài"}
             </ChooseButton>
           </div>
+          <Modal
+          size={"lg"}
+        centered
+        opened={openAlert}
+        onClose={() => setOpenAlert(false)}
+        title="Bạn phải chọn một truyện để viết bài"
+      >
+        <Flex gap={'12px'} justify={'center'} sx={{width: '100%'}}>
+          <Button
+          variant="gradient" gradient={{ from: 'orange', to: 'red' }}
+          onClick={() => {setOpenAlert(false)}}
+          >
+            {'Xác nhận'}
+          </Button>
+          </Flex>
+          </Modal>
+
           <Modal
           size={"lg"}
         centered
