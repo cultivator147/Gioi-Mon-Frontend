@@ -1,0 +1,274 @@
+"filename", "language", "TypeScript", "TypeScript JSX", "XML", "JSON", "CSS", "SCSS", "comment", "blank", "total"
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\config.ts", "TypeScript", 17, 0, 0, 0, 0, 0, 0, 1, 18
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\constant.url.ts", "TypeScript", 7, 0, 0, 0, 0, 0, 0, 2, 9
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\interfaces\auth.ts", "TypeScript", 5, 0, 0, 0, 0, 0, 0, 1, 6
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\interfaces\author.ts", "TypeScript", 4, 0, 0, 0, 0, 0, 0, 0, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\interfaces\category.ts", "TypeScript", 5, 0, 0, 0, 0, 0, 0, 0, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\interfaces\commentPost.ts", "TypeScript", 5, 0, 0, 0, 0, 0, 0, 0, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\interfaces\createPost.ts", "TypeScript", 6, 0, 0, 0, 0, 0, 0, 0, 6
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\interfaces\listPost.ts", "TypeScript", 10, 0, 0, 0, 0, 0, 0, 1, 11
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\interfaces\listStories.ts", "TypeScript", 21, 0, 0, 0, 0, 0, 0, 1, 22
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\interfaces\post.ts", "TypeScript", 5, 0, 0, 0, 0, 0, 0, 0, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\interfaces\postDetail.ts", "TypeScript", 18, 0, 0, 0, 0, 0, 0, 0, 18
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\authentication\authenticate.ts", "TypeScript", 12, 0, 0, 0, 0, 0, 0, 3, 15
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\authentication\request.ts", "TypeScript", 8, 0, 0, 0, 0, 0, 0, 0, 8
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\authentication\request2.ts", "TypeScript", 25, 0, 0, 0, 0, 0, 0, 1, 26
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\post\commentPost.ts", "TypeScript", 8, 0, 0, 0, 0, 0, 0, 1, 9
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\post\listPost.ts", "TypeScript", 5, 0, 0, 0, 0, 0, 0, 2, 7
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\post\post.ts", "TypeScript", 9, 0, 0, 0, 0, 0, 0, 1, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\post\request.ts", "TypeScript", 23, 0, 0, 0, 0, 0, 0, 2, 25
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\stories\category.ts", "TypeScript", 5, 0, 0, 0, 0, 0, 0, 1, 6
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\stories\listStories.ts", "TypeScript", 20, 0, 0, 0, 0, 0, 0, 1, 21
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\stories\request copy.ts", "TypeScript", 47, 0, 0, 0, 0, 0, 0, 2, 49
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\stories\request.ts", "TypeScript", 23, 0, 0, 0, 0, 0, 0, 1, 24
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\stories\stories.ts", "TypeScript", 7, 0, 0, 0, 0, 0, 0, 1, 8
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\upload\upload_image.ts", "TypeScript", 15, 0, 0, 0, 0, 0, 0, 1, 16
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\user\profile.ts", "TypeScript", 7, 0, 0, 0, 0, 0, 0, 2, 9
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\user\request.ts", "TypeScript", 68, 0, 0, 0, 0, 0, 0, 5, 73
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\History\History.tsx", "TypeScript JSX", 0, 15, 0, 0, 0, 0, 0, 3, 18
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Background\Background.tsx", "TypeScript JSX", 0, 45, 0, 0, 0, 0, 0, 4, 49
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\ButtonLinkTab.tsx", "TypeScript JSX", 0, 35, 0, 0, 0, 0, 1, 3, 39
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\ChooseButton.tsx", "TypeScript JSX", 0, 9, 0, 0, 0, 0, 0, 1, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\ContinueReadingBtn.tsx", "TypeScript JSX", 0, 9, 0, 0, 0, 0, 0, 1, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\CreatePostBtn.tsx", "TypeScript JSX", 0, 9, 0, 0, 0, 0, 0, 1, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\GradientButton.tsx", "TypeScript JSX", 0, 22, 0, 0, 0, 0, 0, 2, 24
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\OutlineButton.tsx", "TypeScript JSX", 0, 29, 0, 0, 0, 0, 0, 2, 31
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\ReadButton.tsx", "TypeScript JSX", 0, 9, 0, 0, 0, 0, 0, 1, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\ReadnowButton.tsx", "TypeScript JSX", 0, 9, 0, 0, 0, 0, 0, 1, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\SearchButton.tsx", "TypeScript JSX", 0, 9, 0, 0, 0, 0, 0, 1, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\SelectButton.tsx", "TypeScript JSX", 0, 9, 0, 0, 0, 0, 0, 1, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\StyledButton.tsx", "TypeScript JSX", 0, 48, 0, 0, 0, 0, 1, 1, 50
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\StyledNavButton.tsx", "TypeScript JSX", 0, 50, 0, 0, 0, 0, 1, 1, 52
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\SubtleButton.tsx", "TypeScript JSX", 0, 18, 0, 0, 0, 0, 0, 2, 20
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\animationStyle.css", "CSS", 0, 0, 0, 0, 618, 0, 3, 20, 641
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\buttonStyles.css", "CSS", 0, 0, 0, 0, 263, 0, 7, 41, 311
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Image\StyledAvatar.tsx", "TypeScript JSX", 0, 20, 0, 0, 0, 0, 0, 0, 20
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Image\index.tsx", "TypeScript JSX", 0, 27, 0, 0, 0, 0, 0, 1, 28
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\OverlayLoading.tsx", "TypeScript JSX", 0, 36, 0, 0, 0, 0, 0, 3, 39
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\StyledInput.tsx", "TypeScript JSX", 0, 7, 0, 0, 0, 0, 0, 2, 9
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\StyledLabel.tsx", "TypeScript JSX", 0, 31, 0, 0, 0, 0, 0, 1, 32
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\StyledLink.tsx", "TypeScript JSX", 0, 62, 0, 0, 0, 0, 0, 1, 63
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Directional\Directional.tsx", "TypeScript JSX", 0, 6, 0, 0, 0, 0, 0, 2, 8
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Feed\Feed.tsx", "TypeScript JSX", 0, 436, 0, 0, 0, 0, 29, 17, 482
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Feed\ListPost.tsx", "TypeScript JSX", 0, 40, 0, 0, 0, 0, 0, 4, 44
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Feed\Post\CommentModal.tsx", "TypeScript JSX", 0, 126, 0, 0, 0, 0, 0, 2, 128
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Feed\Post\index.tsx", "TypeScript JSX", 0, 475, 0, 0, 0, 0, 2, 11, 488
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Footer\Footer.module.scss", "SCSS", 0, 0, 0, 0, 0, 115, 0, 10, 125
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Footer\Footer.tsx", "TypeScript JSX", 0, 75, 0, 0, 0, 0, 0, 5, 80
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Header\Brand.tsx", "TypeScript JSX", 0, 28, 0, 0, 0, 0, 0, 1, 29
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Header\Search.tsx", "TypeScript JSX", 0, 62, 0, 0, 0, 0, 0, 4, 66
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Header\index.tsx", "TypeScript JSX", 0, 141, 0, 0, 0, 0, 0, 5, 146
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Layout\CreateProfile\CreateProfile.tsx", "TypeScript JSX", 0, 68, 0, 0, 0, 0, 1, 5, 74
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Layout\CreateProfile\CreateProfileStyles.tsx", "TypeScript JSX", 0, 357, 0, 0, 0, 0, 14, 7, 378
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Layout\LoginLayout.tsx", "TypeScript JSX", 0, 82, 0, 0, 0, 0, 3, 4, 89
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Layout\LoginLayoutStyles.tsx", "TypeScript JSX", 0, 110, 0, 0, 0, 0, 16, 4, 130
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\ListChapter\index.tsx", "TypeScript JSX", 0, 55, 0, 0, 0, 0, 1, 6, 62
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Logo\Logo.tsx", "TypeScript JSX", 0, 45, 0, 0, 0, 0, 1, 5, 51
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\ListStoriesHome\StoryHome.tsx", "TypeScript JSX", 0, 55, 0, 0, 0, 0, 0, 4, 59
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\ListStoriesHome\index.tsx", "TypeScript JSX", 0, 33, 0, 0, 0, 0, 0, 2, 35
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\ListSuggestedStories\SuggestedStory.tsx", "TypeScript JSX", 0, 29, 0, 0, 0, 0, 0, 2, 31
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\ListSuggestedStories\index.tsx", "TypeScript JSX", 0, 61, 0, 0, 0, 0, 0, 8, 69
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\MainHome.tsx", "TypeScript JSX", 0, 147, 0, 0, 0, 0, 0, 2, 149
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\MainSearch.tsx", "TypeScript JSX", 0, 291, 0, 0, 0, 0, 3, 12, 306
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\SubRight\Leaderboard\Leaderboard.tsx", "TypeScript JSX", 0, 76, 0, 0, 0, 0, 0, 2, 78
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\SubRight\Leaderboard\LeaderboardStory.tsx", "TypeScript JSX", 0, 37, 0, 0, 0, 0, 0, 2, 39
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\SubRight\ReadingHistory\HistoryStory.tsx", "TypeScript JSX", 0, 45, 0, 0, 0, 0, 0, 2, 47
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\SubRight\ReadingHistory\ReadingHistory.tsx", "TypeScript JSX", 0, 57, 0, 0, 0, 0, 0, 2, 59
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\SubRight\index.tsx", "TypeScript JSX", 0, 16, 0, 0, 0, 0, 0, 1, 17
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\pagination.css", "CSS", 0, 0, 0, 0, 7, 0, 0, 2, 9
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Modal\CrPostFrStoryModal.tsx", "TypeScript JSX", 0, 158, 0, 0, 0, 0, 0, 11, 169
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Modal\SelectStoryModal.tsx", "TypeScript JSX", 0, 109, 0, 0, 0, 0, 5, 6, 120
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Modal\useModal.ts", "TypeScript", 12, 0, 0, 0, 0, 0, 0, 4, 16
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\NavBar\AppLogo.tsx", "TypeScript JSX", 0, 25, 0, 0, 0, 0, 0, 5, 30
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\NavBar\CategoryExpand.tsx", "TypeScript JSX", 0, 119, 0, 0, 0, 0, 5, 12, 136
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\NavBar\LeaderboardExpand.tsx", "TypeScript JSX", 0, 49, 0, 0, 0, 0, 1, 5, 55
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\NavBar\NavBar.tsx", "TypeScript JSX", 0, 136, 0, 0, 0, 0, 0, 17, 153
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\NavBar\index.tsx", "TypeScript JSX", 0, 23, 0, 0, 0, 0, 0, 2, 25
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\PageWrapper\index.ts", "TypeScript", 18, 0, 0, 0, 0, 0, 0, 3, 21
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Social\Social.tsx", "TypeScript JSX", 0, 46, 0, 0, 0, 0, 0, 4, 50
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\StoryContent\index.tsx", "TypeScript JSX", 0, 236, 0, 0, 0, 0, 3, 10, 249
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\StoryDetail\MainStory.tsx", "TypeScript JSX", 0, 245, 0, 0, 0, 0, 0, 10, 255
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\StoryDetail\index.tsx", "TypeScript JSX", 0, 147, 0, 0, 0, 0, 5, 5, 157
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Zodiac\Zodiac.tsx", "TypeScript JSX", 0, 104, 0, 0, 0, 0, 0, 15, 119
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\custom\MyPassInput\MyPassInput.tsx", "TypeScript JSX", 0, 61, 0, 0, 0, 0, 2, 5, 68
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\index.tsx", "TypeScript JSX", 0, 21, 0, 0, 0, 0, 0, 2, 23
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\FeedPage\index.tsx", "TypeScript JSX", 0, 19, 0, 0, 0, 0, 0, 2, 21
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\FriendProfilePage\FriendProfile.tsx", "TypeScript JSX", 0, 306, 0, 0, 0, 0, 30, 7, 343
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\FriendProfilePage\index.tsx", "TypeScript JSX", 0, 13, 0, 0, 0, 0, 0, 1, 14
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\HomePage\index.tsx", "TypeScript JSX", 0, 18, 0, 0, 0, 0, 0, 2, 20
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\LoginPage\Loadable.tsx", "TypeScript JSX", 0, 5, 0, 0, 0, 0, 3, 3, 11
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\LoginPage\index.tsx", "TypeScript JSX", 0, 207, 0, 0, 0, 0, 0, 3, 210
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\ProfilePage\ProfileScreen.tsx", "TypeScript JSX", 0, 369, 0, 0, 0, 0, 26, 10, 405
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\ProfilePage\index.tsx", "TypeScript JSX", 0, 13, 0, 0, 0, 0, 0, 1, 14
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\ReadingPage\ReadingScreen.tsx", "TypeScript JSX", 0, 188, 0, 0, 0, 0, 4, 1, 193
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\ReadingPage\index.tsx", "TypeScript JSX", 0, 13, 0, 0, 0, 0, 0, 1, 14
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\RegisterProfile\Avatar.tsx", "TypeScript JSX", 0, 277, 0, 0, 0, 0, 5, 8, 290
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\RegisterProfile\Birthday.tsx", "TypeScript JSX", 0, 231, 0, 0, 0, 0, 4, 5, 240
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\RegisterProfile\Description.tsx", "TypeScript JSX", 0, 113, 0, 0, 0, 0, 9, 6, 128
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\RegisterProfile\Gender.tsx", "TypeScript JSX", 0, 277, 0, 0, 0, 0, 9, 7, 293
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\RegisterProfile\Mode.tsx", "TypeScript JSX", 0, 104, 0, 0, 0, 0, 2, 5, 111
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\RegisterProfile\NickName.tsx", "TypeScript JSX", 0, 143, 0, 0, 0, 0, 1, 3, 147
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\RegisterProfile\UpLoad.tsx", "TypeScript JSX", 0, 192, 0, 0, 0, 0, 46, 8, 246
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\index.tsx", "TypeScript JSX", 0, 284, 0, 0, 0, 0, 8, 5, 297
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\SearchPage\index.tsx", "TypeScript JSX", 0, 15, 0, 0, 0, 0, 0, 2, 17
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\StoryContentPage\index.tsx", "TypeScript JSX", 0, 13, 0, 0, 0, 0, 0, 2, 15
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\StoryPage\index.tsx", "TypeScript JSX", 0, 16, 0, 0, 0, 0, 0, 1, 17
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\about\chevronRight.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\about\circle.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\about\gift.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\about\settings.svg", "XML", 0, 0, 4, 0, 0, 0, 0, 1, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\about\wallet.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\arrow.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\arrowDown.svg", "XML", 0, 0, 9, 0, 0, 0, 0, 1, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\arrowDownBlack.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\arrowLeft.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\arrowRight.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\arrowUp.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\backBtn.svg", "XML", 0, 0, 16, 0, 0, 0, 0, 1, 17
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\blink.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\box.svg", "XML", 0, 0, 7, 0, 0, 0, 0, 1, 8
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chatFriend.svg", "XML", 0, 0, 14, 0, 0, 0, 0, 1, 15
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chatIcon.svg", "XML", 0, 0, 4, 0, 0, 0, 0, 1, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chatLove.svg", "XML", 0, 0, 14, 0, 0, 0, 0, 1, 15
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\calendar.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\calendarChatColor.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\calendarMini.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\clock.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\giftMess.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\giftMessColor.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\gradient.svg", "XML", 0, 0, 9, 0, 0, 0, 0, 1, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\plus.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\smiley.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\clear.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\dateBirth.svg", "XML", 0, 0, 4, 0, 0, 0, 0, 1, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\detail.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\dots.svg", "XML", 0, 0, 5, 0, 0, 0, 0, 1, 6
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\en.svg", "XML", 0, 0, 16, 0, 0, 0, 0, 1, 17
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\faceName.svg", "XML", 0, 0, 4, 0, 0, 0, 0, 1, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\filter.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Asexual.svg", "XML", 0, 0, 10, 0, 0, 0, 0, 1, 11
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Bisexual.svg", "XML", 0, 0, 10, 0, 0, 0, 0, 1, 11
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Female.svg", "XML", 0, 0, 10, 0, 0, 0, 0, 1, 11
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Gay.svg", "XML", 0, 0, 10, 0, 0, 0, 0, 1, 11
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Lesbian.svg", "XML", 0, 0, 10, 0, 0, 0, 0, 1, 11
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Male.svg", "XML", 0, 0, 10, 0, 0, 0, 0, 1, 11
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Nonbinary.svg", "XML", 0, 0, 10, 0, 0, 0, 0, 1, 11
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Transgender.svg", "XML", 0, 0, 10, 0, 0, 0, 0, 1, 11
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gift.svg", "XML", 0, 0, 38, 0, 0, 0, 0, 1, 39
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\hide.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\home-05.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\laughPro.svg", "XML", 0, 0, 4, 0, 0, 0, 0, 1, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\like.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\likedFriend.svg", "XML", 0, 0, 14, 0, 0, 0, 0, 1, 15
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\likedIcon.svg", "XML", 0, 0, 4, 0, 0, 0, 0, 1, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\likedLove.svg", "XML", 0, 0, 14, 0, 0, 0, 0, 1, 15
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\mapPin.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\mes.svg", "XML", 0, 0, 17, 0, 0, 0, 0, 1, 18
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\narrowLeft.svg", "XML", 0, 0, 4, 0, 0, 0, 0, 1, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\narrowRight.svg", "XML", 0, 0, 4, 0, 0, 0, 0, 1, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\narrowUp.svg", "XML", 0, 0, 4, 0, 0, 0, 0, 1, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\profile\Hide.svg", "XML", 0, 0, 11, 0, 0, 0, 0, 1, 12
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\profile\Like.svg", "XML", 0, 0, 11, 0, 0, 0, 0, 1, 12
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\profile\Nope.svg", "XML", 0, 0, 11, 0, 0, 0, 0, 1, 12
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\profile\Report.svg", "XML", 0, 0, 11, 0, 0, 0, 0, 1, 12
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\profile\Share.svg", "XML", 0, 0, 11, 0, 0, 0, 0, 1, 12
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\profile\Unpair.svg", "XML", 0, 0, 11, 0, 0, 0, 0, 1, 12
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\search.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\setting\caretDown.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\setting\chevronRight.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\setting\globe.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\setting\noti.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\setting\support.svg", "XML", 0, 0, 9, 0, 0, 0, 0, 1, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\setting\user.svg", "XML", 0, 0, 5, 0, 0, 0, 0, 1, 6
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\settings.svg", "XML", 0, 0, 4, 0, 0, 0, 0, 1, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\show.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\square.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\swipeFriend.svg", "XML", 0, 0, 14, 0, 0, 0, 0, 1, 15
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\swipeIcon.svg", "XML", 0, 0, 4, 0, 0, 0, 0, 1, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\swipeLove.svg", "XML", 0, 0, 14, 0, 0, 0, 0, 1, 15
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\tele.svg", "XML", 0, 0, 15, 0, 0, 0, 0, 1, 16
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\unLike.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\undo.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\userFriend.svg", "XML", 0, 0, 19, 0, 0, 0, 0, 1, 20
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\userIcon.svg", "XML", 0, 0, 5, 0, 0, 0, 0, 1, 6
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\userLove.svg", "XML", 0, 0, 19, 0, 0, 0, 0, 1, 20
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\vi.svg", "XML", 0, 0, 11, 0, 0, 0, 0, 1, 12
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\xCircle.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\─Éa╠ú╠åt li╠úch\Xem li╠úch\Icon\arrow-narrow-left.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\About\diaBlue.svg", "XML", 0, 0, 9, 0, 0, 0, 0, 1, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\About\diamond.svg", "XML", 0, 0, 9, 0, 0, 0, 0, 1, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\AquariusZ.svg", "XML", 0, 0, 47, 0, 0, 0, 0, 1, 48
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\AriesZ.svg", "XML", 0, 0, 208, 0, 0, 0, 0, 1, 209
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\CanerZ.svg", "XML", 0, 0, 81, 0, 0, 0, 0, 1, 82
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\CapricornZ.svg", "XML", 0, 0, 70, 0, 0, 0, 0, 1, 71
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\GeminiZ.svg", "XML", 0, 0, 56, 0, 0, 0, 0, 1, 57
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\LeoZ.svg", "XML", 0, 0, 56, 0, 0, 0, 0, 1, 57
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\LibraZ.svg", "XML", 0, 0, 54, 0, 0, 0, 0, 1, 55
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\PiscesZ.svg", "XML", 0, 0, 101, 0, 0, 0, 0, 1, 102
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\SagittariusZ.svg", "XML", 0, 0, 43, 0, 0, 0, 0, 1, 44
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\ScorpionZ.svg", "XML", 0, 0, 59, 0, 0, 0, 0, 1, 60
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\TaurusZ.svg", "XML", 0, 0, 54, 0, 0, 0, 0, 1, 55
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\VirgoZ.svg", "XML", 0, 0, 63, 0, 0, 0, 0, 1, 64
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\apple.svg", "XML", 0, 0, 10, 0, 0, 0, 0, 1, 11
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\bgLogin.svg", "XML", 0, 0, 25, 0, 0, 0, 0, 1, 26
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\bgLoginMobile.svg", "XML", 0, 0, 13, 0, 0, 0, 0, 1, 14
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\bgLoginTop.svg", "XML", 0, 0, 39, 0, 0, 0, 0, 1, 40
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\bgLoginTopMobile.svg", "XML", 0, 0, 39, 0, 0, 0, 0, 1, 40
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\bgPopUp.svg", "XML", 0, 0, 39, 0, 0, 0, 0, 1, 40
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\birthPro.svg", "XML", 0, 0, 114, 0, 0, 0, 0, 1, 115
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\birthProMobile.svg", "XML", 0, 0, 225, 0, 0, 0, 0, 1, 226
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\brand_img.svg", "XML", 0, 0, 42, 0, 0, 0, 0, 2, 44
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\descPro.svg", "XML", 0, 0, 21, 0, 0, 0, 0, 1, 22
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\en.svg", "XML", 0, 0, 16, 0, 0, 0, 0, 1, 17
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\facebook.svg", "XML", 0, 0, 11, 0, 0, 0, 0, 1, 12
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\genderPro.svg", "XML", 0, 0, 288, 0, 0, 0, 0, 1, 289
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\google.svg", "XML", 0, 0, 6, 0, 0, 0, 0, 1, 7
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\illustrating.svg", "XML", 0, 0, 9, 0, 0, 0, 0, 1, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\index.tsx", "TypeScript JSX", 0, 33, 0, 0, 0, 0, 14, 5, 52
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\logo.svg", "XML", 0, 0, 33, 0, 0, 0, 0, 1, 34
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\messBox.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\messBoxRight.svg", "XML", 0, 0, 3, 0, 0, 0, 0, 1, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\modePro.svg", "XML", 0, 0, 3811, 0, 0, 0, 0, 1, 3812
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\nicknamePro.svg", "XML", 0, 0, 35, 0, 0, 0, 0, 1, 36
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\noConver.svg", "XML", 0, 0, 16, 0, 0, 0, 0, 1, 17
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\noYet.svg", "XML", 0, 0, 1, 0, 0, 0, 0, 0, 1
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\success.svg", "XML", 0, 0, 4, 0, 0, 0, 0, 1, 5
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\tips.svg", "XML", 0, 0, 24, 0, 0, 0, 0, 1, 25
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\vi.svg", "XML", 0, 0, 11, 0, 0, 0, 0, 1, 12
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\warn.svg", "XML", 0, 0, 10, 0, 0, 0, 0, 1, 11
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\lottie\loading.json", "JSON", 0, 0, 0, 2855, 0, 0, 0, 1, 2856
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\hooks\useDetailStory.ts", "TypeScript", 21, 0, 0, 0, 0, 0, 0, 1, 22
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\hooks\useFilterPost.ts", "TypeScript", 32, 0, 0, 0, 0, 0, 0, 4, 36
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\hooks\useFilteredListStories.ts", "TypeScript", 39, 0, 0, 0, 0, 0, 0, 1, 40
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\hooks\useListPost.ts", "TypeScript", 26, 0, 0, 0, 0, 0, 0, 2, 28
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\hooks\useSearch.ts", "TypeScript", 24, 0, 0, 0, 0, 0, 0, 3, 27
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\hooks\useStoryContent.ts", "TypeScript", 21, 0, 0, 0, 0, 0, 0, 1, 22
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\index.tsx", "TypeScript JSX", 0, 21, 0, 0, 0, 0, 1, 3, 25
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\react-app-env.d.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 1, 1, 2
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\configureStore.ts", "TypeScript", 54, 0, 0, 0, 0, 0, 2, 11, 67
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\reducers.ts", "TypeScript", 21, 0, 0, 0, 0, 0, 7, 7, 35
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\slice\categorySlice\index.ts", "TypeScript", 31, 0, 0, 0, 0, 0, 0, 4, 35
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\slice\categorySlice\selector.ts", "TypeScript", 7, 0, 0, 0, 0, 0, 0, 3, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\slice\counterSlice\index.ts", "TypeScript", 31, 0, 0, 0, 0, 0, 0, 4, 35
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\slice\counterSlice\selector.ts", "TypeScript", 7, 0, 0, 0, 0, 0, 0, 3, 10
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\slice\userSlice\index.ts", "TypeScript", 157, 0, 0, 0, 0, 0, 6, 6, 169
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\slice\userSlice\saga.ts", "TypeScript", 154, 0, 0, 0, 0, 0, 35, 7, 196
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\slice\userSlice\selector.ts", "TypeScript", 8, 0, 0, 0, 0, 0, 0, 4, 12
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\reportWebVitals.ts", "TypeScript", 13, 0, 0, 0, 0, 0, 0, 3, 16
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\routes\AuthRouter.tsx", "TypeScript JSX", 0, 22, 0, 0, 0, 0, 0, 2, 24
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\routes\PrivateRouter.tsx", "TypeScript JSX", 0, 43, 0, 0, 0, 0, 0, 4, 47
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\routes\PublicRouter.tsx", "TypeScript JSX", 0, 71, 0, 0, 0, 0, 0, 5, 76
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\routes\route.ts", "TypeScript", 29, 0, 0, 0, 0, 0, 0, 2, 31
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\setupTests.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 4, 1, 6
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\styles\StyleConstants.ts", "TypeScript", 16, 0, 0, 0, 0, 0, 0, 2, 18
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\types\RootState.ts", "TypeScript", 12, 0, 0, 0, 0, 0, 5, 3, 20
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\types\index.ts", "TypeScript", 2, 0, 0, 0, 0, 0, 0, 2, 4
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\@reduxjs\toolkit.tsx", "TypeScript JSX", 0, 15, 0, 0, 0, 0, 2, 3, 20
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\dateFormatter.ts", "TypeScript", 43, 0, 0, 0, 0, 0, 4, 7, 54
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\helper.ts", "TypeScript", 60, 0, 0, 0, 0, 0, 8, 4, 72
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\http\response.ts", "TypeScript", 8, 0, 0, 0, 0, 0, 0, 1, 9
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\imageUploader.ts", "TypeScript", 11, 0, 0, 0, 0, 0, 1, 2, 14
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\loadable.tsx", "TypeScript JSX", 0, 25, 0, 0, 0, 0, 0, 6, 31
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\redux-injectors.ts", "TypeScript", 17, 0, 0, 0, 0, 0, 1, 4, 22
+"h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\types\injector-typings.ts", "TypeScript", 18, 0, 0, 0, 0, 0, 0, 5, 23
+"Total", "-", 1278, 7986, 6340, 2855, 888, 115, 342, 705, 20509

@@ -1,0 +1,381 @@
+Date : 2024-06-28 21:47:49
+Directory : h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src
+Total : 263 files,  19383 codes, 342 comments, 702 blanks, all 20427 lines
+
+Languages
++----------------+------------+------------+------------+------------+------------+
+| language       | files      | code       | comment    | blank      | total      |
++----------------+------------+------------+------------+------------+------------+
+| TypeScript JSX |         89 |      7,986 |        258 |        374 |      8,618 |
+| XML            |        122 |      6,340 |          0 |        122 |      6,462 |
+| JSON           |          1 |      2,855 |          0 |          1 |      2,856 |
+| TypeScript     |         47 |      1,199 |         74 |        132 |      1,405 |
+| CSS            |          3 |        888 |         10 |         63 |        961 |
+| SCSS           |          1 |        115 |          0 |         10 |        125 |
++----------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                      | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                         |        263 |     19,383 |        342 |        702 |     20,427 |
+| . (Files)                                                                                                                 |          4 |         35 |          6 |          8 |         49 |
+| api                                                                                                                       |         17 |        306 |          0 |         27 |        333 |
+| api (Files)                                                                                                               |          2 |         24 |          0 |          3 |         27 |
+| api\modules                                                                                                               |         15 |        282 |          0 |         24 |        306 |
+| api\modules\authentication                                                                                                |          3 |         45 |          0 |          4 |         49 |
+| api\modules\post                                                                                                          |          4 |         45 |          0 |          6 |         51 |
+| api\modules\stories                                                                                                       |          5 |        102 |          0 |          6 |        108 |
+| api\modules\upload                                                                                                        |          1 |         15 |          0 |          1 |         16 |
+| api\modules\user                                                                                                          |          2 |         75 |          0 |          7 |         82 |
+| app                                                                                                                       |         88 |      8,789 |        251 |        426 |      9,466 |
+| app (Files)                                                                                                               |          1 |         21 |          0 |          2 |         23 |
+| app\History                                                                                                               |          1 |         15 |          0 |          3 |         18 |
+| app\components                                                                                                            |         65 |      5,937 |        104 |        338 |      6,379 |
+| app\components\Background                                                                                                 |          1 |         45 |          0 |          4 |         49 |
+| app\components\Common                                                                                                     |         21 |      1,329 |         13 |         87 |      1,429 |
+| app\components\Common (Files)                                                                                             |          4 |        136 |          0 |          7 |        143 |
+| app\components\Common\Button                                                                                              |         15 |      1,146 |         13 |         79 |      1,238 |
+| app\components\Common\Image                                                                                               |          2 |         47 |          0 |          1 |         48 |
+| app\components\Directional                                                                                                |          1 |          6 |          0 |          2 |          8 |
+| app\components\Feed                                                                                                       |          4 |      1,077 |         31 |         34 |      1,142 |
+| app\components\Feed (Files)                                                                                               |          2 |        476 |         29 |         21 |        526 |
+| app\components\Feed\Post                                                                                                  |          2 |        601 |          2 |         13 |        616 |
+| app\components\Footer                                                                                                     |          2 |        190 |          0 |         15 |        205 |
+| app\components\Header                                                                                                     |          3 |        231 |          0 |         10 |        241 |
+| app\components\Layout                                                                                                     |          4 |        617 |         34 |         20 |        671 |
+| app\components\Layout (Files)                                                                                             |          2 |        192 |         19 |          8 |        219 |
+| app\components\Layout\CreateProfile                                                                                       |          2 |        425 |         15 |         12 |        452 |
+| app\components\ListChapter                                                                                                |          1 |         55 |          1 |          6 |         62 |
+| app\components\Logo                                                                                                       |          1 |         45 |          1 |          5 |         51 |
+| app\components\Main                                                                                                       |         12 |        854 |          3 |         41 |        898 |
+| app\components\Main (Files)                                                                                               |          3 |        445 |          3 |         16 |        464 |
+| app\components\Main\ListStoriesHome                                                                                       |          2 |         88 |          0 |          6 |         94 |
+| app\components\Main\ListSuggestedStories                                                                                  |          2 |         90 |          0 |         10 |        100 |
+| app\components\Main\SubRight                                                                                              |          5 |        231 |          0 |          9 |        240 |
+| app\components\Main\SubRight (Files)                                                                                      |          1 |         16 |          0 |          1 |         17 |
+| app\components\Main\SubRight\Leaderboard                                                                                  |          2 |        113 |          0 |          4 |        117 |
+| app\components\Main\SubRight\ReadingHistory                                                                               |          2 |        102 |          0 |          4 |        106 |
+| app\components\Modal                                                                                                      |          3 |        279 |          5 |         21 |        305 |
+| app\components\NavBar                                                                                                     |          5 |        352 |          6 |         41 |        399 |
+| app\components\PageWrapper                                                                                                |          1 |         18 |          0 |          3 |         21 |
+| app\components\Social                                                                                                     |          1 |         46 |          0 |          4 |         50 |
+| app\components\StoryContent                                                                                               |          1 |        236 |          3 |         10 |        249 |
+| app\components\StoryDetail                                                                                                |          2 |        392 |          5 |         15 |        412 |
+| app\components\Zodiac                                                                                                     |          1 |        104 |          0 |         15 |        119 |
+| app\components\custom                                                                                                     |          1 |         61 |          2 |          5 |         68 |
+| app\components\custom\MyPassInput                                                                                         |          1 |         61 |          2 |          5 |         68 |
+| app\pages                                                                                                                 |         21 |      2,816 |        147 |         83 |      3,046 |
+| app\pages\FeedPage                                                                                                        |          1 |         19 |          0 |          2 |         21 |
+| app\pages\FriendProfilePage                                                                                               |          2 |        319 |         30 |          8 |        357 |
+| app\pages\HomePage                                                                                                        |          1 |         18 |          0 |          2 |         20 |
+| app\pages\LoginPage                                                                                                       |          2 |        212 |          3 |          6 |        221 |
+| app\pages\ProfilePage                                                                                                     |          2 |        382 |         26 |         11 |        419 |
+| app\pages\ReadingPage                                                                                                     |          2 |        201 |          4 |          2 |        207 |
+| app\pages\RegisterPage                                                                                                    |          8 |      1,621 |         84 |         47 |      1,752 |
+| app\pages\RegisterPage (Files)                                                                                            |          1 |        284 |          8 |          5 |        297 |
+| app\pages\RegisterPage\RegisterProfile                                                                                    |          7 |      1,337 |         76 |         42 |      1,455 |
+| app\pages\SearchPage                                                                                                      |          1 |         15 |          0 |          2 |         17 |
+| app\pages\StoryContentPage                                                                                                |          1 |         13 |          0 |          2 |         15 |
+| app\pages\StoryPage                                                                                                       |          1 |         16 |          0 |          1 |         17 |
+| assets                                                                                                                    |        124 |      9,228 |         14 |        128 |      9,370 |
+| assets\icons                                                                                                              |         82 |        582 |          0 |         82 |        664 |
+| assets\icons (Files)                                                                                                      |         47 |        358 |          0 |         47 |        405 |
+| assets\icons\about                                                                                                        |          5 |         16 |          0 |          5 |         21 |
+| assets\icons\chat                                                                                                         |          9 |         33 |          0 |          9 |         42 |
+| assets\icons\gender                                                                                                       |          8 |         80 |          0 |          8 |         88 |
+| assets\icons\profile                                                                                                      |          6 |         66 |          0 |          6 |         72 |
+| assets\icons\setting                                                                                                      |          6 |         26 |          0 |          6 |         32 |
+| assets\icons\─Éa╠ú╠åt li╠úch                                                                                              |          1 |          3 |          0 |          1 |          4 |
+| assets\icons\─Éa╠ú╠åt li╠úch\Xem li╠úch                                                                                   |          1 |          3 |          0 |          1 |          4 |
+| assets\icons\─Éa╠ú╠åt li╠úch\Xem li╠úch\Icon                                                                              |          1 |          3 |          0 |          1 |          4 |
+| assets\images                                                                                                             |         41 |      5,791 |         14 |         45 |      5,850 |
+| assets\images (Files)                                                                                                     |         39 |      5,773 |         14 |         43 |      5,830 |
+| assets\images\About                                                                                                       |          2 |         18 |          0 |          2 |         20 |
+| assets\lottie                                                                                                             |          1 |      2,855 |          0 |          1 |      2,856 |
+| hooks                                                                                                                     |          6 |        163 |          0 |         12 |        175 |
+| redux-toolkit                                                                                                             |          9 |        470 |         50 |         49 |        569 |
+| redux-toolkit (Files)                                                                                                     |          2 |         75 |          9 |         18 |        102 |
+| redux-toolkit\slice                                                                                                       |          7 |        395 |         41 |         31 |        467 |
+| redux-toolkit\slice\categorySlice                                                                                         |          2 |         38 |          0 |          7 |         45 |
+| redux-toolkit\slice\counterSlice                                                                                          |          2 |         38 |          0 |          7 |         45 |
+| redux-toolkit\slice\userSlice                                                                                             |          3 |        319 |         41 |         17 |        377 |
+| routes                                                                                                                    |          4 |        165 |          0 |         13 |        178 |
+| styles                                                                                                                    |          1 |         16 |          0 |          2 |         18 |
+| types                                                                                                                     |          2 |         14 |          5 |          5 |         24 |
+| utils                                                                                                                     |          8 |        197 |         16 |         32 |        245 |
+| utils (Files)                                                                                                             |          5 |        156 |         14 |         23 |        193 |
+| utils\@reduxjs                                                                                                            |          1 |         15 |          2 |          3 |         20 |
+| utils\http                                                                                                                |          1 |          8 |          0 |          1 |          9 |
+| utils\types                                                                                                               |          1 |         18 |          0 |          5 |         23 |
++---------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| filename                                                                                                                  | language       | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\config.ts                                                      | TypeScript     |         17 |          0 |          1 |         18 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\constant.url.ts                                                | TypeScript     |          7 |          0 |          2 |          9 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\authentication\authenticate.ts                         | TypeScript     |         12 |          0 |          3 |         15 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\authentication\request.ts                              | TypeScript     |          8 |          0 |          0 |          8 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\authentication\request2.ts                             | TypeScript     |         25 |          0 |          1 |         26 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\post\commentPost.ts                                    | TypeScript     |          8 |          0 |          1 |          9 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\post\listPost.ts                                       | TypeScript     |          5 |          0 |          2 |          7 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\post\post.ts                                           | TypeScript     |          9 |          0 |          1 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\post\request.ts                                        | TypeScript     |         23 |          0 |          2 |         25 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\stories\category.ts                                    | TypeScript     |          5 |          0 |          1 |          6 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\stories\listStories.ts                                 | TypeScript     |         20 |          0 |          1 |         21 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\stories\request copy.ts                                | TypeScript     |         47 |          0 |          2 |         49 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\stories\request.ts                                     | TypeScript     |         23 |          0 |          1 |         24 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\stories\stories.ts                                     | TypeScript     |          7 |          0 |          1 |          8 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\upload\upload_image.ts                                 | TypeScript     |         15 |          0 |          1 |         16 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\user\profile.ts                                        | TypeScript     |          7 |          0 |          2 |          9 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\api\modules\user\request.ts                                        | TypeScript     |         68 |          0 |          5 |         73 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\History\History.tsx                                            | TypeScript JSX |         15 |          0 |          3 |         18 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Background\Background.tsx                           | TypeScript JSX |         45 |          0 |          4 |         49 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\ButtonLinkTab.tsx                     | TypeScript JSX |         35 |          1 |          3 |         39 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\ChooseButton.tsx                      | TypeScript JSX |          9 |          0 |          1 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\ContinueReadingBtn.tsx                | TypeScript JSX |          9 |          0 |          1 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\CreatePostBtn.tsx                     | TypeScript JSX |          9 |          0 |          1 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\GradientButton.tsx                    | TypeScript JSX |         22 |          0 |          2 |         24 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\OutlineButton.tsx                     | TypeScript JSX |         29 |          0 |          2 |         31 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\ReadButton.tsx                        | TypeScript JSX |          9 |          0 |          1 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\ReadnowButton.tsx                     | TypeScript JSX |          9 |          0 |          1 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\SearchButton.tsx                      | TypeScript JSX |          9 |          0 |          1 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\SelectButton.tsx                      | TypeScript JSX |          9 |          0 |          1 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\StyledButton.tsx                      | TypeScript JSX |         48 |          1 |          1 |         50 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\StyledNavButton.tsx                   | TypeScript JSX |         50 |          1 |          1 |         52 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\SubtleButton.tsx                      | TypeScript JSX |         18 |          0 |          2 |         20 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\animationStyle.css                    | CSS            |        618 |          3 |         20 |        641 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Button\buttonStyles.css                      | CSS            |        263 |          7 |         41 |        311 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Image\StyledAvatar.tsx                       | TypeScript JSX |         20 |          0 |          0 |         20 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\Image\index.tsx                              | TypeScript JSX |         27 |          0 |          1 |         28 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\OverlayLoading.tsx                           | TypeScript JSX |         36 |          0 |          3 |         39 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\StyledInput.tsx                              | TypeScript JSX |          7 |          0 |          2 |          9 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\StyledLabel.tsx                              | TypeScript JSX |         31 |          0 |          1 |         32 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Common\StyledLink.tsx                               | TypeScript JSX |         62 |          0 |          1 |         63 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Directional\Directional.tsx                         | TypeScript JSX |          6 |          0 |          2 |          8 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Feed\Feed.tsx                                       | TypeScript JSX |        436 |         29 |         17 |        482 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Feed\ListPost.tsx                                   | TypeScript JSX |         40 |          0 |          4 |         44 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Feed\Post\CommentModal.tsx                          | TypeScript JSX |        126 |          0 |          2 |        128 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Feed\Post\index.tsx                                 | TypeScript JSX |        475 |          2 |         11 |        488 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Footer\Footer.module.scss                           | SCSS           |        115 |          0 |         10 |        125 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Footer\Footer.tsx                                   | TypeScript JSX |         75 |          0 |          5 |         80 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Header\Brand.tsx                                    | TypeScript JSX |         28 |          0 |          1 |         29 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Header\Search.tsx                                   | TypeScript JSX |         62 |          0 |          4 |         66 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Header\index.tsx                                    | TypeScript JSX |        141 |          0 |          5 |        146 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Layout\CreateProfile\CreateProfile.tsx              | TypeScript JSX |         68 |          1 |          5 |         74 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Layout\CreateProfile\CreateProfileStyles.tsx        | TypeScript JSX |        357 |         14 |          7 |        378 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Layout\LoginLayout.tsx                              | TypeScript JSX |         82 |          3 |          4 |         89 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Layout\LoginLayoutStyles.tsx                        | TypeScript JSX |        110 |         16 |          4 |        130 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\ListChapter\index.tsx                               | TypeScript JSX |         55 |          1 |          6 |         62 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Logo\Logo.tsx                                       | TypeScript JSX |         45 |          1 |          5 |         51 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\ListStoriesHome\StoryHome.tsx                  | TypeScript JSX |         55 |          0 |          4 |         59 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\ListStoriesHome\index.tsx                      | TypeScript JSX |         33 |          0 |          2 |         35 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\ListSuggestedStories\SuggestedStory.tsx        | TypeScript JSX |         29 |          0 |          2 |         31 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\ListSuggestedStories\index.tsx                 | TypeScript JSX |         61 |          0 |          8 |         69 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\MainHome.tsx                                   | TypeScript JSX |        147 |          0 |          2 |        149 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\MainSearch.tsx                                 | TypeScript JSX |        291 |          3 |         12 |        306 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\SubRight\Leaderboard\Leaderboard.tsx           | TypeScript JSX |         76 |          0 |          2 |         78 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\SubRight\Leaderboard\LeaderboardStory.tsx      | TypeScript JSX |         37 |          0 |          2 |         39 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\SubRight\ReadingHistory\HistoryStory.tsx       | TypeScript JSX |         45 |          0 |          2 |         47 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\SubRight\ReadingHistory\ReadingHistory.tsx     | TypeScript JSX |         57 |          0 |          2 |         59 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\SubRight\index.tsx                             | TypeScript JSX |         16 |          0 |          1 |         17 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Main\pagination.css                                 | CSS            |          7 |          0 |          2 |          9 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Modal\CrPostFrStoryModal.tsx                        | TypeScript JSX |        158 |          0 |         11 |        169 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Modal\SelectStoryModal.tsx                          | TypeScript JSX |        109 |          5 |          6 |        120 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Modal\useModal.ts                                   | TypeScript     |         12 |          0 |          4 |         16 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\NavBar\AppLogo.tsx                                  | TypeScript JSX |         25 |          0 |          5 |         30 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\NavBar\CategoryExpand.tsx                           | TypeScript JSX |        119 |          5 |         12 |        136 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\NavBar\LeaderboardExpand.tsx                        | TypeScript JSX |         49 |          1 |          5 |         55 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\NavBar\NavBar.tsx                                   | TypeScript JSX |        136 |          0 |         17 |        153 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\NavBar\index.tsx                                    | TypeScript JSX |         23 |          0 |          2 |         25 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\PageWrapper\index.ts                                | TypeScript     |         18 |          0 |          3 |         21 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Social\Social.tsx                                   | TypeScript JSX |         46 |          0 |          4 |         50 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\StoryContent\index.tsx                              | TypeScript JSX |        236 |          3 |         10 |        249 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\StoryDetail\MainStory.tsx                           | TypeScript JSX |        245 |          0 |         10 |        255 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\StoryDetail\index.tsx                               | TypeScript JSX |        147 |          5 |          5 |        157 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\Zodiac\Zodiac.tsx                                   | TypeScript JSX |        104 |          0 |         15 |        119 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\components\custom\MyPassInput\MyPassInput.tsx                  | TypeScript JSX |         61 |          2 |          5 |         68 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\index.tsx                                                      | TypeScript JSX |         21 |          0 |          2 |         23 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\FeedPage\index.tsx                                       | TypeScript JSX |         19 |          0 |          2 |         21 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\FriendProfilePage\FriendProfile.tsx                      | TypeScript JSX |        306 |         30 |          7 |        343 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\FriendProfilePage\index.tsx                              | TypeScript JSX |         13 |          0 |          1 |         14 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\HomePage\index.tsx                                       | TypeScript JSX |         18 |          0 |          2 |         20 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\LoginPage\Loadable.tsx                                   | TypeScript JSX |          5 |          3 |          3 |         11 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\LoginPage\index.tsx                                      | TypeScript JSX |        207 |          0 |          3 |        210 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\ProfilePage\ProfileScreen.tsx                            | TypeScript JSX |        369 |         26 |         10 |        405 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\ProfilePage\index.tsx                                    | TypeScript JSX |         13 |          0 |          1 |         14 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\ReadingPage\ReadingScreen.tsx                            | TypeScript JSX |        188 |          4 |          1 |        193 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\ReadingPage\index.tsx                                    | TypeScript JSX |         13 |          0 |          1 |         14 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\RegisterProfile\Avatar.tsx                  | TypeScript JSX |        277 |          5 |          8 |        290 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\RegisterProfile\Birthday.tsx                | TypeScript JSX |        231 |          4 |          5 |        240 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\RegisterProfile\Description.tsx             | TypeScript JSX |        113 |          9 |          6 |        128 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\RegisterProfile\Gender.tsx                  | TypeScript JSX |        277 |          9 |          7 |        293 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\RegisterProfile\Mode.tsx                    | TypeScript JSX |        104 |          2 |          5 |        111 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\RegisterProfile\NickName.tsx                | TypeScript JSX |        143 |          1 |          3 |        147 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\RegisterProfile\UpLoad.tsx                  | TypeScript JSX |        192 |         46 |          8 |        246 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\RegisterPage\index.tsx                                   | TypeScript JSX |        284 |          8 |          5 |        297 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\SearchPage\index.tsx                                     | TypeScript JSX |         15 |          0 |          2 |         17 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\StoryContentPage\index.tsx                               | TypeScript JSX |         13 |          0 |          2 |         15 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\app\pages\StoryPage\index.tsx                                      | TypeScript JSX |         16 |          0 |          1 |         17 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\about\chevronRight.svg                                | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\about\circle.svg                                      | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\about\gift.svg                                        | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\about\settings.svg                                    | XML            |          4 |          0 |          1 |          5 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\about\wallet.svg                                      | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\arrow.svg                                             | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\arrowDown.svg                                         | XML            |          9 |          0 |          1 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\arrowDownBlack.svg                                    | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\arrowLeft.svg                                         | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\arrowRight.svg                                        | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\arrowUp.svg                                           | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\backBtn.svg                                           | XML            |         16 |          0 |          1 |         17 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\blink.svg                                             | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\box.svg                                               | XML            |          7 |          0 |          1 |          8 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chatFriend.svg                                        | XML            |         14 |          0 |          1 |         15 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chatIcon.svg                                          | XML            |          4 |          0 |          1 |          5 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chatLove.svg                                          | XML            |         14 |          0 |          1 |         15 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\calendar.svg                                     | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\calendarChatColor.svg                            | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\calendarMini.svg                                 | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\clock.svg                                        | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\giftMess.svg                                     | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\giftMessColor.svg                                | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\gradient.svg                                     | XML            |          9 |          0 |          1 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\plus.svg                                         | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\chat\smiley.svg                                       | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\clear.svg                                             | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\dateBirth.svg                                         | XML            |          4 |          0 |          1 |          5 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\detail.svg                                            | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\dots.svg                                              | XML            |          5 |          0 |          1 |          6 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\en.svg                                                | XML            |         16 |          0 |          1 |         17 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\faceName.svg                                          | XML            |          4 |          0 |          1 |          5 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\filter.svg                                            | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Asexual.svg                                    | XML            |         10 |          0 |          1 |         11 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Bisexual.svg                                   | XML            |         10 |          0 |          1 |         11 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Female.svg                                     | XML            |         10 |          0 |          1 |         11 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Gay.svg                                        | XML            |         10 |          0 |          1 |         11 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Lesbian.svg                                    | XML            |         10 |          0 |          1 |         11 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Male.svg                                       | XML            |         10 |          0 |          1 |         11 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Nonbinary.svg                                  | XML            |         10 |          0 |          1 |         11 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gender\Transgender.svg                                | XML            |         10 |          0 |          1 |         11 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\gift.svg                                              | XML            |         38 |          0 |          1 |         39 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\hide.svg                                              | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\home-05.svg                                           | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\laughPro.svg                                          | XML            |          4 |          0 |          1 |          5 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\like.svg                                              | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\likedFriend.svg                                       | XML            |         14 |          0 |          1 |         15 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\likedIcon.svg                                         | XML            |          4 |          0 |          1 |          5 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\likedLove.svg                                         | XML            |         14 |          0 |          1 |         15 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\mapPin.svg                                            | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\mes.svg                                               | XML            |         17 |          0 |          1 |         18 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\narrowLeft.svg                                        | XML            |          4 |          0 |          1 |          5 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\narrowRight.svg                                       | XML            |          4 |          0 |          1 |          5 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\narrowUp.svg                                          | XML            |          4 |          0 |          1 |          5 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\profile\Hide.svg                                      | XML            |         11 |          0 |          1 |         12 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\profile\Like.svg                                      | XML            |         11 |          0 |          1 |         12 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\profile\Nope.svg                                      | XML            |         11 |          0 |          1 |         12 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\profile\Report.svg                                    | XML            |         11 |          0 |          1 |         12 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\profile\Share.svg                                     | XML            |         11 |          0 |          1 |         12 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\profile\Unpair.svg                                    | XML            |         11 |          0 |          1 |         12 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\search.svg                                            | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\setting\caretDown.svg                                 | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\setting\chevronRight.svg                              | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\setting\globe.svg                                     | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\setting\noti.svg                                      | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\setting\support.svg                                   | XML            |          9 |          0 |          1 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\setting\user.svg                                      | XML            |          5 |          0 |          1 |          6 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\settings.svg                                          | XML            |          4 |          0 |          1 |          5 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\show.svg                                              | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\square.svg                                            | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\swipeFriend.svg                                       | XML            |         14 |          0 |          1 |         15 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\swipeIcon.svg                                         | XML            |          4 |          0 |          1 |          5 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\swipeLove.svg                                         | XML            |         14 |          0 |          1 |         15 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\tele.svg                                              | XML            |         15 |          0 |          1 |         16 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\unLike.svg                                            | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\undo.svg                                              | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\userFriend.svg                                        | XML            |         19 |          0 |          1 |         20 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\userIcon.svg                                          | XML            |          5 |          0 |          1 |          6 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\userLove.svg                                          | XML            |         19 |          0 |          1 |         20 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\vi.svg                                                | XML            |         11 |          0 |          1 |         12 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\xCircle.svg                                           | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\icons\─Éa╠ú╠åt li╠úch\Xem li╠úch\Icon\arrow-narrow-left.svg | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\About\diaBlue.svg                                    | XML            |          9 |          0 |          1 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\About\diamond.svg                                    | XML            |          9 |          0 |          1 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\AquariusZ.svg                                        | XML            |         47 |          0 |          1 |         48 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\AriesZ.svg                                           | XML            |        208 |          0 |          1 |        209 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\CanerZ.svg                                           | XML            |         81 |          0 |          1 |         82 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\CapricornZ.svg                                       | XML            |         70 |          0 |          1 |         71 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\GeminiZ.svg                                          | XML            |         56 |          0 |          1 |         57 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\LeoZ.svg                                             | XML            |         56 |          0 |          1 |         57 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\LibraZ.svg                                           | XML            |         54 |          0 |          1 |         55 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\PiscesZ.svg                                          | XML            |        101 |          0 |          1 |        102 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\SagittariusZ.svg                                     | XML            |         43 |          0 |          1 |         44 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\ScorpionZ.svg                                        | XML            |         59 |          0 |          1 |         60 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\TaurusZ.svg                                          | XML            |         54 |          0 |          1 |         55 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\VirgoZ.svg                                           | XML            |         63 |          0 |          1 |         64 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\apple.svg                                            | XML            |         10 |          0 |          1 |         11 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\bgLogin.svg                                          | XML            |         25 |          0 |          1 |         26 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\bgLoginMobile.svg                                    | XML            |         13 |          0 |          1 |         14 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\bgLoginTop.svg                                       | XML            |         39 |          0 |          1 |         40 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\bgLoginTopMobile.svg                                 | XML            |         39 |          0 |          1 |         40 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\bgPopUp.svg                                          | XML            |         39 |          0 |          1 |         40 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\birthPro.svg                                         | XML            |        114 |          0 |          1 |        115 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\birthProMobile.svg                                   | XML            |        225 |          0 |          1 |        226 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\brand_img.svg                                        | XML            |         42 |          0 |          2 |         44 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\descPro.svg                                          | XML            |         21 |          0 |          1 |         22 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\en.svg                                               | XML            |         16 |          0 |          1 |         17 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\facebook.svg                                         | XML            |         11 |          0 |          1 |         12 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\genderPro.svg                                        | XML            |        288 |          0 |          1 |        289 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\google.svg                                           | XML            |          6 |          0 |          1 |          7 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\illustrating.svg                                     | XML            |          9 |          0 |          1 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\index.tsx                                            | TypeScript JSX |         33 |         14 |          5 |         52 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\logo.svg                                             | XML            |         33 |          0 |          1 |         34 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\messBox.svg                                          | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\messBoxRight.svg                                     | XML            |          3 |          0 |          1 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\modePro.svg                                          | XML            |      3,811 |          0 |          1 |      3,812 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\nicknamePro.svg                                      | XML            |         35 |          0 |          1 |         36 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\noConver.svg                                         | XML            |         16 |          0 |          1 |         17 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\noYet.svg                                            | XML            |          1 |          0 |          0 |          1 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\success.svg                                          | XML            |          4 |          0 |          1 |          5 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\tips.svg                                             | XML            |         24 |          0 |          1 |         25 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\vi.svg                                               | XML            |         11 |          0 |          1 |         12 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\images\warn.svg                                             | XML            |         10 |          0 |          1 |         11 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\assets\lottie\loading.json                                         | JSON           |      2,855 |          0 |          1 |      2,856 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\hooks\useDetailStory.ts                                            | TypeScript     |         21 |          0 |          1 |         22 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\hooks\useFilterPost.ts                                             | TypeScript     |         32 |          0 |          4 |         36 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\hooks\useFilteredListStories.ts                                    | TypeScript     |         39 |          0 |          1 |         40 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\hooks\useListPost.ts                                               | TypeScript     |         26 |          0 |          2 |         28 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\hooks\useSearch.ts                                                 | TypeScript     |         24 |          0 |          3 |         27 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\hooks\useStoryContent.ts                                           | TypeScript     |         21 |          0 |          1 |         22 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\index.tsx                                                          | TypeScript JSX |         21 |          1 |          3 |         25 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\react-app-env.d.ts                                                 | TypeScript     |          0 |          1 |          1 |          2 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\configureStore.ts                                    | TypeScript     |         54 |          2 |         11 |         67 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\reducers.ts                                          | TypeScript     |         21 |          7 |          7 |         35 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\slice\categorySlice\index.ts                         | TypeScript     |         31 |          0 |          4 |         35 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\slice\categorySlice\selector.ts                      | TypeScript     |          7 |          0 |          3 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\slice\counterSlice\index.ts                          | TypeScript     |         31 |          0 |          4 |         35 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\slice\counterSlice\selector.ts                       | TypeScript     |          7 |          0 |          3 |         10 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\slice\userSlice\index.ts                             | TypeScript     |        157 |          6 |          6 |        169 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\slice\userSlice\saga.ts                              | TypeScript     |        154 |         35 |          7 |        196 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\redux-toolkit\slice\userSlice\selector.ts                          | TypeScript     |          8 |          0 |          4 |         12 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\reportWebVitals.ts                                                 | TypeScript     |         13 |          0 |          3 |         16 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\routes\AuthRouter.tsx                                              | TypeScript JSX |         22 |          0 |          2 |         24 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\routes\PrivateRouter.tsx                                           | TypeScript JSX |         43 |          0 |          4 |         47 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\routes\PublicRouter.tsx                                            | TypeScript JSX |         71 |          0 |          5 |         76 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\routes\route.ts                                                    | TypeScript     |         29 |          0 |          2 |         31 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\setupTests.ts                                                      | TypeScript     |          1 |          4 |          1 |          6 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\styles\StyleConstants.ts                                           | TypeScript     |         16 |          0 |          2 |         18 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\types\RootState.ts                                                 | TypeScript     |         12 |          5 |          3 |         20 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\types\index.ts                                                     | TypeScript     |          2 |          0 |          2 |          4 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\@reduxjs\toolkit.tsx                                         | TypeScript JSX |         15 |          2 |          3 |         20 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\dateFormatter.ts                                             | TypeScript     |         43 |          4 |          7 |         54 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\helper.ts                                                    | TypeScript     |         60 |          8 |          4 |         72 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\http\response.ts                                             | TypeScript     |          8 |          0 |          1 |          9 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\imageUploader.ts                                             | TypeScript     |         11 |          1 |          2 |         14 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\loadable.tsx                                                 | TypeScript JSX |         25 |          0 |          6 |         31 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\redux-injectors.ts                                           | TypeScript     |         17 |          1 |          4 |         22 |
+| h:\HUST\Thesis\Gioi-Mon-Frontend\Gioi-Mon-Frontend\src\utils\types\injector-typings.ts                                    | TypeScript     |         18 |          0 |          5 |         23 |
+| Total                                                                                                                     |                |     19,383 |        342 |        702 |     20,427 |
++---------------------------------------------------------------------------------------------------------------------------+----------------+------------+------------+------------+------------+
