@@ -271,16 +271,16 @@ export const MainSearch = () => {
                           to={`/tim-truyen/leaderboard/5`}
                           backgroundPath={"/tim-truyen/leaderboard/5"}
                         />
-                        {/* <ButtonLinkTab
+                        <ButtonLinkTab
                           label={"Số lượng bài viết"}
                           to={`/tim-truyen/leaderboard/6`}
                           backgroundPath={"/tim-truyen/leaderboard/6"}
-                        /> */}
-                         <ButtonLinkTab
+                        />
+                         {/* <ButtonLinkTab
                           label={"Lượt xem"}
                           to={`/tim-truyen/leaderboard/6`}
                           backgroundPath={"/tim-truyen/leaderboard/6"}
-                        />
+                        /> */}
                       
                       </Flex>
                     </Flex>

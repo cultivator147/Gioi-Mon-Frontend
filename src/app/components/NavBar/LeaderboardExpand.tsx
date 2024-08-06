@@ -15,7 +15,7 @@ export const LIST_LEADERBOARD = [
   { id: 4, name: "TOP_DAILY", displayName: "Top ngày" },
   { id: 5, name: "CHAPTERS", displayName: "Top số chương" },
   // { id: 6, name: "POSTS", displayName: "Top bài viết" },
-  { id: 6, name: "VIEWS", displayName: "Top lượt xem" },
+  { id: 6, name: "VIEWS", displayName: "Top độ nổi tiếng" },
 ];
 
 interface LeaderboardExpandProps {

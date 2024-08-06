@@ -46,7 +46,7 @@ export const MainHome = () => {
          width={'100%'}
          height={'100%'}
          style={{cursor: 'pointer', borderRadius: '9px', overflow: 'hidden'}}
-         src={"https://i.pinimg.com/736x/fa/10/aa/fa10aab5e38c2e4fbcb3408610306419.jpg"} />
+         src={"https://image.cdn2.seaart.ai/2023-06-23/37741373378629/ec97295bcad92d3e295c8b7ae91ff7a45fe41761_high.webp"} />
       </div>
       <Flex 
       direction={"column"}
